@@ -1,0 +1,138 @@
+{
+    "patologias": [
+        {
+            "D_range": [
+                0.0,
+                0.3
+            ],
+            "interpretacao": "Processo altamente provável. Pode haver sintomas visíveis."
+        },
+        {
+            "D_range": [
+                0.31,
+                0.71
+            ],
+            "interpretacao": "Fase de desenvolvimento inicial, subclínica."
+        },
+        {
+            "D_range": [
+                0.71,
+                ">"
+            ],
+            "interpretacao": "Sem expressão ativa, mas pode estar em latência ou ser um traço genético."
+        }
+    ],
+    "microrganismos": [
+        {
+            "D_range": [
+                0.0,
+                0.3
+            ],
+            "interpretacao": "Provável presença ativa do microrganismo."
+        },
+        {
+            "D_range": [
+                0.31,
+                0.71
+            ],
+            "interpretacao": "Possível presença, podendo estar inativo ou em baixa atividade."
+        },
+        {
+            "D_range": [
+                0.71,
+                ">"
+            ],
+            "interpretacao": "Compatibilidade fraca, indicando memória energética ou irrelevante."
+        }
+    ],
+    "alimentos": [
+        {
+            "D_range": [
+                "<",
+                0.3
+            ],
+            "interpretacao": "Altamente compatível — alimento benéfico, harmonizador."
+        },
+        {
+            "D_range": [
+                0.3,
+                0.7
+            ],
+            "interpretacao": "Compatível — pode ser consumido com moderação."
+        },
+        {
+            "D_range": [
+                0.71,
+                1.0
+            ],
+            "interpretacao": "Pouco compatível — pode gerar leve estresse biológico."
+        },
+        {
+            "D_range": [
+                1.0,
+                ">"
+            ],
+            "interpretacao": "Incompatível — potencial alergênico, inflamatório ou intoxicante."
+        }
+    ],
+    "toxinas": [
+        {
+            "D_range": [
+                0.0,
+                0.3
+            ],
+            "interpretacao": "Alta ressonância — forte impacto no organismo. Indica sobrecarga tóxica ou intoxicação ativa."
+        },
+        {
+            "D_range": [
+                0.3,
+                0.7
+            ],
+            "interpretacao": "Ressonância moderada — há sinais de influência ativa no campo biológico."
+        },
+        {
+            "D_range": [
+                0.71,
+                1.0
+            ],
+            "interpretacao": "Baixa ressonância — possível exposição passada, mas pouco ativa."
+        },
+        {
+            "D_range": [
+                1.0,
+                ">"
+            ],
+            "interpretacao": "Não ressoa com o organismo. Ausência de carga tóxica."
+        }
+    ],
+    "emocoes": [
+        {
+            "D_range": [
+                0.0,
+                0.3
+            ],
+            "interpretacao": "Emoção ativa e ressonante que está afetando os campos emocional/mental no momento."
+        },
+        {
+            "D_range": [
+                0.3,
+                0.7
+            ],
+            "interpretacao": "Emoção latente. Ainda exerce influência, embora com menor intensidade. Pode estar ligada a memórias ou padrões recorrentes."
+        },
+        {
+            "D_range": [
+                0.71,
+                1.0
+            ],
+            "interpretacao": "Emoção em transição ou enfraquecida. Pode estar sendo processada ou superada."
+        },
+        {
+            "D_range": [
+                1.0,
+                ">"
+            ],
+            "interpretacao": "Geralmente não ressoa mais com o campo atual. Foi ressignificada e/ou superada."
+        }
+    ]
+}
