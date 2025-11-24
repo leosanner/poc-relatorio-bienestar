@@ -43,19 +43,29 @@ def oberon_table_content(oberon_obj:dict):
 
     return table_obj
 
-def prosync_table_content(prosync_obj:dict):
+def inside_interval(val, interval):
+    if val < interval[0] or val > interval[1]:
+        return True
+    
+    return False
+
+def prosync_table_content(prosync_obj:dict, std:float = 0.1):
     table_obj = {
         'content': [],
     }
 
+    control = prosync_obj.get("controle")
+    var = control * std
+    range_control = [control - var, control + var]
+
     for test_name, test_value in prosync_obj.items():
         table_obj['content'].append([
             test_name,
-            test_value
+            test_value,
+            inside_interval(test_value, range_control)
         ])
 
     return table_obj
-
 
 def generate_report(
     table_prosync_obj,

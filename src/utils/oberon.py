@@ -20,7 +20,8 @@ def load_txt(path, encoding = 'utf-8'):
 
 def format_file_name(file_name):
     file_name = file_name.replace('.txt', '')
-    file_name = file_name.split('-')[1]
+    file_name = file_name.split('-')[-1]
+    
     return file_name.lower().strip()
 
 def extract_row_content(row:str, term="D="):
