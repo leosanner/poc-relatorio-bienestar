@@ -17,6 +17,15 @@ oberon_files = st.file_uploader("Upload Oberon TXT", type=["txt"], accept_multip
 st.markdown("### Informações do Relatório")
 patient_name = st.text_input("Nome do Paciente", key="patient_name")
 
+st.markdown("### Parâmetros de Configuração")
+col1, col2, col3 = st.columns(3)
+with col1:
+    min_d = st.number_input("Min D", value=0.0, step=0.1, key="min_d")
+with col2:
+    max_d = st.number_input("Max D", value=1.0, step=0.1, key="max_d")
+with col3:
+    prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
+
 if st.button("Processar Arquivos"):
     prosync_data = {}
     oberon_data_full = {}
@@ -59,8 +68,8 @@ if st.button("Processar Arquivos"):
             # but the report template likely expects both or handles empty lists.
             # Based on report.py logic:
             
-            prosync_table = prosync_table_content(prosync_data)['content']
-            oberon_table = oberon_table_content(oberon_data_full)['content']
+            prosync_table = prosync_table_content(prosync_data, std=float(prosync_std))['content']
+            oberon_table = oberon_table_content(oberon_data_full, thershold_range=[min_d, max_d])['content']
             
             docx_buffer = generate_report(prosync_table, oberon_table, patient_name)
             
