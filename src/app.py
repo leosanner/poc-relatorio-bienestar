@@ -24,7 +24,7 @@ with col1:
 with col2:
     max_d = st.number_input("Max D", value=1.0, step=0.1, key="max_d")
 with col3:
-    prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
+    prosync_std = st.number_input("Desvio padrão Prosync", value=0.1, step=0.01, key="prosync_std")
 
 if st.button("Processar Arquivos"):
     prosync_data = {}

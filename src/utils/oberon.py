@@ -1,12 +1,3 @@
-from pathlib import Path
-import os
-
-current_path = Path(__file__)
-ROOT = current_path.parent.parent
-OBERON_DATA_PATH = ROOT / 'assets/oberon'
-FILE_NAME = 'example.txt'
-
-
 def load_txt(path, encoding = 'utf-8'):
     if hasattr(path, 'read'):
         content = path.read()
@@ -51,9 +42,3 @@ def extract_oberon_content(file_path, enc='utf-8'):
     }
 
     return content
-
-
-if __name__ == "__main__":
-    print(
-        extract_oberon_content(OBERON_DATA_PATH / FILE_NAME,)
-    )

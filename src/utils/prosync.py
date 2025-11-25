@@ -1,15 +1,11 @@
 import pdfplumber
 from pathlib import Path
-import os
-import re
 import json
 from pprint import pprint
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
 PROSYNC_DATA_PATH = ROOT / 'assets/prosync'
-FILE_NAME = 'example.pdf'
-
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as file:
@@ -63,8 +59,3 @@ def extract_prosync_content(path):
     summ = retrival_pdf_information(pdf_content)
 
     return summ
-
-if __name__ == "__main__":
-    path = PROSYNC_DATA_PATH / 'example.pdf'
-
-    pprint(extract_prosync_content(path))
