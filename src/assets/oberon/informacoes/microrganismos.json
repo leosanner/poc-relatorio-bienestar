@@ -1,0 +1,442 @@
+{
+  "virus": [
+    {
+      "nome": "Dengue vírus 1–4",
+      "sintomas": "Febre alta, dor retro-orbital, mialgia",
+      "fonte": "Mosquito Aedes"
+    },
+    {
+      "nome": "Zika vírus",
+      "sintomas": "Exantema, febre leve, artralgia",
+      "fonte": "Mosquito Aedes"
+    },
+    {
+      "nome": "Chikungunya vírus",
+      "sintomas": "Artralgia intensa, febre",
+      "fonte": "Mosquito Aedes"
+    },
+    {
+      "nome": "Mayaro vírus",
+      "sintomas": "Febre, mialgia",
+      "fonte": "Mosquito Haemagogus"
+    },
+    {
+      "nome": "Oropouche vírus",
+      "sintomas": "Febre, cefaleia",
+      "fonte": "Mosquito Culicoides"
+    },
+    {
+      "nome": "Influenza A/B",
+      "sintomas": "Tosse, febre, mal-estar",
+      "fonte": "Via respiratória"
+    },
+    {
+      "nome": "SARS‑CoV‑2",
+      "sintomas": "Tosse, febre, anosmia",
+      "fonte": "Aerossóis"
+    },
+    {
+      "nome": "Rotavírus",
+      "sintomas": "Diarreia infantil",
+      "fonte": "Fecal-oral"
+    },
+    {
+      "nome": "Norovírus",
+      "sintomas": "Vômitos súbitos",
+      "fonte": "Fecal-oral"
+    },
+    {
+      "nome": "Adenovírus",
+      "sintomas": "Conjuntivite, faringite",
+      "fonte": "Contato / respiratório"
+    },
+    {
+      "nome": "Herpes simplex vírus 1",
+      "sintomas": "Lesões orais",
+      "fonte": "Saliva"
+    },
+    {
+      "nome": "Herpes simplex vírus 2",
+      "sintomas": "Lesões genitais",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Papilomavírus Humano (HPV)",
+      "sintomas": "Lesões genitais, risco oncológico",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Poliomavírus BK",
+      "sintomas": "Infecção urinária em imunossuprimidos",
+      "fonte": "Reativação viral"
+    }
+  ],
+  "bacterias": [
+    {
+      "nome": "Escherichia coli (UPEC)",
+      "sintomas": "Infecção urinária",
+      "fonte": "Fecal‑oral / uretra"
+    },
+    {
+      "nome": "Klebsiella pneumoniae",
+      "sintomas": "ITU, pielonefrite",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Proteus mirabilis",
+      "sintomas": "Cálculos urinários",
+      "fonte": "Ascensão uretral"
+    },
+    {
+      "nome": "Enterococcus faecalis",
+      "sintomas": "ITU e pós‑parto",
+      "fonte": "Trato intestinal"
+    },
+    {
+      "nome": "Gardnerella vaginalis",
+      "sintomas": "Vaginose",
+      "fonte": "Desequilíbrio vaginal"
+    },
+    {
+      "nome": "Ureaplasma urealyticum",
+      "sintomas": "Uretrite, infertilidade",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Mycoplasma genitalium",
+      "sintomas": "Inflamação pélvica",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Chlamydia trachomatis",
+      "sintomas": "Infertilidade, dor pélvica",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Neisseria gonorrhoeae",
+      "sintomas": "Gonorreia",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Staphylococcus aureus",
+      "sintomas": "Infecções cutâneas e sistêmicas",
+      "fonte": "Contato direto"
+    },
+    {
+      "nome": "Staphylococcus epidermidis",
+      "sintomas": "ITU associada a cateter",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Staphylococcus saprophyticus",
+      "sintomas": "ITU em mulheres jovens",
+      "fonte": "Ascensão uretral"
+    },
+    {
+      "nome": "Staphylococcus haemolyticus",
+      "sintomas": "Infecções urinárias",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Streptococcus agalactiae (GBS)",
+      "sintomas": "ITU e infecções neonatais",
+      "fonte": "Trato vaginal"
+    },
+    {
+      "nome": "Streptococcus pyogenes (GAS)",
+      "sintomas": "Infecções invasivas",
+      "fonte": "Contato"
+    },
+    {
+      "nome": "Streptococcus pneumoniae",
+      "sintomas": "Infecções respiratórias",
+      "fonte": "Respiratório"
+    },
+    {
+      "nome": "Streptococcus mitis",
+      "sintomas": "Infecções oportunistas",
+      "fonte": "Contato oral"
+    },
+    {
+      "nome": "Salmonella spp.",
+      "sintomas": "Diarreia, febre",
+      "fonte": "Alimentos"
+    },
+    {
+      "nome": "Shigella spp.",
+      "sintomas": "Disenteria",
+      "fonte": "Fecal‑oral"
+    },
+    {
+      "nome": "Vibrio cholerae",
+      "sintomas": "Diarreia intensa",
+      "fonte": "Água contaminada"
+    },
+    {
+      "nome": "Vibrio parahaemolyticus",
+      "sintomas": "Diarreia",
+      "fonte": "Frutos do mar"
+    },
+    {
+      "nome": "Borrelia burgdorferi",
+      "sintomas": "Doença de Lyme",
+      "fonte": "Carrapatos"
+    },
+    {
+      "nome": "Treponema pallidum",
+      "sintomas": "Sífilis",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Clostridium botulinum",
+      "sintomas": "Botulismo",
+      "fonte": "Conservas"
+    },
+    {
+      "nome": "Clostridium tetani",
+      "sintomas": "Tétano",
+      "fonte": "Ferimentos"
+    },
+    {
+      "nome": "Clostridium difficile",
+      "sintomas": "Colite",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Clostridium perfringens",
+      "sintomas": "Gangrena gasosa",
+      "fonte": "Feridas"
+    }
+  ],
+  "fungos": [
+    {
+      "nome": "Candida albicans",
+      "sintomas": "Candidíase",
+      "fonte": "Desequilíbrio microbiano"
+    },
+    {
+      "nome": "Candida glabrata",
+      "sintomas": "Candidíase resistente",
+      "fonte": "Trato urinário/vaginal"
+    },
+    {
+      "nome": "Candida tropicalis",
+      "sintomas": "Candidíase sistêmica",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Candida parapsilosis",
+      "sintomas": "ITU neonatal",
+      "fonte": "Cateteres"
+    },
+    {
+      "nome": "Candida krusei",
+      "sintomas": "Resistente a fluconazol",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Candida guilliermondii",
+      "sintomas": "Infecções urinárias",
+      "fonte": "Hospitais"
+    },
+    {
+      "nome": "Candida dubliniensis",
+      "sintomas": "Candidíase recorrente",
+      "fonte": "Contato mucoso"
+    },
+    {
+      "nome": "Cryptococcus neoformans",
+      "sintomas": "Meningite fúngica",
+      "fonte": "Excretas de pombos"
+    },
+    {
+      "nome": "Histoplasma capsulatum",
+      "sintomas": "Histoplasmose",
+      "fonte": "Excretas/morcegos"
+    },
+    {
+      "nome": "Paracoccidioides brasiliensis",
+      "sintomas": "Paracoccidioidomicose",
+      "fonte": "Solo"
+    },
+    {
+      "nome": "Aspergillus fumigatus",
+      "sintomas": "Aspergilose",
+      "fonte": "Ambientes úmidos"
+    },
+    {
+      "nome": "Aspergillus niger",
+      "sintomas": "Alergia/aspergilose",
+      "fonte": "Mofo"
+    },
+    {
+      "nome": "Penicillium spp.",
+      "sintomas": "Alergias respiratórias",
+      "fonte": "Mofo"
+    },
+    {
+      "nome": "Fusarium spp.",
+      "sintomas": "Lesões cutâneas/respiratórias",
+      "fonte": "Grãos contaminados"
+    },
+    {
+      "nome": "Mucor spp.",
+      "sintomas": "Mucormicose",
+      "fonte": "Ambientes úmidos"
+    },
+    {
+      "nome": "Rhizopus spp.",
+      "sintomas": "Mucormicose",
+      "fonte": "Solo"
+    },
+    {
+      "nome": "Trichophyton rubrum",
+      "sintomas": "Micoses cutâneas",
+      "fonte": "Contato direto"
+    }
+  ],
+  "protozoarios": [
+    {
+      "nome": "Entamoeba histolytica",
+      "sintomas": "Disenteria",
+      "fonte": "Fecal‑oral"
+    },
+    {
+      "nome": "Giardia lamblia / intestinalis",
+      "sintomas": "Diarreia gordurosa",
+      "fonte": "Água contaminada"
+    },
+    {
+      "nome": "Entamoeba coli",
+      "sintomas": "Indicador de contaminação fecal",
+      "fonte": "Fecal‑oral"
+    },
+    {
+      "nome": "Trichomonas vaginalis",
+      "sintomas": "Corrimento, coceira",
+      "fonte": "Contato sexual"
+    },
+    {
+      "nome": "Toxoplasma gondii",
+      "sintomas": "Toxoplasmose",
+      "fonte": "Gatos / carne crua"
+    },
+    {
+      "nome": "Cryptosporidium parvum",
+      "sintomas": "Diarreia intensa",
+      "fonte": "Água contaminada"
+    },
+    {
+      "nome": "Plasmodium falciparum",
+      "sintomas": "Malária grave",
+      "fonte": "Mosquito Anopheles"
+    },
+    {
+      "nome": "Leishmania braziliensis",
+      "sintomas": "Úlceras cutâneas",
+      "fonte": "Flebotomíneo"
+    },
+    {
+      "nome": "Leishmania amazonensis",
+      "sintomas": "Lesões amplas",
+      "fonte": "Flebotomíneo"
+    },
+    {
+      "nome": "Leishmania guyanensis",
+      "sintomas": "Lesões mucosas",
+      "fonte": "Flebotomíneo"
+    },
+    {
+      "nome": "Trypanosoma cruzi",
+      "sintomas": "Doença de Chagas",
+      "fonte": "Barbeiro"
+    }
+  ],
+  "helmintos": [
+    {
+      "nome": "Schistosoma haematobium",
+      "sintomas": "Hematuria, cistite crônica",
+      "fonte": "Água doce contaminada"
+    },
+    {
+      "nome": "Schistosoma mansoni",
+      "sintomas": "Esquistossomose",
+      "fonte": "Água doce"
+    },
+    {
+      "nome": "Ascaris lumbricoides",
+      "sintomas": "Dor abdominal",
+      "fonte": "Solo contaminado"
+    },
+    {
+      "nome": "Trichuris trichiura",
+      "sintomas": "Diarreia sanguinolenta",
+      "fonte": "Solo contaminado"
+    },
+    {
+      "nome": "Ancylostoma duodenale",
+      "sintomas": "Anemia",
+      "fonte": "Solo"
+    },
+    {
+      "nome": "Enterobius vermicularis",
+      "sintomas": "Prurido anal",
+      "fonte": "Fecal‑oral"
+    },
+    {
+      "nome": "Strongyloides stercoralis",
+      "sintomas": "Infecção disseminada",
+      "fonte": "Solo"
+    },
+    {
+      "nome": "Taenia saginata",
+      "sintomas": "Teníase",
+      "fonte": "Carne bovina crua"
+    },
+    {
+      "nome": "Taenia solium",
+      "sintomas": "Cisticercose",
+      "fonte": "Carne suína / ovos"
+    },
+    {
+      "nome": "Taenia asiatica",
+      "sintomas": "Teníase",
+      "fonte": "Carne suína"
+    },
+    {
+      "nome": "Fasciola hepatica",
+      "sintomas": "Fasciolíase",
+      "fonte": "Vegetais aquáticos"
+    },
+    {
+      "nome": "Fasciolopsis buski",
+      "sintomas": "Diarreia crônica",
+      "fonte": "Vegetais aquáticos"
+    },
+    {
+      "nome": "Clonorchis sinensis",
+      "sintomas": "Colangite crônica",
+      "fonte": "Peixe cru"
+    },
+    {
+      "nome": "Paragonimus westermani",
+      "sintomas": "Hemoptise",
+      "fonte": "Caranguejos"
+    },
+    {
+      "nome": "Opistorchis felineus",
+      "sintomas": "Doença hepática crônica",
+      "fonte": "Peixe cru"
+    },
+    {
+      "nome": "Eurytrema pancreatico",
+      "sintomas": "Disfunção pancreática",
+      "fonte": "Insetos / plantas"
+    },
+    {
+      "nome": "Trichinella spiralis",
+      "sintomas": "Dor muscular intensa",
+      "fonte": "Carne suína crua"
+    }
+  ]
+}

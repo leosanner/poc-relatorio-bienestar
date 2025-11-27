@@ -1,0 +1,290 @@
+[
+  {
+    "nome": "Mercúrio",
+    "tipo": "Metal pesado",
+    "efeitos": "Neuropatia, tremores, déficit cognitivo.",
+    "fontes": "Peixes grandes, amálgamas."
+  },
+  {
+    "nome": "Chumbo",
+    "tipo": "Metal pesado",
+    "efeitos": "Déficit cognitivo, anemia, hipertensão.",
+    "fontes": "Tintas antigas, água contaminada."
+  },
+  {
+    "nome": "Cádmio",
+    "tipo": "Metal pesado",
+    "efeitos": "Doença renal, osteoporose.",
+    "fontes": "Cigarro, fertilizantes."
+  },
+  {
+    "nome": "Arsênio",
+    "tipo": "Metalóide tóxico",
+    "efeitos": "Lesões cutâneas, neuropatia, câncer.",
+    "fontes": "Água subterrânea."
+  },
+  {
+    "nome": "Níquel",
+    "tipo": "Metal",
+    "efeitos": "Dermatites, irritação respiratória.",
+    "fontes": "Bijuterias, utensílios."
+  },
+  {
+    "nome": "Molibdênio (excesso)",
+    "tipo": "Metal essencial",
+    "efeitos": "Sintomas tipo gota, irritabilidade.",
+    "fontes": "Leguminosas, água."
+  },
+  {
+    "nome": "Urânio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Nefrotoxicidade, risco de câncer.",
+    "fontes": "Mineração, água."
+  },
+  {
+    "nome": "Tório",
+    "tipo": "Metal radioativo",
+    "efeitos": "Câncer ósseo, danos celulares.",
+    "fontes": "Solo, poeira industrial."
+  },
+  {
+    "nome": "Rádio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Osteossarcoma, danos ósseos.",
+    "fontes": "Água, mineração."
+  },
+  {
+    "nome": "Polônio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Falência multiorgânica.",
+    "fontes": "Fumo, contaminação rara."
+  },
+  {
+    "nome": "Plutônio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Carcinogenicidade extrema.",
+    "fontes": "Resíduos nucleares."
+  },
+  {
+    "nome": "Benzeno",
+    "tipo": "Solvente",
+    "efeitos": "Leucemia, toxicidade medular.",
+    "fontes": "Combustíveis, fumaça."
+  },
+  {
+    "nome": "Tolueno",
+    "tipo": "Solvente",
+    "efeitos": "Neurotoxicidade, danos hepáticos.",
+    "fontes": "Tintas, colas."
+  },
+  {
+    "nome": "Xileno",
+    "tipo": "Solvente",
+    "efeitos": "Confusão, tontura.",
+    "fontes": "Tintas, solventes."
+  },
+  {
+    "nome": "Acetona",
+    "tipo": "Solvente",
+    "efeitos": "Irritação, cefaleia.",
+    "fontes": "Cosméticos, removedores."
+  },
+  {
+    "nome": "Clorofórmio",
+    "tipo": "Solvente",
+    "efeitos": "Hepatotoxicidade.",
+    "fontes": "Processos químicos."
+  },
+  {
+    "nome": "Tetracloreto de carbono",
+    "tipo": "Solvente",
+    "efeitos": "Lesão hepática e renal.",
+    "fontes": "Indústria química."
+  },
+  {
+    "nome": "Amianto (Asbesto)",
+    "tipo": "Fibra mineral",
+    "efeitos": "Asbestose, mesotelioma.",
+    "fontes": "Construção antiga."
+  },
+  {
+    "nome": "Radiação gama",
+    "tipo": "Radiação ionizante",
+    "efeitos": "Danos ao DNA, câncer.",
+    "fontes": "Fontes industriais."
+  },
+  {
+    "nome": "Raios X",
+    "tipo": "Radiação ionizante",
+    "efeitos": "Danos celulares cumulativos.",
+    "fontes": "Medicina diagnóstica."
+  },
+  {
+    "nome": "Radiofrequência (RF)",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Estresse celular leve.",
+    "fontes": "Antenas, celulares."
+  },
+  {
+    "nome": "Micro-ondas",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Aquecimento tecidual.",
+    "fontes": "Equipamentos industriais."
+  },
+  {
+    "nome": "ELF (baixa frequência)",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Distúrbios do sono, cefaleia.",
+    "fontes": "Linhas elétricas."
+  },
+  {
+    "nome": "Bisfenol A (BPA)",
+    "tipo": "Disruptor endócrino",
+    "efeitos": "Alterações hormonais, infertilidade.",
+    "fontes": "Plásticos, resinas."
+  },
+  {
+    "nome": "Ftalatos",
+    "tipo": "Plastificantes",
+    "efeitos": "Impacto reprodutivo.",
+    "fontes": "Plásticos, cosméticos."
+  },
+  {
+    "nome": "Parabenos",
+    "tipo": "Conservante",
+    "efeitos": "Disfunção hormonal.",
+    "fontes": "Cosméticos."
+  },
+  {
+    "nome": "Nonilfenol",
+    "tipo": "Surfactante",
+    "efeitos": "Alterações reprodutivas.",
+    "fontes": "Detergentes."
+  },
+  {
+    "nome": "Atrazina",
+    "tipo": "Pesticida",
+    "efeitos": "Disfunção endócrina.",
+    "fontes": "Água contaminada."
+  },
+  {
+    "nome": "Amônia intestinal",
+    "tipo": "Metabólito tóxico",
+    "efeitos": "Confusão, fadiga.",
+    "fontes": "Disbiose intestinal."
+  },
+  {
+    "nome": "Aldeídos intestinais",
+    "tipo": "Subprodutos tóxicos",
+    "efeitos": "Cefaleia, irritabilidade.",
+    "fontes": "Fermentação por leveduras."
+  },
+  {
+    "nome": "Endotoxinas LPS",
+    "tipo": "Endotoxina bacteriana",
+    "efeitos": "Inflamação sistêmica.",
+    "fontes": "Bactérias gram-negativas."
+  },
+  {
+    "nome": "Organofosforados",
+    "tipo": "Neurotoxina",
+    "efeitos": "Tremores, espasmos.",
+    "fontes": "Agrotóxicos."
+  },
+  {
+    "nome": "Solventes neurotóxicos",
+    "tipo": "Neurotoxina",
+    "efeitos": "Alterações cognitivas.",
+    "fontes": "Tintas, colas."
+  },
+  {
+    "nome": "Mercúrio (neurotoxicidade)",
+    "tipo": "Neurotoxina",
+    "efeitos": "Tremores, perda de memória.",
+    "fontes": "Peixes grandes."
+  },
+  {
+    "nome": "Aflatoxinas",
+    "tipo": "Micotoxina",
+    "efeitos": "Hepatotoxicidade.",
+    "fontes": "Amendoim, milho."
+  },
+  {
+    "nome": "Glúten (sensíveis)",
+    "tipo": "Proteína sensibilizante",
+    "efeitos": "Inflamação intestinal.",
+    "fontes": "Trigo, cevada."
+  },
+  {
+    "nome": "Caseína (sensíveis)",
+    "tipo": "Proteína sensibilizante",
+    "efeitos": "Distensão, dermatites.",
+    "fontes": "Laticínios."
+  },
+  {
+    "nome": "Alumínio farmacêutico",
+    "tipo": "Metal adjuvante",
+    "efeitos": "Reação local, resposta imune.",
+    "fontes": "Adjuvantes."
+  },
+  {
+    "nome": "Traços de formaldeído",
+    "tipo": "Composto químico",
+    "efeitos": "Irritação leve.",
+    "fontes": "Processo de fabricação."
+  },
+  {
+    "nome": "Ibuprofeno (excesso)",
+    "tipo": "Fármaco",
+    "efeitos": "Hepatotoxicidade, gastrite.",
+    "fontes": "Uso prolongado."
+  },
+  {
+    "nome": "Antibióticos (excesso)",
+    "tipo": "Fármaco",
+    "efeitos": "Disbiose, hepatotoxicidade.",
+    "fontes": "Uso repetido."
+  },
+  {
+    "nome": "Psicofármacos (crônicos)",
+    "tipo": "Fármaco",
+    "efeitos": "Alterações cognitivas.",
+    "fontes": "Uso prolongado."
+  },
+  {
+    "nome": "Ftalatos (cosméticos)",
+    "tipo": "Plastificante",
+    "efeitos": "Alterações reprodutivas.",
+    "fontes": "Perfumes, esmaltes."
+  },
+  {
+    "nome": "Metais em pigmentos",
+    "tipo": "Pigmento",
+    "efeitos": "Irritação, toxicidade cutânea.",
+    "fontes": "Maquiagens."
+  },
+  {
+    "nome": "Príons",
+    "tipo": "Proteína infecciosa",
+    "efeitos": "Doenças neurodegenerativas.",
+    "fontes": "Carnes contaminadas."
+  },
+  {
+    "nome": "Tartrazina",
+    "tipo": "Corante sintético",
+    "efeitos": "Alergias, hiperatividade.",
+    "fontes": "Alimentos processados."
+  },
+  {
+    "nome": "Vermelho 40",
+    "tipo": "Corante sintético",
+    "efeitos": "Irritação, alterações comportamentais.",
+    "fontes": "Bebidas, doces."
+  },
+  {
+    "nome": "Azul brilhante",
+    "tipo": "Corante sintético",
+    "efeitos": "Reações alérgicas.",
+    "fontes": "Doces, bebidas."
+  }
+]
