@@ -83,11 +83,11 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas.json"):
     content = []
 
     for k, v in oberon_toxin_content.items():
-        if toxins_match.get(k):
-            match_name = toxins_match.get(k)
+        if toxins_match.get(k.lower()):
+            match_name = toxins_match.get(k.lower()).lower()
 
             for t in toxins_information:
-                if t["nome"] == match_name:
+                if t.get("nome").lower() == match_name:
                     t["D"] = v
 
                     content.append(t)
