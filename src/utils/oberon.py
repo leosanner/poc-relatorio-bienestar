@@ -68,7 +68,7 @@ def load_match_information(file_name):
         return json.load(file)
 
 
-def toxins_info(oberon_toxin_content: dict, json_file="toxinas.json"):
+def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json"):
 
     DEFAULT_VALUE = {
         "nome": "",
@@ -83,19 +83,20 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas.json"):
     content = []
 
     for k, v in oberon_toxin_content.items():
-        if toxins_match.get(k.lower()):
-            match_name = toxins_match.get(k.lower()).lower()
-
+        formatted_key = k.title()
+        if toxins_match.get(formatted_key):
+            match_name = toxins_match.get(formatted_key)
             for t in toxins_information:
-                if t.get("nome").lower() == match_name:
+                achou = False
+                if t.get("nome").title() == match_name.title():
                     t["D"] = v
-
                     content.append(t)
 
                     break
+
         else:
             d = DEFAULT_VALUE.copy()
-            d["nome"] = k
+            d["nome"] = k.title()
             d["D"] = v
 
             content.append(d)
@@ -129,7 +130,7 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
                     break
         else:
             d = DEFAULT_VALUE.copy()
-            d["cristal"] = k
+            d["cristal"] = k.title()
             d["D"] = v
 
             content.append(d)
@@ -138,7 +139,7 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
 
 def microorganism_info(
-    oberon_microorganism_content: dict, json_file="microrganismos.json"
+    oberon_microorganism_content: dict, json_file="microrganismos_atualizado.json"
 ):
 
     DEFAULT_VALUE = {
@@ -154,12 +155,13 @@ def microorganism_info(
     content = []
 
     for k, v in oberon_microorganism_content.items():
-        if microorganism_match.get(k):
-            match_name = microorganism_match.get(k)
+        formated_key = k.title()
+
+        if microorganism_match.get(formated_key):
+            match_name = microorganism_match.get(formated_key)
 
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
-
                     if obj["nome"] == match_name:
                         obj["D"] = v
                         obj["tipo"] = m_type
@@ -169,7 +171,7 @@ def microorganism_info(
                         break
         else:
             d = DEFAULT_VALUE.copy()
-            d["nome"] = k
+            d["nome"] = k.title()
             d["D"] = v
 
             content.append(d)

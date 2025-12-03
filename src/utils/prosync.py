@@ -1,17 +1,21 @@
 import pdfplumber
 from pathlib import Path
 import json
-from pprint import pprint
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
-PROSYNC_DATA_PATH = ROOT / 'assets/prosync'
+PROSYNC_DATA_PATH = ROOT / "assets/prosync"
+OBERON_DATA_PATH = ROOT / "assets/oberon"
+
 
 def load_json(path):
-    with open(path, 'r', encoding='utf-8') as file:
+    with open(path, "r", encoding="utf-8") as file:
         return json.load(file)
 
-def preprocess_text(content, ):
+
+def preprocess_text(
+    content,
+):
     r = []
     for token in content:
         if not token:
@@ -22,6 +26,7 @@ def preprocess_text(content, ):
         r.append(token)
 
     return r
+
 
 def extract_pdf_content(path):
     content = []
@@ -34,9 +39,10 @@ def extract_pdf_content(path):
 
     return content
 
-def retrival_pdf_information(content:list):
+
+def retrival_pdf_information(content: list):
     summary = {}
-    parasites = load_json(PROSYNC_DATA_PATH/'parasitas.json')['parasitas']
+    parasites = load_json(PROSYNC_DATA_PATH / "parasitas.json")["parasitas"]
 
     for row in content:
         if row == None:
@@ -44,10 +50,12 @@ def retrival_pdf_information(content:list):
 
         for token in row:
             if token.strip() == "Teste Controle":
-                summary['controle'] = float(row[-1])
+                summary["controle"] = float(row[-1])
 
-            if (token.strip() in parasites ) and token.strip() not in list(summary.keys()):
-                test_value = row[-2].split('/')
+            if (token.strip() in parasites) and token.strip() not in list(
+                summary.keys()
+            ):
+                test_value = row[-2].split("/")
                 summary[token.strip()] = float(test_value[0])
 
     return summary
@@ -59,3 +67,45 @@ def extract_prosync_content(path):
     summ = retrival_pdf_information(pdf_content)
 
     return summ
+
+
+def find_microorgnism_prosyn_info(prosync_summary: dict):
+    microorganisms = load_json(
+        OBERON_DATA_PATH / "informacoes/microrganismos_atualizado.json"
+    )
+    microorganisms_matches = load_json(
+        OBERON_DATA_PATH / "correspondencia/microrganismos_atualizado.json"
+    )
+
+    DEFAULT_VALUE = {
+        "nome": "",
+        "sintomas": "não encontrado",
+        "fonte": "não encontrado",
+        "tipo": "não encontrado",
+    }
+
+    content = []
+
+    for k, v in prosync_summary.items():
+        formated_key = k.title()
+
+        if microorganisms_matches.get(formated_key):
+            match_name = microorganisms_matches.get(formated_key)
+
+            for m_type, objs in microorganisms.items():
+                for obj in objs:
+                    if obj["nome"] == match_name:
+                        obj["D"] = v
+                        obj["tipo"] = m_type
+
+                        content.append(obj)
+
+                        break
+        else:
+            d = DEFAULT_VALUE.copy()
+            d["nome"] = k.title()
+            d["D"] = v
+
+            content.append(d)
+
+    return content

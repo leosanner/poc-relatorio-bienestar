@@ -1,0 +1,902 @@
+[
+  {
+    "nome": "Mercúrio",
+    "tipo": "Metal pesado",
+    "efeitos": "Neuropatia, tremores, déficit cognitivo.",
+    "fontes": "Peixes grandes, amálgamas."
+  },
+  {
+    "nome": "Chumbo",
+    "tipo": "Metal pesado",
+    "efeitos": "Déficit cognitivo, anemia, hipertensão.",
+    "fontes": "Tintas antigas, água contaminada."
+  },
+  {
+    "nome": "Cádmio",
+    "tipo": "Metal pesado",
+    "efeitos": "Doença renal, osteoporose.",
+    "fontes": "Cigarro, fertilizantes."
+  },
+  {
+    "nome": "Arsênio",
+    "tipo": "Metalóide tóxico",
+    "efeitos": "Lesões cutâneas, neuropatia, câncer.",
+    "fontes": "Água subterrânea."
+  },
+  {
+    "nome": "Níquel",
+    "tipo": "Metal",
+    "efeitos": "Dermatites, irritação respiratória.",
+    "fontes": "Bijuterias, utensílios."
+  },
+  {
+    "nome": "Molibdênio (Excesso)",
+    "tipo": "Metal essencial",
+    "efeitos": "Sintomas tipo gota, irritabilidade.",
+    "fontes": "Leguminosas, água."
+  },
+  {
+    "nome": "Urânio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Nefrotoxicidade, risco de câncer.",
+    "fontes": "Mineração, água."
+  },
+  {
+    "nome": "Tório",
+    "tipo": "Metal radioativo",
+    "efeitos": "Câncer ósseo, danos celulares.",
+    "fontes": "Solo, poeira industrial."
+  },
+  {
+    "nome": "Rádio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Osteossarcoma, danos ósseos.",
+    "fontes": "Água, mineração."
+  },
+  {
+    "nome": "Polônio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Falência multiorgânica.",
+    "fontes": "Fumo, contaminação rara."
+  },
+  {
+    "nome": "Plutônio",
+    "tipo": "Metal radioativo",
+    "efeitos": "Carcinogenicidade extrema.",
+    "fontes": "Resíduos nucleares."
+  },
+  {
+    "nome": "Benzeno",
+    "tipo": "Solvente",
+    "efeitos": "Leucemia, toxicidade medular.",
+    "fontes": "Combustíveis, fumaça."
+  },
+  {
+    "nome": "Tolueno",
+    "tipo": "Solvente",
+    "efeitos": "Neurotoxicidade, danos hepáticos.",
+    "fontes": "Tintas, colas."
+  },
+  {
+    "nome": "Xileno",
+    "tipo": "Solvente",
+    "efeitos": "Confusão, tontura.",
+    "fontes": "Tintas, solventes."
+  },
+  {
+    "nome": "Acetona",
+    "tipo": "Solvente",
+    "efeitos": "Irritação, cefaleia.",
+    "fontes": "Cosméticos, removedores."
+  },
+  {
+    "nome": "Clorofórmio",
+    "tipo": "Solvente",
+    "efeitos": "Hepatotoxicidade.",
+    "fontes": "Processos químicos."
+  },
+  {
+    "nome": "Tetracloreto De Carbono",
+    "tipo": "Solvente",
+    "efeitos": "Lesão hepática e renal.",
+    "fontes": "Indústria química."
+  },
+  {
+    "nome": "Amianto (Asbesto)",
+    "tipo": "Fibra mineral",
+    "efeitos": "Asbestose, mesotelioma.",
+    "fontes": "Construção antiga."
+  },
+  {
+    "nome": "Radiação Gama",
+    "tipo": "Radiação ionizante",
+    "efeitos": "Danos ao DNA, câncer.",
+    "fontes": "Fontes industriais."
+  },
+  {
+    "nome": "Raios X",
+    "tipo": "Radiação ionizante",
+    "efeitos": "Danos celulares cumulativos.",
+    "fontes": "Medicina diagnóstica."
+  },
+  {
+    "nome": "Radiofrequência (Rf)",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Estresse celular leve.",
+    "fontes": "Antenas, celulares."
+  },
+  {
+    "nome": "Micro-Ondas",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Aquecimento tecidual.",
+    "fontes": "Equipamentos industriais."
+  },
+  {
+    "nome": "Elf (Baixa Frequência)",
+    "tipo": "Radiação não ionizante",
+    "efeitos": "Distúrbios do sono, cefaleia.",
+    "fontes": "Linhas elétricas."
+  },
+  {
+    "nome": "Bisfenol A (Bpa)",
+    "tipo": "Disruptor endócrino",
+    "efeitos": "Alterações hormonais, infertilidade.",
+    "fontes": "Plásticos, resinas."
+  },
+  {
+    "nome": "Ftalatos",
+    "tipo": "Plastificantes",
+    "efeitos": "Impacto reprodutivo.",
+    "fontes": "Plásticos, cosméticos."
+  },
+  {
+    "nome": "Parabenos",
+    "tipo": "Conservante",
+    "efeitos": "Disfunção hormonal.",
+    "fontes": "Cosméticos."
+  },
+  {
+    "nome": "Nonilfenol",
+    "tipo": "Surfactante",
+    "efeitos": "Alterações reprodutivas.",
+    "fontes": "Detergentes."
+  },
+  {
+    "nome": "Atrazina",
+    "tipo": "Pesticida",
+    "efeitos": "Disfunção endócrina.",
+    "fontes": "Água contaminada."
+  },
+  {
+    "nome": "Amônia Intestinal",
+    "tipo": "Metabólito tóxico",
+    "efeitos": "Confusão, fadiga.",
+    "fontes": "Disbiose intestinal."
+  },
+  {
+    "nome": "Aldeídos Intestinais",
+    "tipo": "Subprodutos tóxicos",
+    "efeitos": "Cefaleia, irritabilidade.",
+    "fontes": "Fermentação por leveduras."
+  },
+  {
+    "nome": "Endotoxinas Lps",
+    "tipo": "Endotoxina bacteriana",
+    "efeitos": "Inflamação sistêmica.",
+    "fontes": "Bactérias gram-negativas."
+  },
+  {
+    "nome": "Organofosforados",
+    "tipo": "Neurotoxina",
+    "efeitos": "Tremores, espasmos.",
+    "fontes": "Agrotóxicos."
+  },
+  {
+    "nome": "Solventes Neurotóxicos",
+    "tipo": "Neurotoxina",
+    "efeitos": "Alterações cognitivas.",
+    "fontes": "Tintas, colas."
+  },
+  {
+    "nome": "Mercúrio (Neurotoxicidade)",
+    "tipo": "Neurotoxina",
+    "efeitos": "Tremores, perda de memória.",
+    "fontes": "Peixes grandes."
+  },
+  {
+    "nome": "Aflatoxinas",
+    "tipo": "Micotoxina",
+    "efeitos": "Hepatotoxicidade.",
+    "fontes": "Amendoim, milho."
+  },
+  {
+    "nome": "Glúten (Sensíveis)",
+    "tipo": "Proteína sensibilizante",
+    "efeitos": "Inflamação intestinal.",
+    "fontes": "Trigo, cevada."
+  },
+  {
+    "nome": "Caseína (Sensíveis)",
+    "tipo": "Proteína sensibilizante",
+    "efeitos": "Distensão, dermatites.",
+    "fontes": "Laticínios."
+  },
+  {
+    "nome": "Alumínio Farmacêutico",
+    "tipo": "Metal adjuvante",
+    "efeitos": "Reação local, resposta imune.",
+    "fontes": "Adjuvantes."
+  },
+  {
+    "nome": "Traços De Formaldeído",
+    "tipo": "Composto químico",
+    "efeitos": "Irritação leve.",
+    "fontes": "Processo de fabricação."
+  },
+  {
+    "nome": "Ibuprofeno (Excesso)",
+    "tipo": "Fármaco",
+    "efeitos": "Hepatotoxicidade, gastrite.",
+    "fontes": "Uso prolongado."
+  },
+  {
+    "nome": "Antibióticos (Excesso)",
+    "tipo": "Fármaco",
+    "efeitos": "Disbiose, hepatotoxicidade.",
+    "fontes": "Uso repetido."
+  },
+  {
+    "nome": "Psicofármacos (Crônicos)",
+    "tipo": "Fármaco",
+    "efeitos": "Alterações cognitivas.",
+    "fontes": "Uso prolongado."
+  },
+  {
+    "nome": "Ftalatos (Cosméticos)",
+    "tipo": "Plastificante",
+    "efeitos": "Alterações reprodutivas.",
+    "fontes": "Perfumes, esmaltes."
+  },
+  {
+    "nome": "Metais Em Pigmentos",
+    "tipo": "Pigmento",
+    "efeitos": "Irritação, toxicidade cutânea.",
+    "fontes": "Maquiagens."
+  },
+  {
+    "nome": "Príons",
+    "tipo": "Proteína infecciosa",
+    "efeitos": "Doenças neurodegenerativas.",
+    "fontes": "Carnes contaminadas."
+  },
+  {
+    "nome": "Tartrazina",
+    "tipo": "Corante sintético",
+    "efeitos": "Alergias, hiperatividade.",
+    "fontes": "Alimentos processados."
+  },
+  {
+    "nome": "Vermelho 40",
+    "tipo": "Corante sintético",
+    "efeitos": "Irritação, alterações comportamentais.",
+    "fontes": "Bebidas, doces."
+  },
+  {
+    "nome": "Azul Brilhante",
+    "tipo": "Corante sintético",
+    "efeitos": "Reações alérgicas.",
+    "fontes": "Doces, bebidas."
+  },
+  {
+    "nome": "Fósforo (P) No Cabelo",
+    "tipo": "Mineral / Nível nutricional",
+    "efeitos": "Alterações metabólicas quando em excesso ou deficiência",
+    "fontes": "Alimentação, suplementos"
+  },
+  {
+    "nome": "Fluor",
+    "tipo": "Halogênio químico",
+    "efeitos": "Em excesso: fluorose, irritação gastrointestinal",
+    "fontes": "Água fluoretada, pastas de dente"
+  },
+  {
+    "nome": "Platina (Pt) No Cabelo",
+    "tipo": "Metal nobre",
+    "efeitos": "Efeitos raros, possível exposição industrial",
+    "fontes": "Catalisadores, indústria"
+  },
+  {
+    "nome": "Ouro (Au) No Cabelo",
+    "tipo": "Metal nobre",
+    "efeitos": "Baixa toxicidade",
+    "fontes": "Joias, mineração"
+  },
+  {
+    "nome": "Lítio (Li) No Cabelo",
+    "tipo": "Metal alcalino",
+    "efeitos": "Tremores, fadiga, alterações renais",
+    "fontes": "Medicamentos, água mineral"
+  },
+  {
+    "nome": "Rob (B) No Cabelo",
+    "tipo": "Elemento traço (boro)",
+    "efeitos": "Alterações hormonais/metabólicas",
+    "fontes": "Alimentos, fertilizantes"
+  },
+  {
+    "nome": "37 Bactérias",
+    "tipo": "Categoria geral",
+    "efeitos": "Indica múltiplos agentes biológicos",
+    "fontes": "Ambiente, microbiota"
+  },
+  {
+    "nome": "Conduzir",
+    "tipo": "Categoria geral",
+    "efeitos": "—",
+    "fontes": "—"
+  },
+  {
+    "nome": "Tálio (Tl) No Cabelo",
+    "tipo": "Metal pesado",
+    "efeitos": "Neuropatia, náuseas",
+    "fontes": "Indústria"
+  },
+  {
+    "nome": "Radiação Ionizante",
+    "tipo": "Radiação ambiental",
+    "efeitos": "Danos celulares, mutações",
+    "fontes": "Raios X, materiais radioativos"
+  },
+  {
+    "nome": "Estrôncio (Sr) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Alterações ósseas em excesso",
+    "fontes": "Água, solo"
+  },
+  {
+    "nome": "Zinco (Zn) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Náuseas em excesso",
+    "fontes": "Alimentos, suplementos"
+  },
+  {
+    "nome": "Vacunas",
+    "tipo": "Categoria biológica",
+    "efeitos": "Reações imunológicas leves",
+    "fontes": "Vacinas"
+  },
+  {
+    "nome": "Constipación",
+    "tipo": "Categoria fisiológica",
+    "efeitos": "Intestino preso",
+    "fontes": "Dieta, medicamentos"
+  },
+  {
+    "nome": "Tin (Sn) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Irritação gastrointestinal",
+    "fontes": "Latas"
+  },
+  {
+    "nome": "Lesión/Cirugía",
+    "tipo": "Categoria fisiológica",
+    "efeitos": "Inflamação",
+    "fontes": "Procedimentos médicos"
+  },
+  {
+    "nome": "Toxinas De Alimentos",
+    "tipo": "Categoria geral",
+    "efeitos": "Intoxicação alimentar",
+    "fontes": "Alimentos contaminados"
+  },
+  {
+    "nome": "Metais Pesados",
+    "tipo": "Categoria geral",
+    "efeitos": "Neurotoxicidade",
+    "fontes": "Indústria, água"
+  },
+  {
+    "nome": "Core",
+    "tipo": "Categoria geral",
+    "efeitos": "—",
+    "fontes": "—"
+  },
+  {
+    "nome": "Bactérias",
+    "tipo": "Categoria biológica",
+    "efeitos": "Infecções",
+    "fontes": "Ambiente"
+  },
+  {
+    "nome": "Alcohol",
+    "tipo": "Composto químico",
+    "efeitos": "Depressão do SNC",
+    "fontes": "Bebidas"
+  },
+  {
+    "nome": "Cosméticos",
+    "tipo": "Categoria química",
+    "efeitos": "Alergias",
+    "fontes": "Produtos cosméticos"
+  },
+  {
+    "nome": "Gluten",
+    "tipo": "Proteína alimentar",
+    "efeitos": "Inflamação intestinal",
+    "fontes": "Trigo"
+  },
+  {
+    "nome": "Mucosidades",
+    "tipo": "Categoria fisiológica",
+    "efeitos": "Sintomas respiratórios",
+    "fontes": "Infecções"
+  },
+  {
+    "nome": "Insecticidas",
+    "tipo": "Tóxico agrícola",
+    "efeitos": "Neurotoxicidade",
+    "fontes": "Pulverização"
+  },
+  {
+    "nome": "Toxinas Del Azúcar",
+    "tipo": "Categoria alimentar",
+    "efeitos": "Inflamação metabólica",
+    "fontes": "Açúcares processados"
+  },
+  {
+    "nome": "Toxinas Intestinales",
+    "tipo": "Categoria biológica",
+    "efeitos": "Diarreia, transtornos gastrointestinais",
+    "fontes": "Bactérias intestinais"
+  },
+  {
+    "nome": "Modelo Virtual",
+    "tipo": "Categoria geral",
+    "efeitos": "—",
+    "fontes": "—"
+  },
+  {
+    "nome": "Priones",
+    "tipo": "Proteína infecciosa",
+    "efeitos": "Doenças neurodegenerativas",
+    "fontes": "Carnes contaminadas"
+  },
+  {
+    "nome": "Ricketsia",
+    "tipo": "Bactéria",
+    "efeitos": "Infecções febris",
+    "fontes": "Carrapatos"
+  },
+  {
+    "nome": "Tabaco",
+    "tipo": "Composto químico",
+    "efeitos": "Irritação pulmonar",
+    "fontes": "Cigarros"
+  },
+  {
+    "nome": "Toxinas Cerdo/Res",
+    "tipo": "Categoria alimentar",
+    "efeitos": "Inflamação",
+    "fontes": "Carnes processadas"
+  },
+  {
+    "nome": "Toxinas Mentales",
+    "tipo": "Categoria geral",
+    "efeitos": "Estresse",
+    "fontes": "Fatores emocionais"
+  },
+  {
+    "nome": "Lácteos",
+    "tipo": "Alimentar",
+    "efeitos": "Intolerância e inflamação",
+    "fontes": "Leite e derivados"
+  },
+  {
+    "nome": "Ameba",
+    "tipo": "Protozoário",
+    "efeitos": "Infecção intestinal",
+    "fontes": "Água contaminada"
+  },
+  {
+    "nome": "Asbestos",
+    "tipo": "Fibra tóxica",
+    "efeitos": "Doença pulmonar e câncer",
+    "fontes": "Construção antiga"
+  },
+  {
+    "nome": "Gluten (Variação)",
+    "tipo": "Proteína alimentar",
+    "efeitos": "Inflamação",
+    "fontes": "Trigo"
+  },
+  {
+    "nome": "Monóxido De Carbono",
+    "tipo": "Gás tóxico",
+    "efeitos": "Hipóxia",
+    "fontes": "Combustão"
+  },
+  {
+    "nome": "Hongos",
+    "tipo": "Fungos",
+    "efeitos": "Infecções",
+    "fontes": "Ambientes úmidos"
+  },
+  {
+    "nome": "Cafeina",
+    "tipo": "Estimulante",
+    "efeitos": "Ansiedade",
+    "fontes": "Café"
+  },
+  {
+    "nome": "Farmacéuticos",
+    "tipo": "Categoria química",
+    "efeitos": "Efeitos variados",
+    "fontes": "Medicamentos"
+  },
+  {
+    "nome": "A Melhor Distribuição",
+    "tipo": "Categoria geral",
+    "efeitos": "—",
+    "fontes": "—"
+  },
+  {
+    "nome": "Potássio (K) No Cabelo",
+    "tipo": "Mineral",
+    "efeitos": "Arritmias em excesso",
+    "fontes": "Alimentação"
+  },
+  {
+    "nome": "Prata (Ag) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Toxicidade rara",
+    "fontes": "Joias, indústria"
+  },
+  {
+    "nome": "Amalgamas",
+    "tipo": "Liga metálica",
+    "efeitos": "Exposição a metais",
+    "fontes": "Odontologia"
+  },
+  {
+    "nome": "Cloro",
+    "tipo": "Halogênio",
+    "efeitos": "Irritação respiratória",
+    "fontes": "Piscinas"
+  },
+  {
+    "nome": "Cromo (Cr) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Dermatites",
+    "fontes": "Indústria"
+  },
+  {
+    "nome": "Alcohol (Duplicado)",
+    "tipo": "Composto químico",
+    "efeitos": "Depressão do SNC",
+    "fontes": "Bebidas"
+  },
+  {
+    "nome": "Álcool Desidrogenase",
+    "tipo": "Enzima",
+    "efeitos": "—",
+    "fontes": "Fígado"
+  },
+  {
+    "nome": "Beryllium 30X 200X 1M (Berílio)",
+    "tipo": "Preparação homeopática",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Silício (Si) No Cabelo",
+    "tipo": "Mineral",
+    "efeitos": "Geralmente benigno",
+    "fontes": "Solo, água"
+  },
+  {
+    "nome": "Cobalt 30X 200X 1M (Cobalt)",
+    "tipo": "Preparação homeopática",
+    "efeitos": "Sem efeito real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Lesão / Cirurgia",
+    "tipo": "Categoria fisiológica",
+    "efeitos": "Inflamação",
+    "fontes": "Procedimentos médicos"
+  },
+  {
+    "nome": "Constipacao",
+    "tipo": "Categoria fisiológica",
+    "efeitos": "Intestino preso",
+    "fontes": "Dieta"
+  },
+  {
+    "nome": "Lacticínios",
+    "tipo": "Alimentar",
+    "efeitos": "Intolerância",
+    "fontes": "Leite"
+  },
+  {
+    "nome": "Cafeína",
+    "tipo": "Estimulante",
+    "efeitos": "Ansiedade",
+    "fontes": "Café"
+  },
+  {
+    "nome": "Glúten",
+    "tipo": "Proteína alimentar",
+    "efeitos": "Inflamação",
+    "fontes": "Trigo"
+  },
+  {
+    "nome": "Toxinas Intestinais",
+    "tipo": "Categoria biológica",
+    "efeitos": "Diarreia",
+    "fontes": "Bactérias"
+  },
+  {
+    "nome": "Toxinas Nervosas",
+    "tipo": "Categoria geral",
+    "efeitos": "Sintomas neurológicos",
+    "fontes": "Inflamação"
+  },
+  {
+    "nome": "Cloranfenicol",
+    "tipo": "Antibiótico",
+    "efeitos": "Supressão medular",
+    "fontes": "Medicamentos"
+  },
+  {
+    "nome": "Cobre",
+    "tipo": "Metal",
+    "efeitos": "Hepatotoxicidade",
+    "fontes": "Tubulações"
+  },
+  {
+    "nome": "Conduzir (Duplicado)",
+    "tipo": "Categoria geral",
+    "efeitos": "—",
+    "fontes": "—"
+  },
+  {
+    "nome": "Formaldeído",
+    "tipo": "Composto químico",
+    "efeitos": "Irritação, carcinógeno",
+    "fontes": "Indústria"
+  },
+  {
+    "nome": "Níquel (Forma Diferente)",
+    "tipo": "Metal",
+    "efeitos": "Dermatites",
+    "fontes": "Metais"
+  },
+  {
+    "nome": "Pesticidas",
+    "tipo": "Tóxico agrícola",
+    "efeitos": "Neurotoxicidade",
+    "fontes": "Agroindústria"
+  },
+  {
+    "nome": "Salicilatos",
+    "tipo": "Composto químico",
+    "efeitos": "Irritação gástrica",
+    "fontes": "Aspirina"
+  },
+  {
+    "nome": "Salicilatos Acetil",
+    "tipo": "Anti-inflamatório",
+    "efeitos": "Gastrite",
+    "fontes": "Medicamentos"
+  },
+  {
+    "nome": "Triptofano",
+    "tipo": "Aminoácido",
+    "efeitos": "Sonolência",
+    "fontes": "Alimentos"
+  },
+  {
+    "nome": "Zinco (Forma Diferente)",
+    "tipo": "Mineral",
+    "efeitos": "Náuseas",
+    "fontes": "Suplementos"
+  },
+  {
+    "nome": "Alumínio 30X 200X 1M (Alumínio)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Arsenic 30X 200X 1M (Arseny)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Merc Tem 30X 200X 1M (Mercúrio Metálico)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Stannum 30X 200X 1M (Tin)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Tálio 30X 200X 1M (Tálio)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Urânio 30X200X 1M (Urano)",
+    "tipo": "Homeopatia",
+    "efeitos": "Sem toxicidade real",
+    "fontes": "Homeopatia"
+  },
+  {
+    "nome": "Antimónio (Sb) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Náuseas, irritação pulmonar e fadiga.",
+    "fontes": "Indústrias têxteis, plásticos, combustão."
+  },
+  {
+    "nome": "Berílio (Be) No Cabelo",
+    "tipo": "Metal tóxico",
+    "efeitos": "Risco de inflamação pulmonar e sensibilização respiratória.",
+    "fontes": "Indústria aeroespacial, eletrônicos, mineração."
+  },
+  {
+    "nome": "Bismuto (Bi) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Baixa toxicidade; pode causar desconforto gastrointestinal.",
+    "fontes": "Cosméticos, medicamentos, ligas metálicas."
+  },
+  {
+    "nome": "Bário (Ba) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Fraqueza muscular, alterações cardíacas e distúrbios gastrointestinais.",
+    "fontes": "Solo, água contaminada, pigmentos."
+  },
+  {
+    "nome": "Cobalto (Co) No Cabelo",
+    "tipo": "Metal essencial",
+    "efeitos": "Em excesso pode causar irritação respiratória e alterações cardiovasculares.",
+    "fontes": "Suplementos, ligas metálicas, mineração."
+  },
+  {
+    "nome": "Cobre (Cu) No Cabelo",
+    "tipo": "Metal essencial",
+    "efeitos": "Excesso provoca distúrbios hepáticos e neurológicos.",
+    "fontes": "Tubulações, alimentos, suplementos."
+  },
+  {
+    "nome": "Cálcio (Ca) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Alterações musculares e ósseas quando em desequilíbrio.",
+    "fontes": "Alimentação, água potável, suplementos."
+  },
+  {
+    "nome": "Ferro (Fe) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Excesso pode causar fadiga, desconforto abdominal e alterações hepáticas.",
+    "fontes": "Carnes, vegetais, suplementos."
+  },
+  {
+    "nome": "Germânio (Ge) No Cabelo",
+    "tipo": "Metal semiprecioso",
+    "efeitos": "Em excesso pode causar nefrotoxicidade.",
+    "fontes": "Suplementos não regulamentados, eletrônicos."
+  },
+  {
+    "nome": "Gálio (Ga) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Baixa toxicidade; pode causar irritação leve.",
+    "fontes": "Indústria eletrônica e semicondutores."
+  },
+  {
+    "nome": "Iodo (I) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Desequilíbrio afeta tireoide, podendo causar hipo ou hipertireoidismo.",
+    "fontes": "Sal iodado, frutos do mar, suplementos."
+  },
+  {
+    "nome": "Magnésio (Mg) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Déficit gera cãibras; excesso causa diarreia e fadiga.",
+    "fontes": "Vegetais verdes, sementes, suplementos."
+  },
+  {
+    "nome": "Manganês (Mn) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Excesso pode afetar o sistema nervoso central.",
+    "fontes": "Água, alimentos integrais, indústria."
+  },
+  {
+    "nome": "Rubídio (Rb) No Cabelo",
+    "tipo": "Metal alcalino",
+    "efeitos": "Exposição elevada pode causar fraqueza e instabilidade metabólica.",
+    "fontes": "Solo, alimentos cultivados, indústria."
+  },
+  {
+    "nome": "Selênio (Se) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Em excesso causa queda de cabelo, fadiga e irritação gastrointestinal.",
+    "fontes": "Castanhas, peixes, suplementos."
+  },
+  {
+    "nome": "Sódio (Na) No Cabelo",
+    "tipo": "Mineral essencial",
+    "efeitos": "Desequilíbrio causa retenção hídrica e alterações cardiovasculares.",
+    "fontes": "Sal, alimentos processados, água."
+  },
+  {
+    "nome": "Tungstênio (W) Em Seu Cabelo",
+    "tipo": "Metal pesado",
+    "efeitos": "Exposição elevada pode causar irritação respiratória e fadiga.",
+    "fontes": "Indústria de ferramentas, ligas metálicas."
+  },
+  {
+    "nome": "Vanádio (V) No Cabelo",
+    "tipo": "Metal de transição",
+    "efeitos": "Pode causar irritação, fadiga e distúrbios gastrointestinais.",
+    "fontes": "Combustão, poluição industrial."
+  },
+  {
+    "nome": "Zircônio (Zr) No Cabelo",
+    "tipo": "Metal",
+    "efeitos": "Geralmente baixa toxicidade; irritações leves podem ocorrer.",
+    "fontes": "Cosméticos, cerâmicas, indústria."
+  },
+  {
+    "nome": "Intestine (Bowel, Colon, Intestine). D Nosode *  ]",
+    "tipo": "Preparação homeopática / nosódio",
+    "efeitos": "Não possui efeitos tóxicos diretos.",
+    "fontes": "Preparações homeopáticas."
+  },
+  {
+    "nome": "Asbestos | Toxic.",
+    "tipo": "Fibra tóxica / carcinogênica",
+    "efeitos": "Pode causar doenças pulmonares, asbestose e câncer.",
+    "fontes": "Construção antiga, isolamento térmico."
+  },
+  {
+    "nome": "Cromosomas Homem",
+    "tipo": "Categoria biológica",
+    "efeitos": "Não representa toxicidade; apenas informação estrutural.",
+    "fontes": "Material genético humano."
+  },
+  {
+    "nome": "Gluten | Highly Allergic Compound In Grains, Ids Intolerance, Allergy Or Sprue.",
+    "tipo": "Proteína alimentar",
+    "efeitos": "Intolerância, alergias e inflamação intestinal.",
+    "fontes": "Trigo, cevada, centeio."
+  },
+  {
+    "nome": "Metales Pesados",
+    "tipo": "Categoria geral (metais pesados)",
+    "efeitos": "Neurotoxicidade, fadiga crônica, danos hepáticos.",
+    "fontes": "Poluição industrial, água contaminada, alimentos."
+  },
+  {
+    "nome": "Parásitos",
+    "tipo": "Categoria biológica",
+    "efeitos": "Infecções intestinais, má absorção e dor abdominal.",
+    "fontes": "Água contaminada, alimentos crus, solos infectados."
+  },
+  {
+    "nome": "Vacinas",
+    "tipo": "Categoria biológica",
+    "efeitos": "Reações leves como febre e fadiga; não tóxico por si só.",
+    "fontes": "Imunizações biológicas."
+  },
+  {
+    "nome": "Suínos / Bovinos Toxinas",
+    "tipo": "Toxinas alimentares",
+    "efeitos": "Pode causar inflamação e desconforto gastrointestinal em sensíveis.",
+    "fontes": "Carne de porco e boi, alimentos processados."
+  }
+]

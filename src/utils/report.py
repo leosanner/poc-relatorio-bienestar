@@ -7,7 +7,7 @@ from io import BytesIO
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
-REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_relatorio.docx"
+REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_relatorio_v2.docx"
 
 
 def inside_interval(val, interval):
@@ -55,20 +55,16 @@ def oberon_table_content(oberon_obj: dict, thershold_ranges: dict):
 
 
 def prosync_table_content(prosync_obj: dict, std: float = 0.1):
-    table_obj = {
-        "content": [],
-    }
-
+    table_obj = {"test": [], "value": []}
+    formatted_docx = []
     control = prosync_obj.get("controle")
-    var = control * std
-    range_control = [control - var, control + var]
 
     for test_name, test_value in prosync_obj.items():
-        r = "Negativo" if inside_interval(test_value, range_control) else "Positivo"
+        table_obj["test"].append(test_name.title())
+        table_obj["value"].append(f"{test_value}/{control}")
+        formatted_docx.append([test_name, f"{test_value}/{control}"])
 
-        table_obj["content"].append([test_name, test_value, r])
-
-    return table_obj
+    return table_obj, formatted_docx
 
 
 def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
@@ -80,12 +76,12 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
     context = {
         "date": datetime.now().strftime("%d/%m/%Y"),
         "name": patient_name,
-        "table_prosync": [], # Will be populated if needed or we can reuse prosync_table_content logic
+        "table_prosync": [],  # Will be populated if needed or we can reuse prosync_table_content logic
         "table_toxins": [],
         "table_microorganism": [],
         "table_crystals": [],
         "table_food": {},
-        "table_emotions": {}
+        "table_emotions": {},
     }
 
     # Process Prosync (reuse existing logic for list format if template expects it, or pass raw dict)
@@ -94,14 +90,14 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
     # "receive the prosync files... values, the results from previous steps"
     # Let's use the existing prosync_table_content to get the list of lists
     if prosync_data:
-        # We need the std value, but it's not passed here. 
+        # We need the std value, but it's not passed here.
         # Let's assume std is handled outside or we need to pass it.
         # For now, let's pass the raw prosync_data and let the template handle it or use a default std if we call the helper.
         # Actually, let's just pass the raw dict as "prosync_data" and also the table as "table_prosync" for flexibility.
-        context["prosync_data"] = prosync_data
-        # If we want the calculated "Positivo/Negativo", we need the std. 
+        context["table_prosync"] = prosync_data
+        # If we want the calculated "Positivo/Negativo", we need the std.
         # I'll add std to the function signature.
-    
+
     # Process Oberon
     for category, data in oberon_data.items():
         threshold = oberon_thresholds.get(category, [0.0, 1.0])
