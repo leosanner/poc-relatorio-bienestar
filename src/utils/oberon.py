@@ -118,11 +118,12 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
     content = []
 
     for k, v in oberon_crystal_content.items():
-        if crystal_match.get(k):
-            match_name = crystal_match.get(k)
+        formatted_key = k.title()
+        if crystal_match.get(formatted_key):
+            match_name = crystal_match.get(formatted_key)
 
             for t in crystal_information:
-                if t["cristal"] == match_name:
+                if t["cristal"].title() == match_name:
                     t["D"] = v
 
                     content.append(t)

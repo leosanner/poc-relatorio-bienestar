@@ -101,6 +101,7 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
                         content.append(obj)
 
                         break
+
         else:
             d = DEFAULT_VALUE.copy()
             d["nome"] = k.title()

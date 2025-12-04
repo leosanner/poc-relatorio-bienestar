@@ -570,7 +570,6 @@
     "fontes": "Indústria"
   },
   {
-    "nome": "Alcohol (Duplicado)",
     "tipo": "Composto químico",
     "efeitos": "Depressão do SNC",
     "fontes": "Bebidas"
@@ -654,7 +653,6 @@
     "fontes": "Tubulações"
   },
   {
-    "nome": "Conduzir (Duplicado)",
     "tipo": "Categoria geral",
     "efeitos": "—",
     "fontes": "—"
