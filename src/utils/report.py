@@ -57,7 +57,7 @@ def oberon_table_content(oberon_obj: dict, thershold_ranges: dict):
 def prosync_table_content(prosync_obj: dict, std: float = 0.1):
     table_obj = {"test": [], "value": []}
     formatted_docx = []
-    control = prosync_obj.get("controle")
+    control = prosync_obj.get("Controle")
 
     for test_name, test_value in prosync_obj.items():
         table_obj["test"].append(test_name.title())
