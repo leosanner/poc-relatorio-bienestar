@@ -49,8 +49,8 @@ def retrival_pdf_information(content: list):
             continue
 
         for token in row:
-            if token.strip() == "Teste Controle":
-                summary["controle"] = float(row[-1])
+            if token.strip() == "Teste Controle'":
+                summary["Controle"] = float(row[-1])
 
             if (token.strip() in parasites) and token.strip() not in list(
                 summary.keys()

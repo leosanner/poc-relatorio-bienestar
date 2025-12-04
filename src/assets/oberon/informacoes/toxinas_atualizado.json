@@ -570,11 +570,6 @@
     "fontes": "Indústria"
   },
   {
-    "tipo": "Composto químico",
-    "efeitos": "Depressão do SNC",
-    "fontes": "Bebidas"
-  },
-  {
     "nome": "Álcool Desidrogenase",
     "tipo": "Enzima",
     "efeitos": "—",
@@ -651,11 +646,6 @@
     "tipo": "Metal",
     "efeitos": "Hepatotoxicidade",
     "fontes": "Tubulações"
-  },
-  {
-    "tipo": "Categoria geral",
-    "efeitos": "—",
-    "fontes": "—"
   },
   {
     "nome": "Formaldeído",
