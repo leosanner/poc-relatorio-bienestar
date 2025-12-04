@@ -88,25 +88,27 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
 
     for k, v in prosync_summary.items():
         formated_key = k.title()
+        test_content = {}
 
-        if microorganisms_matches.get(formated_key):
-            match_name = microorganisms_matches.get(formated_key)
+        for m_type, objs in microorganisms.items():
+            for obj in objs:
+                if obj["nome"] == formated_key:
+                    retrival_information = obj.copy()
+                    retrival_information["D"] = v
+                    retrival_information["tipo"] = m_type
+                    retrival_information["nome"] = formated_key
 
-            for m_type, objs in microorganisms.items():
-                for obj in objs:
-                    if obj["nome"] == match_name:
-                        obj["D"] = v
-                        obj["tipo"] = m_type
+                    content.append(retrival_information)
 
-                        content.append(obj)
+                    break
 
-                        break
-
-        else:
+        if len(test_content) == 0:
             d = DEFAULT_VALUE.copy()
             d["nome"] = k.title()
             d["D"] = v
 
             content.append(d)
+
+    #! Parei aqui
 
     return content

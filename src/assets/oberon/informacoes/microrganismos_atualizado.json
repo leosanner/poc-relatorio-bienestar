@@ -94,9 +94,79 @@
       "nome": "Rinovírus",
       "sintomas": "Resfriado comum; congestão nasal, espirros, dor de garganta",
       "fonte": "Aerossóis, gotículas respiratórias, superfícies contaminadas"
+    },
+    {
+      "nome": "Dengue - Denv-1",
+      "sintomas": "Febre alta, dor muscular, dor de cabeça intensa e mal-estar generalizado.",
+      "fonte": "Transmissão pela picada do mosquito Aedes aegypti."
+    },
+    {
+      "nome": "Dengue - Denv-2",
+      "sintomas": "Quadro febril agudo com dor articular, mialgia e possível exantema.",
+      "fonte": "Mosquito Aedes aegypti."
+    },
+    {
+      "nome": "Dengue - Denv-3",
+      "sintomas": "Sintomas clássicos de dengue, podendo apresentar maior risco de complicações.",
+      "fonte": "Transmissão por Aedes aegypti."
+    },
+    {
+      "nome": "Dengue - Denv-4",
+      "sintomas": "Febre, fadiga, dor retro-orbital e sintomas gripais intensos.",
+      "fonte": "Mosquito Aedes aegypti."
+    },
+    {
+      "nome": "Dengue (arbovírus)",
+      "sintomas": "Febre, dor no corpo, náuseas e manchas vermelhas.",
+      "fonte": "Picada do mosquito Aedes."
+    },
+    {
+      "nome": "Zika",
+      "sintomas": "Febre baixa, coceira, conjuntivite e manchas avermelhadas.",
+      "fonte": "Mosquito Aedes aegypti e Aedes albopictus."
+    },
+    {
+      "nome": "Chikungunya",
+      "sintomas": "Artralgia intensa, febre alta repentina e dor muscular.",
+      "fonte": "Picada dos mosquitos Aedes aegypti ou albopictus."
     }
   ],
   "bacterias": [
+    {
+      "nome": "Enterococcus gallinarum",
+      "sintomas": "Infecções urinárias ou intra-abdominais em casos oportunistas.",
+      "fonte": "Trato gastrointestinal; transmissão por contaminação fecal."
+    },
+    {
+      "nome": "Clostridium acetobutylicum",
+      "sintomas": "Geralmente não patogênico; pode causar infecções oportunistas raras.",
+      "fonte": "Solo, sedimentos e matéria orgânica em decomposição."
+    },
+    {
+      "nome": "Clostridium botulinum (tooth) causes food poisoning",
+      "sintomas": "Paralisia flácida progressiva, visão dupla e dificuldade respiratória.",
+      "fonte": "Consumo de alimentos mal conservados contaminados por toxina botulínica."
+    },
+    {
+      "nome": "Clostridium perfringens spores",
+      "sintomas": "Diarreia, dor abdominal e intoxicação alimentar.",
+      "fonte": "Carnes e alimentos mantidos em temperatura inadequada."
+    },
+    {
+      "nome": "Clostridium septicum",
+      "sintomas": "Infecções graves como miosites e gangrena gasosa.",
+      "fonte": "Solo e trato gastrointestinal."
+    },
+    {
+      "nome": "Clostridium sporogenes",
+      "sintomas": "Infecções de tecidos moles em indivíduos imunocomprometidos.",
+      "fonte": "Solo, poeira ambiental e alimentos contaminados."
+    },
+    {
+      "nome": "Clostridium tetani (tooth) causes tetanus",
+      "sintomas": "Espasmos musculares, rigidez, trismo e risco de insuficiência respiratória.",
+      "fonte": "Contaminação de ferimentos com solo ou objetos enferrujados contendo esporos."
+    },
     {
       "nome": "Escherichia coli (UPEC)",
       "sintomas": "Infecção urinária",
@@ -265,6 +335,11 @@
   ],
   "fungos": [
     {
+      "nome": "Malassezia furfur",
+      "sintomas": "Dermatite seborreica, pitiríase versicolor e coceira no couro cabeludo.",
+      "fonte": "Microbiota da pele; proliferação aumentada em ambientes úmidos."
+    },
+    {
       "nome": "Candida albicans",
       "sintomas": "Candidíase",
       "fonte": "Desequilíbrio microbiano"
@@ -382,6 +457,26 @@
   ],
   "protozoarios": [
     {
+      "nome": "Leishmania",
+      "sintomas": "Lesões cutâneas, úlceras e, em alguns casos, acometimento visceral.",
+      "fonte": "Transmissão pela picada do flebotomíneo (mosquito-palha)."
+    },
+    {
+      "nome": "Endolymax nana",
+      "sintomas": "Geralmente assintomático; pode causar desconforto abdominal leve.",
+      "fonte": "Transmissão fecal-oral."
+    },
+    {
+      "nome": "Toxoplasminum",
+      "sintomas": "Febre baixa, mal-estar e dor muscular; pode ser assintomático.",
+      "fonte": "Ingestão de alimentos contaminados ou contato com fezes de gatos."
+    },
+    {
+      "nome": "Trypanosoma Cruzi",
+      "sintomas": "Febre, edema local e, cronicamente, cardiopatia chagásica.",
+      "fonte": "Fezes do inseto barbeiro; alimentos contaminados."
+    },
+    {
       "nome": "Entamoeba histolytica",
       "sintomas": "Disenteria",
       "fonte": "Fecal‑oral"
@@ -438,6 +533,61 @@
     }
   ],
   "helmintos": [
+    {
+      "nome": "Taenia sp",
+      "sintomas": "Dor abdominal, perda de peso e alterações gastrointestinais.",
+      "fonte": "Ingestão de carne crua ou mal cozida contendo cisticercos."
+    },
+    {
+      "nome": "Fasciola hepatica cercariae",
+      "sintomas": "Quadro abdominal com dor no quadrante superior direito.",
+      "fonte": "Consumo de plantas aquáticas contaminadas."
+    },
+    {
+      "nome": "Fasciola hepatica eggs",
+      "sintomas": "Sintomas inespecíficos de fasciolíase como dor abdominal e fadiga.",
+      "fonte": "Contato com água ou alimentos contaminados com ovos."
+    },
+    {
+      "nome": "Fasciola hepatica metacercariae",
+      "sintomas": "Dor abdominal, febre e desconforto hepático.",
+      "fonte": "Ingestão de vegetais aquáticos contaminados."
+    },
+    {
+      "nome": "Fasciola hepatica miracidia",
+      "sintomas": "Geralmente não causa sintomas diretos em humanos; forma infectante para moluscos.",
+      "fonte": "Ambientes aquáticos contaminados."
+    },
+    {
+      "nome": "Fasciolopsis buskii adult",
+      "sintomas": "Diarreia crônica, dor abdominal e má absorção.",
+      "fonte": "Plantas aquáticas contaminadas."
+    },
+    {
+      "nome": "Fasciolopsis buskii eggs",
+      "sintomas": "Sintomas gastrointestinais associados à fasciolopsíase.",
+      "fonte": "Ingestão de vegetação aquática contaminada."
+    },
+    {
+      "nome": "Fasciolopsis buskii eggs unincubated",
+      "sintomas": "Geralmente assintomático, mas indica exposição ao parasita.",
+      "fonte": "Água ou alimentos contaminados."
+    },
+    {
+      "nome": "Fasciolopsis cercariae",
+      "sintomas": "Pode causar irritação intestinal leve.",
+      "fonte": "Contato com água contaminada ou ingestão de plantas expostas."
+    },
+    {
+      "nome": "Fasciolopsis miracidia",
+      "sintomas": "Forma não patogênica para humanos; estágio inicial do ciclo.",
+      "fonte": "Ambientes aquáticos infectados."
+    },
+    {
+      "nome": "Fasciolopsis rediae",
+      "sintomas": "Não causa sintomas diretos em humanos; estágio intermediário.",
+      "fonte": "Moluscos aquáticos infectados."
+    },
     {
       "nome": "Taenia pisiformis",
       "sintomas": "Teníase em cães e outros canídeos; em humanos, infecção intestinal rara com dor abdominal e perda de peso.",
