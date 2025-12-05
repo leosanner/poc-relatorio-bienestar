@@ -50,13 +50,13 @@ def retrival_pdf_information(content: list):
 
         for token in row:
             if token.strip() == "Teste Controle":
-                summary["Controle"] = float(row[-1])
+                summary["Controle"] = int(row[-1])
 
             if (token.strip() in parasites) and token.strip() not in list(
                 summary.keys()
             ):
                 test_value = row[-2].split("/")
-                summary[token.strip()] = float(test_value[0])
+                summary[token.strip()] = int(test_value[0])
 
     return summary
 
@@ -66,9 +66,8 @@ def extract_prosync_content(path):
     pdf_content = [preprocess_text(content) for content in pdf_content]
     summ = retrival_pdf_information(pdf_content)
 
-    # print(find_microorgnism_prosyn_info(summ))
+    return find_microorgnism_prosyn_info(summ)
 
-    return summ
 
 
 def find_microorgnism_prosyn_info(prosync_summary: dict):
@@ -90,7 +89,7 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
 
     for k, v in prosync_summary.items():
         formated_key = k.title()
-        test_content = {}
+        retrival_information = {}
 
         for m_type, objs in microorganisms.items():
             for obj in objs:
@@ -104,11 +103,11 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
 
                     break
 
-        if len(test_content) == 0:
+        if len(retrival_information) == 0:
             d = DEFAULT_VALUE.copy()
             d["nome"] = k.title()
             d["D"] = v
 
             content.append(d)
-
+            
     return content

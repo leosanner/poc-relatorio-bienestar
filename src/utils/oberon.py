@@ -146,7 +146,7 @@ def microorganism_info(
     DEFAULT_VALUE = {
         "nome": "",
         "sintomas": "não encontrado",
-        "fonte": "não encontrado",
+        "fonte": "Não encontrado",
         "tipo": "não encontrado",
     }
 
@@ -159,13 +159,13 @@ def microorganism_info(
         formated_key = k.title()
 
         if microorganism_match.get(formated_key):
-            match_name = microorganism_match.get(formated_key)
+            match_name = microorganism_match.get(formated_key).title()
 
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
-                    if obj["nome"] == match_name:
+                    if obj["nome"].title() == match_name:
                         obj["D"] = v
-                        obj["tipo"] = m_type
+                        obj["tipo"] = m_type.title()
 
                         content.append(obj)
 

@@ -128,7 +128,7 @@ if st.button("Gerar Relatório"):
             prosync_list = []
             if prosync_data:
                 prosync_list = prosync_table_content(
-                    prosync_data, std=float(prosync_std)
+                    prosync_data, gen_report=True
                 )[1]
 
             docx_buffer = generate_report(

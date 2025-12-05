@@ -1,5 +1,5 @@
 {
-  "virus": [
+  "vírus": [
     {
       "nome": "Echovírus 9",
       "sintomas": "Infecções entéricas e respiratórias; pode causar febre, exantema e meningite asséptica.",
@@ -36,7 +36,7 @@
       "fonte": "Mosquito Culicoides"
     },
     {
-      "nome": "Influenza A/B",
+      "nome": "Influenza",
       "sintomas": "Tosse, febre, mal-estar",
       "fonte": "Via respiratória"
     },
@@ -71,7 +71,7 @@
       "fonte": "Contato sexual"
     },
     {
-      "nome": "Papilomavírus Humano (HPV)",
+      "nome": "Papilomavírus Humano",
       "sintomas": "Lesões genitais, risco oncológico",
       "fonte": "Contato sexual"
     },
@@ -116,7 +116,7 @@
       "fonte": "Mosquito Aedes aegypti."
     },
     {
-      "nome": "Dengue (arbovírus)",
+      "nome": "Dengue ( Arbovírus)",
       "sintomas": "Febre, dor no corpo, náuseas e manchas vermelhas.",
       "fonte": "Picada do mosquito Aedes."
     },
@@ -131,7 +131,7 @@
       "fonte": "Picada dos mosquitos Aedes aegypti ou albopictus."
     }
   ],
-  "bacterias": [
+  "bactéria": [
     {
       "nome": "Enterococcus gallinarum",
       "sintomas": "Infecções urinárias ou intra-abdominais em casos oportunistas.",
@@ -163,12 +163,12 @@
       "fonte": "Solo, poeira ambiental e alimentos contaminados."
     },
     {
-      "nome": "Clostridium tetani (tooth) causes tetanus",
+      "nome": "Clostridium tetani",
       "sintomas": "Espasmos musculares, rigidez, trismo e risco de insuficiência respiratória.",
       "fonte": "Contaminação de ferimentos com solo ou objetos enferrujados contendo esporos."
     },
     {
-      "nome": "Escherichia coli (UPEC)",
+      "nome": "Escherichia coli",
       "sintomas": "Infecção urinária",
       "fonte": "Fecal‑oral / uretra"
     },
@@ -233,12 +233,12 @@
       "fonte": "Hospitais"
     },
     {
-      "nome": "Streptococcus agalactiae (GBS)",
+      "nome": "Streptococcus agalactiae",
       "sintomas": "ITU e infecções neonatais",
       "fonte": "Trato vaginal"
     },
     {
-      "nome": "Streptococcus pyogenes (GAS)",
+      "nome": "Streptococcus pyogenes",
       "sintomas": "Infecções invasivas",
       "fonte": "Contato"
     },
@@ -333,7 +333,7 @@
       "fonte": "Pele humana"
     }
   ],
-  "fungos": [
+  "fungo": [
     {
       "nome": "Malassezia furfur",
       "sintomas": "Dermatite seborreica, pitiríase versicolor e coceira no couro cabeludo.",
@@ -455,7 +455,7 @@
       "fonte": "Contato com solo, animais ou humanos infectados"
     }
   ],
-  "protozoarios": [
+  "protozoário": [
     {
       "nome": "Leishmania",
       "sintomas": "Lesões cutâneas, úlceras e, em alguns casos, acometimento visceral.",
@@ -532,7 +532,7 @@
       "fonte": "Barbeiro"
     }
   ],
-  "helmintos": [
+  "helminto": [
     {
       "nome": "Taenia sp",
       "sintomas": "Dor abdominal, perda de peso e alterações gastrointestinais.",
