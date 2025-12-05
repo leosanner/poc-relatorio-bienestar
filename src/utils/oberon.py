@@ -7,6 +7,27 @@ ROOT = current_path.parent.parent
 OBERON_DATA_PATH = ROOT / "assets/oberon"
 FILE_NAME = "example.txt"
 
+important_microrganisms = [
+    "ascaris",
+    "bacillus cereus",
+    "candida",
+    "chlamydia",
+    "cytomegalovirus",
+    "epstein barr",
+    "h. pylori",
+    "meningitidis",
+    "mycobacterium tuberculosis",
+    "staphylococcus",
+    "hepatite",
+    "varicela"
+]
+
+def load_stopwords(file_name):
+    data_path = OBERON_DATA_PATH / "elementos-excluir"
+
+    with open(data_path / file_name, "r", encoding="utf-8") as file:
+        return json.load(file)
+
 
 def load_txt(path, encoding="utf-8"):
     if hasattr(path, "read"):
@@ -77,17 +98,21 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
         "fontes": "não encontrado",
     }
 
+    toxins_sw = load_stopwords('toxinas.json')
     toxins_information = load_test_information(json_file)
     toxins_match = load_match_information(json_file)
 
     content = []
 
     for k, v in oberon_toxin_content.items():
+        if k.lower() in toxins_sw:
+            continue
+
         formatted_key = k.title()
+        
         if toxins_match.get(formatted_key):
             match_name = toxins_match.get(formatted_key)
             for t in toxins_information:
-                achou = False
                 if t.get("nome").title() == match_name.title():
                     t["D"] = v
                     content.append(t)
@@ -150,6 +175,7 @@ def microorganism_info(
         "tipo": "não encontrado",
     }
 
+    microorganism_sw = load_stopwords('microrganismos.json')
     microorganism_information = load_test_information(json_file)
     microorganism_match = load_match_information(json_file)
 
@@ -157,6 +183,8 @@ def microorganism_info(
 
     for k, v in oberon_microorganism_content.items():
         formated_key = k.title()
+        if k.lower() in microorganism_sw:
+            continue
 
         if microorganism_match.get(formated_key):
             match_name = microorganism_match.get(formated_key).title()

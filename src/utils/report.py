@@ -1,9 +1,10 @@
 from utils.prosync import extract_prosync_content
-from utils.oberon import extract_oberon_content, format_file_name
+from utils.oberon import extract_oberon_content, format_file_name, important_microrganisms
 from pathlib import Path
-from docxtpl import DocxTemplate
+from docxtpl import DocxTemplate, RichText
 from datetime import datetime
 from io import BytesIO
+from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
@@ -126,6 +127,15 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
             if isinstance(data, list):
                 for item in data:
                     d_val = float(item.get("D", -1))
+                    if 0.35 <= d_val <= 0.45:
+                        item["D"] = RichText(str(d_val), color="#FFA500")
+
+                    if find_related_term(
+                        item.get('nome'), important_microrganisms
+                    ):
+                        filtered.append(item)
+                        continue
+
                     if min_d <= d_val <= max_d:
                         filtered.append(item)
             context["table_microorganism"] = filtered

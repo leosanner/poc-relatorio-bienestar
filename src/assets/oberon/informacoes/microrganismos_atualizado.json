@@ -168,6 +168,12 @@
   ],
   "bactéria": [
     {
+    "nome": "Borrelia burgdorferi",
+    "efeitos": "febre, fadiga, dor de cabeça, dores musculares e nas articulações",
+    "fontes": "Picada de carrapatos infectados (gênero Ixodes — “deer ticks” / carrapatos-de-veado)"
+  },
+
+    {
       "nome": "Anthracies Esporos de Bacillus",
       "sintomas": "Lesões escuras, febre, dificuldade respiratória.",
       "fonte": "Contato com esporos presentes no solo ou materiais animais."
@@ -378,11 +384,6 @@
       "fonte": "Frutos do mar"
     },
     {
-      "nome": "Borrelia burgdorferi",
-      "sintomas": "Doença de Lyme",
-      "fonte": "Carrapatos"
-    },
-    {
       "nome": "Treponema pallidum",
       "sintomas": "Sífilis",
       "fonte": "Contato sexual"
@@ -581,7 +582,12 @@
     }
   ],
   "protozoário": [
-     {
+    {
+      "nome": "Toxoplasma gondii",
+      "efeitos": "Causa toxoplasmose; sintomas variam de leves a graves, incluindo febre, fadiga, dor muscular; em gestantes pode causar malformações fetais.",
+      "fontes": "Fezes de gatos contaminadas, carnes cruas ou mal cozidas, água contaminada."
+    }, 
+    {
       "nome": "Ameba Meleagridis",
       "sintomas": "Geralmente assintomático; raro desconforto abdominal.",
       "fonte": "Ingestão de água ou alimentos contaminados."

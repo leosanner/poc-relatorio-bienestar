@@ -17,7 +17,7 @@
   "Staphylococcus Aureus": "Staphylococcus aureus",
   "Steroptococcus Agalactia B": "Streptococcus agalactiae",
   "Sterptococcus Virudans": "Streptococcus mitis",
-  "Streptococcus Lactis": "Streptococcus agalactiae",
+  "Streptococcus Lactis": "Streptococcus lactis",
   "Streptococcus Mitis": "Streptococcus mitis",
   "Streptococcus Pneumoniae": "Streptococcus pneumoniae",
   "Chikungunya Vírus": "Chikungunya vírus",
@@ -73,7 +73,6 @@
   "Oropouche Vírus": "Oropouche vírus",
   "Taenia Asiatica": "Taenia asiatica",
   "Clonorchis Sinensis": "Clonorchis sinensis",
-  "Borrelia Burgdorferi": "Borrelia burgdorferi",
   "Treponema Pallidum": "Treponema pallidum",
   "Penicillium Spp.": "Penicillium spp.",
   "Entamoeba Histolytica": "Entamoeba histolytica",
@@ -98,7 +97,7 @@
   "Helicobacter Pylori": "Helicobacter Pylori",
   "Lactobacillus Acidophilus": "Lactobacillus Acidophilus",
   "Mucosis Fungóide": "Mucosis Fungóide",
-  "Mycobacterium Phlei": "Mycobacterium Phlei",
+  "bacterium Phlei": "Mycobacterium Phlei",
   "Microsporum Canis": "Microsporum Canis",
   "Propionobacterium Acnes": "Propionobacterium Acnes",
   "Reovírus": "Reovírus",
@@ -136,5 +135,10 @@
   "Pseudomonas Aeruginosa": "Pseudomonas Aeruginosa",
   "Roseola (Hhv-6)": "Roseola (HHV-6)",
   "Salmonella Paratyphi B": "Salmonella Paratyphi B",
-  "Vírus Da Varicela-Zoster": "Vírus da Varicela-Zoster"
+  "Vírus Da Varicela-Zoster": "Vírus da Varicela-Zoster",
+  "Toxoplasminum": "Toxoplasma gondii",
+  "Hlamidium": "Chlamydia trachomatis",
+  "Meningococo": "Neisseria meningitidis",
+  "O Vírus Hiv - Infecção": "Hiv",
+  "Borrelia Burgdorferi": "Borrelia burgdorferi"
 }

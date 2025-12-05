@@ -24,6 +24,18 @@
     "fontes": "Água subterrânea."
   },
   {
+    "nome": "Amálgama",
+    "tipo": "Liga metálica contendo mercúrio",
+    "efeitos": "Irritabilidade, fadiga, alterações cognitivas, tremores e estresse oxidativo em indivíduos sensíveis.",
+    "fontes": "Restaurações dentárias antigas feitas com amálgama."
+  },
+  {
+    "nome": "Fluoreto",
+    "tipo": "Elemento químico",
+    "efeitos": "Alterações endócrinas, impacto na tireoide e efeitos neurotóxicos em exposições prolongadas.",
+    "fontes": "Água fluoretada, cremes dentais, enxaguantes bucais, pesticidas, processos industriais, alimentos cultivados em solos ricos em flúor."
+  },
+  {
     "nome": "Níquel",
     "tipo": "Metal",
     "efeitos": "Dermatites, irritação respiratória.",
