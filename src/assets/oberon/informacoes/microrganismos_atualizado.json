@@ -1,6 +1,41 @@
 {
   "vírus": [
     {
+      "nome": "Hepadnavirus B",
+      "sintomas": "Icterícia, fadiga, dor abdominal.",
+      "fonte": "Contato com sangue, fluidos corporais ou transmissão vertical."
+    },
+    {
+      "nome": "Hepatite E",
+      "sintomas": "Hepatite aguda, náuseas, icterícia.",
+      "fonte": "Ingestão de água contaminada."
+    },
+    {
+      "nome": "Influenza A",
+      "sintomas": "Febre alta, tosse seca, dores no corpo.",
+      "fonte": "Gotículas respiratórias."
+    },
+    {
+      "nome": "HIV – Infecção",
+      "sintomas": "Imunossupressão progressiva, febre persistente.",
+      "fonte": "Sangue, fluidos corporais ou transmissão vertical."
+    },
+    {
+      "nome": "Powassan Virus",
+      "sintomas": "Febre, vômitos, confusão, encefalite.",
+      "fonte": "Picadas de carrapatos."
+    },
+    {
+      "nome": "Roseola (HHV-6)",
+      "sintomas": "Febre alta com manchas rosadas.",
+      "fonte": "Contato com secreções respiratórias."
+    },
+    {
+      "nome": "Vírus da Varicela-Zoster",
+      "sintomas": "Erupções vesiculares, dor neuropática.",
+      "fonte": "Contato com lesões ou aerossóis virais."
+    },
+    {
       "nome": "Echovírus 9",
       "sintomas": "Infecções entéricas e respiratórias; pode causar febre, exantema e meningite asséptica.",
       "fonte": "Transmissão fecal-oral ou por gotículas respiratórias."
@@ -132,6 +167,76 @@
     }
   ],
   "bactéria": [
+    {
+      "nome": "Anthracies Esporos de Bacillus",
+      "sintomas": "Lesões escuras, febre, dificuldade respiratória.",
+      "fonte": "Contato com esporos presentes no solo ou materiais animais."
+    },
+    {
+      "nome": "Bartonella Quintana",
+      "sintomas": "Febre das trincheiras, dor nas pernas, cefaleia.",
+      "fonte": "Transmissão por piolhos do corpo."
+    },
+    {
+      "nome": "Bacillus Cereus",
+      "sintomas": "Vômitos intensos ou diarreia.",
+      "fonte": "Ingestão de alimentos mal armazenados."
+    },
+    {
+      "nome": "Bacteroides Fragilis",
+      "sintomas": "Diarreia, abscessos abdominais.",
+      "fonte": "Translocação intestinal ou contaminação fecal."
+    },
+    {
+      "nome": "Borrelia Burgdorferi",
+      "sintomas": "Eritema migratório, dor articular, fadiga.",
+      "fonte": "Picada de carrapatos infectados."
+    },
+    {
+      "nome": "Enterococcus Faecium",
+      "sintomas": "Infecção urinária, endocardite, infecções hospitalares.",
+      "fonte": "Microbiota intestinal; transmissão hospitalar cruzada."
+    },
+    {
+      "nome": "Haemophilus Influenzae",
+      "sintomas": "Otite, sinusite, pneumonia; meningite.",
+      "fonte": "Contato com secreções respiratórias."
+    },
+    {
+      "nome": "Chlamidium (Chlamydia spp.)",
+      "sintomas": "Corrimento, dor ao urinar, inflamação pélvica.",
+      "fonte": "Transmissão sexual ou contato mucoso."
+    },
+    {
+      "nome": "Lactobacillus",
+      "sintomas": "Assintomático; raras infecções oportunistas.",
+      "fonte": "Microbiota normal humana."
+    },
+    {
+      "nome": "Mycobacterium Tuberculosis",
+      "sintomas": "Tosse crônica, febre vespertina, sudorese noturna.",
+      "fonte": "Inalação de aerossóis de pessoas infectadas."
+    },
+    {
+      "nome": "Neisseria Meningitidis",
+      "sintomas": "Febre alta, rigidez de nuca, manchas roxas.",
+      "fonte": "Transmissão respiratória em ambientes coletivos."
+    },
+    {
+      "nome": "Proteus Vulgaris",
+      "sintomas": "Infecção urinária, dor lombar, infecções de feridas.",
+      "fonte": "Ascensão de bactérias intestinais ao trato urinário."
+    },
+    {
+      "nome": "Pseudomonas Aeruginosa",
+      "sintomas": "Infecções respiratórias, otite, infecção de feridas.",
+      "fonte": "Água contaminada, superfícies úmidas e ambiente hospitalar."
+    },
+    {
+      "nome": "Salmonella Paratyphi B",
+      "sintomas": "Diarreia, febre, dor abdominal.",
+      "fonte": "Ingestão de alimentos ou água contaminados."
+    },
     {
       "nome": "Enterococcus gallinarum",
       "sintomas": "Infecções urinárias ou intra-abdominais em casos oportunistas.",
@@ -335,6 +440,26 @@
   ],
   "fungo": [
     {
+      "nome": "Aspergillus, Rhizopus, Penicillium",
+      "sintomas": "Rinite, sinusite, alergias respiratórias; risco de infecções invasivas em imunossuprimidos.",
+      "fonte": "Inalação de esporos presentes em poeira, solo, matéria orgânica."
+    },
+    {
+      "nome": "Candida Robusta",
+      "sintomas": "Candidíase oportunista.",
+      "fonte": "Desequilíbrio da microbiota; proliferação oportunista em mucosas."
+    },
+    {
+      "nome": "Criptococcus Neoformans Candida",
+      "sintomas": "Meningite fúngica, febre, sintomas pulmonares.",
+      "fonte": "Inalação de poeira contaminada por excrementos de aves."
+    },
+    {
+      "nome": "Pityrosporum Furfur",
+      "sintomas": "Caspa, dermatite seborreica, pitiríase versicolor.",
+      "fonte": "Proliferação fúngica natural em áreas oleosas da pele."
+    },
+    {
       "nome": "Malassezia furfur",
       "sintomas": "Dermatite seborreica, pitiríase versicolor e coceira no couro cabeludo.",
       "fonte": "Microbiota da pele; proliferação aumentada em ambientes úmidos."
@@ -456,6 +581,11 @@
     }
   ],
   "protozoário": [
+     {
+      "nome": "Ameba Meleagridis",
+      "sintomas": "Geralmente assintomático; raro desconforto abdominal.",
+      "fonte": "Ingestão de água ou alimentos contaminados."
+    },
     {
       "nome": "Leishmania",
       "sintomas": "Lesões cutâneas, úlceras e, em alguns casos, acometimento visceral.",
