@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import json
+import re
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
@@ -29,7 +30,7 @@ def load_stopwords(file_name):
         return json.load(file)
 
 
-def load_txt(path, encoding="utf-8"):
+def load_txt(path, encoding):
     if hasattr(path, "read"):
         content = path.read()
         if isinstance(content, bytes):
@@ -55,12 +56,13 @@ def extract_row_content(row: str, term="D="):
 
     name = row[:idx].strip()
     value = row[idx + len(term) :].strip()
+    value = re.sub(r"[^0-9\.]", "", value)
 
     return (name, term, value)
 
 
 def extract_oberon_content(file_path, enc="utf-8"):
-    txt = load_txt(file_path, enc)
+    txt = load_txt(file_path, encoding=enc)
     content = []
 
     for row in txt.splitlines():

@@ -78,13 +78,26 @@ if oberon_files:
     for key, file in oberon_files.items():
         try:
             st.markdown(f"**Categoria: {oberon_categories[key]}**")
-
-            # Reset file pointer
-            if hasattr(file, "seek"):
-                file.seek(0)
-
             # Extract raw content first
-            raw_content = extract_oberon_content(file, enc="cp1252")
+            available_enc = [
+                "cp1252",
+                "utf-8",
+                "latin1",
+                "iso-8859-1",
+                "utf-8-sig"
+            ]
+
+            for enc in available_enc:
+                try:
+                    if hasattr(file, "seek"):
+                        file.seek(0)
+                    
+                    raw_content = extract_oberon_content(file, enc=enc)
+                    if len(raw_content) > 0:
+                        break
+
+                except Exception as e:
+                    print(f'Problema na leitura: com {enc}')
 
             # Process based on category
             processed_data = []
