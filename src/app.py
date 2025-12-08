@@ -79,25 +79,19 @@ if oberon_files:
         try:
             st.markdown(f"**Categoria: {oberon_categories[key]}**")
             # Extract raw content first
-            available_enc = [
-                "cp1252",
-                "utf-8",
-                "latin1",
-                "iso-8859-1",
-                "utf-8-sig"
-            ]
+            available_enc = ["cp1252", "utf-8", "latin1", "iso-8859-1", "utf-8-sig"]
 
             for enc in available_enc:
                 try:
                     if hasattr(file, "seek"):
                         file.seek(0)
-                    
+
                     raw_content = extract_oberon_content(file, enc=enc)
                     if len(raw_content) > 0:
                         break
 
                 except Exception as e:
-                    print(f'Problema na leitura: com {enc}')
+                    print(f"Problema na leitura: com {enc}")
 
             # Process based on category
             processed_data = []
@@ -113,7 +107,7 @@ if oberon_files:
                 processed_data = food_info(raw_content)
             else:
                 processed_data = raw_content
-            
+
             oberon_data_full[key] = processed_data
 
             # Display
@@ -138,9 +132,7 @@ if st.button("Gerar Relatório"):
             # Calculate prosync table content to pass to context (reusing existing logic for consistency)
             prosync_list = []
             if prosync_data:
-                prosync_list = prosync_table_content(
-                    prosync_data, gen_report=True
-                )[1]
+                prosync_list = prosync_table_content(prosync_data, gen_report=True)[1]
 
             docx_buffer = generate_report(
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
