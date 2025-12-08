@@ -2,6 +2,8 @@ from pathlib import Path
 import os
 import json
 import re
+from utils.format_string import first_char_uppercase
+from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
@@ -107,7 +109,7 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
     content = []
 
     for k, v in oberon_toxin_content.items():
-        if k.lower() in toxins_sw:
+        if find_related_term(k, toxins_sw):
             continue
 
         formatted_key = k.title()
@@ -141,10 +143,14 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
     crystal_information = load_test_information(json_file)
     crystal_match = load_match_information(json_file)
+    crystal_sw = load_stopwords(json_file)
 
     content = []
 
     for k, v in oberon_crystal_content.items():
+        if find_related_term(k, crystal_sw):
+            continue
+
         formatted_key = k.title()
         if crystal_match.get(formatted_key):
             match_name = crystal_match.get(formatted_key)
@@ -207,4 +213,30 @@ def microorganism_info(
 
             content.append(d)
 
+    return content
+
+
+def food_info(food_content:dict):
+    food_sw = load_stopwords("alimentos.json")
+    food_match = load_match_information("alimentos.json")
+
+    content = []
+
+    for k, v in food_content.items():
+        if k.lower() in food_sw:
+            continue
+        
+        if food_match.get(k.lower()):
+            content.append(
+                [
+                    first_char_uppercase(
+                        food_match.get(k.lower())
+                    ),
+                    v
+                ]
+            )
+            continue
+
+        content.append([first_char_uppercase(k),v])
+        
     return content

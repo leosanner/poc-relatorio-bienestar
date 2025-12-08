@@ -235,22 +235,22 @@
     "beneficios_emocionais": "Calma, autoestima e estabilidade emocional."
   },
   {
-    "cristal": "A MELHOR DISTRIBUIÇÃO",
+    "cristal": "A melhor distribuição",
     "beneficios_fisicos": "Sensação geral de equilíbrio corporal.",
-    "beneficios_emocionais": "Favorece organização interna e estabilidade emocional."
+    "beneficios_emocionales": "Favorece organização interna e estabilidade emocional."
   },
   {
-    "cristal": "ALEXANDRIA",
+    "cristal": "Alexandrita",
     "beneficios_fisicos": "Sensação de leve ativação energética.",
     "beneficios_emocionais": "Favorece clareza e definição emocional."
   },
   {
-    "cristal": "AZUR",
+    "cristal": "Azurita",
     "beneficios_fisicos": "Relaxamento muscular leve.",
     "beneficios_emocionais": "Sensação de tranquilidade e suavização de pensamentos."
   },
   {
-    "cristal": "Almandine",
+    "cristal": "Almandina",
     "beneficios_fisicos": "Sensação de vigor e sustentação corporal.",
     "beneficios_emocionais": "Favorece coragem e firmeza emocional."
   },
@@ -260,12 +260,12 @@
     "beneficios_emocionais": "Traz calma e serenidade em momentos de tensão."
   },
   {
-    "cristal": "CORAL",
+    "cristal": "Coral",
     "beneficios_fisicos": "Sensação de vitalidade suave.",
     "beneficios_emocionais": "Promove leveza emocional e harmonização interna."
   },
   {
-    "cristal": "DIAMOND",
+    "cristal": "Diamante",
     "beneficios_fisicos": "Sensação de clareza física e revitalização.",
     "beneficios_emocionais": "Favorece foco e alinhamento emocional."
   },
@@ -275,8 +275,8 @@
     "beneficios_emocionais": "Promove sensação de integração emocional."
   },
   {
-    "cristal": "EMERALD",
-    "beneficios_fisicos": "Relaxamento do sistema nervoso.",
+    "cristal": "Esmeralda",
+    "beneficios_fisicios": "Relaxamento do sistema nervoso.",
     "beneficios_emocionais": "Traz sensação de renovação emocional."
   },
   {
@@ -295,32 +295,32 @@
     "beneficios_emocionais": "Favorece proteção emocional e redução de tensão."
   },
   {
-    "cristal": "MODELO VIRTUAL",
+    "cristal": "Modelo Virtual",
     "beneficios_fisicos": "Sensação de alinhamento corporal leve.",
     "beneficios_emocionais": "Auxilia na organização interna e clareza emocional."
   },
   {
-    "cristal": "RUBIN",
+    "cristal": "Rubi",
     "beneficios_fisicos": "Estímulo suave de energia e vitalidade.",
     "beneficios_emocionais": "Favorece motivação e fortalecimento emocional."
   },
   {
-    "cristal": "Selenito",
+    "cristal": "Selenita",
     "beneficios_fisicos": "Relaxamento profundo e sensação de leveza.",
     "beneficios_emocionais": "Tranquilidade, limpeza emocional e serenidade."
   },
   {
-    "cristal": "TOPAZ",
+    "cristal": "Topázio",
     "beneficios_fisicos": "Sensação de revitalização corporal.",
     "beneficios_emocionais": "Traz clareza emocional e motivação."
   },
   {
-    "cristal": "TURQUESA",
+    "cristal": "Turquesa",
     "beneficios_fisicos": "Relaxamento do sistema respiratório e físico.",
     "beneficios_emocionais": "Favorece comunicação emocional equilibrada."
   },
   {
-    "cristal": "Yashma",
+    "cristal": "Jaspe",
     "beneficios_fisicos": "Estabilidade corporal e suporte energético.",
     "beneficios_emocionais": "Reduz impulsividade e traz segurança emocional."
   },
@@ -330,12 +330,12 @@
     "beneficios_emocionais": "Organização interna e foco emocional."
   },
   {
-    "cristal": "Chrysoberyl",
+    "cristal": "Crisoberilo",
     "beneficios_fisicos": "Sensação de fortalecimento físico.",
     "beneficios_emocionais": "Estímulo de autoconfiança e clareza emocional."
   },
   {
-    "cristal": "GESSONIT",
+    "cristal": "Gessonita",
     "beneficios_fisicos": "Sensação de relaxamento corporal.",
     "beneficios_emocionais": "Redução de ansiedade e estabilização emocional."
   },
@@ -360,7 +360,7 @@
     "beneficios_emocionais": "Favorece estabilidade emocional intensa."
   },
   {
-    "cristal": "SAGILIT",
+    "cristal": "Sagalita",
     "beneficios_fisicos": "Relaxamento generalizado.",
     "beneficios_emocionais": "Redução de tensão emocional."
   }

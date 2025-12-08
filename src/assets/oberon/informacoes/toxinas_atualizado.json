@@ -492,7 +492,7 @@
     "fontes": "Carnes processadas"
   },
   {
-    "nome": "Toxinas Mentales",
+    "nome": "Toxinas Nervosas",
     "tipo": "Categoria geral",
     "efeitos": "Estresse",
     "fontes": "Fatores emocionais"
@@ -510,7 +510,7 @@
     "fontes": "Água contaminada"
   },
   {
-    "nome": "Asbestos",
+    "nome": "Amianto",
     "tipo": "Fibra tóxica",
     "efeitos": "Doença pulmonar e câncer",
     "fontes": "Construção antiga"
@@ -612,7 +612,7 @@
     "fontes": "Procedimentos médicos"
   },
   {
-    "nome": "Constipacao",
+    "nome": "Constipação",
     "tipo": "Categoria fisiológica",
     "efeitos": "Intestino preso",
     "fontes": "Dieta"
@@ -888,7 +888,7 @@
     "fontes": "Água contaminada, alimentos crus, solos infectados."
   },
   {
-    "nome": "Vacinas",
+    "nome": "Toxina De Vacinas",
     "tipo": "Categoria biológica",
     "efeitos": "Reações leves como febre e fadiga; não tóxico por si só.",
     "fontes": "Imunizações biológicas."

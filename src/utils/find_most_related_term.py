@@ -1,5 +1,3 @@
-from pathlib import Path
-import json
 import re
 
 def find_related_term(string:str, tokens_to_compare:list[str]):

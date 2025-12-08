@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
-from utils.oberon import extract_oberon_content, format_file_name
+from utils.oberon import extract_oberon_content, food_info
 from utils.report import generate_report, prosync_table_content, oberon_table_content
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
@@ -109,13 +109,11 @@ if oberon_files:
                 processed_data = microorganism_info(raw_content)
             elif key == "cristais":
                 processed_data = crystal_info(raw_content)
+            elif key == "alimentos":
+                processed_data = food_info(raw_content)
             else:
-                # For Emoções and Alimentos, keep simple structure but normalize to list of dicts for consistency if needed
-                # Or just keep as dict and handle in report generation
-                # The plan said: "Use extract_oberon_files is fine" for these.
-                # But to display them nicely, let's just show the raw content for now.
                 processed_data = raw_content
-
+            
             oberon_data_full[key] = processed_data
 
             # Display
