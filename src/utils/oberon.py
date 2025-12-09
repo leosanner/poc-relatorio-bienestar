@@ -198,10 +198,10 @@ def microorganism_info(
 
         if microorganism_match.get(formated_key):
             match_name = microorganism_match.get(formated_key).title()
-
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
                     if obj["nome"].title() == match_name:
+                        obj["nome"] = first_char_uppercase(match_name)
                         obj["D"] = v
                         obj["tipo"] = m_type.title()
                         content.append(obj)
@@ -209,7 +209,7 @@ def microorganism_info(
                         break
         else:
             d = DEFAULT_VALUE.copy()
-            d["nome"] = k.title()
+            d["nome"] = first_char_uppercase(k)
             d["D"] = v
 
             content.append(d)

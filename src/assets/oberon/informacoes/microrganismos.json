@@ -93,6 +93,11 @@
       "fonte": "Trato intestinal"
     },
     {
+      "nome": "Enterococcus Faecium",
+      "sintomas": "Infecção urinária com ardor ao urinar, urgência miccional e dor pélvica, infecções intestinais com diarreia, dor abdominal e inflamação persistente. Em casos mais graves, pode causar , infecções da corrente sanguínea com febre, calafrios, fraqueza intensa além de endocardite, falta de ar e dor torácica.",
+      "fonte": "Alimentos"
+    },
+    {
       "nome": "Gardnerella vaginalis",
       "sintomas": "Vaginose",
       "fonte": "Desequilíbrio vaginal"
