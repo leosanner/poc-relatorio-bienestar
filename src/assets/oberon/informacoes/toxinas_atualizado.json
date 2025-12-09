@@ -42,7 +42,7 @@
     "fontes": "Bijuterias, utensílios."
   },
   {
-    "nome": "Molibdênio (Excesso)",
+    "nome": "Molibdênio",
     "tipo": "Metal essencial",
     "efeitos": "Sintomas tipo gota, irritabilidade.",
     "fontes": "Leguminosas, água."
@@ -234,7 +234,7 @@
     "fontes": "Laticínios."
   },
   {
-    "nome": "Alumínio Farmacêutico",
+    "nome": "Alumínio",
     "tipo": "Metal adjuvante",
     "efeitos": "Reação local, resposta imune.",
     "fontes": "Adjuvantes."
@@ -300,31 +300,31 @@
     "fontes": "Doces, bebidas."
   },
   {
-    "nome": "Fósforo (P) No Cabelo",
+    "nome": "Fósforo",
     "tipo": "Mineral / Nível nutricional",
     "efeitos": "Alterações metabólicas quando em excesso ou deficiência",
     "fontes": "Alimentação, suplementos"
   },
   {
-    "nome": "Fluor",
+    "nome": "Flúor",
     "tipo": "Halogênio químico",
     "efeitos": "Em excesso: fluorose, irritação gastrointestinal",
     "fontes": "Água fluoretada, pastas de dente"
   },
   {
-    "nome": "Platina (Pt) No Cabelo",
+    "nome": "Platina",
     "tipo": "Metal nobre",
     "efeitos": "Efeitos raros, possível exposição industrial",
     "fontes": "Catalisadores, indústria"
   },
   {
-    "nome": "Ouro (Au) No Cabelo",
+    "nome": "Ouro",
     "tipo": "Metal nobre",
     "efeitos": "Baixa toxicidade",
     "fontes": "Joias, mineração"
   },
   {
-    "nome": "Lítio (Li) No Cabelo",
+    "nome": "Lítio",
     "tipo": "Metal alcalino",
     "efeitos": "Tremores, fadiga, alterações renais",
     "fontes": "Medicamentos, água mineral"
@@ -348,7 +348,7 @@
     "fontes": "—"
   },
   {
-    "nome": "Tálio (Tl) No Cabelo",
+    "nome": "Tálio",
     "tipo": "Metal pesado",
     "efeitos": "Neuropatia, náuseas",
     "fontes": "Indústria"
@@ -360,13 +360,13 @@
     "fontes": "Raios X, materiais radioativos"
   },
   {
-    "nome": "Estrôncio (Sr) No Cabelo",
+    "nome": "Estrôncio",
     "tipo": "Metal",
     "efeitos": "Alterações ósseas em excesso",
     "fontes": "Água, solo"
   },
   {
-    "nome": "Zinco (Zn) No Cabelo",
+    "nome": "Zinco",
     "tipo": "Mineral essencial",
     "efeitos": "Náuseas em excesso",
     "fontes": "Alimentos, suplementos"
@@ -384,7 +384,7 @@
     "fontes": "Dieta, medicamentos"
   },
   {
-    "nome": "Tin (Sn) No Cabelo",
+    "nome": "Estanho",
     "tipo": "Metal",
     "efeitos": "Irritação gastrointestinal",
     "fontes": "Latas"
@@ -420,7 +420,7 @@
     "fontes": "Ambiente"
   },
   {
-    "nome": "Alcohol",
+    "nome": "Álcool",
     "tipo": "Composto químico",
     "efeitos": "Depressão do SNC",
     "fontes": "Bebidas"
@@ -456,7 +456,7 @@
     "fontes": "Açúcares processados"
   },
   {
-    "nome": "Toxinas Intestinales",
+    "nome": "Toxinas Intestinais",
     "tipo": "Categoria biológica",
     "efeitos": "Diarreia, transtornos gastrointestinais",
     "fontes": "Bactérias intestinais"
@@ -468,7 +468,7 @@
     "fontes": "—"
   },
   {
-    "nome": "Priones",
+    "nome": "Prions",
     "tipo": "Proteína infecciosa",
     "efeitos": "Doenças neurodegenerativas",
     "fontes": "Carnes contaminadas"
@@ -552,13 +552,13 @@
     "fontes": "—"
   },
   {
-    "nome": "Potássio (K) No Cabelo",
+    "nome": "Potássio",
     "tipo": "Mineral",
     "efeitos": "Arritmias em excesso",
     "fontes": "Alimentação"
   },
   {
-    "nome": "Prata (Ag) No Cabelo",
+    "nome": "Prata",
     "tipo": "Metal",
     "efeitos": "Toxicidade rara",
     "fontes": "Joias, indústria"
@@ -576,7 +576,7 @@
     "fontes": "Piscinas"
   },
   {
-    "nome": "Cromo (Cr) No Cabelo",
+    "nome": "Cromo",
     "tipo": "Metal",
     "efeitos": "Dermatites",
     "fontes": "Indústria"
@@ -594,7 +594,7 @@
     "fontes": "Homeopatia"
   },
   {
-    "nome": "Silício (Si) No Cabelo",
+    "nome": "Silício",
     "tipo": "Mineral",
     "efeitos": "Geralmente benigno",
     "fontes": "Solo, água"
@@ -634,12 +634,6 @@
     "tipo": "Proteína alimentar",
     "efeitos": "Inflamação",
     "fontes": "Trigo"
-  },
-  {
-    "nome": "Toxinas Intestinais",
-    "tipo": "Categoria biológica",
-    "efeitos": "Diarreia",
-    "fontes": "Bactérias"
   },
   {
     "nome": "Toxinas Nervosas",
@@ -738,115 +732,115 @@
     "fontes": "Homeopatia"
   },
   {
-    "nome": "Antimónio (Sb) No Cabelo",
+    "nome": "Antimónio",
     "tipo": "Metal",
     "efeitos": "Náuseas, irritação pulmonar e fadiga.",
     "fontes": "Indústrias têxteis, plásticos, combustão."
   },
   {
-    "nome": "Berílio (Be) No Cabelo",
+    "nome": "Berílio",
     "tipo": "Metal tóxico",
     "efeitos": "Risco de inflamação pulmonar e sensibilização respiratória.",
     "fontes": "Indústria aeroespacial, eletrônicos, mineração."
   },
   {
-    "nome": "Bismuto (Bi) No Cabelo",
+    "nome": "Bismuto",
     "tipo": "Metal",
     "efeitos": "Baixa toxicidade; pode causar desconforto gastrointestinal.",
     "fontes": "Cosméticos, medicamentos, ligas metálicas."
   },
   {
-    "nome": "Bário (Ba) No Cabelo",
+    "nome": "Bário",
     "tipo": "Metal",
     "efeitos": "Fraqueza muscular, alterações cardíacas e distúrbios gastrointestinais.",
     "fontes": "Solo, água contaminada, pigmentos."
   },
   {
-    "nome": "Cobalto (Co) No Cabelo",
+    "nome": "Cobalto",
     "tipo": "Metal essencial",
     "efeitos": "Em excesso pode causar irritação respiratória e alterações cardiovasculares.",
     "fontes": "Suplementos, ligas metálicas, mineração."
   },
   {
-    "nome": "Cobre (Cu) No Cabelo",
+    "nome": "Cobre",
     "tipo": "Metal essencial",
     "efeitos": "Excesso provoca distúrbios hepáticos e neurológicos.",
     "fontes": "Tubulações, alimentos, suplementos."
   },
   {
-    "nome": "Cálcio (Ca) No Cabelo",
+    "nome": "Cálcio",
     "tipo": "Mineral essencial",
     "efeitos": "Alterações musculares e ósseas quando em desequilíbrio.",
     "fontes": "Alimentação, água potável, suplementos."
   },
   {
-    "nome": "Ferro (Fe) No Cabelo",
+    "nome": "Ferro",
     "tipo": "Mineral essencial",
     "efeitos": "Excesso pode causar fadiga, desconforto abdominal e alterações hepáticas.",
     "fontes": "Carnes, vegetais, suplementos."
   },
   {
-    "nome": "Germânio (Ge) No Cabelo",
+    "nome": "Germânio",
     "tipo": "Metal semiprecioso",
     "efeitos": "Em excesso pode causar nefrotoxicidade.",
     "fontes": "Suplementos não regulamentados, eletrônicos."
   },
   {
-    "nome": "Gálio (Ga) No Cabelo",
+    "nome": "Gálio",
     "tipo": "Metal",
     "efeitos": "Baixa toxicidade; pode causar irritação leve.",
     "fontes": "Indústria eletrônica e semicondutores."
   },
   {
-    "nome": "Iodo (I) No Cabelo",
+    "nome": "Iodo",
     "tipo": "Mineral essencial",
     "efeitos": "Desequilíbrio afeta tireoide, podendo causar hipo ou hipertireoidismo.",
     "fontes": "Sal iodado, frutos do mar, suplementos."
   },
   {
-    "nome": "Magnésio (Mg) No Cabelo",
+    "nome": "Magnésio",
     "tipo": "Mineral essencial",
     "efeitos": "Déficit gera cãibras; excesso causa diarreia e fadiga.",
     "fontes": "Vegetais verdes, sementes, suplementos."
   },
   {
-    "nome": "Manganês (Mn) No Cabelo",
+    "nome": "Manganês",
     "tipo": "Mineral essencial",
     "efeitos": "Excesso pode afetar o sistema nervoso central.",
     "fontes": "Água, alimentos integrais, indústria."
   },
   {
-    "nome": "Rubídio (Rb) No Cabelo",
+    "nome": "Rubídio",
     "tipo": "Metal alcalino",
     "efeitos": "Exposição elevada pode causar fraqueza e instabilidade metabólica.",
     "fontes": "Solo, alimentos cultivados, indústria."
   },
   {
-    "nome": "Selênio (Se) No Cabelo",
+    "nome": "Selênio",
     "tipo": "Mineral essencial",
     "efeitos": "Em excesso causa queda de cabelo, fadiga e irritação gastrointestinal.",
     "fontes": "Castanhas, peixes, suplementos."
   },
   {
-    "nome": "Sódio (Na) No Cabelo",
+    "nome": "Sódio",
     "tipo": "Mineral essencial",
     "efeitos": "Desequilíbrio causa retenção hídrica e alterações cardiovasculares.",
     "fontes": "Sal, alimentos processados, água."
   },
   {
-    "nome": "Tungstênio (W) Em Seu Cabelo",
+    "nome": "Tungstênio",
     "tipo": "Metal pesado",
     "efeitos": "Exposição elevada pode causar irritação respiratória e fadiga.",
     "fontes": "Indústria de ferramentas, ligas metálicas."
   },
   {
-    "nome": "Vanádio (V) No Cabelo",
+    "nome": "Vanádio",
     "tipo": "Metal de transição",
     "efeitos": "Pode causar irritação, fadiga e distúrbios gastrointestinais.",
     "fontes": "Combustão, poluição industrial."
   },
   {
-    "nome": "Zircônio (Zr) No Cabelo",
+    "nome": "zircônio no cabelo",
     "tipo": "Metal",
     "efeitos": "Geralmente baixa toxicidade; irritações leves podem ocorrer.",
     "fontes": "Cosméticos, cerâmicas, indústria."

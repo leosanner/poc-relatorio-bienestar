@@ -3,7 +3,7 @@ import os
 import json
 import re
 from utils.format_string import first_char_uppercase
-from utils.sort_elements import sort_by_d
+from utils.sort_elements import sort_by_d, remove_duplicates
 from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
@@ -120,6 +120,8 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
             match_name = toxins_match.get(formatted_key)
             for t in toxins_information:
                 if t.get("nome").title() == match_name.title():
+                    t["nome"] = first_char_uppercase(match_name)
+
                     t["D"] = v
                     content.append(t)
 
@@ -132,7 +134,9 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
 
             content.append(d)
 
-    return sort_by_d(content)
+    unique_content = remove_duplicates(content)
+
+    return sort_by_d(unique_content)
 
 
 def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
@@ -159,6 +163,8 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
             for t in crystal_information:
                 if t["cristal"].title() == match_name:
+                    t["nome"] = first_char_uppercase(match_name)
+
                     t["D"] = v
 
                     content.append(t)
@@ -171,7 +177,9 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
             content.append(d)
 
-    return sort_by_d(content)
+    unique_content = remove_duplicates(content)
+    print()
+    return sort_by_d(unique_content)
 
 
 def microorganism_info(
@@ -214,7 +222,9 @@ def microorganism_info(
 
             content.append(d)
 
-    return sort_by_d(content)
+    unique_content = remove_duplicates(content)
+
+    return sort_by_d(unique_content)
 
 
 def food_info(food_content: dict):

@@ -61,7 +61,7 @@
       "fonte": "Gotículas respiratórias e contato com secreções nasais."
     },
     {
-      "nome": "Dengue vírus 1–4",
+      "nome": "Dengue",
       "sintomas": "Febre alta, dor retro-orbital, mialgia",
       "fonte": "Mosquito Aedes"
     },
@@ -121,7 +121,7 @@
       "fonte": "Contato sexual"
     },
     {
-      "nome": "Papilomavírus Humano",
+      "nome": "Papilomavírus",
       "sintomas": "Lesões genitais, risco oncológico",
       "fonte": "Contato sexual"
     },
@@ -570,7 +570,7 @@
       "fonte": "Contato direto"
     },
     {
-      "nome": "Candida Saccharomyces (ocular)",
+      "nome": "Candida Saccharomyces",
       "sintomas": "Micoses superficiais ou candidíase oportunista",
       "fonte": "Contaminação ambiental ou desequilíbrio da microbiota"
     },
@@ -709,22 +709,22 @@
       "fonte": "Ingestão de carne crua ou mal cozida contendo cisticercos."
     },
     {
-      "nome": "Fasciola hepatica cercariae",
+      "nome": "Fascíola Hepática cercariae",
       "sintomas": "Quadro abdominal com dor no quadrante superior direito.",
       "fonte": "Consumo de plantas aquáticas contaminadas."
     },
     {
-      "nome": "Fasciola hepatica eggs",
+      "nome": "Fascíola Hepática eggs",
       "sintomas": "Sintomas inespecíficos de fasciolíase como dor abdominal e fadiga.",
       "fonte": "Contato com água ou alimentos contaminados com ovos."
     },
     {
-      "nome": "Fasciola hepatica metacercariae",
+      "nome": "Fascíola Hepática metacercariae",
       "sintomas": "Dor abdominal, febre e desconforto hepático.",
       "fonte": "Ingestão de vegetais aquáticos contaminados."
     },
     {
-      "nome": "Fasciola hepatica miracidia",
+      "nome": "Fascíola Hepática miracidia",
       "sintomas": "Geralmente não causa sintomas diretos em humanos; forma infectante para moluscos.",
       "fonte": "Ambientes aquáticos contaminados."
     },

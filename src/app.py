@@ -68,17 +68,14 @@ if prosync_file:
 else:
     st.info("Nenhum arquivo Prosync enviado.")
 
-
 if oberon_files:
     st.subheader("Resultados Oberon")
 
-    # Import specific processing functions
     from utils.oberon import toxins_info, crystal_info, microorganism_info
 
     for key, file in oberon_files.items():
         try:
             st.markdown(f"**Categoria: {oberon_categories[key]}**")
-            # Extract raw content first
             available_enc = ["cp1252", "utf-8", "latin1", "iso-8859-1", "utf-8-sig"]
 
             for enc in available_enc:
