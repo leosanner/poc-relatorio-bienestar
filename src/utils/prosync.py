@@ -1,6 +1,7 @@
 import pdfplumber
 from pathlib import Path
 import json
+from utils.oberon import microorganism_info
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
@@ -69,7 +70,7 @@ def extract_prosync_content(path):
     return find_microorgnism_prosyn_info(summ)
 
 
-
+# Melhorar isso para ficar unificado com o do oberon
 def find_microorgnism_prosyn_info(prosync_summary: dict):
     microorganisms = load_json(
         OBERON_DATA_PATH / "informacoes/microrganismos_atualizado.json"
@@ -87,6 +88,9 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
 
     content = []
 
+    return microorganism_info(prosync_summary)
+
+    # Solução prévia
     for k, v in prosync_summary.items():
         formated_key = k.title()
         retrival_information = {}
@@ -104,10 +108,11 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
                     break
 
         if len(retrival_information) == 0:
+            print(k.title(), v)
             d = DEFAULT_VALUE.copy()
             d["nome"] = k.title()
             d["D"] = v
 
             content.append(d)
-            
+
     return content

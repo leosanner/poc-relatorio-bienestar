@@ -3,6 +3,7 @@ import os
 import json
 import re
 from utils.format_string import first_char_uppercase
+from utils.sort_elements import sort_by_d
 from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
@@ -22,8 +23,9 @@ important_microrganisms = [
     "mycobacterium tuberculosis",
     "staphylococcus",
     "hepatite",
-    "varicela"
+    "varicela",
 ]
+
 
 def load_stopwords(file_name):
     data_path = OBERON_DATA_PATH / "elementos-excluir"
@@ -102,7 +104,7 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
         "fontes": "não encontrado",
     }
 
-    toxins_sw = load_stopwords('toxinas.json')
+    toxins_sw = load_stopwords("toxinas.json")
     toxins_information = load_test_information(json_file)
     toxins_match = load_match_information(json_file)
 
@@ -113,7 +115,7 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
             continue
 
         formatted_key = k.title()
-        
+
         if toxins_match.get(formatted_key):
             match_name = toxins_match.get(formatted_key)
             for t in toxins_information:
@@ -130,7 +132,7 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
 
             content.append(d)
 
-    return content
+    return sort_by_d(content)
 
 
 def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
@@ -169,7 +171,7 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
             content.append(d)
 
-    return content
+    return sort_by_d(content)
 
 
 def microorganism_info(
@@ -183,7 +185,7 @@ def microorganism_info(
         "tipo": "não encontrado",
     }
 
-    microorganism_sw = load_stopwords('microrganismos.json')
+    microorganism_sw = load_stopwords("microrganismos.json")
     microorganism_information = load_test_information(json_file)
     microorganism_match = load_match_information(json_file)
 
@@ -202,7 +204,6 @@ def microorganism_info(
                     if obj["nome"].title() == match_name:
                         obj["D"] = v
                         obj["tipo"] = m_type.title()
-
                         content.append(obj)
 
                         break
@@ -213,10 +214,10 @@ def microorganism_info(
 
             content.append(d)
 
-    return content
+    return sort_by_d(content)
 
 
-def food_info(food_content:dict):
+def food_info(food_content: dict):
     food_sw = load_stopwords("alimentos.json")
     food_match = load_match_information("alimentos.json")
 
@@ -225,18 +226,21 @@ def food_info(food_content:dict):
     for k, v in food_content.items():
         if k.lower() in food_sw:
             continue
-        
+
         if food_match.get(k.lower()):
-            content.append(
-                [
-                    first_char_uppercase(
-                        food_match.get(k.lower())
-                    ),
-                    v
-                ]
-            )
+            content.append([first_char_uppercase(food_match.get(k.lower())), v])
             continue
 
-        content.append([first_char_uppercase(k),v])
-        
-    return content
+        content.append([first_char_uppercase(k), v])
+
+    duplicates = []
+    unique_results = []
+
+    for food, d in content:
+        if food in duplicates:
+            continue
+        else:
+            duplicates.append(food)
+            unique_results.append([food, d])
+
+    return sort_by_d(unique_results)

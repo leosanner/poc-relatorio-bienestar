@@ -1,8 +1,23 @@
 {
   "vírus": [
     {
+      "nome": "Sintitsialny Virus (Repiratório)",
+      "sintomas": "Coriza, congestão nasal e espirros, dor de garganta e febre baixa,  tosse persistente, chiado no peito (sibilos), falta de ar e respiração acelerada, sensação de aperto no tórax, aumento de secreção e inflamação das vias respiratórias, fadiga, piora de asma, bronquite ou DPOC,  pneumonia (casos mais graves). Em bebês: dificuldade para mamar, irritabilidade, retração das costelas e episódios de apneia.",
+      "fonte": "Através de gotículas de tosse e espirros de uma pessoa infectada."
+    },
+    {
+      "nome": "Coxsackievírus B4",
+      "sintomas": "Febre, mal-estar, dor de garganta, fadiga e dores musculares, evoluindo em alguns casos para dores torácicas , inflamação do coração, dor abdominal, náuseas, vômitos e diarreia, além de comprometimento do sistema nervoso",
+      "fonte": " transmitida principalmente por via fecal-oral ou respiratória (gotículas) de pessoa para pessoa."
+    },
+    {
+      "nome": "Cytomegalovirus",
+      "sintomas": "Fadiga intensa e persistente, dores musculares e articulares, dor de garganta, gânglios inchados e mal-estar geral.",
+      "fonte": " contato direto com fluidos corporais de uma pessoa infectada, como saliva, urina, sêmen, lágrimas, sangue e leite materno."
+    },
+    {
       "nome": "Hepadnavirus B",
-      "sintomas": "Icterícia, fadiga, dor abdominal.",
+      "sintomas": "Febre, fadiga intensa, mal-estar, perda de apetite, náuseas, vômitos, dor no lado direito do abdômen, além de urina escura, fezes claras e icterícia (pele e olhos amarelados); quando a infecção se torna crônica, pode evoluir silenciosamente com inflamação hepática persistente, levando a fibrose, cirrose e insuficiência hepática.",
       "fonte": "Contato com sangue, fluidos corporais ou transmissão vertical."
     },
     {
@@ -12,7 +27,7 @@
     },
     {
       "nome": "Influenza A",
-      "sintomas": "Febre alta, tosse seca, dores no corpo.",
+      "sintomas": "Febre, calafrios, dor de cabeça, dores musculares, fadiga, tosse seca, dor de garganta, congestão nasal, até complicações como pneumonia.",
       "fonte": "Gotículas respiratórias."
     },
     {
@@ -26,18 +41,18 @@
       "fonte": "Picadas de carrapatos."
     },
     {
-      "nome": "Roseola (HHV-6)",
+      "nome": "Roseola (ocular)",
       "sintomas": "Febre alta com manchas rosadas.",
       "fonte": "Contato com secreções respiratórias."
     },
     {
-      "nome": "Vírus da Varicela-Zoster",
-      "sintomas": "Erupções vesiculares, dor neuropática.",
+      "nome": "Varicela-Zoster",
+      "sintomas": "Causa inicialmente a varicela (catapora), caracterizada por febre, mal-estar e erupção cutânea com bolhas pruriginosas espalhadas pelo corpo, mais comum na infância; após a infecção primária, o vírus permanece latente nos gânglios nervosos e pode reativar anos depois como herpes-zóster (cobreiro), provocando dor intensa em faixa, formigamento, ardor e erupções dolorosas em um lado do corpo, podendo ainda causar neuralgia pós-herpética (dor crônica persistente), além de complicações oculares, neurológicas e auditivas (especialmente em idosos ou pessoas com imunidade reduzida.",
       "fonte": "Contato com lesões ou aerossóis virais."
     },
     {
       "nome": "Echovírus 9",
-      "sintomas": "Infecções entéricas e respiratórias; pode causar febre, exantema e meningite asséptica.",
+      "sintomas": "Febre, dor de cabeça, mal-estar, dor de garganta, dor muscular e gastrointestinal, além de exantema (manchas na pele).",
       "fonte": "Transmissão fecal-oral ou por gotículas respiratórias."
     },
     {
@@ -82,7 +97,7 @@
     },
     {
       "nome": "Rotavírus",
-      "sintomas": "Diarreia infantil",
+      "sintomas": "Diarreia aquosa intensa, vômitos, febre, dor abdominal, mal-estar e rápida desidratação.",
       "fonte": "Fecal-oral"
     },
     {
@@ -122,7 +137,7 @@
     },
     {
       "nome": "Reovírus",
-      "sintomas": "Febre leve, sintomas respiratórios ou gastrointestinais brandos",
+      "sintomas": "Diarreia, náuseas, dor abdominal, febre, sintomas respiratórios leves e, ocasionalmente, mialgia e mal-estar, especialmente em crianças; em situações específicas associado a encefalite, hepatite leve e miocardite.",
       "fonte": "Contato fecal-oral ou respiratório"
     },
     {
@@ -168,10 +183,15 @@
   ],
   "bactéria": [
     {
-    "nome": "Borrelia burgdorferi",
-    "efeitos": "febre, fadiga, dor de cabeça, dores musculares e nas articulações",
-    "fontes": "Picada de carrapatos infectados (gênero Ixodes — “deer ticks” / carrapatos-de-veado)"
-  },
+      "nome": "Borellia miyamotoi",
+      "efeitos": "Febre alta, calafrios e mal estar frequente, dor de cabeça forte, dores musculares e corporais, sensação de gripe forte, fadiga extrema, náusea e vômito ( em alguns casos)",
+      "fonte": "Picada de carrapatos (do gênero Ixodes)."
+    },
+    {
+      "nome": "Borellia burgdorferi",
+      "efeitos": "Infecção multissistêmica que começa frequentemente com lesão cutânea, febre, fadiga, dor de cabeça e dores musculares.",
+      "fonte": "Picada de carrapatos infectados (gênero Ixodes — “deer ticks” / carrapatos-de-veado)"
+    },
 
     {
       "nome": "Anthracies Esporos de Bacillus",
@@ -180,32 +200,27 @@
     },
     {
       "nome": "Bartonella Quintana",
-      "sintomas": "Febre das trincheiras, dor nas pernas, cefaleia.",
+      "sintomas": "Febre recorrente, dor de cabeça, dores musculares, mal estar geral.",
       "fonte": "Transmissão por piolhos do corpo."
     },
     {
       "nome": "Bacillus Cereus",
-      "sintomas": "Vômitos intensos ou diarreia.",
+      "sintomas": "Náuseas, vômitos, diarreia, dor e cólicas abdominais.",
       "fonte": "Ingestão de alimentos mal armazenados."
     },
     {
       "nome": "Bacteroides Fragilis",
-      "sintomas": "Diarreia, abscessos abdominais.",
+      "sintomas": "Vive no intestino, mas quando está em grande número ou migra para outros órgãos  pode causar gases, dor abdominal, diarreia ou constipação, inflamação intestinal, fadiga, alterações de humor e dificuldade de concentração em razão do eixo intestino-cérebro.",
       "fonte": "Translocação intestinal ou contaminação fecal."
     },
     {
-      "nome": "Borrelia Burgdorferi",
-      "sintomas": "Eritema migratório, dor articular, fadiga.",
-      "fonte": "Picada de carrapatos infectados."
-    },
-    {
       "nome": "Enterococcus Faecium",
-      "sintomas": "Infecção urinária, endocardite, infecções hospitalares.",
+      "sintomas": "Infecção urinária com ardor ao urinar, urgência miccional e dor pélvica, infecções intestinais com diarreia, dor abdominal e inflamação persistente. Em casos mais graves, pode causar , infecções da corrente sanguínea com febre, calafrios, fraqueza intensa além de endocardite, falta de ar e dor torácica.",
       "fonte": "Microbiota intestinal; transmissão hospitalar cruzada."
     },
     {
       "nome": "Haemophilus Influenzae",
-      "sintomas": "Otite, sinusite, pneumonia; meningite.",
+      "sintomas": "Pode causar infecções respiratórias e sistêmicas, variando de quadros leves a doenças graves, especialmente em crianças, idosos e pessoas com imunidade reduzida; pode provocar otite média, sinusite, bronquite e pneumonia com febre, tosse e dor de ouvido.",
       "fonte": "Contato com secreções respiratórias."
     },
     {
@@ -280,7 +295,7 @@
     },
     {
       "nome": "Escherichia coli",
-      "sintomas": "Infecção urinária",
+      "sintomas": "Normalmente presente no intestino humano, mas determinadas cepas podem causar diarreia e gastroenterite. Quando migra para outros locais, pode provocar infecções urinárias, pielonefrite, infecções ginecológicas, infecções da corrente sanguínea e, em recém-nascidos, meningite.",
       "fonte": "Fecal‑oral / uretra"
     },
     {
@@ -325,7 +340,7 @@
     },
     {
       "nome": "Staphylococcus aureus",
-      "sintomas": "Infecções cutâneas e sistêmicas",
+      "sintomas": "Comum da pele e das narinas, pode viver sem causar sintomas, mas quando ultrapassa as barreiras de defesa do organismo, provoca infecções cutâneas como furúnculos, abscessos e impetigo, além de infecções mais graves como pneumonia, osteomielite, artrite séptica e endocardite.",
       "fonte": "Contato direto"
     },
     {
@@ -355,7 +370,7 @@
     },
     {
       "nome": "Streptococcus pneumoniae",
-      "sintomas": "Infecções respiratórias",
+      "sintomas": "Comum das vias aéreas superiores, pode viver de forma assintomática, mas quando invade tecidos profundos, pode causar infecções respiratórias e sistêmicas importantes, como pneumonia, otite média, sinusite e meningite.",
       "fonte": "Respiratório"
     },
     {
@@ -369,8 +384,8 @@
       "fonte": "Alimentos"
     },
     {
-      "nome": "Shigella spp.",
-      "sintomas": "Disenteria",
+      "nome": "Shigella Sonnei",
+      "sintomas": "Diarreia aquosa ou com muco e sangue, cólicas abdominais intensas, febre, náuseas, vômitos, sensação de evacuação incompleta, mal-estar geral, podendo levar à desidratação.",
       "fonte": "Fecal‑oral"
     },
     {
@@ -390,7 +405,7 @@
     },
     {
       "nome": "Clostridium botulinum",
-      "sintomas": "Botulismo",
+      "sintomas": "Visão dupla ou embaçada, pálpebras caídas, boca seca, dificuldade para falar e engolir, voz fraca, fraqueza muscular.",
       "fonte": "Conservas"
     },
     {
@@ -405,7 +420,7 @@
     },
     {
       "nome": "Clostridium perfringens",
-      "sintomas": "Gangrena gasosa",
+      "sintomas": "Gastroenterite com diarreia aquosa, cólicas abdominais, distensão, gases e náuseas.",
       "fonte": "Feridas"
     },
     {
@@ -446,12 +461,16 @@
       "fonte": "Inalação de esporos presentes em poeira, solo, matéria orgânica."
     },
     {
-      "nome": "Candida Robusta",
-      "sintomas": "Candidíase oportunista.",
+      "nome": "Saccharomyces cerevisiae",
+      "sintomas": "Em situações específicas — como imunossupressão,uso prolongado de antibióticos, internações, presença de cateteres ou doenças graves, pode atuar como patógeno oportunista e causar  gases, desconforto intestinal, diarreia e, mais raramente, infecções sistêmicas como fungemia/endocardite.",
       "fonte": "Desequilíbrio da microbiota; proliferação oportunista em mucosas."
     },
     {
-      "nome": "Criptococcus Neoformans Candida",
+      "nome": "Candida",
+      "sintomas": "pode causar desde infecção pulmonar com tosse, dor torácica, falta de ar e febre baixa até criptococose sistêmic."
+    },
+    {
+      "nome": "Criptococcus Neoformans",
       "sintomas": "Meningite fúngica, febre, sintomas pulmonares.",
       "fonte": "Inalação de poeira contaminada por excrementos de aves."
     },
@@ -551,7 +570,7 @@
       "fonte": "Contato direto"
     },
     {
-      "nome": "Candida Saharomyces",
+      "nome": "Candida Saccharomyces (ocular)",
       "sintomas": "Micoses superficiais ou candidíase oportunista",
       "fonte": "Contaminação ambiental ou desequilíbrio da microbiota"
     },
@@ -583,10 +602,15 @@
   ],
   "protozoário": [
     {
+      "nome": "Tricomoníase",
+      "sintomas": "Coceira, vermelhidão e dor na área genita",
+      "fonte": "Infecção Sexualmente Transmissível (IST)"
+    },
+    {
       "nome": "Toxoplasma gondii",
-      "efeitos": "Causa toxoplasmose; sintomas variam de leves a graves, incluindo febre, fadiga, dor muscular; em gestantes pode causar malformações fetais.",
+      "sintomas": "Causa toxoplasmose; sintomas variam de leves a graves, incluindo febre, fadiga, dor muscular; em gestantes pode causar malformações fetais.",
       "fontes": "Fezes de gatos contaminadas, carnes cruas ou mal cozidas, água contaminada."
-    }, 
+    },
     {
       "nome": "Ameba Meleagridis",
       "sintomas": "Geralmente assintomático; raro desconforto abdominal.",
@@ -596,6 +620,11 @@
       "nome": "Leishmania",
       "sintomas": "Lesões cutâneas, úlceras e, em alguns casos, acometimento visceral.",
       "fonte": "Transmissão pela picada do flebotomíneo (mosquito-palha)."
+    },
+    {
+      "nome": "Leishmania mexicana",
+      "sintomas": "Lesões na pele, geralmente indolores, de bordas elevadas e fundo granuloso, que podem surgir semanas ou meses após a picada do mosquito-palha (Lutzomyia). Risco de cicatrizes permanentes quando não tratada.",
+      "fonte": "Picada do mosquito-palha (flebotomíneo)"
     },
     {
       "nome": "Endolymax nana",
@@ -618,8 +647,8 @@
       "fonte": "Fecal‑oral"
     },
     {
-      "nome": "Giardia lamblia / intestinalis",
-      "sintomas": "Diarreia gordurosa",
+      "nome": "Giardia lamblia",
+      "sintomas": "Diarreia aquosa ou gordurosa e fétida, distensão abdominal, gases excessivos, cólicas, náuseas, perda de apetite, emagrecimento e fadiga, podendo evoluir para má absorção de nutrientes, deficiência de vitaminas e intolerância à lactose quando se torna crônica.",
       "fonte": "Água contaminada"
     },
     {
@@ -669,6 +698,11 @@
     }
   ],
   "helminto": [
+    {
+      "nome": "Felineus Opisthorhis",
+      "sintomas": "Dor abdominal no quadrante superior direito, náuseas, vômitos, diarreia, distensão abdominal, fadig, e reações alérgicas como urticária; com a cronicidade, pode causar colecistite, colangite, hepatomegalia, icterícia, intolerância a alimentos gordurosos, pancreatite e aumento do risco de doenças hepáticas crônicas.",
+      "fonte": " ingestão de peixes de água doce crus ou mal cozidos que contenham as larvas infectantes (metacercárias)"
+    },
     {
       "nome": "Taenia sp",
       "sintomas": "Dor abdominal, perda de peso e alterações gastrointestinais.",
@@ -726,7 +760,7 @@
     },
     {
       "nome": "Taenia pisiformis",
-      "sintomas": "Teníase em cães e outros canídeos; em humanos, infecção intestinal rara com dor abdominal e perda de peso.",
+      "sintomas": "Infecção intestinal rara com dor abdominal e perda de peso.",
       "fonte": "Ingestão de carne ou vísceras de coelhos/roedores contaminadas."
     },
     {
@@ -756,12 +790,12 @@
     },
     {
       "nome": "Enterobius vermicularis",
-      "sintomas": "Prurido anal",
+      "sintomas": "Coceira anal, distúrbios do sono, irritabilidade, ansiedade e dificuldade de concentração, além de dor abdominal, gases, náuseas e alterações do hábito intestinal.",
       "fonte": "Fecal‑oral"
     },
     {
       "nome": "Strongyloides stercoralis",
-      "sintomas": "Infecção disseminada",
+      "sintomas": "Diarreia ou constipação intermitente, dor abdominal, gases, náuseas, perda de peso, fadiga, além de manifestações cutâneas (coceira, lesões serpiginosas) e respiratórias (tosse seca, chiado, falta de ar) durante a fase de migração larvária",
       "fonte": "Solo"
     },
     {
@@ -811,7 +845,7 @@
     },
     {
       "nome": "Trichinella spiralis",
-      "sintomas": "Dor muscular intensa",
+      "sintomas": "Diarreia, dor abdominal, náuseas e vômitos e evolui, quando as larvas migram para os músculos, para febre, dores musculares intensas, fraqueza, edema facial e periorbitário, dor ao mastigar e engolir, podendo ainda causar miocardite, arritmias, alterações neurológicas (cefaleia, confusão)",
       "fonte": "Carne suína crua"
     },
     {
