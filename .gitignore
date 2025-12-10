@@ -10,4 +10,7 @@ wheels/
 .venv
 
 src/assets/oberon/correspondencia/helper.py
+src/assets/oberon/correspondencia/full-content.json
+src/assets/oberon/correspondencia/matchs-test.json
+src/assets/oberon/correspondencia/test.csv
 src/assets/oberon/informacoes/helper.py

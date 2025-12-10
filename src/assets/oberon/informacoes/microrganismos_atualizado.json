@@ -1,6 +1,66 @@
 {
   "vírus": [
     {
+      "nome": "Epstein-Barr Virus",
+      "sintomas": "Pode gerar fadiga persistente, linfonodomegalia e impacto no sistema imunológico e neuroenergético.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Cytomegalovirus",
+      "sintomas": "Geralmente assintomático, mas pode contribuir para inflamação crônica e fadiga em quadros de baixa imunidade.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Herpes Simplex",
+      "sintomas": "Associa-se a lesões recorrentes, inflamação neural e queda de energia em períodos de estresse.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Varicella-Zoster Virus",
+      "sintomas": "Pode causar neuralgia, dor persistente e impacto neuroimune após reativação.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Dengue Virus",
+      "sintomas": "Infecção sistêmica com febre alta, dores intensas, fadiga profunda e inflamação vascular.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Chikungunya Virus",
+      "sintomas": "Caracteriza-se por inflamação articular intensa, fadiga prolongada e impacto musculoesquelético.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Rotavirus",
+      "sintomas": "Provoca gastroenterite aguda com diarreia intensa, vômitos, febre e desidratação, impactando fortemente o eixo intestinal e energético.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Norovirus",
+      "sintomas": "Causa gastroenterite altamente contagiosa com náuseas, vômitos, diarreia e grande desgaste físico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Influenza A",
+      "sintomas": "Infecção respiratória sistêmica com febre alta, dores musculares, fadiga profunda e inflamação generalizada.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Respiratory Syncytial Virus",
+      "sintomas": "Pode causar bronquiolite e pneumonia, principalmente em crianças e idosos, gerando sobrecarga respiratória.",
+      "fonte": "-"
+    },
+    {
+      "nome": " Papillomavirus ",
+      "sintomas": "Pode permanecer assintomático, mas está associado a lesões cutâneas e mucosas e alterações celulares persistentes.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Human Papillomavirus (Hpv)",
+      "sintomas": "Pode permanecer assintomático, mas está associado a lesões cutâneas e mucosas e alterações celulares persistentes.",
+      "fonte": "-"
+    },
+    {
       "nome": "Sintitsialny Virus (Repiratório)",
       "sintomas": "Coriza, congestão nasal e espirros, dor de garganta e febre baixa,  tosse persistente, chiado no peito (sibilos), falta de ar e respiração acelerada, sensação de aperto no tórax, aumento de secreção e inflamação das vias respiratórias, fadiga, piora de asma, bronquite ou DPOC,  pneumonia (casos mais graves). Em bebês: dificuldade para mamar, irritabilidade, retração das costelas e episódios de apneia.",
       "fonte": "Através de gotículas de tosse e espirros de uma pessoa infectada."
@@ -9,11 +69,6 @@
       "nome": "Coxsackievírus B4",
       "sintomas": "Febre, mal-estar, dor de garganta, fadiga e dores musculares, evoluindo em alguns casos para dores torácicas , inflamação do coração, dor abdominal, náuseas, vômitos e diarreia, além de comprometimento do sistema nervoso",
       "fonte": " transmitida principalmente por via fecal-oral ou respiratória (gotículas) de pessoa para pessoa."
-    },
-    {
-      "nome": "Cytomegalovirus",
-      "sintomas": "Fadiga intensa e persistente, dores musculares e articulares, dor de garganta, gânglios inchados e mal-estar geral.",
-      "fonte": " contato direto com fluidos corporais de uma pessoa infectada, como saliva, urina, sêmen, lágrimas, sangue e leite materno."
     },
     {
       "nome": "Hepadnavirus B",
@@ -26,11 +81,6 @@
       "fonte": "Ingestão de água contaminada."
     },
     {
-      "nome": "Influenza A",
-      "sintomas": "Febre, calafrios, dor de cabeça, dores musculares, fadiga, tosse seca, dor de garganta, congestão nasal, até complicações como pneumonia.",
-      "fonte": "Gotículas respiratórias."
-    },
-    {
       "nome": "HIV – Infecção",
       "sintomas": "Imunossupressão progressiva, febre persistente.",
       "fonte": "Sangue, fluidos corporais ou transmissão vertical."
@@ -41,7 +91,7 @@
       "fonte": "Picadas de carrapatos."
     },
     {
-      "nome": "Roseola (ocular)",
+      "nome": "Roseola",
       "sintomas": "Febre alta com manchas rosadas.",
       "fonte": "Contato com secreções respiratórias."
     },
@@ -109,11 +159,6 @@
       "nome": "Adenovírus",
       "sintomas": "Conjuntivite, faringite",
       "fonte": "Contato / respiratório"
-    },
-    {
-      "nome": "Herpes simplex vírus 1",
-      "sintomas": "Lesões orais",
-      "fonte": "Saliva"
     },
     {
       "nome": "Herpes simplex vírus 2",
@@ -209,19 +254,9 @@
       "fonte": "Ingestão de alimentos mal armazenados."
     },
     {
-      "nome": "Bacteroides Fragilis",
-      "sintomas": "Vive no intestino, mas quando está em grande número ou migra para outros órgãos  pode causar gases, dor abdominal, diarreia ou constipação, inflamação intestinal, fadiga, alterações de humor e dificuldade de concentração em razão do eixo intestino-cérebro.",
-      "fonte": "Translocação intestinal ou contaminação fecal."
-    },
-    {
       "nome": "Enterococcus Faecium",
       "sintomas": "Infecção urinária com ardor ao urinar, urgência miccional e dor pélvica, infecções intestinais com diarreia, dor abdominal e inflamação persistente. Em casos mais graves, pode causar , infecções da corrente sanguínea com febre, calafrios, fraqueza intensa além de endocardite, falta de ar e dor torácica.",
       "fonte": "Microbiota intestinal; transmissão hospitalar cruzada."
-    },
-    {
-      "nome": "Haemophilus Influenzae",
-      "sintomas": "Pode causar infecções respiratórias e sistêmicas, variando de quadros leves a doenças graves, especialmente em crianças, idosos e pessoas com imunidade reduzida; pode provocar otite média, sinusite, bronquite e pneumonia com febre, tosse e dor de ouvido.",
-      "fonte": "Contato com secreções respiratórias."
     },
     {
       "nome": "Chlamidium (Chlamydia spp.)",
@@ -234,24 +269,9 @@
       "fonte": "Microbiota normal humana."
     },
     {
-      "nome": "Mycobacterium Tuberculosis",
-      "sintomas": "Tosse crônica, febre vespertina, sudorese noturna.",
-      "fonte": "Inalação de aerossóis de pessoas infectadas."
-    },
-    {
-      "nome": "Neisseria Meningitidis",
-      "sintomas": "Febre alta, rigidez de nuca, manchas roxas.",
-      "fonte": "Transmissão respiratória em ambientes coletivos."
-    },
-    {
       "nome": "Proteus Vulgaris",
       "sintomas": "Infecção urinária, dor lombar, infecções de feridas.",
       "fonte": "Ascensão de bactérias intestinais ao trato urinário."
-    },
-    {
-      "nome": "Pseudomonas Aeruginosa",
-      "sintomas": "Infecções respiratórias, otite, infecção de feridas.",
-      "fonte": "Água contaminada, superfícies úmidas e ambiente hospitalar."
     },
     {
       "nome": "Salmonella Paratyphi B",
@@ -269,16 +289,6 @@
       "fonte": "Solo, sedimentos e matéria orgânica em decomposição."
     },
     {
-      "nome": "Clostridium botulinum (tooth) causes food poisoning",
-      "sintomas": "Paralisia flácida progressiva, visão dupla e dificuldade respiratória.",
-      "fonte": "Consumo de alimentos mal conservados contaminados por toxina botulínica."
-    },
-    {
-      "nome": "Clostridium perfringens spores",
-      "sintomas": "Diarreia, dor abdominal e intoxicação alimentar.",
-      "fonte": "Carnes e alimentos mantidos em temperatura inadequada."
-    },
-    {
       "nome": "Clostridium septicum",
       "sintomas": "Infecções graves como miosites e gangrena gasosa.",
       "fonte": "Solo e trato gastrointestinal."
@@ -294,36 +304,6 @@
       "fonte": "Contaminação de ferimentos com solo ou objetos enferrujados contendo esporos."
     },
     {
-      "nome": "Escherichia coli",
-      "sintomas": "Normalmente presente no intestino humano, mas determinadas cepas podem causar diarreia e gastroenterite. Quando migra para outros locais, pode provocar infecções urinárias, pielonefrite, infecções ginecológicas, infecções da corrente sanguínea e, em recém-nascidos, meningite.",
-      "fonte": "Fecal‑oral / uretra"
-    },
-    {
-      "nome": "Klebsiella pneumoniae",
-      "sintomas": "ITU, pielonefrite",
-      "fonte": "Hospitais"
-    },
-    {
-      "nome": "Proteus mirabilis",
-      "sintomas": "Cálculos urinários",
-      "fonte": "Ascensão uretral"
-    },
-    {
-      "nome": "Enterococcus faecalis",
-      "sintomas": "ITU e pós‑parto",
-      "fonte": "Trato intestinal"
-    },
-    {
-      "nome": "Gardnerella vaginalis",
-      "sintomas": "Vaginose",
-      "fonte": "Desequilíbrio vaginal"
-    },
-    {
-      "nome": "Ureaplasma urealyticum",
-      "sintomas": "Uretrite, infertilidade",
-      "fonte": "Contato sexual"
-    },
-    {
       "nome": "Mycoplasma genitalium",
       "sintomas": "Inflamação pélvica",
       "fonte": "Contato sexual"
@@ -337,11 +317,6 @@
       "nome": "Neisseria gonorrhoeae",
       "sintomas": "Gonorreia",
       "fonte": "Contato sexual"
-    },
-    {
-      "nome": "Staphylococcus aureus",
-      "sintomas": "Comum da pele e das narinas, pode viver sem causar sintomas, mas quando ultrapassa as barreiras de defesa do organismo, provoca infecções cutâneas como furúnculos, abscessos e impetigo, além de infecções mais graves como pneumonia, osteomielite, artrite séptica e endocardite.",
-      "fonte": "Contato direto"
     },
     {
       "nome": "Staphylococcus epidermidis",
@@ -369,11 +344,6 @@
       "fonte": "Contato"
     },
     {
-      "nome": "Streptococcus pneumoniae",
-      "sintomas": "Comum das vias aéreas superiores, pode viver de forma assintomática, mas quando invade tecidos profundos, pode causar infecções respiratórias e sistêmicas importantes, como pneumonia, otite média, sinusite e meningite.",
-      "fonte": "Respiratório"
-    },
-    {
       "nome": "Streptococcus mitis",
       "sintomas": "Infecções oportunistas",
       "fonte": "Contato oral"
@@ -382,11 +352,6 @@
       "nome": "Salmonella spp.",
       "sintomas": "Diarreia, febre",
       "fonte": "Alimentos"
-    },
-    {
-      "nome": "Shigella Sonnei",
-      "sintomas": "Diarreia aquosa ou com muco e sangue, cólicas abdominais intensas, febre, náuseas, vômitos, sensação de evacuação incompleta, mal-estar geral, podendo levar à desidratação.",
-      "fonte": "Fecal‑oral"
     },
     {
       "nome": "Vibrio cholerae",
@@ -399,24 +364,9 @@
       "fonte": "Frutos do mar"
     },
     {
-      "nome": "Treponema pallidum",
-      "sintomas": "Sífilis",
-      "fonte": "Contato sexual"
-    },
-    {
       "nome": "Clostridium botulinum",
       "sintomas": "Visão dupla ou embaçada, pálpebras caídas, boca seca, dificuldade para falar e engolir, voz fraca, fraqueza muscular.",
       "fonte": "Conservas"
-    },
-    {
-      "nome": "Clostridium tetani",
-      "sintomas": "Tétano",
-      "fonte": "Ferimentos"
-    },
-    {
-      "nome": "Clostridium difficile",
-      "sintomas": "Colite",
-      "fonte": "Hospitais"
     },
     {
       "nome": "Clostridium perfringens",
@@ -427,11 +377,6 @@
       "nome": "Bactéria Lactis Aerogenes",
       "sintomas": "Contaminante oportunista; geralmente assintomático",
       "fonte": "Ambientes úmidos, alimentos e microbiota ambiental"
-    },
-    {
-      "nome": "Helicobacter Pylori",
-      "sintomas": "Gastrite crônica, úlcera péptica, dor epigástrica",
-      "fonte": "Via oral-oral ou fecal-oral; água contaminada"
     },
     {
       "nome": "Lactobacillus Acidophilus",
@@ -452,9 +397,144 @@
       "nome": "Staphylococcus Albus",
       "sintomas": "Geralmente não patogênico; pode causar infecções oportunistas",
       "fonte": "Pele humana"
+    },
+    {
+      "nome": "Helicobacter Pylori",
+      "sintomas": "Associada a gastrite crônica, dor epigástrica, azia e desequilíbrio digestivo funcional.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Borrelia Burgdorferi",
+      "sintomas": "Inflamação multissistêmica com fadiga crônica, dores articulares e possível comprometimento neurológico funcional.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Brucella Abortus",
+      "sintomas": "Inflamação sistêmica prolongada com fadiga profunda e comprometimento osteoarticular e imunológico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Escherichia Coli",
+      "sintomas": "Bactéria comensal intestinal; impacto clínico apenas quando há disbiose ou cepas patogênicas específicas.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Bacteroides Fragilis",
+      "sintomas": "Componente normal da microbiota intestinal; torna-se patogênico apenas se migrar para tecidos estéreis.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Streptococcus Viridans",
+      "sintomas": "Habitante da cavidade oral; pode causar infecções oportunistas em contexto de baixa imunidade.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Clostridium Difficile",
+      "sintomas": "Pode causar colite inflamatória com diarreia intensa, dor abdominal e grande impacto no eixo intestinal-imunológico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Staphylococcus Aureus",
+      "sintomas": "Colonizador comum da pele e mucosas, tornando-se patogênico em contextos inflamatórios ou de baixa imunidade.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Mycobacterium Tuberculosis",
+      "sintomas": "Infecção crônica com comprometimento pulmonar, perda de peso, fadiga prolongada e impacto imunológico sistêmico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Salmonella Enterica",
+      "sintomas": "Gastroenterite bacteriana com diarreia, febre, dor abdominal e inflamação intestinal aguda.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Shigella Sonnei",
+      "sintomas": "Causa disenteria com diarreia sanguinolenta, febre, cólicas abdominais e inflamação intestinal intensa.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Campylobacter Jejuni",
+      "sintomas": "Infecção intestinal com dor abdominal, febre e diarreia, podendo desencadear fadiga pós-infecciosa.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Neisseria Meningitidis",
+      "sintomas": "Pode causar meningite e septicemia, com febre alta, rigidez de nuca, dor de cabeça intensa e risco sistêmico elevado.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Streptococcus Pneumoniae",
+      "sintomas": "Associado a pneumonia, sinusite e meningite, provocando inflamação respiratória e sistêmica.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Haemophilus Influenzae",
+      "sintomas": "Pode causar infecções respiratórias, otite, sinusite e meningite, especialmente em crianças.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Klebsiella Pneumoniae",
+      "sintomas": "Pode causar pneumonias, infecções urinárias e intestinais em contextos de baixa imunidade.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Pseudomonas Aeruginosa",
+      "sintomas": "Associada a infecções respiratórias, urinárias e cutâneas em organismos fragilizados.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Enterococcus Faecalis",
+      "sintomas": "Parte da microbiota intestinal, podendo causar infecções urinárias ou sistêmicas se houver desequilíbrio.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Proteus Mirabilis",
+      "sintomas": "Associado a infecções urinárias recorrentes com dor, ardor urinário e inflamação local.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Gardnerella Vaginalis",
+      "sintomas": "Desequilíbrio vaginal com corrimento, odor característico e inflamação local.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Ureaplasma Urealyticum",
+      "sintomas": "Pode habitar trato geniturinário, causando sintomas apenas quando há desequilíbrio imunológico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Mycoplasma Hominis",
+      "sintomas": "Colonizador geniturinário que pode causar inflamação pélvica em situações específicas.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Clamydia Trachomatis",
+      "sintomas": "Pode causar inflamação urogenital, dor pélvica, infertilidade e impacto imunológico prolongado.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Treponema Pallidum",
+      "sintomas": "Provoca manifestações cutâneas, neurológicas e sistêmicas progressivas.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Bartonella Henselae",
+      "sintomas": "Pode causar inflamação sistêmica, linfadenopatia e fadência prolongada.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Yersinia Enterocolitica",
+      "sintomas": "Gastroenterite com dor abdominal, diarreia e possível inflamação autoimune reativa.",
+      "fonte": "-"
     }
   ],
   "fungo": [
+    {
+      "nome": "Candida Albicans",
+      "sintomas": "Quando em desequilíbrio causa disbiose, inflamação de mucosas, fadiga, alterações cognitivas e sobrecarga imunometabólica.",
+      "fonte": "-"
+    },
     {
       "nome": "Aspergillus, Rhizopus, Penicillium",
       "sintomas": "Rinite, sinusite, alergias respiratórias; risco de infecções invasivas em imunossuprimidos.",
@@ -483,11 +563,6 @@
       "nome": "Malassezia furfur",
       "sintomas": "Dermatite seborreica, pitiríase versicolor e coceira no couro cabeludo.",
       "fonte": "Microbiota da pele; proliferação aumentada em ambientes úmidos."
-    },
-    {
-      "nome": "Candida albicans",
-      "sintomas": "Candidíase",
-      "fonte": "Desequilíbrio microbiano"
     },
     {
       "nome": "Candida glabrata",
@@ -602,14 +677,49 @@
   ],
   "protozoário": [
     {
+      "nome": "Endolimax Nana",
+      "sintomas": "Protozoário não patogênico, indicador de contaminação fecal-oral sem impacto clínico direto.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Entamoeba Coli",
+      "sintomas": "Comensal intestinal não invasivo, sem relevância clínica funcional direta.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Toxoplasma Gondii",
+      "sintomas": "Infecção geralmente assintomática, podendo impactar sistema nervoso, muscular e imunológico, especialmente em imunossupressão.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Trypanosoma Cruzi",
+      "sintomas": "Pode provocar comprometimento cardíaco, digestivo e neurológico progressivo, com impacto energético profundo no longo prazo.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Leishmania Sp.",
+      "sintomas": "Afeta pele, mucosas ou órgãos internos, causando inflamação crônica, fadiga e sobrecarga imunometabólica.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Giardia Lamblia",
+      "sintomas": "Disbiose intestinal com diarreia recorrente, gases e má absorção, impactando imunidade e eixo intestino-cérebro.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Entamoeba Histolytica",
+      "sintomas": "Processo inflamatório intestinal com possível sobrecarga hepática e impacto sistêmico imunológico.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Trichomonas Vaginalis",
+      "sintomas": "Infecção urogenital com corrimento, prurido, ardor e inflamação mucosa.",
+      "fonte": "-"
+    },
+    {
       "nome": "Tricomoníase",
       "sintomas": "Coceira, vermelhidão e dor na área genita",
       "fonte": "Infecção Sexualmente Transmissível (IST)"
-    },
-    {
-      "nome": "Toxoplasma gondii",
-      "sintomas": "Causa toxoplasmose; sintomas variam de leves a graves, incluindo febre, fadiga, dor muscular; em gestantes pode causar malformações fetais.",
-      "fontes": "Fezes de gatos contaminadas, carnes cruas ou mal cozidas, água contaminada."
     },
     {
       "nome": "Ameba Meleagridis",
@@ -628,43 +738,13 @@
     },
     {
       "nome": "Endolymax nana",
-      "sintomas": "Geralmente assintomático; pode causar desconforto abdominal leve.",
+      "sintomas": "Protozoário não patogênico, indicador de contaminação fecal-oral sem impacto clínico direto.",
       "fonte": "Transmissão fecal-oral."
     },
     {
       "nome": "Toxoplasminum",
       "sintomas": "Febre baixa, mal-estar e dor muscular; pode ser assintomático.",
       "fonte": "Ingestão de alimentos contaminados ou contato com fezes de gatos."
-    },
-    {
-      "nome": "Trypanosoma Cruzi",
-      "sintomas": "Febre, edema local e, cronicamente, cardiopatia chagásica.",
-      "fonte": "Fezes do inseto barbeiro; alimentos contaminados."
-    },
-    {
-      "nome": "Entamoeba histolytica",
-      "sintomas": "Disenteria",
-      "fonte": "Fecal‑oral"
-    },
-    {
-      "nome": "Giardia lamblia",
-      "sintomas": "Diarreia aquosa ou gordurosa e fétida, distensão abdominal, gases excessivos, cólicas, náuseas, perda de apetite, emagrecimento e fadiga, podendo evoluir para má absorção de nutrientes, deficiência de vitaminas e intolerância à lactose quando se torna crônica.",
-      "fonte": "Água contaminada"
-    },
-    {
-      "nome": "Entamoeba coli",
-      "sintomas": "Indicador de contaminação fecal",
-      "fonte": "Fecal‑oral"
-    },
-    {
-      "nome": "Trichomonas vaginalis",
-      "sintomas": "Corrimento, coceira",
-      "fonte": "Contato sexual"
-    },
-    {
-      "nome": "Toxoplasma gondii",
-      "sintomas": "Toxoplasmose",
-      "fonte": "Gatos / carne crua"
     },
     {
       "nome": "Cryptosporidium parvum",
@@ -690,11 +770,6 @@
       "nome": "Leishmania guyanensis",
       "sintomas": "Lesões mucosas",
       "fonte": "Flebotomíneo"
-    },
-    {
-      "nome": "Trypanosoma cruzi",
-      "sintomas": "Doença de Chagas",
-      "fonte": "Barbeiro"
     }
   ],
   "helminto": [
@@ -705,7 +780,7 @@
     },
     {
       "nome": "Taenia sp",
-      "sintomas": "Dor abdominal, perda de peso e alterações gastrointestinais.",
+      "sintomas": "Parasitose intestinal relacionada a dor abdominal, perda de peso, distúrbios digestivos e possível comprometimento nutricional.",
       "fonte": "Ingestão de carne crua ou mal cozida contendo cisticercos."
     },
     {
@@ -769,33 +844,13 @@
       "fonte": "Água doce contaminada"
     },
     {
-      "nome": "Schistosoma mansoni",
-      "sintomas": "Esquistossomose",
-      "fonte": "Água doce"
-    },
-    {
-      "nome": "Ascaris lumbricoides",
-      "sintomas": "Dor abdominal",
-      "fonte": "Solo contaminado"
-    },
-    {
       "nome": "Trichuris trichiura",
       "sintomas": "Diarreia sanguinolenta",
       "fonte": "Solo contaminado"
     },
     {
       "nome": "Ancylostoma duodenale",
-      "sintomas": "Anemia",
-      "fonte": "Solo"
-    },
-    {
-      "nome": "Enterobius vermicularis",
-      "sintomas": "Coceira anal, distúrbios do sono, irritabilidade, ansiedade e dificuldade de concentração, além de dor abdominal, gases, náuseas e alterações do hábito intestinal.",
-      "fonte": "Fecal‑oral"
-    },
-    {
-      "nome": "Strongyloides stercoralis",
-      "sintomas": "Diarreia ou constipação intermitente, dor abdominal, gases, náuseas, perda de peso, fadiga, além de manifestações cutâneas (coceira, lesões serpiginosas) e respiratórias (tosse seca, chiado, falta de ar) durante a fase de migração larvária",
+      "sintomas": "Inflamação intestinal persistente, microperdas sanguíneas, anemia funcional e fadiga, comprometendo metabolismo energético.",
       "fonte": "Solo"
     },
     {
@@ -867,6 +922,38 @@
       "nome": "Taenia Saginata Eggs",
       "sintomas": "Teníase; dor abdominal, perda de peso",
       "fonte": "Ingestão de carne bovina crua ou mal cozida"
+    },
+    {
+      "nome": "Enterobius Vermicularis",
+      "sintomas": "Parasitose intestinal associada a prurido anal intenso, agitação do sono e irritabilidade, impactando eixo neuroimune e qualidade do descanso.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Strongyloides Stercoralis",
+      "sintomas": "Pode gerar inflamação intestinal persistente, diarreia intermitente, manifestações cutâneas e risco sistêmico em imunossuprimidos.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Taenia Sp.",
+      "sintomas": "Parasitose intestinal relacionada a dor abdominal, perda de peso, distúrbios digestivos e possível comprometimento nutricional.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Schistosoma Mansoni",
+      "sintomas": "Inflamação crônica do sistema portal com sobrecarga hepática, intestinal e repercussões imunológicas prolongadas.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Ascaris Lumbricoides",
+      "sintomas": "Sobrecarga intestinal com inflamação crônica leve, prejuízo na absorção de nutrientes e impacto no eixo imunológico e energético.",
+      "fonte": "-"
+    }
+  ],
+  "vermes": [
+    {
+      "nome": "Fasciolopsis Buskii Eggs",
+      "sintomas": "Diarreia crônica ou intermitente, dor abdominal difusa, distensão abdominal e gases,náuseas, sensação de digestão lenta, má absorção de nutriente",
+      "fonte": "-"
     }
   ]
 }

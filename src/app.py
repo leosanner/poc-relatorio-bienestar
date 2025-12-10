@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
 from utils.oberon import extract_oberon_content, food_info
-from utils.report import generate_report, prosync_table_content, oberon_table_content
+from utils.report import generate_report, prosync_table_content
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
@@ -24,7 +24,6 @@ oberon_categories = {
 oberon_files = {}
 oberon_thresholds = {}
 
-# Create uploaders and threshold inputs for each category
 for key, label in oberon_categories.items():
     st.markdown(f"#### {label}")
     file = st.file_uploader(f"Upload {label} TXT", type=["txt"], key=f"oberon_{key}")
@@ -50,8 +49,6 @@ patient_name = st.text_input("Nome do Paciente", key="patient_name")
 st.markdown("### Parâmetros de Configuração")
 prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
 
-
-# Initialize data containers
 prosync_data = {}
 oberon_data_full = {}
 
@@ -67,6 +64,7 @@ if prosync_file:
         st.error(f"Erro ao processar Prosync: {e}")
 else:
     st.info("Nenhum arquivo Prosync enviado.")
+
 
 if oberon_files:
     st.subheader("Resultados Oberon")
