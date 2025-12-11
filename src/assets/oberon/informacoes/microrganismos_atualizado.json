@@ -62,8 +62,13 @@
     },
     {
       "nome": "Sintitsialny Virus (Repiratório)",
-      "sintomas": "Coriza, congestão nasal e espirros, dor de garganta e febre baixa,  tosse persistente, chiado no peito (sibilos), falta de ar e respiração acelerada, sensação de aperto no tórax, aumento de secreção e inflamação das vias respiratórias, fadiga, piora de asma, bronquite ou DPOC,  pneumonia (casos mais graves). Em bebês: dificuldade para mamar, irritabilidade, retração das costelas e episódios de apneia.",
-      "fonte": "Através de gotículas de tosse e espirros de uma pessoa infectada."
+      "sintomas": "Chiado, febre e dificuldade respiratória, especialmente em crianças.",
+      "fonte": "Contato com secreções respiratórias contaminadas."
+    },
+    {
+      "nome": "Vírus Echo‑9",
+      "sintomas": "Febre, dores musculares e infecções gastrointestinais.",
+      "fonte": "Água contaminada e contato próximo."
     },
     {
       "nome": "Coxsackievírus B4",
@@ -77,8 +82,8 @@
     },
     {
       "nome": "Hepatite E",
-      "sintomas": "Hepatite aguda, náuseas, icterícia.",
-      "fonte": "Ingestão de água contaminada."
+      "sintomas": "Inflamação hepática com fadiga intensa, icterícia, dores abdominais e náuseas.",
+      "fonte": "Água ou alimentos contaminados e saneamento inadequado."
     },
     {
       "nome": "HIV – Infecção",
@@ -106,9 +111,9 @@
       "fonte": "Transmissão fecal-oral ou por gotículas respiratórias."
     },
     {
-      "nome": "Vírus Parainfluenza humano",
-      "sintomas": "Laringotraqueobronquite (crupe), tosse, febre, rouquidão e sintomas respiratórios altos.",
-      "fonte": "Gotículas respiratórias e contato com secreções nasais."
+      "nome": "Parainfluenza Vírus",
+      "sintomas": "Tosse persistente, rouquidão e dificuldade respiratória.",
+      "fonte": "Secreções respiratórias e ambientes fechados."
     },
     {
       "nome": "Dengue",
@@ -182,13 +187,13 @@
     },
     {
       "nome": "Reovírus",
-      "sintomas": "Diarreia, náuseas, dor abdominal, febre, sintomas respiratórios leves e, ocasionalmente, mialgia e mal-estar, especialmente em crianças; em situações específicas associado a encefalite, hepatite leve e miocardite.",
-      "fonte": "Contato fecal-oral ou respiratório"
+      "sintomas": "Diarreia, febre leve e desconforto gastrointestinal.Água e alimentos contaminados.Vírus",
+      "fonte": "Água e alimentos contaminados."
     },
     {
       "nome": "Rinovírus",
-      "sintomas": "Resfriado comum; congestão nasal, espirros, dor de garganta",
-      "fonte": "Aerossóis, gotículas respiratórias, superfícies contaminadas"
+      "sintomas": "Coriza, congestão nasal, dor de cabeça e irritação na garganta",
+      "fonte": "Gotículas respiratórias e superfícies contaminadas."
     },
     {
       "nome": "Dengue - Denv-1",
@@ -375,8 +380,8 @@
     },
     {
       "nome": "Bactéria Lactis Aerogenes",
-      "sintomas": "Contaminante oportunista; geralmente assintomático",
-      "fonte": "Ambientes úmidos, alimentos e microbiota ambiental"
+      "sintomas": "Desconforto abdominal, gases e distúrbios digestivos.",
+      "fonte": "Alimentos fermentados e ambientes contaminados."
     },
     {
       "nome": "Lactobacillus Acidophilus",
@@ -385,13 +390,13 @@
     },
     {
       "nome": "Mycobacterium Phlei",
-      "sintomas": "Raramente causa infecção; possíveis lesões pulmonares ou cutâneas em imunossuprimidos",
-      "fonte": "Ambiente, poeira e água"
+      "sintomas": "Tosse persistente, febre e perda de peso.",
+      "fonte": "Transmissão aérea por gotículas."
     },
     {
       "nome": "Propionobacterium Acnes",
-      "sintomas": "Acne inflamatória, foliculite",
-      "fonte": "Pele humana (microbiota natural)"
+      "sintomas": "Inflamações cutâneas, acne e vermelhidão.",
+      "fonte": "Pele humana e superfícies contaminadas."
     },
     {
       "nome": "Staphylococcus Albus",
@@ -400,8 +405,8 @@
     },
     {
       "nome": "Helicobacter Pylori",
-      "sintomas": "Associada a gastrite crônica, dor epigástrica, azia e desequilíbrio digestivo funcional.",
-      "fonte": "-"
+      "sintomas": "Dor estomacal, gastrite e refluxo.",
+      "fonte": "Água e alimentos contaminados."
     },
     {
       "nome": "Borrelia Burgdorferi",
@@ -480,8 +485,8 @@
     },
     {
       "nome": "Pseudomonas Aeruginosa",
-      "sintomas": "Associada a infecções respiratórias, urinárias e cutâneas em organismos fragilizados.",
-      "fonte": "-"
+      "sintomas": "Infecções respiratórias, urinárias e cutâneas.",
+      "fonte": "Água contaminada e ambientes úmidos."
     },
     {
       "nome": "Enterococcus Faecalis",
@@ -505,8 +510,8 @@
     },
     {
       "nome": "Mycoplasma Hominis",
-      "sintomas": "Colonizador geniturinário que pode causar inflamação pélvica em situações específicas.",
-      "fonte": "-"
+      "sintomas": "Sensibilização pulmonar e irritações respiratórias leves.",
+      "fonte": "Ambientes com poeira orgânica."
     },
     {
       "nome": "Clamydia Trachomatis",
@@ -531,6 +536,11 @@
   ],
   "fungo": [
     {
+      "nome": "Mucosis Fungóide",
+      "sintomas": "Irritações persistentes na pele com descamação.",
+      "fonte": "Contato com superfícies úmidas e ambientes contaminados."
+    },
+    {
       "nome": "Candida Albicans",
       "sintomas": "Quando em desequilíbrio causa disbiose, inflamação de mucosas, fadiga, alterações cognitivas e sobrecarga imunometabólica.",
       "fonte": "-"
@@ -542,12 +552,13 @@
     },
     {
       "nome": "Saccharomyces cerevisiae",
-      "sintomas": "Em situações específicas — como imunossupressão,uso prolongado de antibióticos, internações, presença de cateteres ou doenças graves, pode atuar como patógeno oportunista e causar  gases, desconforto intestinal, diarreia e, mais raramente, infecções sistêmicas como fungemia/endocardite.",
-      "fonte": "Desequilíbrio da microbiota; proliferação oportunista em mucosas."
+      "sintomas": "Candidíase com irritação, coceira e inflamação.",
+      "fonte": "Ambientes úmidos e microbiota alterada."
     },
     {
       "nome": "Candida",
-      "sintomas": "pode causar desde infecção pulmonar com tosse, dor torácica, falta de ar e febre baixa até criptococose sistêmic."
+      "sintomas": "Alterações gastrointestinais e irritação em mucosas.",
+      "fonte": "Alimentos fermentados e superfícies úmidas."
     },
     {
       "nome": "Criptococcus Neoformans",
@@ -646,23 +657,28 @@
     },
     {
       "nome": "Candida Saccharomyces",
-      "sintomas": "Micoses superficiais ou candidíase oportunista",
-      "fonte": "Contaminação ambiental ou desequilíbrio da microbiota"
+      "sintomas": "Alterações gastrointestinais e irritação em mucosas.",
+      "fonte": "Alimentos fermentados e superfícies úmidas."
     },
     {
       "nome": "Epidermophyton Floccosum",
-      "sintomas": "Tinea corporis, tinea cruris, frieiras",
-      "fonte": "Contato direto com pele contaminada ou superfícies úmidas"
+      "sintomas": "Descamação, coceira e irritação da pele.",
+      "fonte": "Pisos úmidos, toalhas e roupas."
     },
     {
       "nome": "Microsporum Canis",
-      "sintomas": "Tinea capitis, tinea corporis (micose de pele e couro cabeludo)",
-      "fonte": "Cães e gatos; contato com pelos contaminados"
+      "sintomas": "Lesões circulares, coceira e inflamação.",
+      "fonte": "Contato com animais domésticos infectados."
     },
     {
       "nome": "Scopulariopsis Brevic",
-      "sintomas": "Onicomicose (infecção de unhas); infecções oportunistas",
-      "fonte": "Ambiente (solo, poeira)"
+      "sintomas": "Infecções nas unhas e irritações cutâneas.",
+      "fonte": "Ambientes úmidos e poeira doméstica."
+    },
+    {
+      "nome": "Scopulariopsis Brevic (Var.)",
+      "sintomas": "Espessamento das unhas e descamação.",
+      "fonte": "Poeira, pisos úmidos e superfícies orgânicas."
     },
     {
       "nome": "Tinea Capitis",
@@ -775,8 +791,8 @@
   "helminto": [
     {
       "nome": "Felineus Opisthorhis",
-      "sintomas": "Dor abdominal no quadrante superior direito, náuseas, vômitos, diarreia, distensão abdominal, fadig, e reações alérgicas como urticária; com a cronicidade, pode causar colecistite, colangite, hepatomegalia, icterícia, intolerância a alimentos gordurosos, pancreatite e aumento do risco de doenças hepáticas crônicas.",
-      "fonte": " ingestão de peixes de água doce crus ou mal cozidos que contenham as larvas infectantes (metacercárias)"
+      "sintomas": "Dor abdominal, febre e inflamação das vias biliares.",
+      "fonte": "Água e alimentos contaminados."
     },
     {
       "nome": "Taenia sp",
@@ -835,8 +851,8 @@
     },
     {
       "nome": "Taenia pisiformis",
-      "sintomas": "Infecção intestinal rara com dor abdominal e perda de peso.",
-      "fonte": "Ingestão de carne ou vísceras de coelhos/roedores contaminadas."
+      "sintomas": "Desconforto abdominal, náuseas e perda de peso.",
+      "fonte": "Ingestão de alimentos contaminados."
     },
     {
       "nome": "Schistosoma haematobium",
@@ -905,18 +921,18 @@
     },
     {
       "nome": "Alveococcus Multiocularis",
-      "sintomas": "Echinococose alveolar; dor abdominal, perda de peso, icterícia",
-      "fonte": "Ingestão de ovos em alimentos ou água contaminada com fezes de cães/raposas"
+      "sintomas": "Lesões hepáticas, dor abdominal e febre intermitente.",
+      "fonte": "Alimentos contaminados e contato com animais silvestres."
     },
     {
       "nome": "Ascaris Larvae",
-      "sintomas": "Ascaridíase; dor abdominal, tosse na fase pulmonar",
-      "fonte": "Ingestão de ovos presentes em solo ou alimentos contaminados"
+      "sintomas": "Dor abdominal, tosse e distensão devido à migração larval.",
+      "fonte": "Solo contaminado e alimentos mal lavados."
     },
     {
       "nome": "Fasciolopsis Buski Eggs",
-      "sintomas": "Fasciolopsíase; diarreia crônica, dor abdominal",
-      "fonte": "Ingestão de plantas aquáticas contaminadas (ex.: castanhas d'água)"
+      "sintomas": "Diarreia, distensão e má absorção.",
+      "fonte": "Vegetais aquáticos contaminados."
     },
     {
       "nome": "Taenia Saginata Eggs",

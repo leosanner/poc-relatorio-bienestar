@@ -235,11 +235,6 @@
     "beneficios_emocionais": "Calma, autoestima e estabilidade emocional."
   },
   {
-    "cristal": "A melhor distribuição",
-    "beneficios_fisicos": "Sensação geral de equilíbrio corporal.",
-    "beneficios_emocionales": "Favorece organização interna e estabilidade emocional."
-  },
-  {
     "cristal": "Alexandrita",
     "beneficios_fisicos": "Sensação de leve ativação energética.",
     "beneficios_emocionais": "Favorece clareza e definição emocional."
@@ -276,7 +271,7 @@
   },
   {
     "cristal": "Esmeralda",
-    "beneficios_fisicios": "Relaxamento do sistema nervoso.",
+    "beneficios_fisicos": "Relaxamento do sistema nervoso.",
     "beneficios_emocionais": "Traz sensação de renovação emocional."
   },
   {
@@ -340,6 +335,11 @@
     "beneficios_emocionais": "Redução de ansiedade e estabilização emocional."
   },
   {
+    "cristal": "Pérola",
+    "beneficios_fisicos": "Sensação de equilíbrio fisiológico suave e harmonização do sistema feminino",
+    "beneficios_emocionais": "Favorece calma, autoestima e estabilidade emocional."
+  },
+  {
     "cristal": "Heliotrópio",
     "beneficios_fisicos": "Sensação de vigor físico.",
     "beneficios_emocionais": "Auxilia na determinação e foco."
@@ -350,7 +350,7 @@
     "beneficios_emocionais": "Favorece tranquilidade mental e estabilidade emocional."
   },
   {
-    "cristal": "Aquamarine",
+    "cristal": "Água marinha",
     "beneficios_fisicos": "Sensação de clareza respiratória e leveza corporal.",
     "beneficios_emocionais": "Promove calma emocional e redução de ansiedade leve."
   },
@@ -373,5 +373,15 @@
     "cristal": "Sagalita",
     "beneficios_fisicos": "Relaxamento generalizado.",
     "beneficios_emocionais": "Redução de tensão emocional."
+  },
+  {
+    "cristal": "Rodolita",
+    "beneficios_fisicos": "",
+    "beneficios_emocionais": ""
+  },
+  {
+    "cristal": "Zircão",
+    "beneficios_fisicos": "",
+    "beneficios_emocionais": ""
   }
 ]
