@@ -192,6 +192,15 @@ def microorganism_info(
         "tipo": "não encontrado",
     }
 
+    scpecial_micro = [
+        "hepatite d",
+        "hepatite c",
+        "hepatite d",
+        "hepatite b",
+        "influenza a",
+        "hepadnovirus b",
+    ]
+
     microorganism_sw = load_stopwords("microrganismos.json")
     microorganism_information = load_test_information(json_file)
     microorganism_match = load_match_information(json_file)
@@ -208,7 +217,12 @@ def microorganism_info(
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
                     if obj["nome"].title() == match_name:
-                        obj["nome"] = first_char_uppercase(match_name)
+
+                        if obj["nome"] in scpecial_micro:
+                            obj["nome"] = match_name.title()
+                        else:
+                            obj["nome"] = first_char_uppercase(match_name)
+
                         obj["D"] = v
                         obj["tipo"] = m_type.title()
                         content.append(obj)

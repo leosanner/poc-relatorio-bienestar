@@ -138,6 +138,12 @@
     "fontes": "Antenas, celulares."
   },
   {
+    "nome": "Radiação",
+    "tipo": "Radiação ionizante",
+    "efeitos": "Cansaço persistente, diminuição das células sanguíneas (anemia, baixa de plaquetas ou leucócitos), problemas de pele, maior risco de câncer ao longo dos anos, catarata, distúrbios hormonais ou da tireoide.",
+    "fontes": "-"
+  },
+  {
     "nome": "Micro-Ondas",
     "tipo": "Radiação não ionizante",
     "efeitos": "Aquecimento tecidual.",
@@ -446,7 +452,7 @@
   {
     "nome": "Insecticidas",
     "tipo": "Tóxico agrícola",
-    "efeitos": "Neurotoxicidade",
+    "efeitos": "Fadiga, icterícia, náusea, vômito, dor abdominal, febre, anorexia, urina escura, fezes claras, mal-estar.",
     "fontes": "Pulverização"
   },
   {

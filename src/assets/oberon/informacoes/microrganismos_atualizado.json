@@ -71,19 +71,34 @@
       "fonte": "Água contaminada e contato próximo."
     },
     {
-      "nome": "Coxsackievírus B4",
-      "sintomas": "Febre, mal-estar, dor de garganta, fadiga e dores musculares, evoluindo em alguns casos para dores torácicas , inflamação do coração, dor abdominal, náuseas, vômitos e diarreia, além de comprometimento do sistema nervoso",
+      "nome": "Coxsackievírus",
+      "sintomas": "FCom carga viral alta, o Coxsackie vírus pode causar febre elevada, dor de garganta intensa, lesões orais e cutâneas (mão-pé-boca), dores musculares, cefaléia e sintomas gastrointestinais. Em casos mais graves, pode levar a miocardite, pericardite, meningite viral, pleurodinia, inflamação pancreática e agravar doenças autoimunes, além de estar associado a fadiga pós-viral persistente, intolerância ao esforço, dor crônica e disfunção autonômica.",
       "fonte": " transmitida principalmente por via fecal-oral ou respiratória (gotículas) de pessoa para pessoa."
     },
     {
-      "nome": "Hepadnavirus B",
-      "sintomas": "Febre, fadiga intensa, mal-estar, perda de apetite, náuseas, vômitos, dor no lado direito do abdômen, além de urina escura, fezes claras e icterícia (pele e olhos amarelados); quando a infecção se torna crônica, pode evoluir silenciosamente com inflamação hepática persistente, levando a fibrose, cirrose e insuficiência hepática.",
+      "nome": "Hepadnovirus B",
+      "sintomas": "Inflamação leve e silenciosa no fígado, com cansaço discreto e queda gradual da imunidade. Com sua carga alta, provoca hepatite ativa, causando fadiga intensa, enjoo, dor abdominal, urina escura e pele ou olhos amarelados (icterícia). Se persistir, pode levar a inflamação crônica do fígado, aumentando o risco de cirrose.",
       "fonte": "Contato com sangue, fluidos corporais ou transmissão vertical."
+    },
+    {
+      "nome": "Hepatite C",
+      "sintomas": "Fadiga, icterícia, náusea, dor abdominal, febre, anorexia, mal-estar, urina escura, fezes claras, artralgia.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Hepatite B",
+      "sintomas": "Fadiga, icterícia, náusea, vômito, dor abdominal, febre, anorexia, urina escura, fezes claras, mal-estar.",
+      "fonte": "-"
     },
     {
       "nome": "Hepatite E",
       "sintomas": "Inflamação hepática com fadiga intensa, icterícia, dores abdominais e náuseas.",
       "fonte": "Água ou alimentos contaminados e saneamento inadequado."
+    },
+    {
+      "nome": "Hepatite D",
+      "sintomas": "Em carga alta, provoca hepatite grave, com fadiga intensa, náuseas, dor abdominal, urina escura e icterícia (pele e olhos amarelados).",
+      "fonte": "-"
     },
     {
       "nome": "HIV – Infecção",
@@ -187,7 +202,7 @@
     },
     {
       "nome": "Reovírus",
-      "sintomas": "Diarreia, febre leve e desconforto gastrointestinal.Água e alimentos contaminados.Vírus",
+      "sintomas": "Diarreia, náuseas, dor abdominal, febre, sintomas respiratórios leves e, ocasionalmente, mialgia e mal-estar, especialmente em crianças, Em situações específicas pode estar associado a encefalite, hepatite leve e miocardite.",
       "fonte": "Água e alimentos contaminados."
     },
     {
@@ -234,7 +249,7 @@
   "bactéria": [
     {
       "nome": "Borellia miyamotoi",
-      "efeitos": "Febre alta, calafrios e mal estar frequente, dor de cabeça forte, dores musculares e corporais, sensação de gripe forte, fadiga extrema, náusea e vômito ( em alguns casos)",
+      "efeitos": "Em baixa quantidade  causa cansaço leve, dores no corpo, dor de cabeça e sensação de mal-estar difusa, muitas vezes confundidos com estresse ou virose, mantendo uma inflamação discreta e contínua. Em quantidade alta, provoca o quadro típico da doença de Lyme, com febre, fadiga intensa, dor nas articulações, dor muscular, dor de cabeça forte e, em alguns casos, mancha avermelhada na pele.",
       "fonte": "Picada de carrapatos (do gênero Ixodes)."
     },
     {
@@ -355,7 +370,7 @@
     },
     {
       "nome": "Salmonella spp.",
-      "sintomas": "Diarreia, febre",
+      "sintomas": "Salmonella spp.Não causa sintomas aparentes quando a carga bacteriana é baixa. À medida que a carga aumenta pode causar dor abdominal, cólicas, diarreia (por vezes com muco ou sangue), febre, náuseas, vômitos e mal-esta. Em situações de elevada carga ou em pessoas vulneráveis (crianças, idosos, imunossuprimidos), a bactéria pode ultrapassar o intestino e causar desidratação, bacteremia, infecção sistêmica, artrite reativa e outras complicações.",
       "fonte": "Alimentos"
     },
     {
@@ -375,7 +390,7 @@
     },
     {
       "nome": "Clostridium perfringens",
-      "sintomas": "Gastroenterite com diarreia aquosa, cólicas abdominais, distensão, gases e náuseas.",
+      "sintomas": "Em carga baixa, pode ocorrer no máximo desconforto intestinal leve ou nenhum sintoma aparente, configurando colonização transitória. Quando a carga bacteriana é alta, geralmente após ingestão de alimentos contaminados e mal armazenados, passa a produzir toxinas potentes  causando diarreia,cólicas, gases, náuseas e inflamação intestinal.",
       "fonte": "Feridas"
     },
     {
@@ -414,6 +429,11 @@
       "fonte": "-"
     },
     {
+      "nome": "Borrelia miyamotoi",
+      "sintomas": "Em baixa quantidade, pode causar cansaço leve, dores no corpo, dor de cabeça e mal-estar inespecífico, muitas vezes passando despercebida, mas mantendo inflamação leve e contínua. Em quantidade alta, provoca febres recorrentes, calafrios, fadiga intensa, dores musculares e articulares, dor de cabeça e náuseas. Em alguns casos, pode afetar o sistema nervoso, causando confusão mental.",
+      "fonte": "-"
+    },
+    {
       "nome": "Brucella Abortus",
       "sintomas": "Inflamação sistêmica prolongada com fadiga profunda e comprometimento osteoarticular e imunológico.",
       "fonte": "-"
@@ -440,7 +460,7 @@
     },
     {
       "nome": "Staphylococcus Aureus",
-      "sintomas": "Colonizador comum da pele e mucosas, tornando-se patogênico em contextos inflamatórios ou de baixa imunidade.",
+      "sintomas": "Comum na pele e nas narinas,  pode não oferecer risco, mas quando ultrapassa as defesas do organismo pode provocar infecções de pele (furúnculos, abscessos, impetigo, celulite) e nos tecidos moles, bem como infecções respiratórias (pneumonia), infecções ósseas (osteomielite), articulares (artrite séptica), infecções urinárias, além de endocardite, septicemia (infecção generalizada) e síndrome do choque tóxico.",
       "fonte": "-"
     },
     {
@@ -456,6 +476,16 @@
     {
       "nome": "Shigella Sonnei",
       "sintomas": "Causa disenteria com diarreia sanguinolenta, febre, cólicas abdominais e inflamação intestinal intensa.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Shigella flexneri",
+      "sintomas": "Em carga baixa, pode causar diarreia leve, cólicas, gases e inflamação intestinal, irritando a mucosa e favorecendo disbiose, com aumento da permeabilidade intestinal e menor absorção de nutrientes. Com carga alta, provoca diarréia intensa (com muco ou sangue), cólicas fortes, febre, náuseas e desidratação, podendo evoluir para colite inflamatória, anemia e agravamento de processos inflamatórios e autoimunes",
+      "fonte": "-"
+    },
+    {
+      "nome": "Shigella dysenteriae",
+      "sintomas": "Em baixa quantidade, pode causar diarreia leve, dor abdominal e desconforto intestinal, às vezes sem sintomas claros, mas ainda assim irrita o intestino e prejudica a digestão e a absorção de nutrientes (Disbiose). Quando está em quantidade alta, provoca diarreia forte com sangue, dor abdominal intensa, febre e desidratação, podendo causar inflamação grave do intestino, anemia e piorar outros problemas inflamatórios no corpo.",
       "fonte": "-"
     },
     {
@@ -475,7 +505,7 @@
     },
     {
       "nome": "Haemophilus Influenzae",
-      "sintomas": "Pode causar infecções respiratórias, otite, sinusite e meningite, especialmente em crianças.",
+      "sintomas": "Em baixa carga pode causar episódios ocasionais de congestão nasal. Quando ocorre aumento da carga ou queda da defesa imunológica, passa a invadir tecidos e  pode provocar otite média, sinusite, faringite e bronquite,podendo evoluir para pneumonia.",
       "fonte": "-"
     },
     {
@@ -536,6 +566,21 @@
   ],
   "fungo": [
     {
+      "nome": "Torulopsis glabratis candida",
+      "sintomas": "Infecções urinárias, candidemia, febre, dor, ardência, fadiga persistente.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Micose oris candida",
+      "sintomas": "Placas brancas na boca, dor, ardência, disfagia, gosto ruim, vermelhidão.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Trichophyton cutaneum",
+      "sintomas": "Em baixa quantidade causa coceira leve, descamação discreta e irritação suave na pele, muitas vezes confundidas com ressecamento ou alergia. Em quantidade alta, provoca micose evidente, com vermelhidão, coceira intensa, descamação mais marcada, rachaduras, áreas esbranquiçadas ou escurecidas e, às vezes, mau odor. Pode atingir unhas e couro cabeludo.",
+      "fonte": "-"
+    },
+    {
       "nome": "Mucosis Fungóide",
       "sintomas": "Irritações persistentes na pele com descamação.",
       "fonte": "Contato com superfícies úmidas e ambientes contaminados."
@@ -562,7 +607,7 @@
     },
     {
       "nome": "Criptococcus Neoformans",
-      "sintomas": "Meningite fúngica, febre, sintomas pulmonares.",
+      "sintomas": "Pode existir em baixa carga no organismo sem causar sintomas aparentes, no máximo irritação leve e tosse discreta. Quando a carga ou quando a imunidade está comprometida  o fungo pode atravessar o pulmão, disseminar-se pelo sangue e atingir principalmente o sistema nervoso central, causando pneumonia fúngica, cau forte resposta inflamatória, febre, dor torácica, mal-estar, e nos quadros mais graves desencadeia meningite criptocócica, com cefaleia intensa, rigidez de nuca, confusão mental, náuseas, vômitos, alterações neurológicas.",
       "fonte": "Inalação de poeira contaminada por excrementos de aves."
     },
     {
@@ -572,7 +617,7 @@
     },
     {
       "nome": "Malassezia furfur",
-      "sintomas": "Dermatite seborreica, pitiríase versicolor e coceira no couro cabeludo.",
+      "sintomas": "Vive normalmente na pele humana, e em baixa carga pode apenas gerar oleosidade discreta e leve descamação. Quando ocorre aumento da carga por calor, umidade, sudorese excessiva, imunidade reduzida ou desequilíbrios metabólicos passa a causar pitiríase versicolor (manchas claras ou escuras na pele, com descamação fina), dermatite seborreica (caspa, vermelhidão, coceira no couro cabeludo, face e tórax) e foliculite. Em situações raras e geralmente associadas à imunossupressão pode estar relacionada a infecções sistêmicas.",
       "fonte": "Microbiota da pele; proliferação aumentada em ambientes úmidos."
     },
     {
@@ -656,6 +701,11 @@
       "fonte": "Contato direto"
     },
     {
+      "nome": "Candida stellaidea",
+      "sintomas": "Febre, candidemia, fadiga, lesões cutâneas, infecção sistêmica persistente.",
+      "fonte": "-"
+    },
+    {
       "nome": "Candida Saccharomyces",
       "sintomas": "Alterações gastrointestinais e irritação em mucosas.",
       "fonte": "Alimentos fermentados e superfícies úmidas."
@@ -672,7 +722,7 @@
     },
     {
       "nome": "Scopulariopsis Brevic",
-      "sintomas": "Infecções nas unhas e irritações cutâneas.",
+      "sintomas": "Scopulariopsis brevic Fungo Onicomicose (infecção das unhas), caracterizada por espessamento, fragilidade e alteração de cor, menos frequentemente, pode causar infecções cutâneas e de tecidos moles após microtraumas, e, em indivíduos imunossuprimidos, endocardite fúngica, infecções pulmonares, osteomielite e fungemia.",
       "fonte": "Ambientes úmidos e poeira doméstica."
     },
     {
@@ -692,6 +742,11 @@
     }
   ],
   "protozoário": [
+    {
+      "nome": "Balantidium coli",
+      "sintomas": "Diarreia leve, gases e desconforto abdominal, mantendo irritação discreta da mucosa intestinal. Em carga alta, causa diarreia intensa (às vezes com muco ou sangue), dor abdominal forte, náuseas, febre e desidratação, podendo evoluir para colite inflamatória, úlceras intestinais e anemia em casos mais graves.",
+      "fonte": "-"
+    },
     {
       "nome": "Endolimax Nana",
       "sintomas": "Protozoário não patogênico, indicador de contaminação fecal-oral sem impacto clínico direto.",
@@ -749,7 +804,7 @@
     },
     {
       "nome": "Leishmania mexicana",
-      "sintomas": "Lesões na pele, geralmente indolores, de bordas elevadas e fundo granuloso, que podem surgir semanas ou meses após a picada do mosquito-palha (Lutzomyia). Risco de cicatrizes permanentes quando não tratada.",
+      "sintomas": "Em quantidade alta, causa leishmaniose cutânea, com feridas na pele que não cicatrizam, inflamação local, possível infecção secundária e cicatrizes permanentes em casos raros, pode haver disseminação e impacto no estado geral.",
       "fonte": "Picada do mosquito-palha (flebotomíneo)"
     },
     {
@@ -891,7 +946,7 @@
     },
     {
       "nome": "Fasciolopsis buski",
-      "sintomas": "Diarreia crônica",
+      "sintomas": "Fasciolopsis buski Helminto Dor abdominal, diarreia, náuseas, má absorção de nutrientes e perda de peso; a inflamação contínua da mucosa intestinal pode levar a aumento da permeabilidade intestinal, reações alérgicas, fadiga, fraqueza e sintomas neuroemocionais como irritabilidade e dificuldade de concentração, e em casos de alta carga pode evoluir para anemia, desnutrição, e até obstrução intestinal",
       "fonte": "Vegetais aquáticos"
     },
     {
@@ -941,7 +996,7 @@
     },
     {
       "nome": "Enterobius Vermicularis",
-      "sintomas": "Parasitose intestinal associada a prurido anal intenso, agitação do sono e irritabilidade, impactando eixo neuroimune e qualidade do descanso.",
+      "sintomas": "Em baixa carga parasitária gera uma colonização silenciosa que pode iniciar uma princípio de inflamação. Se a carga aumenta  pode causar coceira anal  levando a irritabilidade, distúrbios do sono, ansiedade e dificuldade de concentração; pode provocar ainda desconforto abdominal leve, gases, náuseas, diarreia ocasional e inflamação intestinal persistente. Em meninas e mulheres, a migração desse verme pode causar vulvovaginite (prurido genital, corrimento, ardor), e raramente surgem complicações como apendicite, infecções urinárias ou inflamação pélvica.",
       "fonte": "-"
     },
     {
@@ -969,6 +1024,38 @@
     {
       "nome": "Fasciolopsis Buskii Eggs",
       "sintomas": "Diarreia crônica ou intermitente, dor abdominal difusa, distensão abdominal e gases,náuseas, sensação de digestão lenta, má absorção de nutriente",
+      "fonte": "-"
+    }
+  ],
+  "parasita": [
+    {
+      "nome": "Eurytrema Pancreaticum Stages",
+      "sintomas": "Dor abdominal, diarreia, perda de peso, fadiga, pancreatite, icterícia.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Fasciola Hepatica Metacercariae",
+      "sintomas": "Dor abdominal, febre, icterícia, náusea, vômito, hepatomegalia, fadiga.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Fasciola Hepatica Cercariae",
+      "sintomas": "Geralmente assintomática, exposição inicial, possível irritação cutânea leve, risco hepático.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Fasciola Hepatica Miracidia",
+      "sintomas": "Os sintomas só aparecem após ingestão das metacercárias (estágio infectante) e migração do parasita pelo fígado.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Fasciola Hepatica Eggs",
+      "sintomas": "Não causam sintomas, pois a infecção humana ocorre somente após ingestão das metacercárias presentes em água ou vegetais contaminados.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Fasciolopsis Buskii Eggs Unincubated",
+      "sintomas": "Ovos não incubados, eliminados nas fezes, não causam sintomas humanos.",
       "fonte": "-"
     }
   ]
