@@ -12,7 +12,7 @@
     },
     {
       "nome": "Herpes Simplex",
-      "sintomas": "Associa-se a lesões recorrentes, inflamação neural e queda de energia em períodos de estresse.",
+      "sintomas": "Pode permanecer latente no organismo sem sintomas. Em reativação ou alta carga  pode causar lesões vesiculares dolorosas em boca ou genitais, podendo haver febre e mal-estar.",
       "fonte": "-"
     },
     {
@@ -72,7 +72,7 @@
     },
     {
       "nome": "Coxsackievírus",
-      "sintomas": "FCom carga viral alta, o Coxsackie vírus pode causar febre elevada, dor de garganta intensa, lesões orais e cutâneas (mão-pé-boca), dores musculares, cefaléia e sintomas gastrointestinais. Em casos mais graves, pode levar a miocardite, pericardite, meningite viral, pleurodinia, inflamação pancreática e agravar doenças autoimunes, além de estar associado a fadiga pós-viral persistente, intolerância ao esforço, dor crônica e disfunção autonômica.",
+      "sintomas": "Se  instala principalmente no trato respiratório e no trato gastrointestinal. Em carga baixa, pode causar  irritação leve, como dor de garganta discreta, mal-estar ou desconforto digestivo. Em carga alta, pode provocar faringite, febre, dor muscular, diarreia, náuseas, aftas e tosse.",
       "fonte": " transmitida principalmente por via fecal-oral ou respiratória (gotículas) de pessoa para pessoa."
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "nome": "Hepatite E",
-      "sintomas": "Inflamação hepática com fadiga intensa, icterícia, dores abdominais e náuseas.",
+      "sintomas": "Em carga baixa, pode ser assintomático ou provocar mal-estar, náusea, cansaço e sensibilidade abdominal. Em carga alta, pode gerar icterícia, perda de apetite, febre baixa, urina escura, fezes claras e aumento de enzimas hepáticas.",
       "fonte": "Água ou alimentos contaminados e saneamento inadequado."
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "nome": "Echovírus 9",
-      "sintomas": "Febre, dor de cabeça, mal-estar, dor de garganta, dor muscular e gastrointestinal, além de exantema (manchas na pele).",
+      "sintomas": "Instala-se principalmente nos tratos respiratório e gastrointestinal. Em carga baixa, pode causar sintomas leves, como mal-estar, dor de garganta  ou pequenas alterações digestivas. Em carga alta, pode provocar faringite, febre, dor muscular, diarreia, náuseas, dor abdominal, exantema (manchas na pele) e irritação respiratória.",
       "fonte": "Transmissão fecal-oral ou por gotículas respiratórias."
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "nome": "Adenovírus",
-      "sintomas": "Conjuntivite, faringite",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar apenas irritação leve nas vias respiratórias ou nos olhos. Em carga alta, pode gerar febre, dor de garganta, tosse e  conjuntivite. Em pessoas com imunidade fragilizada, pode evoluir para infecções mais intensas, como bronquite ou pneumonia.",
       "fonte": "Contato / respiratório"
     },
     {
@@ -197,12 +197,12 @@
     },
     {
       "nome": "Reovírus",
-      "sintomas": "Em carga baixa,  pode causar infecção assintomática ou leve como mal-estar, febre baixa, coriza, tosse ou desconforto gastrointestinal. Em carga elevada, especialmente em crianças pequenas, idosos ou imunossuprimidos, pode provocar infecções respiratórias mais intensas, gastroenterite significativa, mialgia, febre persistente e, mais raramente, distúrbios do sistema nervoso central.",
+      "sintomas": "Em maior replicação pode causar gastroenterite, sintomas respiratórios leves e, raramente, envolvimento neurológico.",
       "fonte": "Água e alimentos contaminados."
     },
     {
       "nome": "Rinovírus",
-      "sintomas": "Em carga baixa, pode provocar resfriado leve, com coriza, congestão nasal, espirros, dor de garganta, tosse e febre baixa. Já em carga elevada ou em pessoas com resposta imune comprometida, pode causar congestão nasal intensa, sinusite, tosse persistente, febre,  otite além de exacerbação de asma e bronquite.",
+      "sintomas": "Em maior replicação pode provocar coriza, congestão nasal, dor de garganta e tosse.",
       "fonte": "Gotículas respiratórias e superfícies contaminadas."
     },
     {
@@ -244,12 +244,12 @@
   "bactéria": [
     {
       "nome": "Borellia miyamotoi",
-      "efeitos": "Em baixa quantidade  causa cansaço leve, dores no corpo, dor de cabeça e sensação de mal-estar difusa, muitas vezes confundidos com estresse ou virose, mantendo uma inflamação discreta e contínua. Em quantidade alta, provoca o quadro típico da doença de Lyme, com febre, fadiga intensa, dor nas articulações, dor muscular, dor de cabeça forte e, em alguns casos, mancha avermelhada na pele.",
+      "efeitos": "Não faz parte da biota humana. Em carga  baixa, pode causar cansaço leve, dores no corpo, dor de cabeça e mal-estar. Em carga alta, provoca febres recorrentes, calafrios, fadiga intensa, dores musculares e articulares, dor de cabeça e náuseas. Em alguns casos, pode afetar o sistema nervoso e provocar confusão mental.",
       "fonte": "Picada de carrapatos (do gênero Ixodes)."
     },
     {
       "nome": "Borellia burgdorferi",
-      "efeitos": "Infecção multissistêmica que começa frequentemente com lesão cutânea, febre, fadiga, dor de cabeça e dores musculares.",
+      "efeitos": "Não faz parte da biota humana. Em baixa carga causa cansaço leve, dores no corpo, dor de cabeça e sensação de mal-estar, muitas vezes confundidos com estresse ou virose. Em carga, provoca febre, fadiga intensa, dor nas articulações, dor muscular, dor de cabeça forte e, em alguns casos, mancha avermelhada na pele.",
       "fonte": "Picada de carrapatos infectados (gênero Ixodes — “deer ticks” / carrapatos-de-veado)"
     },
 
@@ -260,17 +260,17 @@
     },
     {
       "nome": "Bartonella Quintana",
-      "sintomas": "Febre recorrente, dor de cabeça, dores musculares, mal estar geral.",
+      "sintomas": "Não faz parte da biota humana. Aloja-se no sangue, infectando eritrócitos e o endotélio vascular. Em alta carga causa febre recorrente, dor de cabeça, dores musculares, mal estar geral.",
       "fonte": "Transmissão por piolhos do corpo."
     },
     {
       "nome": "Bacillus Cereus",
-      "sintomas": "Náuseas, vômitos, diarreia, dor e cólicas abdominais.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar irritação gastrointestinal. Em carga alta, especialmente quando há disbiose ou sensibilidade digestiva, pode provocar náuseas, cólicas, diarreia ou vômitos decorrentes de toxinas que  produz; em casos mais intensos, pode gerar inflamação intestinal, febre baixa e agravar quadros de intolerâncias alimentares.",
       "fonte": "Ingestão de alimentos mal armazenados."
     },
     {
       "nome": "Enterococcus Faecium",
-      "sintomas": "Infecção urinária com ardor ao urinar, urgência miccional e dor pélvica, infecções intestinais com diarreia, dor abdominal e inflamação persistente. Em casos mais graves, pode causar , infecções da corrente sanguínea com febre, calafrios, fraqueza intensa além de endocardite, falta de ar e dor torácica.",
+      "sintomas": "Pode integrar a biota intestinal sem causar danos. Em carga alta ou fora do intestino, pode causar diarreia, inflamação intestinal, infecção urinária, bacteremia e endocardite.",
       "fonte": "Microbiota intestinal; transmissão hospitalar cruzada."
     },
     {
@@ -325,7 +325,7 @@
     },
     {
       "nome": "Chlamydia trachomatis",
-      "sintomas": "Infertilidade, dor pélvica",
+      "sintomas": "Não faz parte da biota humana. Instala-se principalmente nas mucosas genitais, podendo também afetar uretra, colo uterino, trompas e reto. Em carga baixa, pode ser assintomática ou causar ardor ao urinar, corrimento ou irritação genital. Em carga alta, pode gerar uretrite, cervicite, inflamação pélvica, dor abdominal, sangramentos, infertilidade por dano tubário e maior sensibilidade a outras infecções; também pode causar conjuntivite e, raramente, artrite reativa. Sem tratamento, tende a persistir silenciosamente, provocando inflamação crônica.",
       "fonte": "Contato sexual"
     },
     {
@@ -385,7 +385,7 @@
     },
     {
       "nome": "Clostridium perfringens",
-      "sintomas": "Em carga baixa, pode ocorrer no máximo desconforto intestinal leve ou nenhum sintoma aparente, configurando colonização transitória. Quando a carga bacteriana é alta, geralmente após ingestão de alimentos contaminados e mal armazenados, passa a produzir toxinas potentes  causando diarreia,cólicas, gases, náuseas e inflamação intestinal.",
+      "sintomas": "Não faz parte da biota humana. Instala-se principalmente no intestino, onde, em carga baixa, pode causar desconforto discreto e  gases. Em carga alta, suas toxinas podem provocar diarreia, cólicas intensas, náuseas, distensão, inflamação intestinal e agravamento da permeabilidade da mucosa.",
       "fonte": "Feridas"
     },
     {
@@ -415,7 +415,7 @@
     },
     {
       "nome": "Helicobacter Pylori",
-      "sintomas": "Dor estomacal, gastrite e refluxo.",
+      "sintomas": "Pode fazer parte da biota humana. Quando presente, instala-se principalmente no estômago, aderido à mucosa gástrica. Em carga baixa, pode permanecer silencioso ou causar leve queimação, sensação de peso após comer ou aumento da sensibilidade a alimentos ácidos. Em carga alta, pode provocar gastrite, refluxo, náuseas, distensão, mau hálito e irritação persistente da mucosa. Pode ainda favorecer a formação de úlceras e inflamação crônica do estômago.",
       "fonte": "Água e alimentos contaminados."
     },
     {
@@ -435,7 +435,7 @@
     },
     {
       "nome": "Escherichia Coli",
-      "sintomas": "Bactéria comensal intestinal; impacto clínico apenas quando há disbiose ou cepas patogênicas específicas.",
+      "sintomas": "Compõe a biota intestinal sem causar danos.  Em carga alta pode provocar diarreia, cólicas, gases, náuseas, febre, mal-estar, além de infecções do trato urinário, prostatite e infecções intestinais.",
       "fonte": "-"
     },
     {
@@ -460,7 +460,7 @@
     },
     {
       "nome": "Mycobacterium Tuberculosis",
-      "sintomas": "Infecção crônica com comprometimento pulmonar, perda de peso, fadiga prolongada e impacto imunológico sistêmico.",
+      "sintomas": "Não faz parte da biota humana. Instala-se principalmente nos pulmões, embora possa atingir gânglios linfáticos, ossos, rins e outros órgãos quando disseminado. Em carga baixa, pode permanecer latente, sem sintomas, apenas com sinais discretos, como cansaço ou sensibilidade respiratória. Em carga alta, pode causar tosse persistente, dor torácica, febre baixa vespertina, suores noturnos, perda de peso, fraqueza e inflamação pulmonar progressiva. Quando se dissemina, pode comprometer outros órgãos, gerando quadros mais graves.",
       "fonte": "-"
     },
     {
@@ -490,7 +490,7 @@
     },
     {
       "nome": "Neisseria Meningitidis",
-      "sintomas": "Pode causar meningite e septicemia, com febre alta, rigidez de nuca, dor de cabeça intensa e risco sistêmico elevado.",
+      "sintomas": "Pode colonizar a nasofaringe sem causar sintomas. Em maior replicação pode causar meningite e septicemia.",
       "fonte": "-"
     },
     {
@@ -500,12 +500,12 @@
     },
     {
       "nome": "Haemophilus Influenzae",
-      "sintomas": "Em baixa carga pode causar episódios ocasionais de congestão nasal. Quando ocorre aumento da carga ou queda da defesa imunológica, passa a invadir tecidos e  pode provocar otite média, sinusite, faringite e bronquite,podendo evoluir para pneumonia.",
+      "sintomas": "Pode compor a biota das vias respiratórias superiores sem causar danos. Em carga alta invade tecidos e pode provocar otite, sinusite, faringite, bronquite, bem como pneumonia.",
       "fonte": "-"
     },
     {
       "nome": "Klebsiella Pneumoniae",
-      "sintomas": "Pode causar pneumonias, infecções urinárias e intestinais em contextos de baixa imunidade.",
+      "sintomas": "Não faz parte da biota. Aparece como colonizadora oportunista no intestino, pele ou vias respiratórias em pessoas com disbiose ou imunidade fragilizada. Em carga baixa, pode permanecer silenciosa ou causar desconforto digestivo discreto ou sensibilidade respiratória. Em carga alta, pode provocar cistite, sinusite, bronquite ou, em casos mais intensos, pneumonia, além de contribuir para disbiose intestinal, gases, distensão e inflamação da mucosa.",
       "fonte": "-"
     },
     {
@@ -535,7 +535,7 @@
     },
     {
       "nome": "Mycoplasma Hominis",
-      "sintomas": "Sensibilização pulmonar e irritações respiratórias leves.",
+      "sintomas": "Pode fazer parte da biota humana em pequenas quantidades, especialmente no trato genital, mas não é considerado um microrganismo totalmente benigno; torna-se oportunista quando há disbiose ou imunidade reduzida. Em carga baixa, costuma ser assintomático ou causar irritação discreta, corrimento leve ou desconforto geniturinário sutil. Em carga alta, pode provocar uretrite, vaginose, dor pélvica, ardor ao urinar, alterações do fluxo vaginal, desconforto após relações e inflamação genital. Em casos mais avançados, pode contribuir para doença inflamatória pélvica, infertilidade, complicações na gravidez.",
       "fonte": "Ambientes com poeira orgânica."
     },
     {
@@ -582,7 +582,7 @@
     },
     {
       "nome": "Candida Albicans",
-      "sintomas": "Quando em desequilíbrio causa disbiose, inflamação de mucosas, fadiga, alterações cognitivas e sobrecarga imunometabólica.",
+      "sintomas": "Pode compor a biota intestinal, cutânea e de mucosas sem causar danos. Em carga alta, pode provocar candidíase oral, vaginal, cutânea, distensão abdominal, gases, fadiga e, em imunossuprimidos, infecção sistêmica.",
       "fonte": "-"
     },
     {
@@ -602,7 +602,7 @@
     },
     {
       "nome": "Criptococcus Neoformans",
-      "sintomas": "Pode existir em baixa carga no organismo sem causar sintomas aparentes, no máximo irritação leve e tosse discreta. Quando a carga ou quando a imunidade está comprometida  o fungo pode atravessar o pulmão, disseminar-se pelo sangue e atingir principalmente o sistema nervoso central, causando pneumonia fúngica, cau forte resposta inflamatória, febre, dor torácica, mal-estar, e nos quadros mais graves desencadeia meningite criptocócica, com cefaleia intensa, rigidez de nuca, confusão mental, náuseas, vômitos, alterações neurológicas.",
+      "sintomas": "Pode colonizar vias respiratórias sem sintomas. Em alta carga ou imunossupressão pode causar pneumonia fúngica e meningite criptocócica, com cefaleia e alterações neurológicas.",
       "fonte": "Inalação de poeira contaminada por excrementos de aves."
     },
     {
@@ -612,12 +612,12 @@
     },
     {
       "nome": "Malassezia furfur",
-      "sintomas": "Vive normalmente na pele humana, e em baixa carga pode apenas gerar oleosidade discreta e leve descamação. Quando ocorre aumento da carga por calor, umidade, sudorese excessiva, imunidade reduzida ou desequilíbrios metabólicos passa a causar pitiríase versicolor (manchas claras ou escuras na pele, com descamação fina), dermatite seborreica (caspa, vermelhidão, coceira no couro cabeludo, face e tórax) e foliculite. Em situações raras e geralmente associadas à imunossupressão pode estar relacionada a infecções sistêmicas.",
+      "sintomas": "Vive na pele humana e em baixa carga pode gerar oleosidade discreta e leve descamação. Em alta carga pode  causar pitiríase versicolor (manchas claras ou escuras na pele, com descamação), dermatite seborreica (caspa, vermelhidão, coceira no couro cabeludo, face e tórax) e foliculite. Em situações associadas a imunossupressão pode provocar infecções sistêmicas.",
       "fonte": "Microbiota da pele; proliferação aumentada em ambientes úmidos."
     },
     {
       "nome": "Candida glabrata",
-      "sintomas": "Candidíase resistente",
+      "sintomas": "Pode colonizar mucosas sem sintomas. Em carga alta pode causar candidíase vaginal ou urinária.",
       "fonte": "Trato urinário/vaginal"
     },
     {
@@ -632,7 +632,7 @@
     },
     {
       "nome": "Candida krusei",
-      "sintomas": "Resistente a fluconazol",
+      "sintomas": "Pode fazer parte da biota humana em pequenas quantidades, instalando-se principalmente no intestino, pele e mucosas. Pode gerar leve desconforto digestivo. Em carga alta, pode favorecer disbiose, distensão, fermentação excessiva, intolerância a açúcares, aumento da permeabilidade intestinal, irritação de mucosas (oral ou vaginal) e alterações do eixo intestino-cérebro, como ansiedade e fadiga. ",
       "fonte": "Hospitais"
     },
     {
@@ -662,7 +662,7 @@
     },
     {
       "nome": "Aspergillus fumigatus",
-      "sintomas": "Aspergilose",
+      "sintomas": "Pode colonizar as vias respiratórias, sem causar doença ou provocar  irritação leve, tosse discreta e aumento da sensibilidade alérgica. Em carga alta, pode favorecer inflamação pulmonar, sinusite fúngica, piora de asma e quadros alérgicos como aspergilose broncopulmonar.",
       "fonte": "Ambientes úmidos"
     },
     {
@@ -702,17 +702,17 @@
     },
     {
       "nome": "Candida Saccharomyces",
-      "sintomas": "Alterações gastrointestinais e irritação em mucosas.",
+      "sintomas": "Pode integrar a biota intestinal sem danos. Em alta carga pode causar distensão abdominal, gases, diarreia, fermentação excessiva e exacerbação da disbiose intestinal.",
       "fonte": "Alimentos fermentados e superfícies úmidas."
     },
     {
       "nome": "Epidermophyton Floccosum",
-      "sintomas": "Descamação, coceira e irritação da pele.",
+      "sintomas": "Não faz parte da biota humana. Instala-se na pele, unhas e pregas úmidas (virilha, axilas, entre os dedos dos pés). Em carga baixa, pode causar  irritação discreta, leve descamação ou coceira. Em carga alta pode provocar micose corporal, na virilha ou no pé com vermelhidão, coceira, descamação, fissuras, mau odor e inflamação local.",
       "fonte": "Pisos úmidos, toalhas e roupas."
     },
     {
       "nome": "Microsporum Canis",
-      "sintomas": "Lesões circulares, coceira e inflamação.",
+      "sintomas": "Aloja-se na pele e no couro cabeludo. Em baixa carga causa lesões discretas. Em alta carga provoca queda de cabelo, descamação, prurido e infecções dermatofíticas extensas.",
       "fonte": "Contato com animais domésticos infectados."
     },
     {
@@ -737,8 +737,18 @@
   ],
   "protozoário": [
     {
+      "nome": "Iodamoeaba Buetschlii",
+      "sintomas": "Pode aparecer como comensal,  mas não faz parte da biota saudável. Geralmente indica disbiose intestinal. Em carga baixa, pode ser assintomática ou causar adiscreto desconforto abdominal e gases Em carga alta, pode provocar dor abdominal, diarreia, distensão, náuseas e irritação da mucosa, favorecendo disbiose e aumento da permeabilidade intestinal. Em pessoas sensíveis, pode contribuir para fadiga e irritabilidade pelo eixo intestino-cérebro.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Dientamoeba Fragilis",
+      "sintomas": "Não faz parte da biota humana. Instala-se no intestino e em carga baixa, pode ser assintomático ou causar gases e dor abdominal. Em carga alta, pode provocar diarreia, dor abdominal mais intensa, cólicas, distensão, náuseas e irritação da mucosa intestinal, favorecendo disbiose e aumento da permeabilidade; em alguns casos, pode contribuir para fadiga e irritabilidade via eixo intestino-cérebro.",
+      "fonte": "-"
+    },
+    {
       "nome": "Balantidium coli",
-      "sintomas": "Diarreia leve, gases e desconforto abdominal, mantendo irritação discreta da mucosa intestinal. Em carga alta, causa diarreia intensa (às vezes com muco ou sangue), dor abdominal forte, náuseas, febre e desidratação, podendo evoluir para colite inflamatória, úlceras intestinais e anemia em casos mais graves.",
+      "sintomas": "Não faz parte da biota humana. Pode causar diarreia leve, gases e desconforto abdominal, mantendo irritação discreta da mucosa intestinal. Em carga alta, causa diarreia intensa (às vezes com muco ou sangue), dor abdominal forte, náuseas, febre e desidratação, podendo evoluir para colite inflamatória, úlceras intestinais e anemia em casos mais graves.",
       "fonte": "-"
     },
     {
@@ -753,12 +763,12 @@
     },
     {
       "nome": "Toxoplasma Gondii",
-      "sintomas": "Não faz parte da biota humana. Em carga baixa, a infecção pode ser assintomática ou provocar cansaço, dor muscular e aumento discreto de gânglios linfáticos. Em carga alta, pode provocar febre, inflamação sistêmica, comprometimento neurológico e ocular, além de representar risco significativo para gestantes e imunossuprimidos.",
+      "sintomas": "Infecção geralmente assintomática, podendo impactar sistema nervoso, muscular e imunológico, especialmente em imunossupressão.",
       "fonte": "-"
     },
     {
       "nome": "Trypanosoma Cruzi",
-      "sintomas": "Não faz parte da biota humana. Em carga baixa, a infecção pode ser assintomática ou provocar febre e cansaço. Em carga alta, pode causar febre, inchaço nas extremidades e aumento do fígado e baço. A forma crônica pode levar a complicações cardíacas.",
+      "sintomas": "Pode provocar comprometimento cardíaco, digestivo e neurológico progressivo, com impacto energético profundo no longo prazo.",
       "fonte": "-"
     },
     {
@@ -798,7 +808,7 @@
     },
     {
       "nome": "Leishmania mexicana",
-      "sintomas": "Em quantidade alta, causa leishmaniose cutânea, com feridas na pele que não cicatrizam, inflamação local, possível infecção secundária e cicatrizes permanentes em casos raros, pode haver disseminação e impacto no estado geral.",
+      "sintomas": "Não faz parte da biota humana. Instala-se  principalmente na pele e, em alguns casos, nas mucosas. Em carga baixa, pode gerar um nódulo discreto, irritação local ou pequena lesão que não cicatriza. Em carga alta, pode provocar úlceras cutâneas e inflamação persistente.",
       "fonte": "Picada do mosquito-palha (flebotomíneo)"
     },
     {
@@ -840,7 +850,7 @@
   "helminto": [
     {
       "nome": "Felineus Opisthorhis",
-      "sintomas": "Dor abdominal, febre e inflamação das vias biliares.",
+      "sintomas": "Dor abdominal no quadrante superior direito, náuseas, vômitos, diarreia, distensão abdominal, fadig, e reações alérgicas como urticária; com a cronicidade, pode causar colecistite, colangite, hepatomegalia, icterícia, intolerância a alimentos gordurosos, pancreatite e aumento do risco de doenças hepáticas crônicas.",
       "fonte": "Água e alimentos contaminados."
     },
     {
@@ -870,7 +880,7 @@
     },
     {
       "nome": "Fasciolopsis buskii adult",
-      "sintomas": "Diarreia crônica, dor abdominal e má absorção.",
+      "sintomas": "Não faz parte da biota humana.Pode estar presente no duedono e intestino sem causar danos. Em alta carga pode provocar inflamação intestinal, diarreia, dor abdominal, má absorção, anemia e, em infestações maciças, obstrução intestinal.",
       "fonte": "Plantas aquáticas contaminadas."
     },
     {
@@ -920,7 +930,7 @@
     },
     {
       "nome": "Taenia saginata",
-      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode permanecer assintomática ou causar distensão abdominal, gases, alterações do apetite e eliminação ocasional de proglotes nas fezes. Em carga alta, pode provocar dor abdominal, diarreia ou constipação alternadas, perda de peso, anemia leve, deficiência nutricional e irritação intestinal crônica, interferindo na absorção de nutrientes e contribuindo para processos inflamatórios e desequilíbrios metabólicos.",
+      "sintomas": "Teníase",
       "fonte": "Carne bovina crua"
     },
     {
@@ -960,7 +970,7 @@
     },
     {
       "nome": "Eurytrema pancreatico",
-      "sintomas": "Não faz parte da biota humano. Tende a se instalar no pâncreas, nos ductos pancreáticos e vias biliares. Em carga baixa, pode permanecer silencioso ou causar leve desconforto abdominal, náuseas ocasionais ou alterações da digestão de gorduras. Em carga alta, pode favorecer inflamação do pâncreas, má digestão, empachamento após refeições, dor  no abdômen, gases, alteração das enzimas digestivas , agravamento de disbiose intestina e piora funcional do pâncreas. ",
+      "sintomas": "Não faz parte da biota humano. Tende a se instalar no pâncreas, nos ductos pancreáticos e vias biliares. Em carga baixa, pode permanecer silencioso ou causar leve desconforto abdominal, náuseas ocasionais ou alterações da digestão de gorduras. Em carga alta, pode favorecer inflamação do pâncreas, má digestão, empachamento após refeições, dor  no abdômen, gases, alteração das enzimas digestivas , agravamento de disbiose intestina e piora funcional do pâncreas.",
       "fonte": "Insetos / plantas"
     },
     {
@@ -970,7 +980,7 @@
     },
     {
       "nome": "Echinococcus multilocularis",
-      "sintomas": "Lesões hepáticas, dor abdominal e febre intermitente.",
+      "sintomas": "Aloja-se inicialmente no fígado, podendo permanecer assintomático por anos formando pequenas lesões larvárias de crescimento lento. Quando as lesões aumentam e se infiltram nos tecidos ao redor, podem  causar dor abdominal, aumento do fígado, icterícia, fadiga, perda de peso, e, em fases avançadas, disseminar-se para pulmões, cérebro e outros órgãos..",
       "fonte": "Alimentos contaminados e contato com animais silvestres."
     },
     {
@@ -990,7 +1000,7 @@
     },
     {
       "nome": "Enterobius Vermicularis",
-      "sintomas": "Em baixa carga parasitária gera uma colonização silenciosa que pode iniciar uma princípio de inflamação. Se a carga aumenta  pode causar coceira anal  levando a irritabilidade, distúrbios do sono, ansiedade e dificuldade de concentração; pode provocar ainda desconforto abdominal leve, gases, náuseas, diarreia ocasional e inflamação intestinal persistente. Em meninas e mulheres, a migração desse verme pode causar vulvovaginite (prurido genital, corrimento, ardor), e raramente surgem complicações como apendicite, infecções urinárias ou inflamação pélvica.",
+      "sintomas": "Pode integrar a biota intestinal sem danos. Em carga  alta pode causar  prurido anal, distúrbios do sono, irritabilidade, dor e vulvovaginite em mulheres.",
       "fonte": "-"
     },
     {
@@ -1010,7 +1020,7 @@
     },
     {
       "nome": "Ascaris Lumbricoides",
-      "sintomas": "Sobrecarga intestinal com inflamação crônica leve, prejuízo na absorção de nutrientes e impacto no eixo imunológico e energético.",
+      "sintomas": "Não faz parte da biota humana. Aloja-se principalmente no intestino e em carga baixa pode causar desconforto leve, gases, distensão e alteração discreta da mucosa, além de fase pulmonar inicial com tosse leve e irritação brônquica. Em carga alta, gera dor abdominal, náuseas, inflamação persistente, maior permeabilidade intestina, sensibilização imunológica, além de poder migrar para outros órgãos, como ductos biliares, ducto pancreático, fígado e vesícula, podendo desencadear crises inflamatórias mais amplas.",
       "fonte": "-"
     }
   ],

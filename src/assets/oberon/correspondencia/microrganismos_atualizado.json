@@ -174,8 +174,10 @@
   "Meningococo": "Neisseria meningitidis",
   "Coxsackievírus B4": "Coxsackievírus",
   "Coxsackie vírus, a 22": "Coxsackievírus",
+  "Coxsackie A 22": "Coxsackievírus",
   "Neisseria Meningococcal": "Neisseria meningitidis",
   "O Vírus Hiv - Infecção": "Hiv",
+  "Dientamoeba Fragilis": "Dientamoeba Fragilis",
   "Borrelia Burgdorferi": "Borellia burgdorferi",
   "Borrelia miyamotoi": "Borellia miyamotoi",
   "Shigella flexneri": "Shigella flexneri",
@@ -221,5 +223,6 @@
   "Bartonella Henselae": "Bartonella Henselae",
   "Yersinia Enterocolitica": "Yersinia Enterocolitica",
   "Fasciolopsis Buskii Eggs": "Fasciolopsis Buskii Eggs",
-  "Fasciolopsis buskii eggs unincubated": "Fasciolopsis Buskii Eggs"
+  "Fasciolopsis buskii eggs unincubated": "Fasciolopsis Buskii Eggs",
+  "Iodamoeaba Buetschlii": "Iodamoeaba Buetschlii"
 }
