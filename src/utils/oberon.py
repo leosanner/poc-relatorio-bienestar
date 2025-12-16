@@ -15,15 +15,21 @@ important_microrganisms = [
     "ascaris",
     "bacillus cereus",
     "candida",
+    "clamydia",
     "chlamydia",
+    "Cryptococcus neoformans",
     "cytomegalovirus",
     "epstein barr",
     "h. pylori",
     "meningitidis",
     "mycobacterium tuberculosis",
     "staphylococcus",
+    "streptococcus",
+    "Streptococcus pneumoniae",
+    "papiloma",
     "hepatite",
     "varicela",
+    "haemophilus influenza",
 ]
 
 
