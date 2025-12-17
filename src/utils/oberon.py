@@ -201,7 +201,7 @@ def microorganism_info(
     scpecial_micro = [
         "hepatite d",
         "hepatite c",
-        "hepatite d",
+        "hepatite e",
         "hepatite b",
         "influenza a",
         "hepadnovirus b",
@@ -227,7 +227,7 @@ def microorganism_info(
                 for obj in objs:
                     if obj["nome"].title() == match_name:
 
-                        if obj["nome"] in scpecial_micro:
+                        if obj["nome"].lower() in scpecial_micro:
                             new_obj["nome"] = match_name.title()
                         else:
                             new_obj["nome"] = first_char_uppercase(match_name)
