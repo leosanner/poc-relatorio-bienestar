@@ -1,4 +1,4 @@
-def sort_by_d(content_obj):
+def sort_by_d(content_obj, reverse=False):
 
     if not isinstance(content_obj, list):
         raise TypeError("A função deve receber uma lista.")
@@ -7,10 +7,10 @@ def sort_by_d(content_obj):
         return content_obj
 
     if isinstance(content_obj[0], dict):
-        return sorted(content_obj, key=lambda x: x["D"], reverse=False)
+        return sorted(content_obj, key=lambda x: x["D"], reverse=reverse)
 
     if isinstance(content_obj[0], list):
-        return sorted(content_obj, key=lambda x: x[-1], reverse=False)
+        return sorted(content_obj, key=lambda x: x[-1], reverse=reverse)
 
 
 def remove_duplicates(content_obj):

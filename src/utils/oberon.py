@@ -215,23 +215,27 @@ def microorganism_info(
 
     for k, v in oberon_microorganism_content.items():
         formated_key = k.title()
+        new_obj = {}
+
         if k.lower() in microorganism_sw:
             continue
 
         if microorganism_match.get(formated_key):
             match_name = microorganism_match.get(formated_key).title()
+
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
                     if obj["nome"].title() == match_name:
 
                         if obj["nome"] in scpecial_micro:
-                            obj["nome"] = match_name.title()
+                            new_obj["nome"] = match_name.title()
                         else:
-                            obj["nome"] = first_char_uppercase(match_name)
+                            new_obj["nome"] = first_char_uppercase(match_name)
 
-                        obj["D"] = v
-                        obj["tipo"] = m_type.title()
-                        content.append(obj)
+                        new_obj["D"] = v
+                        new_obj["tipo"] = m_type.title()
+                        new_obj["sintomas"] = obj["sintomas"]
+                        content.append(new_obj)
 
                         break
         else:
@@ -241,9 +245,10 @@ def microorganism_info(
 
             content.append(d)
 
-    unique_content = remove_duplicates(content)
+    sorted_elements = sort_by_d(content)  # ver exemplo com reverse
+    unique_content = remove_duplicates(sorted_elements)
 
-    return sort_by_d(unique_content)
+    return unique_content
 
 
 def food_info(food_content: dict):
