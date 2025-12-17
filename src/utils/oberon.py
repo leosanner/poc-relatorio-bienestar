@@ -211,6 +211,8 @@ def microorganism_info(
     microorganism_information = load_test_information(json_file)
     microorganism_match = load_match_information(json_file)
 
+    microorganism_sw = [w.lower() for w in microorganism_sw]
+
     content = []
 
     for k, v in oberon_microorganism_content.items():

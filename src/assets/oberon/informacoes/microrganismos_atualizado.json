@@ -244,11 +244,11 @@
   "bactéria": [
     {
       "nome": "Borellia miyamotoi",
-      "efeitos": "Não faz parte da biota humana. Em baixa carga, a nfecção pode ser assintomática ou causar sintomas leves, como febre, fadiga, dor de cabeça e mal-estar. Em carga alta, pode provocar febre alta, calafrios, mialgias, dor de cabeça intensa e, em alguns casos, envolvimento neurológico (meningite ou meningoencefalite), sobretudo em pessoas imunocomprometidas."
+      "sintomas": "Não faz parte da biota humana. Em baixa carga, a nfecção pode ser assintomática ou causar sintomas leves, como febre, fadiga, dor de cabeça e mal-estar. Em carga alta, pode provocar febre alta, calafrios, mialgias, dor de cabeça intensa e, em alguns casos, envolvimento neurológico (meningite ou meningoencefalite), sobretudo em pessoas imunocomprometidas."
     },
     {
       "nome": "Borellia burgdorferi",
-      "efeitos": "Não faz parte da biota humana. Em baixa carga causa cansaço leve, dores no corpo, dor de cabeça e sensação de mal-estar, muitas vezes confundidos com estresse ou virose. Em carga, provoca febre, fadiga intensa, dor nas articulações, dor muscular, dor de cabeça forte e, em alguns casos, mancha avermelhada na pele.",
+      "sintomas": "Não faz parte da biota humana. Em baixa carga causa cansaço leve, dores no corpo, dor de cabeça e sensação de mal-estar, muitas vezes confundidos com estresse ou virose. Em carga, provoca febre, fadiga intensa, dor nas articulações, dor muscular, dor de cabeça forte e, em alguns casos, mancha avermelhada na pele.",
       "fonte": "Picada de carrapatos infectados (gênero Ixodes — “deer ticks” / carrapatos-de-veado)"
     },
 
