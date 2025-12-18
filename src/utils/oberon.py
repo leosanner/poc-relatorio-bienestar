@@ -224,6 +224,8 @@ def microorganism_info(
 
         if microorganism_match.get(formated_key):
             match_name = microorganism_match.get(formated_key).title()
+            if match_name.lower() in microorganism_sw:
+                continue
 
             for m_type, objs in microorganism_information.items():
                 for obj in objs:
@@ -255,6 +257,7 @@ def microorganism_info(
 
 def food_info(food_content: dict):
     food_sw = load_stopwords("alimentos.json")
+    food_sw = [f.lower() for f in food_sw]
     food_match = load_match_information("alimentos.json")
 
     content = []

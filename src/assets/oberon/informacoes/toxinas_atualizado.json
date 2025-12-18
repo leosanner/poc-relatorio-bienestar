@@ -114,12 +114,6 @@
     "fontes": "Indústria química."
   },
   {
-    "nome": "Amianto (Asbesto)",
-    "tipo": "Fibra mineral",
-    "efeitos": "Asbestose, mesotelioma.",
-    "fontes": "Construção antiga."
-  },
-  {
     "nome": "Radiação Gama",
     "tipo": "Radiação ionizante",
     "efeitos": "Danos ao DNA, câncer.",
@@ -140,7 +134,7 @@
   {
     "nome": "Radiação",
     "tipo": "Radiação ionizante",
-    "efeitos": "Cansaço persistente, diminuição das células sanguíneas (anemia, baixa de plaquetas ou leucócitos), problemas de pele, maior risco de câncer ao longo dos anos, catarata, distúrbios hormonais ou da tireoide.",
+    "efeitos": "Pode favorecer estresse oxidativo, inflamação crônica de baixo grau, alterações do sono, fadiga persistente, cefaleias, dificuldade de concentração e maior sobrecarga do sistema nervoso e imunológico, especialmente em indivíduos já fragilizados. Em exposição elevada ou prolongada, pode provocar danos ao DNA, morte celular, disfunção da medula óssea, alterações hormonais, infertilidade eenvelhecimento precoce dos tecidos.",
     "fontes": "-"
   },
   {
@@ -314,7 +308,7 @@
   {
     "nome": "Flúor",
     "tipo": "Halogênio químico",
-    "efeitos": "Em excesso: fluorose, irritação gastrointestinal",
+    "efeitos": "Rigidez, dor articular, calcificações anormais, disfunção da tireoide, possíveis efeitos neurológicos como redução da atenção e da memória em contextos de exposição excessiva.",
     "fontes": "Água fluoretada, pastas de dente"
   },
   {
@@ -326,7 +320,7 @@
   {
     "nome": "Ouro",
     "tipo": "Metal nobre",
-    "efeitos": "Baixa toxicidade",
+    "efeitos": "Sobrecarga hepática e renal, alterações do sistema imunológico, fadiga persistente, dificuldade de concentração e interferência em processos enzimáticos ao competir com minerais essenciais como zinco e cobre.",
     "fontes": "Joias, mineração"
   },
   {
@@ -368,7 +362,7 @@
   {
     "nome": "Estrôncio",
     "tipo": "Metal",
-    "efeitos": "Alterações ósseas em excesso",
+    "efeitos": "Alterações ósseas.",
     "fontes": "Água, solo"
   },
   {
@@ -452,7 +446,7 @@
   {
     "nome": "Insecticidas",
     "tipo": "Tóxico agrícola",
-    "efeitos": "Fadiga, icterícia, náusea, vômito, dor abdominal, febre, anorexia, urina escura, fezes claras, mal-estar.",
+    "efeitos": "Fadiga, náusea, vômito, dor abdominal, febre, urina escura, fezes claras, mal-estar.",
     "fontes": "Pulverização"
   },
   {
@@ -500,7 +494,7 @@
   {
     "nome": "Toxinas Nervosas",
     "tipo": "Categoria geral",
-    "efeitos": "Estresse",
+    "efeitos": "Fadiga mental, dificuldade de concentração, lapsos de memória, alterações do humor, ansiedade, irritabilidade, distúrbios do sono e redução da tolerância ao estresse. Em exposição elevava ou prolongada, podem provocar tremores, formigamentos, fraqueza muscular, alterações cognitivas, depressão, crises convulsivas e comprometimento da coordenação motora.",
     "fontes": "Fatores emocionais"
   },
   {
@@ -518,7 +512,7 @@
   {
     "nome": "Amianto",
     "tipo": "Fibra tóxica",
-    "efeitos": "Doença pulmonar e câncer",
+    "efeitos": "Fibrose pulmonar progressiva, redução da capacidade respiratória, dor torácica, tosse crônica, além de aumentar significativamente o risco de câncer de pulmão e mesotelioma (tumor agressivo da pleura e do peritônio).",
     "fontes": "Construção antiga"
   },
   {
@@ -566,7 +560,7 @@
   {
     "nome": "Prata",
     "tipo": "Metal",
-    "efeitos": "Toxicidade rara",
+    "efeitos": "Sobrecarga hepática e renal, alterações neurológicas como cefaleia e lentificação cognitiva, interferência na produção de energia celular.",
     "fontes": "Joias, indústria"
   },
   {
@@ -738,7 +732,7 @@
     "fontes": "Homeopatia"
   },
   {
-    "nome": "Antimónio",
+    "nome": "Antimônio",
     "tipo": "Metal",
     "efeitos": "Náuseas, irritação pulmonar e fadiga.",
     "fontes": "Indústrias têxteis, plásticos, combustão."
@@ -752,7 +746,7 @@
   {
     "nome": "Bismuto",
     "tipo": "Metal",
-    "efeitos": "Baixa toxicidade; pode causar desconforto gastrointestinal.",
+    "efeitos": "Pode causar desconforto gastrointestinal.",
     "fontes": "Cosméticos, medicamentos, ligas metálicas."
   },
   {

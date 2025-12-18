@@ -7,7 +7,7 @@
     },
     {
       "nome": "Cytomegalovirus",
-      "sintomas": "Geralmente assintomático, mas pode contribuir para inflamação crônica e fadiga em quadros de baixa imunidade.",
+      "sintomas": "Pode fazer parte da biota viral humana em estado latente, permanecendo inativo no organismo após a infecção inicial. Em carga baixa, geralmente é assintomático ou causa sintomas leves  como fadiga, mal-estar, dores musculares e leve inflamação sistêmica, muitas vezes confundidos com estresse ou queda imunológica. Em carga alta especialmente quando há imunidade comprometida, pode provocar febre persistente, fadiga intensa,,aumento do fígado e do baço, inflamação gastrointestinal, alterações hematológicas e comprometimento neurológico.",
       "fonte": "-"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "nome": "Chikungunya Vírus",
-      "sintomas": "Caracteriza-se por inflamação articular intensa, fadiga prolongada e impacto musculoesquelético.",
+      "sintomas": "Em carga baixa, pode causar febre moderada, mal-estar, cansaço, dor de cabeça e dores articulares leves. Em carga alta, pode provocar febre alta, dores articulares intensas e incapacitantes, rigidez, inchaço das articulações, dores musculares, fadiga profunda, dificuldade de mobilidade e, em alguns casos, persistência de dor articular e inflamação por meses ou anos.",
       "fonte": "-"
     },
     {
@@ -289,12 +289,12 @@
     },
     {
       "nome": "Salmonella Paratyphi B",
-      "sintomas": "Diarreia, febre, dor abdominal.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode provocar um quadro gastrointestinal leve, com diarreia, dor abdominal, náuseas, febre baixa e mal-estar. Em carga alta, pode causar febre persistente, fraqueza intensa, forte dor abdominal, diarreia ou constipação, cefaleia, aumento do fígado e do baço e inflamação sistêmica .",
       "fonte": "Ingestão de alimentos ou água contaminados."
     },
     {
       "nome": "Enterococcus gallinarum",
-      "sintomas": "Infecções urinárias ou intra-abdominais em casos oportunistas.",
+      "sintomas": "Faz parte da biota humana. Em carga baixa, pode passar despercebido, mantendo-se restrito ao intestino. Em carga alta, quando há disbiosel e/ou aumento da permeabilidade intestinal, pode favorecer a inflamação crônica da mucosa, desconforto abdominal, distensão e  alterações do trânsito intestinal. Em contextos mais avançados, pode deslocar-se para outros tecidos e contribuir para  processos inflamatórios sistêmicos e autoimunes.",
       "fonte": "Trato gastrointestinal; transmissão por contaminação fecal."
     },
     {
@@ -454,7 +454,7 @@
     },
     {
       "nome": "Staphylococcus Aureus",
-      "sintomas": "Pode fazer parte da biota humana, especialmente da pele e das mucosas, como as narinas. E carga baixa, pode permanecer apenas como colonização assintomática ou causar infecções leves, como foliculite, pequenas inflamações cutâneas, furúnculos isolados ou irritação local. Em carga alta, pode provocar infecções mais significativas, incluindo abscessos, infecções de feridas, sinusite, pneumonia, infecções urinárias ou sistêmicas.",
+      "sintomas": "Pode fazer parte da biota humana, especialmente da pele e das mucosas, como as narinas. Em carga baixa, pode permanecer s como colonização assintomática ou causar infecções leves, como foliculite, pequenas inflamações cutâneas, furúnculos isolados ou irritação local. Em carga alta, pode provocar infecções mais significativas, incluindo abscessos, infecções de feridas, sinusite, pneumonia, infecções urinárias ou sistêmicas.",
       "fonte": "-"
     },
     {
@@ -490,6 +490,16 @@
     {
       "nome": "Neisseria Meningitidis",
       "sintomas": "Pode colonizar a nasofaringe sem causar sintomas. Em maior replicação pode causar meningite e septicemia.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Streptococcus haemolyticus A",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode provocar  dor de garganta, amigdalite, febre, mal-estar, inflamação das vias aéreas superiores. Em carga alta,  pode causar quadros mais graves, como escarlatina, infecções cutâneas (impetigo, erisipela), febre alta, dor intensa e resposta inflamatória sistêmica.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Streptococcus gallolyticus",
+      "sintomas": "Pode fazer parte da biota humana. Em carga baixa, geralmente permanece assintomático. Em carga alta, pode indicar disbiose intestinal e inflamação da mucosa e está associado a endocardite e lesões do cólon.",
       "fonte": "-"
     },
     {
@@ -534,7 +544,7 @@
     },
     {
       "nome": "Mycoplasma Hominis",
-      "sintomas": "Pode fazer parte da biota humana em pequenas quantidades, especialmente no trato genital, mas não é considerado um microrganismo totalmente benigno; torna-se oportunista quando há disbiose ou imunidade reduzida. Em carga baixa, costuma ser assintomático ou causar irritação discreta, corrimento leve ou desconforto geniturinário sutil. Em carga alta, pode provocar uretrite, vaginose, dor pélvica, ardor ao urinar, alterações do fluxo vaginal, desconforto após relações e inflamação genital. Em casos mais avançados, pode contribuir para doença inflamatória pélvica, infertilidade, complicações na gravidez.",
+      "sintomas": "Pode fazer parte da biota, mas se torna oportunista quando há disbiose ou imunidade reduzida. Em carga baixa, costuma ser assintomático ou causar corrimento leve e desconforto geniturinário. Em carga alta, pode provocar uretrite, vaginose, dor pélvica, ardor ao urinar, alterações do fluxo vaginal, desconforto após relações e inflamação genital. Em casos mais avançados, pode contribuir para doença inflamatória pélvica, infertilidade e complicações na gravidez.",
       "fonte": "Ambientes com poeira orgânica."
     },
     {
@@ -616,7 +626,7 @@
     },
     {
       "nome": "Candida glabrata",
-      "sintomas": "Não faz parte da biota humana, embora possa estar presente como colonizador oportunista das mucosas, especialmente intestinal e urogenital. Em baixa carga, geralmente é assintomática. Em carga elevada, pode causar inflamação intestinal ou vaginal, ardor, prurido, corrimento, disbiose podendo evoluir para infecções sistêmicas em pessoas imunocomprometidas.",
+      "sintomas": "Pode fazer parte da microbiota humana especialmente no trato gastrointestinal e geniturinário. Em carga baixa, costuma permanecer assintomática. Em carga alta, particularmente quando há disbiose intestinal, imunidade reduzida ou uso frequente de antibióticos, pode provocar candidíase vaginal persistente, inflamação intestinal, desconforto abdominal, gases, fadiga, maior permeabilidade intestinal e ativação inflamatória crônica.",
       "fonte": "Trato urinário/vaginal"
     },
     {
@@ -626,7 +636,7 @@
     },
     {
       "nome": "Candida parapsilosis",
-      "sintomas": "ITU neonatal",
+      "sintomas": "Pode fazer parte da microbiota humana especialmente na pele, mucosas e trato gastrointestinal. Em carga baixa, geralmente permanece assintomática. Em carga alta, sobretudo quando há disbiose intestinal, uso prolongado de antibióticos ou imunidade comprometida, pode causar inflamação intestinal, distensão abdominal, fadiga, alterações cutâneas e, em casos mais graves,  infecções sistêmicas.",
       "fonte": "Cateteres"
     },
     {
@@ -1014,7 +1024,7 @@
     },
     {
       "nome": "Schistosoma Mansoni",
-      "sintomas": "Inflamação crônica do sistema portal com sobrecarga hepática, intestinal e repercussões imunológicas prolongadas.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode permanecer assintomático ou provocar cansaço, desconforto abdominal leve e inflamação intestinal subclínica. Em carga elevada, pode causar diarreia, dor abdominal, anemia, perda de peso, aumento do fígado e do baço, inflamação crônica do intestino.",
       "fonte": "-"
     },
     {
