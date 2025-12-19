@@ -188,7 +188,9 @@ def crystal_info(oberon_crystal_content: dict, json_file="cristais.json"):
 
 
 def microorganism_info(
-    oberon_microorganism_content: dict, json_file="microrganismos_atualizado.json"
+    oberon_microorganism_content: dict,
+    json_file="microrganismos_atualizado.json",
+    for_prosync=False,
 ):
 
     DEFAULT_VALUE = {
@@ -207,13 +209,19 @@ def microorganism_info(
         "hepadnovirus b",
     ]
 
+    content = []
+    control = None
+    if for_prosync:
+
+        for k, v in oberon_microorganism_content.items():
+            if k.lower() == "controle":
+                control = {"nome": "Controle", "D": int(v)}
+
     microorganism_sw = load_stopwords("microrganismos.json")
     microorganism_information = load_test_information(json_file)
     microorganism_match = load_match_information(json_file)
 
     microorganism_sw = [w.lower() for w in microorganism_sw]
-
-    content = []
 
     for k, v in oberon_microorganism_content.items():
         formated_key = k.title()
@@ -251,6 +259,9 @@ def microorganism_info(
 
     sorted_elements = sort_by_d(content)  # ver exemplo com reverse
     unique_content = remove_duplicates(sorted_elements)
+
+    if control:
+        unique_content.insert(0, control)
 
     return unique_content
 

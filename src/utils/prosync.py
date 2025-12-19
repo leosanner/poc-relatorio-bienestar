@@ -88,7 +88,7 @@ def find_microorgnism_prosyn_info(prosync_summary: dict):
 
     content = []
 
-    return microorganism_info(prosync_summary)
+    return microorganism_info(prosync_summary, for_prosync=True)
 
     # Solução prévia
     for k, v in prosync_summary.items():

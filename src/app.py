@@ -57,7 +57,9 @@ if prosync_file:
         st.subheader("Resultado Prosync")
         # extract_prosync_content returns a dict
         prosync_data = extract_prosync_content(prosync_file)
-        df_prosync = pd.DataFrame(prosync_table_content(prosync_data)[0])
+        df_prosync = pd.DataFrame(
+            prosync_table_content(prosync_data, gen_report=True)[0]
+        )
         st.dataframe(df_prosync)
 
     except Exception as e:
