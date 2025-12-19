@@ -12,7 +12,7 @@ from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
-REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_relatorio.docx"
+REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_provisorio.docx"
 
 
 def inside_interval(val, interval):
@@ -82,7 +82,13 @@ def prosync_table_content(prosync_obj: list[dict], gen_report=False):
 
         formatted_docx.append(docx_obj)
 
-    return table_obj, formatted_docx
+    filtered_copy = formatted_docx.copy()
+    for c in filtered_copy:
+        name = c.get("nome")
+        _type = c.get("tipo")
+        c["nome"] = f"{name } - {_type}"
+
+    return table_obj, filtered_copy
 
 
 def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
@@ -135,7 +141,14 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
 
                     if min_d <= d_val <= max_d:
                         filtered.append(item)
-            context["table_microorganism"] = filtered
+
+            filtered_copy = filtered.copy()
+            for c in filtered_copy:
+                name = c.get("nome")
+                _type = c.get("tipo")
+                c["nome"] = f"{name } - {_type}"
+
+            context["table_microorganism"] = filtered_copy
 
         elif category == "cristais":
             # List of dicts
@@ -152,7 +165,6 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
             filtered = {}
             if isinstance(data, list):
                 for k, v in data:
-                    print(k, v)
                     try:
                         d_val = float(v)
                         if min_d <= d_val <= max_d:
