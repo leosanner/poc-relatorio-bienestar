@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
-from utils.oberon import extract_oberon_content, food_info
+from utils.oberon import extract_oberon_content, food_info, emotions_info
 from utils.report import generate_report, prosync_table_content
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
@@ -102,6 +102,8 @@ if oberon_files:
                 processed_data = crystal_info(raw_content)
             elif key == "alimentos":
                 processed_data = food_info(raw_content)
+            elif key == "emocoes":
+                processed_data = emotions_info(raw_content)
             else:
                 processed_data = raw_content
 

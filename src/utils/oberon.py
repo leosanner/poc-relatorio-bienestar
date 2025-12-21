@@ -294,3 +294,12 @@ def food_info(food_content: dict):
             unique_results.append([food, d])
 
     return sort_by_d(unique_results)
+
+
+def emotions_info(emotions_content: dict):
+    formated_content = {}
+    formated_content = dict(
+        sorted(emotions_content.items(), key=lambda x: x[1], reverse=False)
+    )
+
+    return {first_char_uppercase(k): v for k, v in formated_content.items()}
