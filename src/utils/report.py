@@ -82,13 +82,13 @@ def prosync_table_content(prosync_obj: list[dict], gen_report=False):
 
         formatted_docx.append(docx_obj)
 
-    filtered_copy = formatted_docx.copy()
-    for c in filtered_copy:
-        name = c.get("nome")
-        _type = c.get("tipo")
-        c["nome"] = f"{name } - {_type}"
+    # filtered_copy = formatted_docx.copy()
+    # for c in filtered_copy:
+    #     name = c.get("nome")
+    #     _type = c.get("tipo")
+    #     c["nome"] = f"{name}"
 
-    return table_obj, filtered_copy
+    return table_obj, formatted_docx
 
 
 def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
@@ -142,13 +142,13 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
                     if min_d <= d_val <= max_d:
                         filtered.append(item)
 
-            filtered_copy = filtered.copy()
-            for c in filtered_copy:
-                name = c.get("nome")
-                _type = c.get("tipo")
-                c["nome"] = f"{name } - {_type}"
+            # filtered_copy = filtered.copy()
+            # for c in filtered_copy:
+            #     name = c.get("nome")
+            #     _type = c.get("tipo")
+            #     c["nome"] = f"{name } - {_type}"
 
-            context["table_microorganism"] = filtered_copy
+            context["table_microorganism"] = filtered
 
         elif category == "cristais":
             # List of dicts

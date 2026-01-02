@@ -207,6 +207,8 @@ def microorganism_info(
         "hepatite b",
         "influenza a",
         "hepadnovirus b",
+        "salmonella paratyphi b",
+        "coxsackie b4",
     ]
 
     content = []

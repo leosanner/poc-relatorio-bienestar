@@ -2,25 +2,25 @@
   {
     "nome": "Mercúrio",
     "tipo": "Metal pesado",
-    "efeitos": "Neuropatia, tremores, déficit cognitivo.",
+    "efeitos": "Danos neurológicos, tremores, alterações sensoriais e cognitivas. Em exposições elevadas, comprometimento do sistema imunológico e dos rins.",
     "fontes": "Peixes grandes, amálgamas."
   },
   {
     "nome": "Chumbo",
     "tipo": "Metal pesado",
-    "efeitos": "Déficit cognitivo, anemia, hipertensão.",
+    "efeitos": "Déficit cognitivo, anemia, aumento da pressão arterial e danos progressivos aos rins, coração e vasos sanguíneos.",
     "fontes": "Tintas antigas, água contaminada."
   },
   {
     "nome": "Cádmio",
     "tipo": "Metal pesado",
-    "efeitos": "Doença renal, osteoporose.",
+    "efeitos": "Danos aos rins e ossos, alterações cardiovasculares e hormonais, prejuízo da fertilidade, redução da imunidade, fadiga, lentificação cognitiva e  risco de câncer.",
     "fontes": "Cigarro, fertilizantes."
   },
   {
     "nome": "Arsênio",
     "tipo": "Metalóide tóxico",
-    "efeitos": "Lesões cutâneas, neuropatia, câncer.",
+    "efeitos": "Lesões cutâneas, alterações neurológicas, neuropatia periférica e aumento do risco de câncer.",
     "fontes": "Água subterrânea."
   },
   {
@@ -38,7 +38,7 @@
   {
     "nome": "Níquel",
     "tipo": "Metal",
-    "efeitos": "Dermatites, irritação respiratória.",
+    "efeitos": "Alergias cutâneas, inflamação das vias respiratórias, alterações do sistema imunológico, aumento do estresse oxidativo e maior risco de câncer em exposições prolongadas.",
     "fontes": "Bijuterias, utensílios."
   },
   {
@@ -134,7 +134,7 @@
   {
     "nome": "Radiação",
     "tipo": "Radiação ionizante",
-    "efeitos": "Pode favorecer estresse oxidativo, inflamação crônica de baixo grau, alterações do sono, fadiga persistente, cefaleias, dificuldade de concentração e maior sobrecarga do sistema nervoso e imunológico, especialmente em indivíduos já fragilizados. Em exposição elevada ou prolongada, pode provocar danos ao DNA, morte celular, disfunção da medula óssea, alterações hormonais, infertilidade eenvelhecimento precoce dos tecidos.",
+    "efeitos": "Dano celular e ao DNA, aumento do estresse oxidativo, risco oncológico e comprometimento imunológico.",
     "fontes": "-"
   },
   {
@@ -236,7 +236,7 @@
   {
     "nome": "Alumínio",
     "tipo": "Metal adjuvante",
-    "efeitos": "Reação local, resposta imune.",
+    "efeitos": "Estimulo de forma inadequada do sistema imunológico, estresse oxidativo, interferência no metabolismo do cálcio e do ferro afetando o sistema nervoso e a saúde óssea.",
     "fontes": "Adjuvantes."
   },
   {
@@ -308,7 +308,7 @@
   {
     "nome": "Flúor",
     "tipo": "Halogênio químico",
-    "efeitos": "Rigidez, dor articular, calcificações anormais, disfunção da tireoide, possíveis efeitos neurológicos como redução da atenção e da memória em contextos de exposição excessiva.",
+    "efeitos": "Dores articulares, alterações nos ossos  e dentes, possível impacto cognitivo, distúrbios do sono, redução da melatonina e desregulação do ritmo circadiano.",
     "fontes": "Água fluoretada, pastas de dente"
   },
   {
@@ -350,7 +350,7 @@
   {
     "nome": "Tálio",
     "tipo": "Metal pesado",
-    "efeitos": "Neuropatia, náuseas",
+    "efeitos": "Fraqueza intensa, dor abdominal, náuseas, vômitos, diarreia, queda de cabelo, confusão mental, tremores e alterações do ritmo cardíaco.",
     "fontes": "Indústria"
   },
   {
@@ -362,7 +362,7 @@
   {
     "nome": "Estrôncio",
     "tipo": "Metal",
-    "efeitos": "Alterações ósseas.",
+    "efeitos": "Alterações estruturais ósseas. Na forma radioativa, aumenta o risco de doenças ósseas graves e leucemia.",
     "fontes": "Água, solo"
   },
   {
@@ -386,7 +386,7 @@
   {
     "nome": "Estanho",
     "tipo": "Metal",
-    "efeitos": "Irritação gastrointestinal",
+    "efeitos": "Irritação gastrointestinal, estresse oxidativo, náuseas e diarreia. Alguns compostos de estanho estão associados a alterações hormonais e impacto no sistema imunológico .",
     "fontes": "Latas"
   },
   {
@@ -422,13 +422,13 @@
   {
     "nome": "Álcool",
     "tipo": "Composto químico",
-    "efeitos": "Depressão do SNC",
+    "efeitos": "Lesão progressiva do fígado, inflamação intestinal, deficiência de vitaminas, danos neurológicos, prejuízo cognitivo, queda da imunidade e maior risco cardiovascular",
     "fontes": "Bebidas"
   },
   {
     "nome": "Cosméticos",
     "tipo": "Categoria química",
-    "efeitos": "Alergias",
+    "efeitos": "Alergias, desregulação hormonal, danos renais e aumento  do risco de câncer.",
     "fontes": "Produtos cosméticos"
   },
   {
@@ -444,9 +444,9 @@
     "fontes": "Infecções"
   },
   {
-    "nome": "Insecticidas",
+    "nome": "Inseticidas",
     "tipo": "Tóxico agrícola",
-    "efeitos": "Fadiga, náusea, vômito, dor abdominal, febre, urina escura, fezes claras, mal-estar.",
+    "efeitos": "Toxicidade neurológica, alterações hormonais, irritação respiratória e cutânea, sobrecarga hepática e queda da imunidade.",
     "fontes": "Pulverização"
   },
   {
@@ -458,7 +458,7 @@
   {
     "nome": "Toxinas Intestinais",
     "tipo": "Categoria biológica",
-    "efeitos": "Diarreia, transtornos gastrointestinais",
+    "efeitos": "Inflamação intestinal, distúrbios digestivos, sobrecarga hepática, fadiga, queda da imunidade e sintomas sistêmicos quando atravessam a barreira intestinal.",
     "fontes": "Bactérias intestinais"
   },
   {
@@ -470,7 +470,7 @@
   {
     "nome": "Prions",
     "tipo": "Proteína infecciosa",
-    "efeitos": "Doenças neurodegenerativas",
+    "efeitos": "Degeneração neurológica progressiva, encefalopatia, perda cognitiva e motora.",
     "fontes": "Carnes contaminadas"
   },
   {
@@ -500,7 +500,7 @@
   {
     "nome": "Lácteos",
     "tipo": "Alimentar",
-    "efeitos": "Intolerância e inflamação",
+    "efeitos": "Inflamação intestinal, produção excessiva de muco e agravamento de disbiose.",
     "fontes": "Leite e derivados"
   },
   {
@@ -512,7 +512,7 @@
   {
     "nome": "Amianto",
     "tipo": "Fibra tóxica",
-    "efeitos": "Fibrose pulmonar progressiva, redução da capacidade respiratória, dor torácica, tosse crônica, além de aumentar significativamente o risco de câncer de pulmão e mesotelioma (tumor agressivo da pleura e do peritônio).",
+    "efeitos": "Fibrose pulmonar progressiva, redução da capacidade respiratória, aumento do risco de câncer de pulmão e mesotelioma.",
     "fontes": "Construção antiga"
   },
   {
@@ -540,9 +540,9 @@
     "fontes": "Café"
   },
   {
-    "nome": "Farmacéuticos",
+    "nome": "Fármacos",
     "tipo": "Categoria química",
-    "efeitos": "Efeitos variados",
+    "efeitos": "Sobrecarga hepática e renal, disbiose intestinal, alterações hormonais e efeitos neurológicos cumulativos.",
     "fontes": "Medicamentos"
   },
   {
@@ -572,7 +572,7 @@
   {
     "nome": "Cloro",
     "tipo": "Halogênio",
-    "efeitos": "Irritação respiratória",
+    "efeitos": "Irritação respiratória e cutânea, estresse oxidativo, desequilíbrio da microbiota e, em altas exposições, dano pulmonar.",
     "fontes": "Piscinas"
   },
   {
@@ -734,25 +734,25 @@
   {
     "nome": "Antimônio",
     "tipo": "Metal",
-    "efeitos": "Náuseas, irritação pulmonar e fadiga.",
+    "efeitos": "Náuseas, vômitos e irritação gastrointestinal; exposições prolongadas podem afetar o coração, pulmões e fígado, com risco de alterações cardíacas.",
     "fontes": "Indústrias têxteis, plásticos, combustão."
   },
   {
     "nome": "Berílio",
     "tipo": "Metal tóxico",
-    "efeitos": "Risco de inflamação pulmonar e sensibilização respiratória.",
+    "efeitos": "Inflamação pulmonar, tosse persistente e dificuldade respiratória. A exposição crônica pode evoluir para fibrose pulmonar e aumento do risco de câncer de pulmão.",
     "fontes": "Indústria aeroespacial, eletrônicos, mineração."
   },
   {
     "nome": "Bismuto",
     "tipo": "Metal",
-    "efeitos": "Pode causar desconforto gastrointestinal.",
+    "efeitos": "Irritação gastrointestinal, náuseas e diarreia; o uso excessivo ou prolongado pode levar à sobrecarga renal.",
     "fontes": "Cosméticos, medicamentos, ligas metálicas."
   },
   {
     "nome": "Bário",
     "tipo": "Metal",
-    "efeitos": "Fraqueza muscular, alterações cardíacas e distúrbios gastrointestinais.",
+    "efeitos": "Fraqueza muscular severa, cãibras, arritmias cardíacas, dificuldade respiratória e distúrbios gastrointestinais.",
     "fontes": "Solo, água contaminada, pigmentos."
   },
   {
@@ -765,6 +765,12 @@
     "nome": "Cobre",
     "tipo": "Metal essencial",
     "efeitos": "Excesso provoca distúrbios hepáticos e neurológicos.",
+    "fontes": "Tubulações, alimentos, suplementos."
+  },
+  {
+    "nome": "Tugstênio",
+    "tipo": "Metal essencial",
+    "efeitos": "Estresse oxidativo, inflamação crônica, sobrecarga renal e metabólica.",
     "fontes": "Tubulações, alimentos, suplementos."
   },
   {
@@ -782,7 +788,7 @@
   {
     "nome": "Germânio",
     "tipo": "Metal semiprecioso",
-    "efeitos": "Em excesso pode causar nefrotoxicidade.",
+    "efeitos": "Em excesso, lesão severa dos rins, associada a anemia, fraqueza intensa e alterações neurológicas.",
     "fontes": "Suplementos não regulamentados, eletrônicos."
   },
   {
@@ -812,7 +818,7 @@
   {
     "nome": "Rubídio",
     "tipo": "Metal alcalino",
-    "efeitos": "Exposição elevada pode causar fraqueza e instabilidade metabólica.",
+    "efeitos": "Em níveis elevados, fraqueza física, cansaço e instabilidade metabólica.",
     "fontes": "Solo, alimentos cultivados, indústria."
   },
   {
@@ -890,7 +896,19 @@
   {
     "nome": "Toxinas de suínos e bovinos",
     "tipo": "Toxinas alimentares",
-    "efeitos": "Pode causar inflamação e desconforto gastrointestinal em sensíveis.",
+    "efeitos": "Inflamação e desconforto gastrointestinal.",
+    "fontes": "Carne de porco e boi, alimentos processados."
+  },
+  {
+    "nome": "Toxinas alimentares",
+    "tipo": "Toxinas alimentares",
+    "efeitos": "Inflamação crônica, desequilíbrio da flora intestinal, sobrecarga do fígado e enfraquecimento do sistema imunológico.",
+    "fontes": "Carne de porco e boi, alimentos processados."
+  },
+  {
+    "nome": "Toxinas de vacinas",
+    "tipo": "Toxinas de vacinas",
+    "efeitos": "Reações inflamatórias, ativação do sistema imunológico, fadiga, mal-estar, estresse oxidativo e sobrecarga imunológica.",
     "fontes": "Carne de porco e boi, alimentos processados."
   }
 ]
