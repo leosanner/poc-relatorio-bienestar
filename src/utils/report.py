@@ -106,6 +106,7 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
         "table_crystals": [],
         "table_food": {},
         "table_emotions": {},
+        "table_patologies": {},
     }
 
     if prosync_data:
@@ -172,6 +173,19 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
                     except ValueError:
                         pass
             context["table_food"] = filtered
+
+        elif category == "patologias":
+            # Dict {Name: Value}
+            filtered = {}
+            if isinstance(data, dict):
+                for k, v in data.items():
+                    try:
+                        d_val = float(v)
+                        if min_d <= d_val <= max_d:
+                            filtered[k] = v
+                    except ValueError:
+                        pass
+            context["table_patologies"] = filtered
 
         elif category == "emocoes":
             # Dict {Name: Value}

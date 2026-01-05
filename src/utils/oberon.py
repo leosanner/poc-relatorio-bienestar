@@ -304,4 +304,30 @@ def emotions_info(emotions_content: dict):
         sorted(emotions_content.items(), key=lambda x: x[1], reverse=False)
     )
 
+    emotions_stopwords = load_stopwords("emocoes.json")
+    emotions_match = load_match_information("emocoes.json")
+
+    formated_content = {
+        k.lower(): v
+        for k, v in formated_content.items()
+        if k.lower() not in emotions_stopwords
+    }
+    formated_content_matched = {}
+
+    for k, v in formated_content.items():
+        if emotions_match.get(k):
+            formated_content_matched[emotions_match.get(k)] = v
+
+        else:
+            formated_content_matched[k] = v
+
+    return {first_char_uppercase(k): v for k, v in formated_content_matched.items()}
+
+
+def patologies_info(patologies_content: dict):
+    formated_content = {}
+    formated_content = dict(
+        sorted(patologies_content.items(), key=lambda x: x[1], reverse=False)
+    )
+
     return {first_char_uppercase(k): v for k, v in formated_content.items()}
