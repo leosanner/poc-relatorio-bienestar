@@ -295,7 +295,21 @@ def food_info(food_content: dict):
             duplicates.append(food)
             unique_results.append([food, d])
 
-    return sort_by_d(unique_results)
+    results_sorted = sort_by_d(unique_results)
+
+    output_results_splitted = [{} for _ in range(3)]
+
+    for food_name, food_value in results_sorted:
+        if 0 <= float(food_value) <= 0.300:
+            output_results_splitted[0][food_name] = food_value
+
+        if 0.300 < float(food_value) <= 1:
+            output_results_splitted[1][food_name] = food_value
+
+        if float(food_value) > 1:
+            output_results_splitted[2][food_name] = food_value
+
+    return output_results_splitted
 
 
 def emotions_info(emotions_content: dict):

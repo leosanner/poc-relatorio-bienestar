@@ -82,21 +82,31 @@ def prosync_table_content(prosync_obj: list[dict], gen_report=False):
 
         formatted_docx.append(docx_obj)
 
-    # filtered_copy = formatted_docx.copy()
-    # for c in filtered_copy:
-    #     name = c.get("nome")
-    #     _type = c.get("tipo")
-    #     c["nome"] = f"{name}"
-
     return table_obj, formatted_docx
 
 
-def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
+def format_food_table_to_docx_template(food_content: list[dict]):
+    docx_food = []
+    max_len_food = max([len(f) for f in food_content])
+    food_content_to_list = [list(d.items()) for d in food_content]
 
-    if not REPORT_TEMPLATE_PATH.exists():
-        print(f"Template not found at {REPORT_TEMPLATE_PATH}")
-        return
+    for index_row in range(max_len_food):
+        row_content = []
+        for content in food_content_to_list:
+            if (len(content) - 1) < index_row:
+                row_content.extend([" ", " "])
+                continue
 
+            row_content.extend(content[index_row])
+
+        docx_food.append(row_content)
+
+    return docx_food
+
+
+def generate_content_for_report(
+    prosync_data, oberon_data, oberon_thresholds, patient_name
+):
     context = {
         "date": datetime.now().strftime("%d/%m/%Y"),
         "name": patient_name,
@@ -143,12 +153,6 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
                     if min_d <= d_val <= max_d:
                         filtered.append(item)
 
-            # filtered_copy = filtered.copy()
-            # for c in filtered_copy:
-            #     name = c.get("nome")
-            #     _type = c.get("tipo")
-            #     c["nome"] = f"{name } - {_type}"
-
             context["table_microorganism"] = filtered
 
         elif category == "cristais":
@@ -163,16 +167,18 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
 
         elif category == "alimentos":
             # Dict {Name: Value}
-            filtered = {}
+            filtered = [{} for _ in range(len(data))]
             if isinstance(data, list):
-                for k, v in data:
-                    try:
-                        d_val = float(v)
-                        if min_d <= d_val <= max_d:
-                            filtered[k] = v
-                    except ValueError:
-                        pass
-            context["table_food"] = filtered
+                for idx, obj_data in enumerate(data):
+                    for k, v in obj_data.items():
+                        try:
+                            d_val = float(v)
+                            if min_d <= d_val <= max_d:
+                                filtered[idx][k] = v
+                        except ValueError:
+                            pass
+
+            context["table_food"] = format_food_table_to_docx_template(filtered)
 
         elif category == "patologias":
             # Dict {Name: Value}
@@ -199,6 +205,19 @@ def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
                     except ValueError:
                         pass
             context["table_emotions"] = filtered
+
+    return context
+
+
+def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
+
+    if not REPORT_TEMPLATE_PATH.exists():
+        print(f"Template not found at {REPORT_TEMPLATE_PATH}")
+        return
+
+    context = generate_content_for_report(
+        prosync_data, oberon_data, oberon_thresholds, patient_name
+    )
 
     doc = DocxTemplate(REPORT_TEMPLATE_PATH)
     doc.render(context)
