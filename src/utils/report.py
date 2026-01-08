@@ -9,6 +9,7 @@ from docxtpl import DocxTemplate, RichText
 from datetime import datetime
 from io import BytesIO
 from utils.find_most_related_term import find_related_term
+from utils.protocol import microorganisms_treatment_block
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
