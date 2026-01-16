@@ -61,15 +61,16 @@ def oberon_table_content(oberon_obj: dict, thershold_ranges: dict):
 
 def prosync_table_content(prosync_obj: list[dict], gen_report=False):
     docx_obj_template = {"nome": "", "tipo": "", "sintomas": "", "D": ""}
+    prosync_obj_copy = prosync_obj.copy()
 
     table_obj = {"test": [], "value": []}
     formatted_docx = []
-    control = prosync_obj[0].get("D")
+    control = prosync_obj_copy[0].get("D")
 
     if gen_report:
-        prosync_obj.pop(0)
+        prosync_obj_copy.pop(0)
 
-    for data in prosync_obj:
+    for data in prosync_obj_copy:
         d = data.get("D")
         table_obj["test"].append(data.get("nome").title())
         table_obj["value"].append(f"{d}/{control}")

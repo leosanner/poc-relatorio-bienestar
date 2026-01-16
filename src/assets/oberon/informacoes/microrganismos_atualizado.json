@@ -42,7 +42,7 @@
     },
     {
       "nome": "Influenza A",
-      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar febre leve, dor no corpo, coriza e mal-estar. Em carga alta, pode evoluir para dificuldade respiratória, pneumonia e complicações sistêmicas.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, os sintomas costumam ser leves ou ausentes, como mal-estar, cansaço e leve coriza. Em carga alta, surgem os sinais típicos são febre alta, dores no corpo, fadiga intensa, tosse seca, dor de garganta e calafrios.",
       "fonte": "-"
     },
     {
@@ -56,7 +56,7 @@
       "fonte": "-"
     },
     {
-      "nome": "Human Papillomavirus (Hpv)",
+      "nome": "Human Papillomavirus (HPV)",
       "sintomas": "Pode estar presente na biota humana, especialmente nas mucosas genital, anal e orofaríngea, sem causar doença quando o sistema imunológico consegue controlá-lo. A carga elevada pode provocar  verrugas recorrentes, lesões do epitélio, sangramentos genitais fora do ciclo, ardor ou dor local. Risco para o desenvolvimento de câncer.",
       "fonte": "-"
     },
