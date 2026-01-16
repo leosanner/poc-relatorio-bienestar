@@ -1,0 +1,891 @@
+{
+  "Adenovírus": "",
+  "Cytomegalovirus": "",
+  "Ancilostoma Duodenale": [
+    "ancilostoma duodenale",
+    "ancylostoma duodenale male",
+    0.851063829787234,
+    "5000, 600"
+  ],
+  "Ascaris Lumbricoides": [
+    "ascaris lumbricoides",
+    "ascaris lumbricoides (m and f)",
+    0.8,
+    "1594, 600"
+  ],
+  "Candida Glabrata": [
+    "candida glabrata",
+    "candida glabrata",
+    1.0,
+    "3176, 600\n2642, 600\n1403, 600"
+  ],
+  "Candida glabrata": [
+    "candida glabrata",
+    "candida glabrata",
+    1.0,
+    "3176, 600\n2642, 600\n1403, 600"
+  ],
+  "Candida Krusei": "",
+  "Clostridium Perfringens": [
+    "clostridium perfringens",
+    "clostridium perfringens",
+    1.0,
+    "5000, 600"
+  ],
+  "Cryptococcus neoformans": "",
+  "Enterobius Vermicularis": [
+    "enterobius vermicularis",
+    "enterobius vermicularis",
+    1.0,
+    "1652, 600"
+  ],
+  "Escherichia coli": "",
+  "Herpes simplex": [
+    "herpes simplex",
+    "herpes simples",
+    0.9285714285714286,
+    "1141, 600; 1350, 600"
+  ],
+  "Klebsiella pneumoniae": "",
+  "Giardia lamblia": [
+    "giardia lamblia",
+    "giardia lamblia cysts",
+    0.8333333333333334,
+    "5000, 600"
+  ],
+  "Leishmania mexicana": "",
+  "Papilomavírus": [
+    "papilomavírus",
+    "hpv - papilloma virus",
+    0.7058823529411765,
+    "45, 180;   489, 180; 874, 180; 907, 180; 16970, 180; 265, 180; 5657, 180; 3203, 180; 1011, 180; 9258, 180; 3083, 180; 1051, 180; 9609, 180; 466, 180; 110, 180; 767, 180; 404, 180"
+  ],
+  "Salmonella Typhimurium": [
+    "salmonella typhimurium",
+    "salmonella typhimurium",
+    1.0,
+    "1387, 600\n1508, 600\n1523, 600"
+  ],
+  "Shigella Sonnei - Peterling": [
+    "shigella sonnei - peterling",
+    "shigella sonnei",
+    0.7142857142857143,
+    "1242, 600"
+  ],
+  "Kingella kingae": "",
+  "Vírus sincicial respiratório (VSR)": "",
+  "Staphylococcus Aureus": [
+    "staphylococcus aureus",
+    "staphylococcus aureus (culture)",
+    0.8076923076923077,
+    "424,180 \n727,180 \n786,180 \n943,180 \n1050,180"
+  ],
+  "Steroptococcus Agalactia B": [
+    "steroptococcus agalactia b",
+    "streptococcus lactis",
+    0.782608695652174,
+    "1504, 600"
+  ],
+  "Sterptococcus Virudans": [
+    "sterptococcus virudans",
+    "# streptococcus virus:",
+    0.8181818181818182,
+    "563,180 \n611,180 \n727,180\n"
+  ],
+  "Streptococcus Lactis": [
+    "streptococcus lactis",
+    "streptococcus lactis",
+    1.0,
+    "1504, 600"
+  ],
+  "Streptococcus Mitis": [
+    "streptococcus mitis",
+    "streptococcus mitis",
+    1.0,
+    "1242, 600"
+  ],
+  "Streptococcus Pneumoniae": [
+    "streptococcus pneumoniae",
+    "streptococcus pneumoniae",
+    1.0,
+    "1437, 600"
+  ],
+  "Chikungunya Vírus": [
+    "chikungunya vírus",
+    "chikungunya",
+    0.7857142857142857,
+    "5000, 600 145, 600; 267,300 ; 587,300; 142,600"
+  ],
+  "Actinomyces Israelii": "",
+  "Chikungunya": [
+    "chikungunya",
+    "chikungunya",
+    1.0,
+    "5000, 600 145, 600; 267,300 ; 587,300; 142,600"
+  ],
+  "Candida Parapsilosis": "",
+  "Taenia saginata": "",
+  "Vibrio parahaemolyticus": "",
+  "Chlamydia Trachomatis": [
+    "chlamydia trachomatis",
+    "chlamydia trachomatis",
+    1.0,
+    "1488, 600"
+  ],
+  "Gardnerella Vaginalis": [
+    "gardnerella vaginalis",
+    "gardnerella vaginalis",
+    1.0,
+    1328.6
+  ],
+  "Opistorchis felineus": "",
+  "Clostridium Difficile": [
+    "clostridium difficile",
+    "clostridium septicum",
+    0.6829268292682927,
+    "1422, 600"
+  ],
+  "Fasciola Hepatica Metacercariae": [
+    "fasciola hepatica metacercariae",
+    "fasciola hepatica cercariae",
+    0.9310344827586207,
+    "1668, 600"
+  ],
+  "Fasciola Hepatica Cercariae": [
+    "fasciola hepatica cercariae",
+    "fasciola hepatica cercariae",
+    1.0,
+    "1668, 600"
+  ],
+  "Fasciola Hepatica Miracidia": [
+    "fasciola hepatica miracidia",
+    "fasciola hepatica cercariae",
+    0.8148148148148148,
+    "1668, 600"
+  ],
+  "Fasciola Hepatica Eggs": [
+    "fasciola hepatica eggs",
+    "fasciola hepatica eggs",
+    1.0,
+    "1660, 600"
+  ],
+  "Fasciolopsis Buskii Eggs Unincubated": [
+    "fasciolopsis buskii eggs unincubated",
+    "fasciolopsis buskii eggs unincubated",
+    1.0,
+    "5000, 600"
+  ],
+  "Hepatite C": [
+    "hepatite c",
+    "hepatite geral",
+    0.75,
+    "28, 180\n1550, 180\n1351, 180\n880, 180\n802, 180\n727, 180\n224, 180\n317, 180\n329, 180\n477, 180\n922, 180"
+  ],
+  "Hepatite B": [
+    "hepatite b",
+    "hepatite geral",
+    0.75,
+    "28, 180\n1550, 180\n1351, 180\n880, 180\n802, 180\n727, 180\n224, 180\n317, 180\n329, 180\n477, 180\n922, 180"
+  ],
+  "Entamoeba Coli": [
+    "entamoeba coli",
+    "entamoeba coli cysts",
+    0.8235294117647058,
+    "5000, 600"
+  ],
+  "Staphylococcus Haemolyticus": [
+    "staphylococcus haemolyticus",
+    "staphylococcus aureus (culture)",
+    0.6551724137931034,
+    "424,180 \n727,180 \n786,180 \n943,180 \n1050,180"
+  ],
+  "Staphylococcus Epidermidis": [
+    "staphylococcus epidermidis",
+    "streptococcus mitis",
+    0.6666666666666666,
+    "1242, 600"
+  ],
+  "Clostridium Tetani": [
+    "clostridium tetani",
+    "clostridium tetani",
+    1.0,
+    "5000, 600"
+  ],
+  "Clostridium tetani": [
+    "clostridium tetani",
+    "clostridium tetani",
+    1.0,
+    "5000, 600"
+  ],
+  "Trichomonas Vaginalis": [
+    "trichomonas vaginalis",
+    "trichomonas vaginalis",
+    1.0,
+    "1488, 600"
+  ],
+  "Taenia solium": "",
+  "Influenza": "",
+  "Mycoplasma genitalium": "",
+  "Vibrio cholerae": "",
+  "Candida Tropicalis": [
+    "candida tropicalis",
+    "candida albicans",
+    0.7058823529411765,
+    414.18
+  ],
+  "Paracoccidioides brasiliensis": "",
+  "Proteus mirabilis": "",
+  "Staphylococcus saprophyticus": "",
+  "Candida Guilliermondii": "",
+  "Trichuris trichiura": "",
+  "Herpes Simplex Vírus 2": [
+    "herpes simplex vírus 2",
+    "herpes simples",
+    0.7777777777777778,
+    "1141, 600; 1350, 600"
+  ],
+  "Vírus Echo‑9": "",
+  "Dengue Vírus 1–4": [
+    "dengue vírus 1–4",
+    "dengue parte 1",
+    0.6666666666666666,
+    "464, 180\n440, 180\n3672, 180\n7766, 180\n7760, 180\n7344, 180\n1234, 180\n5000, 180\n727, 180\n787, 180"
+  ],
+  "Dengue": [
+    "dengue",
+    "dengue",
+    1.0,
+    "464, 180\n440, 180\n3672, 180\n7766, 180\n7760, 180\n7344, 180\n1234, 180\n5000, 180\n727, 180\n787, 180\n800, 180\n875, 180\n880, 180\n885, 180\n728, 180\n1550, 180\n1500, 180\n2008, 180\n20, 180\n728, 180\n440, 180\n465, 180\n613, 180\n666, 180\n727, 180\n787, 180\n800, 180\n1000, 180\n5000, 180\n10000, 180"
+  ],
+  "Fasciolopsis Buski": [
+    "fasciolopsis buski",
+    "fasciolopsis buskii adult",
+    0.8372093023255814,
+    "1695, 600"
+  ],
+  "Neisseria Gonorrhoeae": [
+    "neisseria gonorrhoeae",
+    "neisseria gonorrhea",
+    0.95,
+    1305.6
+  ],
+  "Eurytrema Pancreatico": [
+    "eurytrema pancreatico",
+    "eurytrema pancreaticum",
+    0.9302325581395349,
+    "1644, 600"
+  ],
+  "Eurytrema Pancreaticum": [
+    "eurytrema pancreaticum",
+    "eurytrema pancreaticum",
+    1.0,
+    "1644, 600"
+  ],
+  "Rhizopus spp.": "",
+  "Tricomoníase": "",
+  "Candida Albicans": [
+    "candida albicans",
+    "candida albicans",
+    1.0,
+    414.18
+  ],
+  "Rotavírus": [
+    "rotavírus",
+    "rotavirus",
+    0.8888888888888888,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Coronavirus": [
+    "coronavirus",
+    "rotavirus",
+    0.8,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Trypanosoma Cruzi": [
+    "trypanosoma cruzi",
+    "trypanosoma cruzi",
+    1.0,
+    "1808, 600"
+  ],
+  "Trichinella Spiralis": [
+    "trichinella spiralis",
+    "trichinella spiralis (muscle)",
+    0.8163265306122449,
+    "1580, 600"
+  ],
+  "Fusarium spp.": "",
+  "Brucella Abortus": "",
+  "Streptococcus Pyogenes (Gas)": [
+    "streptococcus pyogenes (gas)",
+    "streptococcus pneumoniae",
+    0.6923076923076923,
+    "1437, 600"
+  ],
+  "Trichophyton Rubrum": [
+    "trichophyton rubrum",
+    "trichophyton  rubrum:",
+    0.95,
+    "752,180 \n923,180"
+  ],
+  "Enterococcus Faecalis": [
+    "enterococcus faecalis",
+    "enterococcus gallinarum",
+    0.7272727272727273,
+    "686, 600\n409, 180\n454, 180\n5000, 180"
+  ],
+  "Histoplasma Capsulatum": [
+    "histoplasma capsulatum",
+    "histoplasma capsulatum",
+    1.0,
+    "1180, 600"
+  ],
+  "Leishmania Braziliensis": [
+    "leishmania braziliensis",
+    "leishmania braziliensis",
+    1.0,
+    "1574, 600"
+  ],
+  "Aspergillus niger": "",
+  "Toxoplasma gondii": "",
+  "Leishmania Amazonensis": [
+    "leishmania amazonensis",
+    "leishmania braziliensis",
+    0.8,
+    "1574, 600"
+  ],
+  "Paragonimus westermani": "",
+  "Clostridium Botulinum": [
+    "clostridium botulinum",
+    "clostridium botulinum",
+    1.0,
+    "1414, 600"
+  ],
+  "Clostridium botulinum": [
+    "clostridium botulinum",
+    "clostridium botulinum",
+    1.0,
+    "1414, 600"
+  ],
+  "SARS‑CoV‑2": "",
+  "Plasmodium Falciparum": [
+    "plasmodium falciparum",
+    "plasmodim falciparum",
+    0.975609756097561,
+    "1457, 600"
+  ],
+  "Fasciola Hepatica": [
+    "fasciola hepatica",
+    "fasciola hepatica",
+    1.0,
+    "1660, 600"
+  ],
+  "Candida Dubliniensis": [
+    "candida dubliniensis",
+    "candida albicans",
+    0.6666666666666666,
+    414.18
+  ],
+  "Oropouche vírus": "",
+  "Taenia asiatica": "",
+  "Clonorchis Sinensis": [
+    "clonorchis sinensis",
+    "clonorchis sinensis",
+    1.0,
+    "1668, 600"
+  ],
+  "Treponema pallidum": "",
+  "Penicillium spp.": "",
+  "Entamoeba Histolytica": [
+    "entamoeba histolytica",
+    "entamoeba histolytica trophozoite",
+    0.7777777777777778,
+    "1504, 600"
+  ],
+  "Cryptosporidium parvum": "",
+  "Ureaplasma urealyticum": "",
+  "Mucor spp.": "",
+  "Mayaro vírus": "",
+  "Poliomavírus BK": "",
+  "Zika Vírus": [
+    "zika vírus",
+    "zika vírus",
+    1.0,
+    "727, 600; 5000,600;213,600; 516,600"
+  ],
+  "Zika": "",
+  "Schistosoma Haematobium": [
+    "schistosoma haematobium",
+    "schistosoma mansoni",
+    0.7619047619047619,
+    "1379, 600"
+  ],
+  "Aspergillus fumigatus": "",
+  "Schistosoma Mansoni": [
+    "schistosoma mansoni",
+    "schistosoma_mansoni",
+    0.9473684210526315,
+    "329, 180\n9889, 180"
+  ],
+  "Norovírus": [
+    "norovírus",
+    "rotavirus",
+    0.6666666666666666,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Leishmania Guyanensis": [
+    "leishmania guyanensis",
+    "leishmania braziliensis",
+    0.7727272727272727,
+    "1574, 600"
+  ],
+  "Herpes Simplex Vírus 1": [
+    "herpes simplex vírus 1",
+    "herpes simples",
+    0.7777777777777778,
+    "1141, 600; 1350, 600"
+  ],
+  "Echinococcus multilocularis": "",
+  "Ascaris Larvae": [
+    "ascaris larvae",
+    "ascaris",
+    0.6666666666666666,
+    "152, 180\n442, 180\n8146, 180\n751, 180\n1146, 180\n797, 180"
+  ],
+  "Bactéria Lactis Aerogenes": "",
+  "Candida Saccharomyces": "",
+  "Epidermophyton Floccosum": [
+    "epidermophyton floccosum",
+    "epidermophyton floccinum",
+    0.9166666666666666,
+    "20\n727\n787\n880\n5000\n644\n766\n464\n802\n1552\n9999\n3176\n304\n"
+  ],
+  "Fasciolopsis Buski Eggs": [
+    "fasciolopsis buski eggs",
+    "fasciolopsis buskii adult",
+    0.7916666666666666,
+    "1695, 600"
+  ],
+  "Helicobacter Pylori": [
+    "helicobacter pylori",
+    "helicobacter pylori",
+    1.0,
+    "676, 180\n704.9, 180\n694.7, 180\n# 1\n2167, 180\n728, 180\n880, 180\n2950, 180\n# exp\n694.7, 180\n2778.8, 180\n704.9, 180\n2819.4, 180"
+  ],
+  "Lactobacillus Acidophilus": "",
+  "Mucosis Fungóide": "",
+  "Mycobacterium Phlei": "",
+  "Microsporum Canis": [
+    "microsporum canis",
+    "microsporum canis",
+    1.0,
+    1644.18
+  ],
+  "Cutibacterium acnes": "",
+  "Reovírus": [
+    "reovírus",
+    "rotavirus",
+    0.7058823529411765,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Rinovírus": "",
+  "Scopulariopsis Brevic": [
+    "scopulariopsis brevic",
+    "fasciolopsis rediae",
+    0.65,
+    "1687, 600"
+  ],
+  "Staphylococcus Albus": [
+    "staphylococcus albus",
+    "staphylococcus aureus (culture)",
+    0.7058823529411765,
+    "424,180 \n727,180 \n786,180 \n943,180 \n1050,180"
+  ],
+  "Tinea Capitis": "",
+  "Tricophyton Mentagrophyte": [
+    "tricophyton mentagrophyte",
+    "trichophyton  mentagrophytes",
+    0.9433962264150944,
+    311.18
+  ],
+  "Strongyloides Stercoralis": [
+    "strongyloides stercoralis",
+    "strongyloides_secondary",
+    0.75,
+    "380, 180\n698, 180\n752, 180\n776, 180\n722, 180\n738, 180\n746, 180\n1113, 180"
+  ],
+  "Taenia pisiformis": "",
+  "Echovírus 9": "",
+  "Parainfluenza": "",
+  "Aspergillus, Rhizopus, Penicillium": "",
+  "Ameba Meleagridis": "",
+  "Anthracies Esporos de Bacillus": "",
+  "Bartonella Quintana": "",
+  "Felineus Opisthorhis": "",
+  "Bacillus Cereus": "",
+  "Bacteroides Fragilis": "",
+  "Candida Robusta": [
+    "candida robusta",
+    "candida glabrata",
+    0.7096774193548387,
+    "3176, 600\n2642, 600\n1403, 600"
+  ],
+  "Scopulariopsis Brevic (Var.)": "",
+  "Criptococcus Neoformans": "",
+  "Enterococcum Faecium": [
+    "enterococcum faecium",
+    "enterococcus gallinarum",
+    0.7441860465116279,
+    "686, 600\n409, 180\n454, 180\n5000, 180"
+  ],
+  "Enterococcus Faecium": [
+    "enterococcus faecium",
+    "enterococcus gallinarum",
+    0.7906976744186046,
+    "686, 600\n409, 180\n454, 180\n5000, 180"
+  ],
+  "O Enterococcum Faecium": [
+    "o enterococcum faecium",
+    "enterococcus gallinarum",
+    0.7111111111111111,
+    "686, 600\n409, 180\n454, 180\n5000, 180"
+  ],
+  "Haemophilus Influenzae": "",
+  "Candida albicans": [
+    "candida albicans",
+    "candida albicans",
+    1.0,
+    414.18
+  ],
+  "Chlamidium": "",
+  "Hepatite E": [
+    "hepatite e",
+    "hepatite geral",
+    0.8333333333333334,
+    "28, 180\n1550, 180\n1351, 180\n880, 180\n802, 180\n727, 180\n224, 180\n317, 180\n329, 180\n477, 180\n922, 180"
+  ],
+  "Hepatite D": [
+    "hepatite d",
+    "hepatite geral",
+    0.75,
+    "28, 180\n1550, 180\n1351, 180\n880, 180\n802, 180\n727, 180\n224, 180\n317, 180\n329, 180\n477, 180\n922, 180"
+  ],
+  "Influenza A": "",
+  "Lactobacillus": "",
+  "Mycobacterium Tuberculosis": "",
+  "Balantidium Coli": [
+    "balantidium coli",
+    "balatidium coli",
+    0.967741935483871,
+    "5000, 600"
+  ],
+  "Neisseria Meningitidis": "",
+  "HIV – Infecção": "",
+  "Hepatite A": [
+    "hepatite a",
+    "hepatite geral",
+    0.8333333333333334,
+    "28, 180\n1550, 180\n1351, 180\n880, 180\n802, 180\n727, 180\n224, 180\n317, 180\n329, 180\n477, 180\n922, 180"
+  ],
+  "Powassan": "",
+  "Proteus Vulgaris": "",
+  "Malassezia Furfur": [
+    "malassezia furfur",
+    "malassezia furfur",
+    1.0,
+    "222, 180\n225, 180\n491, 180\n616, 180\n700, 180"
+  ],
+  "Pseudomonas Aeruginosa": "",
+  "Roseola": "",
+  "Salmonella Paratyphi B": [
+    "salmonella paratyphi b",
+    "salmonella paratyphi",
+    0.9523809523809523,
+    "1437, 600\n1504, 600"
+  ],
+  "Varicela-Zoster": "",
+  "Torulopsis glabratis candida": "",
+  "Micose Oris Candida": [
+    "micose oris candida",
+    "microsporum canis",
+    0.6666666666666666,
+    1644.18
+  ],
+  "Eurytrema Pancreaticum Stages": [
+    "eurytrema pancreaticum stages",
+    "eurytrema pancreaticum stages",
+    1.0,
+    "5000, 600"
+  ],
+  "Chlamydia trachomatis": [
+    "chlamydia trachomatis",
+    "chlamydia trachomatis",
+    1.0,
+    "1488, 600"
+  ],
+  "Neisseria meningitidis": "",
+  "Coxsackie B4": "",
+  "Neisseria Meningococcal": [
+    "neisseria meningococcal",
+    "neisseria gonorrhea",
+    0.6666666666666666,
+    1305.6
+  ],
+  "Hiv": [
+    "hiv",
+    "hiv",
+    1.0,
+    "683,180 \n714,180 \n3554,180"
+  ],
+  "Dientamoeba Fragilis": [
+    "dientamoeba fragilis",
+    "entamoeba coli cysts",
+    0.65,
+    "5000, 600"
+  ],
+  "Borellia burgdorferi": "",
+  "Borellia miyamotoi": "",
+  "Shigella Flexneri": [
+    "shigella flexneri",
+    "shigella flexneri",
+    1.0,
+    "1539, 600"
+  ],
+  "Shigella Dysenteriae": [
+    "shigella dysenteriae",
+    "shigella flexneri",
+    0.7567567567567568,
+    "1539, 600"
+  ],
+  "Trichophyton Cutaneum": [
+    "trichophyton cutaneum",
+    "trichophyton  rubrum:",
+    0.7619047619047619,
+    "752,180 \n923,180"
+  ],
+  "Clostridium Acetobutylicum": [
+    "clostridium acetobutylicum",
+    "clostridium acetobutylicum",
+    1.0,
+    "1519, 600\n1500, 600"
+  ],
+  "Clostridium Perfringens Spores": [
+    "clostridium perfringens spores",
+    "clostridium perfringens spores",
+    1.0,
+    "1547, 600"
+  ],
+  "Clostridium Septicum": [
+    "clostridium septicum",
+    "clostridium septicum",
+    1.0,
+    "1422, 600"
+  ],
+  "Clostridium Sporogenes": [
+    "clostridium sporogenes",
+    "clostridium sporogenes",
+    1.0,
+    "5000, 600"
+  ],
+  "Endolimax nana": "",
+  "Enterococcus Gallinarum": [
+    "enterococcus gallinarum",
+    "enterococcus gallinarum",
+    1.0,
+    "686, 600\n409, 180\n454, 180\n5000, 180"
+  ],
+  "Leishmania": "",
+  "Taenia Sp": [
+    "taenia sp",
+    "taenia",
+    0.8,
+    187.18
+  ],
+  "Fascíola Hepática Cercariae": [
+    "fascíola hepática cercariae",
+    "fasciola hepatica cercariae",
+    0.9259259259259259,
+    "1668, 600"
+  ],
+  "Fascíola Hepática Eggs": [
+    "fascíola hepática eggs",
+    "fasciola hepatica eggs",
+    0.9090909090909091,
+    "1660, 600"
+  ],
+  "Fascíola Hepática Metacercariae": [
+    "fascíola hepática metacercariae",
+    "fasciola hepatica cercariae",
+    0.8620689655172413,
+    "1668, 600"
+  ],
+  "Fascíola HepáticaMiracidia": [
+    "fascíola hepáticamiracidia",
+    "fasciola hepatica cercariae",
+    0.7169811320754716,
+    "1668, 600"
+  ],
+  "Fasciolopsis Buskii Adult": [
+    "fasciolopsis buskii adult",
+    "fasciolopsis buskii adult",
+    1.0,
+    "1695, 600"
+  ],
+  "Fasciolopsis Cercariae": [
+    "fasciolopsis cercariae",
+    "fasciolopsis rediae",
+    0.8292682926829268,
+    "1687, 600"
+  ],
+  "Fasciolopsis Miracidia": [
+    "fasciolopsis miracidia",
+    "fasciolopsis rediae",
+    0.8292682926829268,
+    "1687, 600"
+  ],
+  "Fasciolopsis Rediae": [
+    "fasciolopsis rediae",
+    "fasciolopsis rediae",
+    1.0,
+    "1687, 600"
+  ],
+  "Endolimax Nana": "",
+  "Taenia Sp.": [
+    "taenia sp.",
+    "taenia",
+    0.75,
+    187.18
+  ],
+  "Leishmania Sp.": "",
+  "Epstein-Barr Virus": [
+    "epstein-barr virus",
+    "epstein barre virus (ebv)",
+    0.7906976744186046,
+    "1484, 600; 1465,600"
+  ],
+  "Herpes Simplex Virus": [
+    "herpes simplex virus",
+    "herpes simples",
+    0.8235294117647058,
+    "1141, 600; 1350, 600"
+  ],
+  "Herpes Simples": [
+    "herpes simples",
+    "herpes simples",
+    1.0,
+    "1141, 600; 1350, 600"
+  ],
+  "Varicella-Zoster Virus": "",
+  "Dengue Virus": [
+    "dengue virus",
+    "dengue",
+    0.6666666666666666,
+    "464, 180\n440, 180\n3672, 180\n7766, 180\n7760, 180\n7344, 180\n1234, 180\n5000, 180\n727, 180\n787, 180\n800, 180\n875, 180\n880, 180\n885, 180\n728, 180\n1550, 180\n1500, 180\n2008, 180\n20, 180\n728, 180\n440, 180\n465, 180\n613, 180\n666, 180\n727, 180\n787, 180\n800, 180\n1000, 180\n5000, 180\n10000, 180"
+  ],
+  "Chikungunya Virus": [
+    "chikungunya virus",
+    "chikungunya",
+    0.7857142857142857,
+    "5000, 600 145, 600; 267,300 ; 587,300; 142,600"
+  ],
+  "Rotavirus": [
+    "rotavirus",
+    "rotavirus",
+    1.0,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Norovirus": [
+    "norovirus",
+    "rotavirus",
+    0.7777777777777778,
+    "665, 300\n666, 300\n667, 300\n776, 300\n787, 300\n802, 300\n1550, 300\n832, 300\n840, 300\n880, 300\n1570, 300\n1998, 300\n2008, 300\n2052, 300\n2127.5, 300\n2489, 300\n2490, 300\n5000, 300"
+  ],
+  "Respiratory Syncytial Virus": "",
+  "Salmonella Enterica": [
+    "salmonella enterica",
+    "salmonella typhimurium",
+    0.6829268292682927,
+    "1387, 600\n1508, 600\n1523, 600"
+  ],
+  "Shigella Sonnei": [
+    "shigella sonnei",
+    "shigella sonnei",
+    1.0,
+    "1242, 600"
+  ],
+  "Campylobacter Jejuni": [
+    "campylobacter jejuni",
+    "campylobacter fetus smear",
+    0.7111111111111111,
+    "1437, 600"
+  ],
+  " Papillomavirus ": [
+    " papillomavirus ",
+    "hpv - papilloma virus",
+    0.8108108108108109,
+    "45, 180;   489, 180; 874, 180; 907, 180; 16970, 180; 265, 180; 5657, 180; 3203, 180; 1011, 180; 9258, 180; 3083, 180; 1051, 180; 9609, 180; 466, 180; 110, 180; 767, 180; 404, 180"
+  ],
+  "Ancylostoma Duodenale": [
+    "ancylostoma duodenale",
+    "ancylostoma duodenale male",
+    0.8936170212765957,
+    "5000, 600"
+  ],
+  "Giardia Lamblia": [
+    "giardia lamblia",
+    "giardia lamblia cysts",
+    0.8333333333333334,
+    "5000, 600"
+  ],
+  "Streptococcus Viridans": [
+    "streptococcus viridans",
+    "streptococcus mitis",
+    0.8292682926829268,
+    "1242, 600"
+  ],
+  "Human Papillomavirus (Hpv)": [
+    "human papillomavirus (hpv)",
+    "hpv - papilloma virus",
+    0.6808510638297872,
+    "45, 180;   489, 180; 874, 180; 907, 180; 16970, 180; 265, 180; 5657, 180; 3203, 180; 1011, 180; 9258, 180; 3083, 180; 1051, 180; 9609, 180; 466, 180; 110, 180; 767, 180; 404, 180"
+  ],
+  "Mycoplasma Hominis": "",
+  "Clamydia Trachomatis": [
+    "clamydia trachomatis",
+    "chlamydia trachomatis",
+    0.975609756097561,
+    "1488, 600"
+  ],
+  "Bartonella Henselae": "",
+  "Yersinia Enterocolitica": "",
+  "Fasciolopsis Buskii Eggs": [
+    "fasciolopsis buskii eggs",
+    "fasciolopsis buskii adult",
+    0.8163265306122449,
+    "1695, 600"
+  ],
+  "Fasciolopsis buskii eggs unincubated": [
+    "fasciolopsis buskii eggs unincubated",
+    "fasciolopsis buskii eggs unincubated",
+    1.0,
+    "5000, 600"
+  ],
+  "Iodamoeaba Buetschlii": "",
+  "Streptococcus Gallolyticus": [
+    "streptococcus gallolyticus",
+    "streptococcus lactis",
+    0.782608695652174,
+    "1504, 600"
+  ],
+  "Streptococcus Bovis": [
+    "streptococcus bovis",
+    "streptococcus mitis",
+    0.8421052631578947,
+    "1242, 600"
+  ],
+  "Streptococcus Haemolyticus A": [
+    "streptococcus haemolyticus a",
+    "streptococcus mitis",
+    0.7659574468085106,
+    "1242, 600"
+  ]
+}

@@ -1,0 +1,1202 @@
+{
+  "founded": {
+    "total": 46,
+    "values": [
+      "chikungunya",
+      "zika vírus",
+      "herpes simples",
+      "hiv",
+      "prions",
+      "dengue",
+      "candida albicans",
+      "candida albicans",
+      "chlamydia trachomatis",
+      "enterobius vermicularis",
+      "enterococcus gallinarum",
+      "gardnerella vaginalis",
+      "helicobacter pylori",
+      "leishmania braziliensis",
+      "malassezia furfur",
+      "rotavirus",
+      "schistosoma mansoni",
+      "trichomonas vaginalis",
+      "trypanosoma cruzi",
+      "clostridium acetobutylicum",
+      "clostridium botulinum",
+      "clostridium perfringens",
+      "clostridium perfringens spores",
+      "clostridium septicum",
+      "clostridium sporogenes",
+      "clostridium tetani",
+      "fasciola hepatica",
+      "fasciola hepatica cercariae",
+      "fasciola hepatica eggs",
+      "salmonella typhimurium",
+      "shigella flexneri",
+      "shigella sonnei",
+      "streptococcus lactis",
+      "streptococcus mitis",
+      "streptococcus pneumoniae",
+      "fasciolopsis buskii adult",
+      "fasciolopsis buskii eggs unincubated",
+      "fasciolopsis rediae",
+      "eurytrema pancreaticum",
+      "eurytrema pancreaticum stages",
+      "enterobius vermicularis",
+      "clonorchis sinensis",
+      "gardnerella vaginalis",
+      "candida glabrata",
+      "microsporum canis",
+      "histoplasma capsulatum"
+    ]
+  },
+  "not_founded": {
+    "total": 152,
+    "values": [
+      "chicken pox, shingles",
+      "cvm",
+      "hepatite geral",
+      "rhinopneumonltis",
+      "grippe",
+      "# streptococcus virus:",
+      "epstein barre virus (ebv)",
+      "hpv - papilloma virus",
+      "dengue parte 1",
+      "dengue parte 2",
+      "herpes zoster secundário",
+      "herpes zoster",
+      "coronavirus 2019, 2020, 2021",
+      "corona virus - sars",
+      "herv-k  retrovírus",
+      "alcoois e solventes de uso geral",
+      "ancylostoma duodenale male",
+      "ancylostoma braziliense (adult)1566, 600",
+      "ascaris lumbricoides (m and f)",
+      "ascaris larvae in lung common roundworm of cats and dogs",
+      "ascaris",
+      "trophozoites and cysts",
+      "entamoeba coli trophozoites1555, 600",
+      "entamoeba coli cysts",
+      "entamoeba histolytica trophozoite",
+      "giardia lamblia (trophozoites",
+      "giardia",
+      "giardia lamblia cysts",
+      "schistosoma_mansoni",
+      "micoplasma",
+      "strongyloides",
+      "strongyloides_secondary",
+      "plasmodim falciparum",
+      "taenia",
+      "toxoplasma (human strain)",
+      "trichuris sp. (male",
+      "trichophyton  mentagrophytes",
+      "trichophyton  rubrum:",
+      "ascaris lumbricoides (m and f)",
+      "ascaris megalocephala (male)",
+      "bacteroides fragilis found with common roundworm ascaris",
+      "campylobacter pyloridis",
+      "campylobacter fetus smear",
+      "ancylostoma caninum",
+      "trichinella spiralis (muscle)",
+      "salmonella enteriditis intestinal infection",
+      "salmonella paratyphi",
+      "shigella",
+      "staphylococcus aureus (culture)",
+      "streptococcus family",
+      "streptococcus sp. group g",
+      "escherichia coli (e. coli) intestinal",
+      "epidermophyton floccinum",
+      "neisseria gonorrhea",
+      "ancylostoma duodenale male",
+      "staphylococcus aureus (culture)",
+      "balatidium coli",
+      "rickettsia - bactéria",
+      "pulomes- regulador energético",
+      "ag(prata)",
+      "al (aluminio)",
+      "as(arsênico)",
+      "au(ouro)",
+      "b(boro",
+      "ba(bário)",
+      "be(berilio",
+      "bi(bismuto)",
+      "ca(calcio)",
+      "cd (cádmio",
+      "cs(cesio)",
+      "co(cobalto)",
+      "cr(cromo)",
+      "cu(cobre)",
+      "dy(dysprasio)",
+      "sn(estanho)",
+      "er(erlio)",
+      "eu(europio",
+      "f(fluor)",
+      "fe(ferro)",
+      "gd(gadolinio)",
+      "ge(germanio)",
+      "hf(hafnio)",
+      "hg (mercúrio)",
+      "ho(holmio)",
+      "in(indio)",
+      "ir(iridio",
+      "k(potassio)",
+      "la(lantalio)",
+      "li(litio",
+      "lu(lutecio)",
+      "mg(magnesio)",
+      "mn(manganes)",
+      "mo(molibidenio)",
+      "na(sodio)",
+      "nb(niobio)",
+      "nd(neodinio",
+      "ni(niquel)",
+      "os(osmio)",
+      "pb (chumbo)",
+      "pd(paladio)",
+      "pr(praseoclimio",
+      "pt(platina)",
+      "rb(rubidio)",
+      "re(renio)",
+      "rh(rodio)",
+      "ru(rutenio",
+      "sb(antimônio)",
+      "sc(escandio)",
+      "se(selenio)",
+      "silicio",
+      "sr(estroncio)",
+      "tl(tálio)",
+      "ta(tantalio)",
+      "tb(terbio)",
+      "te(telurio)",
+      "th(torio)",
+      "ti(titânio",
+      "tu(tulio)",
+      "u(urânio)",
+      "v(vanadio",
+      "w(tungstenio",
+      "y(itrio)",
+      "yb(itérbio",
+      "zn(zinco)",
+      "desintoxicação de amianto ou asbesto",
+      "desintoxicação de amianto ou asbesto",
+      "fungos e mofos",
+      "liberacao de culpas e medos",
+      "bloqueios emocionais",
+      "lebite",
+      "flebite (inflamação das veias)(",
+      "linfadenite",
+      "linfangioleiomiomatose",
+      "linfangioma",
+      "linfáticos",
+      "linfedema",
+      "lymphangitis",
+      "peripheral vascular diseases",
+      "parkinson_tremor_alivio_temporario",
+      "oxido de grafeno",
+      "prot s vacina",
+      "# cmv, known as salivary gland virus or human herpes type 5\n126, 180\n597, 180\n682, 180\n1045, 180\n2145, 180",
+      "# cytomegalovirus known as salivary gland virus or human herpes type 5\n126, 180    tempo 24 min\n597, 180\n629, 180\n682, 180\n1045, 180\n2145, 180\n8848, 180\n8856, 180",
+      "# cmv (cytomegalovirus known as salivary gland virus or \n# human herpes type 5): \n# usar em modo positivo\n# tempo: 12 minutos\n126,180\n597,180 \n1045,180 \n2145,180",
+      "normalizar calcio",
+      "uretrite",
+      "normaliza a producao de estrogeno: homem e mulher",
+      "probelma de estômago e coli e parasitas",
+      "# redução de estresse\n# modo: positivo\n# tempo: 45 minutos\n7.83, 540\n720, 540\n1550, 540\n20, 540\n4200, 540",
+      "melhorar sono e convivio social (melatonina 5 htp ocitocina litio)\n\n# melatonina 5 htp ocitocina e lítio\n# modo: positivo\n# tempo: 30 min\n323, 300\n711, 300\n529, 600\n3542, 600",
+      "regulador conjugado\nenergia e vitalidade\n\n#tempo: 03 minutos\n9999, 180",
+      "padroes energeticos desarmonicos\ndemais padores\n\nproblema mental\n#tempo: 33 minutos\n# general aid; especially if toxins are the cause\n522, 180\n146, 180\n10000, 180\n125, 180\n95, 180\n72, 180\n20, 180\n4.9, 180\n428, 180\n550, 180\n802, 180"
+    ]
+  },
+  "similarities": [
+    [
+      "chikungunya",
+      "chikungunya",
+      1.0
+    ],
+    [
+      "zika vírus",
+      "zika vírus",
+      1.0
+    ],
+    [
+      "chicken pox, shingles",
+      "",
+      0
+    ],
+    [
+      "herpes simples",
+      "herpes simplex",
+      0.9285714285714286
+    ],
+    [
+      "cvm",
+      "",
+      0
+    ],
+    [
+      "hepatite geral",
+      "hepatite e",
+      0.8333333333333334
+    ],
+    [
+      "rhinopneumonltis",
+      "",
+      0
+    ],
+    [
+      "hiv",
+      "hiv",
+      1.0
+    ],
+    [
+      "grippe",
+      "",
+      0
+    ],
+    [
+      "# streptococcus virus:",
+      "streptococcus bovis",
+      0.8292682926829268
+    ],
+    [
+      "epstein barre virus (ebv)",
+      "epstein-barr virus",
+      0.7906976744186046
+    ],
+    [
+      "prions",
+      "priones",
+      0.9230769230769231
+    ],
+    [
+      "hpv - papilloma virus",
+      " papillomavirus ",
+      0.8108108108108109
+    ],
+    [
+      "dengue parte 1",
+      "dengue vírus 1–4",
+      0.6666666666666666
+    ],
+    [
+      "dengue parte 2",
+      "",
+      0
+    ],
+    [
+      "herpes zoster secundário",
+      "",
+      0
+    ],
+    [
+      "herpes zoster",
+      "herpes simplex",
+      0.6666666666666666
+    ],
+    [
+      "dengue",
+      "dengue",
+      1.0
+    ],
+    [
+      "coronavirus 2019, 2020, 2021",
+      "",
+      0
+    ],
+    [
+      "corona virus - sars",
+      "coronavirus",
+      0.7333333333333333
+    ],
+    [
+      "herv-k  retrovírus",
+      "",
+      0
+    ],
+    [
+      "alcoois e solventes de uso geral",
+      "",
+      0
+    ],
+    [
+      "ancylostoma duodenale male",
+      "ancylostoma duodenale",
+      0.8936170212765957
+    ],
+    [
+      "ancylostoma braziliense (adult)1566, 600",
+      "",
+      0
+    ],
+    [
+      "ascaris lumbricoides (m and f)",
+      "ascaris lumbricoides",
+      0.8
+    ],
+    [
+      "ascaris larvae in lung common roundworm of cats and dogs",
+      "",
+      0
+    ],
+    [
+      "ascaris",
+      "ascaris larvae",
+      0.6666666666666666
+    ],
+    [
+      "candida albicans",
+      "candida albicans",
+      1.0
+    ],
+    [
+      "candida albicans",
+      "candida albicans",
+      1.0
+    ],
+    [
+      "chlamydia trachomatis",
+      "chlamydia trachomatis",
+      1.0
+    ],
+    [
+      "trophozoites and cysts",
+      "",
+      0
+    ],
+    [
+      "entamoeba coli trophozoites1555, 600",
+      "",
+      0
+    ],
+    [
+      "entamoeba coli cysts",
+      "entamoeba coli",
+      0.8235294117647058
+    ],
+    [
+      "entamoeba histolytica trophozoite",
+      "entamoeba histolytica",
+      0.7777777777777778
+    ],
+    [
+      "enterobius vermicularis",
+      "enterobius vermicularis",
+      1.0
+    ],
+    [
+      "enterococcus gallinarum",
+      "enterococcus gallinarum",
+      1.0
+    ],
+    [
+      "gardnerella vaginalis",
+      "gardnerella vaginalis",
+      1.0
+    ],
+    [
+      "giardia lamblia (trophozoites",
+      "giardia lamblia",
+      0.6818181818181818
+    ],
+    [
+      "giardia",
+      "",
+      0
+    ],
+    [
+      "giardia lamblia cysts",
+      "giardia lamblia",
+      0.8333333333333334
+    ],
+    [
+      "helicobacter pylori",
+      "helicobacter pylori",
+      1.0
+    ],
+    [
+      "leishmania braziliensis",
+      "leishmania braziliensis",
+      1.0
+    ],
+    [
+      "malassezia furfur",
+      "malassezia furfur",
+      1.0
+    ],
+    [
+      "rotavirus",
+      "rotavirus",
+      1.0
+    ],
+    [
+      "schistosoma_mansoni",
+      "schistosoma mansoni",
+      0.9473684210526315
+    ],
+    [
+      "micoplasma",
+      "",
+      0
+    ],
+    [
+      "schistosoma mansoni",
+      "schistosoma mansoni",
+      1.0
+    ],
+    [
+      "strongyloides",
+      "strongyloides stercoralis",
+      0.6842105263157895
+    ],
+    [
+      "strongyloides_secondary",
+      "strongyloides stercoralis",
+      0.75
+    ],
+    [
+      "plasmodim falciparum",
+      "plasmodium falciparum",
+      0.975609756097561
+    ],
+    [
+      "taenia",
+      "taenia sp",
+      0.8
+    ],
+    [
+      "toxoplasma (human strain)",
+      "",
+      0
+    ],
+    [
+      "trichuris sp. (male",
+      "",
+      0
+    ],
+    [
+      "trichomonas vaginalis",
+      "trichomonas vaginalis",
+      1.0
+    ],
+    [
+      "trichophyton  mentagrophytes",
+      "tricophyton mentagrophyte",
+      0.9433962264150944
+    ],
+    [
+      "trichophyton  rubrum:",
+      "trichophyton rubrum",
+      0.95
+    ],
+    [
+      "trypanosoma cruzi",
+      "trypanosoma cruzi",
+      1.0
+    ],
+    [
+      "clostridium acetobutylicum",
+      "clostridium acetobutylicum",
+      1.0
+    ],
+    [
+      "clostridium botulinum",
+      "clostridium botulinum",
+      1.0
+    ],
+    [
+      "clostridium perfringens",
+      "clostridium perfringens",
+      1.0
+    ],
+    [
+      "clostridium perfringens spores",
+      "clostridium perfringens spores",
+      1.0
+    ],
+    [
+      "clostridium septicum",
+      "clostridium septicum",
+      1.0
+    ],
+    [
+      "clostridium sporogenes",
+      "clostridium sporogenes",
+      1.0
+    ],
+    [
+      "clostridium tetani",
+      "clostridium tetani",
+      1.0
+    ],
+    [
+      "fasciola hepatica",
+      "fasciola hepática",
+      0.9411764705882353
+    ],
+    [
+      "fasciola hepatica cercariae",
+      "fasciola hepatica metacercariae",
+      0.9310344827586207
+    ],
+    [
+      "fasciola hepatica eggs",
+      "fasciola hepatica eggs",
+      1.0
+    ],
+    [
+      "ascaris lumbricoides (m and f)",
+      "ascaris lumbricoides",
+      0.8
+    ],
+    [
+      "ascaris megalocephala (male)",
+      "",
+      0
+    ],
+    [
+      "bacteroides fragilis found with common roundworm ascaris",
+      "",
+      0
+    ],
+    [
+      "campylobacter pyloridis",
+      "helicobacter pylori",
+      0.7142857142857143
+    ],
+    [
+      "campylobacter fetus smear",
+      "campylobacter jejuni",
+      0.7111111111111111
+    ],
+    [
+      "ancylostoma caninum",
+      "ancylostoma duodenale",
+      0.65
+    ],
+    [
+      "trichinella spiralis (muscle)",
+      "trichinella spiralis",
+      0.8163265306122449
+    ],
+    [
+      "salmonella enteriditis intestinal infection",
+      "",
+      0
+    ],
+    [
+      "salmonella paratyphi",
+      "salmonella paratyphi b",
+      0.9523809523809523
+    ],
+    [
+      "salmonella typhimurium",
+      "salmonella typhimurium",
+      1.0
+    ],
+    [
+      "shigella",
+      "shigella sonnei",
+      0.6956521739130435
+    ],
+    [
+      "shigella flexneri",
+      "shigella flexneri",
+      1.0
+    ],
+    [
+      "shigella sonnei",
+      "shigella sonnei",
+      1.0
+    ],
+    [
+      "staphylococcus aureus (culture)",
+      "staphylococcus aureus",
+      0.8076923076923077
+    ],
+    [
+      "streptococcus family",
+      "streptococcus mitis",
+      0.8205128205128205
+    ],
+    [
+      "streptococcus lactis",
+      "streptococcus lactis",
+      1.0
+    ],
+    [
+      "streptococcus mitis",
+      "streptococcus mitis",
+      1.0
+    ],
+    [
+      "streptococcus pneumoniae",
+      "streptococcus pneumoniae",
+      1.0
+    ],
+    [
+      "streptococcus sp. group g",
+      "streptococcus mitis",
+      0.6818181818181818
+    ],
+    [
+      "escherichia coli (e. coli) intestinal",
+      "",
+      0
+    ],
+    [
+      "fasciolopsis buskii adult",
+      "fasciolopsis buskii adult",
+      1.0
+    ],
+    [
+      "epidermophyton floccinum",
+      "epidermophyton floccosum",
+      0.9166666666666666
+    ],
+    [
+      "fasciolopsis buskii eggs unincubated",
+      "fasciolopsis buskii eggs unincubated",
+      1.0
+    ],
+    [
+      "fasciolopsis rediae",
+      "fasciolopsis rediae",
+      1.0
+    ],
+    [
+      "eurytrema pancreaticum",
+      "eurytrema pancreatico",
+      0.9302325581395349
+    ],
+    [
+      "eurytrema pancreaticum stages",
+      "eurytrema pancreaticum stages",
+      1.0
+    ],
+    [
+      "neisseria gonorrhea",
+      "neisseria gonorrhoeae",
+      0.95
+    ],
+    [
+      "enterobius vermicularis",
+      "enterobius vermicularis",
+      1.0
+    ],
+    [
+      "clonorchis sinensis",
+      "clonorchis sinensis",
+      1.0
+    ],
+    [
+      "gardnerella vaginalis",
+      "gardnerella vaginalis",
+      1.0
+    ],
+    [
+      "candida glabrata",
+      "candida glabrata",
+      1.0
+    ],
+    [
+      "microsporum canis",
+      "microsporum canis",
+      1.0
+    ],
+    [
+      "ancylostoma duodenale male",
+      "ancylostoma duodenale",
+      0.8936170212765957
+    ],
+    [
+      "histoplasma capsulatum",
+      "histoplasma capsulatum",
+      1.0
+    ],
+    [
+      "staphylococcus aureus (culture)",
+      "staphylococcus aureus",
+      0.8076923076923077
+    ],
+    [
+      "balatidium coli",
+      "balantidium coli",
+      0.967741935483871
+    ],
+    [
+      "rickettsia - bactéria",
+      "",
+      0
+    ],
+    [
+      "pulomes- regulador energético",
+      "",
+      0
+    ],
+    [
+      "ag(prata)",
+      "prata",
+      0.7142857142857143
+    ],
+    [
+      "al (aluminio)",
+      "alumínio",
+      0.6666666666666666
+    ],
+    [
+      "as(arsênico)",
+      "arsênico",
+      0.8
+    ],
+    [
+      "au(ouro)",
+      "ouro",
+      0.6666666666666666
+    ],
+    [
+      "b(boro",
+      "",
+      0
+    ],
+    [
+      "ba(bário)",
+      "bário",
+      0.7142857142857143
+    ],
+    [
+      "be(berilio",
+      "berílio",
+      0.7058823529411765
+    ],
+    [
+      "bi(bismuto)",
+      "bismuto",
+      0.7777777777777778
+    ],
+    [
+      "ca(calcio)",
+      "",
+      0
+    ],
+    [
+      "cd (cádmio",
+      "cádmio",
+      0.75
+    ],
+    [
+      "cs(cesio)",
+      "",
+      0
+    ],
+    [
+      "co(cobalto)",
+      "cobalto",
+      0.7777777777777778
+    ],
+    [
+      "cr(cromo)",
+      "cromo",
+      0.7142857142857143
+    ],
+    [
+      "cu(cobre)",
+      "cobre",
+      0.7142857142857143
+    ],
+    [
+      "dy(dysprasio)",
+      "",
+      0
+    ],
+    [
+      "sn(estanho)",
+      "estanho",
+      0.7777777777777778
+    ],
+    [
+      "er(erlio)",
+      "",
+      0
+    ],
+    [
+      "eu(europio",
+      "",
+      0
+    ],
+    [
+      "f(fluor)",
+      "fluor",
+      0.7692307692307693
+    ],
+    [
+      "fe(ferro)",
+      "ferro",
+      0.7142857142857143
+    ],
+    [
+      "gd(gadolinio)",
+      "",
+      0
+    ],
+    [
+      "ge(germanio)",
+      "germânio",
+      0.7
+    ],
+    [
+      "hf(hafnio)",
+      "",
+      0
+    ],
+    [
+      "hg (mercúrio)",
+      "mercúrio",
+      0.7619047619047619
+    ],
+    [
+      "ho(holmio)",
+      "",
+      0
+    ],
+    [
+      "in(indio)",
+      "",
+      0
+    ],
+    [
+      "ir(iridio",
+      "",
+      0
+    ],
+    [
+      "k(potassio)",
+      "potássio",
+      0.7368421052631579
+    ],
+    [
+      "la(lantalio)",
+      "",
+      0
+    ],
+    [
+      "li(litio",
+      "",
+      0
+    ],
+    [
+      "lu(lutecio)",
+      "",
+      0
+    ],
+    [
+      "mg(magnesio)",
+      "magnésio",
+      0.7
+    ],
+    [
+      "mn(manganes)",
+      "manganês",
+      0.7
+    ],
+    [
+      "mo(molibidenio)",
+      "molibdênio",
+      0.72
+    ],
+    [
+      "na(sodio)",
+      "",
+      0
+    ],
+    [
+      "nb(niobio)",
+      "",
+      0
+    ],
+    [
+      "nd(neodinio",
+      "",
+      0
+    ],
+    [
+      "ni(niquel)",
+      "",
+      0
+    ],
+    [
+      "os(osmio)",
+      "",
+      0
+    ],
+    [
+      "pb (chumbo)",
+      "chumbo",
+      0.7058823529411765
+    ],
+    [
+      "pd(paladio)",
+      "",
+      0
+    ],
+    [
+      "pr(praseoclimio",
+      "",
+      0
+    ],
+    [
+      "pt(platina)",
+      "platina",
+      0.7777777777777778
+    ],
+    [
+      "rb(rubidio)",
+      "rubídio",
+      0.6666666666666666
+    ],
+    [
+      "re(renio)",
+      "",
+      0
+    ],
+    [
+      "rh(rodio)",
+      "",
+      0
+    ],
+    [
+      "ru(rutenio",
+      "",
+      0
+    ],
+    [
+      "sb(antimônio)",
+      "antimônio",
+      0.8181818181818182
+    ],
+    [
+      "sc(escandio)",
+      "",
+      0
+    ],
+    [
+      "se(selenio)",
+      "selênio",
+      0.6666666666666666
+    ],
+    [
+      "silicio",
+      "silício",
+      0.8571428571428571
+    ],
+    [
+      "sr(estroncio)",
+      "estrôncio",
+      0.7272727272727273
+    ],
+    [
+      "tl(tálio)",
+      "tálio",
+      0.7142857142857143
+    ],
+    [
+      "ta(tantalio)",
+      "",
+      0
+    ],
+    [
+      "tb(terbio)",
+      "",
+      0
+    ],
+    [
+      "te(telurio)",
+      "",
+      0
+    ],
+    [
+      "th(torio)",
+      "",
+      0
+    ],
+    [
+      "ti(titânio",
+      "",
+      0
+    ],
+    [
+      "tu(tulio)",
+      "",
+      0
+    ],
+    [
+      "u(urânio)",
+      "urânio",
+      0.8
+    ],
+    [
+      "v(vanadio",
+      "vanádio",
+      0.75
+    ],
+    [
+      "w(tungstenio",
+      "tungstênio",
+      0.8181818181818182
+    ],
+    [
+      "y(itrio)",
+      "",
+      0
+    ],
+    [
+      "yb(itérbio",
+      "",
+      0
+    ],
+    [
+      "zn(zinco)",
+      "zinco",
+      0.7142857142857143
+    ],
+    [
+      "desintoxicação de amianto ou asbesto",
+      "",
+      0
+    ],
+    [
+      "desintoxicação de amianto ou asbesto",
+      "",
+      0
+    ],
+    [
+      "fungos e mofos",
+      "",
+      0
+    ],
+    [
+      "liberacao de culpas e medos",
+      "",
+      0
+    ],
+    [
+      "bloqueios emocionais",
+      "",
+      0
+    ],
+    [
+      "lebite",
+      "",
+      0
+    ],
+    [
+      "flebite (inflamação das veias)(",
+      "",
+      0
+    ],
+    [
+      "linfadenite",
+      "",
+      0
+    ],
+    [
+      "linfangioleiomiomatose",
+      "",
+      0
+    ],
+    [
+      "linfangioma",
+      "",
+      0
+    ],
+    [
+      "linfáticos",
+      "",
+      0
+    ],
+    [
+      "linfedema",
+      "",
+      0
+    ],
+    [
+      "lymphangitis",
+      "",
+      0
+    ],
+    [
+      "peripheral vascular diseases",
+      "",
+      0
+    ],
+    [
+      "parkinson_tremor_alivio_temporario",
+      "",
+      0
+    ],
+    [
+      "oxido de grafeno",
+      "monóxido de carbono",
+      0.6857142857142857
+    ],
+    [
+      "prot s vacina",
+      "",
+      0
+    ],
+    [
+      "# cmv, known as salivary gland virus or human herpes type 5\n126, 180\n597, 180\n682, 180\n1045, 180\n2145, 180",
+      "",
+      0
+    ],
+    [
+      "# cytomegalovirus known as salivary gland virus or human herpes type 5\n126, 180    tempo 24 min\n597, 180\n629, 180\n682, 180\n1045, 180\n2145, 180\n8848, 180\n8856, 180",
+      "",
+      0
+    ],
+    [
+      "# cmv (cytomegalovirus known as salivary gland virus or \n# human herpes type 5): \n# usar em modo positivo\n# tempo: 12 minutos\n126,180\n597,180 \n1045,180 \n2145,180",
+      "",
+      0
+    ],
+    [
+      "normalizar calcio",
+      "",
+      0
+    ],
+    [
+      "uretrite",
+      "",
+      0
+    ],
+    [
+      "normaliza a producao de estrogeno: homem e mulher",
+      "",
+      0
+    ],
+    [
+      "probelma de estômago e coli e parasitas",
+      "",
+      0
+    ],
+    [
+      "# redução de estresse\n# modo: positivo\n# tempo: 45 minutos\n7.83, 540\n720, 540\n1550, 540\n20, 540\n4200, 540",
+      "",
+      0
+    ],
+    [
+      "melhorar sono e convivio social (melatonina 5 htp ocitocina litio)\n\n# melatonina 5 htp ocitocina e lítio\n# modo: positivo\n# tempo: 30 min\n323, 300\n711, 300\n529, 600\n3542, 600",
+      "",
+      0
+    ],
+    [
+      "regulador conjugado\nenergia e vitalidade\n\n#tempo: 03 minutos\n9999, 180",
+      "",
+      0
+    ],
+    [
+      "padroes energeticos desarmonicos\ndemais padores\n\nproblema mental\n#tempo: 33 minutos\n# general aid; especially if toxins are the cause\n522, 180\n146, 180\n10000, 180\n125, 180\n95, 180\n72, 180\n20, 180\n4.9, 180\n428, 180\n550, 180\n802, 180",
+      "",
+      0
+    ]
+  ]
+}

@@ -1,4 +1,6 @@
 from utils.sort_elements import sort_by_d, remove_duplicates
+from pprint import pprint
+from collections import Counter
 
 # Desenvolvimento do protocolo
 # Microrganismo de 0,000 até 0,350 – estarão em preto no relatório e na 1ª etapa do protocolo
@@ -29,7 +31,7 @@ exclude_metals = [
     "mercúrio",
     "chumbo",
     "alumínio",
-    "arsênico",
+    "arsênio",
     "prata",
     "níquel",
 ]
@@ -37,6 +39,7 @@ exclude_metals = [
 
 def metals_treatment_block(toxins_data: list[dict]):
     metals = []
+    print(f"Tamanho dos dados de entrada: {len(toxins_data)}")
 
     for d in toxins_data:
         metal_name = d.get("nome")
@@ -48,16 +51,12 @@ def metals_treatment_block(toxins_data: list[dict]):
 
         metals.append([metal_name, d.get("D")])
 
-    sorted_metals = sort_by_d(metals)
-    metals = remove_duplicates(sorted_metals)
-
     return metals
 
 
 def microorganisms_treatment_block(
     microrganisms_informations_oberon, microrganisms_informations_prosync
 ):
-    # Remover valores repetidos
     order_treatment = ["fungo", "helminto", "protozoário", "bactéria", "vírus"]
     order_treatment = [c.title() for c in order_treatment]
 
@@ -73,10 +72,14 @@ def microorganisms_treatment_block(
 
         for method in relevance:
             data_for_treatment.extend(
-                [data for data in method if data.get("tipo") == treatment_type]
+                [
+                    data.get("nome").lower()
+                    for data in method
+                    if data.get("tipo") == treatment_type
+                ]
             )
 
-        protocol_data[treatment_type] = data_for_treatment
+        protocol_data[treatment_type] = list(Counter(data_for_treatment))
 
     return protocol_data
 
