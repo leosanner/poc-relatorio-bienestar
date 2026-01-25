@@ -155,7 +155,7 @@ def generate_content_for_report(
                         filtered.append(item)
 
             context["table_microorganism"] = filtered
-            (microorganisms_treatment_block(filtered, prosync_data))
+            print(microorganisms_treatment_block(filtered, prosync_data))
 
         elif category == "cristais":
             # List of dicts
