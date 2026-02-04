@@ -1,10 +1,18 @@
+from itertools import groupby
+from docxtpl import DocxTemplate
+from io import BytesIO
 from utils.sort_elements import sort_by_d, remove_duplicates
+from utils.report import generate_content_for_report
 from pathlib import Path
 import pandas as pd
-from pprint import pprint
 from collections import Counter
 from rich import print
 import json
+
+TOL_TIME = 70 * 60
+
+path = Path(__file__).parent.parent
+PROTOCOL_TEMPLATE_PATH = path / "assets/protocol/template_protocolo_microrganismos.docx"
 
 # Desenvolvimento do protocolo
 # Microrganismo de 0,000 até 0,350 – estarão em preto no relatório e na 1ª etapa do protocolo
@@ -21,14 +29,7 @@ import json
 # ================================================================== #
 
 # ========================== Bloco parasitas ========================== #
-# ? Ordem de relevância -> (1º Prosync; 2º Oberon / Metahunter)
-# * 1 Fungos
-# * 2 Protozoário / Helminto
-# * 3 Bactérias
-# ! 3 minutos para cada frequência
 
-# TODO: quebrar em intervalos de 1 hora (cada elemento 3 minutos)
-# TODO: pegar frequências
 
 exclude_metals = [
     "cádmio",
@@ -45,10 +46,32 @@ def isNaN(value):
     return value != value
 
 
+def write_not_found_elements(names: list[str], path: Path):
+    try:
+        with open(path, "r", encoding="utf8") as file:
+            data = json.load(file)
+
+    except FileNotFoundError as error:
+        data = []
+
+    if not isinstance(data, list):
+        return
+
+    unique_elements = list(set(data))
+
+    for name in names:
+        if name not in unique_elements:
+            unique_elements.append(name)
+
+    with open(path, "w", encoding="utf8") as file:
+        json.dump(unique_elements, file, ensure_ascii=False, indent=2)
+
+
 def load_microorganisms_frequencies():
     path = (
         Path(__file__).parent.parent / "assets/protocol/microrganismos_encontrados.csv"
     )
+
     df = pd.read_csv(path)
     df.columns = ["name", "frequency", "time"]
     data = {}
@@ -75,15 +98,20 @@ def get_microorganism_frequency(microorganism_name: str, frequencies: dict):
     return frequencies.get(microorganism_name)
 
 
-def microorganisms_frequencies(protocol_data: dict[str:list]):
+def microorganisms_frequencies(protocol_data: dict[str, list]):
     summary = {}
     frequencies = load_microorganisms_frequencies()
+    not_founded_to_export = []
 
     for microorganism_type, microorganisms in protocol_data.items():
         if not summary.get(microorganism_type):
-            summary[microorganism_type] = {"freq": [], "time": []}
+            summary[microorganism_type] = {
+                "freq": [],
+                "time": [],
+                "microorganism_name": [],
+            }
 
-        not_founded = 0
+        not_founded = []
 
         for microorganism in microorganisms:
             microorganism_data = get_microorganism_frequency(
@@ -97,32 +125,39 @@ def microorganisms_frequencies(protocol_data: dict[str:list]):
                 summary[microorganism_type]["time"].extend(
                     microorganism_data["treatment_time"]
                 )
+                summary[microorganism_type]["microorganism_name"].extend(
+                    [
+                        microorganism
+                        for _ in range(len(microorganism_data["frequencies"]))
+                    ]
+                )
 
             else:
-                not_founded += 1
+                not_founded_to_export.append(microorganism)
+                not_founded.append(microorganism)
 
         unique_freq = []
         relative_time = []
+        unique_microorganism_name = []
 
         current_frequencies = summary[microorganism_type]["freq"]
         current_treatment_time = summary[microorganism_type]["time"]
+        current_names = summary[microorganism_type]["microorganism_name"]
 
         for i in range(0, len(summary[microorganism_type]["freq"])):
             if current_frequencies[i] not in unique_freq:
                 unique_freq.append(current_frequencies[i])
                 relative_time.append(current_treatment_time[i])
-
-        print("Tamanho antigo: ", len(current_frequencies))
-        print("Tamanho novo: ", len(unique_freq))
+                unique_microorganism_name.append(current_names[i])
 
         summary[microorganism_type]["freq"] = unique_freq
         summary[microorganism_type]["time"] = relative_time
+        summary[microorganism_type]["microorganism_name"] = unique_microorganism_name
 
-        print(
-            f"Resumo microrganismos do tipo: {microorganism_type}, não encontrados: {not_founded}, quantidade total: {len(microorganisms)}\n"
-        )
+        path_ = Path(__file__).parent / "not_founded_elements.json"
+        write_not_found_elements(not_founded, path_)
 
-    return summary
+    return (summary, not_founded_to_export)
 
 
 def metals_treatment_block(toxins_data: list[dict]):
@@ -142,6 +177,44 @@ def metals_treatment_block(toxins_data: list[dict]):
     return metals
 
 
+def load_freq_groups():
+    pass
+
+
+def metals_frequencies(metals: list):
+    # ver a que grupo o metal pertence
+    # para cada grupo pegar as frequências
+    # com as frequências em mãos, criar sessões de até uma hora
+
+    """
+    [
+        {
+            metals: [],
+            frequencies: [],
+            group_id: int
+
+        }
+    ]
+    """
+
+    groups_founded = []
+    frequency_group: list[dict] = load_freq_groups()
+
+    for metal_name, d in metals:
+        metal_name = metal_name.strip().lower()
+        for frequenct_obj in frequency_group:
+            if metal_name in list(frequenct_obj.get("metals")):
+                group_id = frequenct_obj.get("group_id")
+                if group_id not in groups_founded:
+                    groups_founded.append(group_id)
+
+                continue
+
+    # criar lista com total de frequências -> por meio dos grupos encontrados
+    # criar sessões de 1 hora
+
+
+# Arrumar esta parte, adicionar para cada sessão o nome do microorganismo
 def microorganisms_sessions(frequencies: dict[str:list]):
     # receber frequências
     # quebrar em blocos por tipo
@@ -155,7 +228,6 @@ def microorganisms_sessions(frequencies: dict[str:list]):
     }
     """
     sessions_data = []
-    TOL_TIME = 70 * 60
 
     for microorganism_type, freq_time in frequencies.items():
         microorganism_sessions = {
@@ -165,20 +237,103 @@ def microorganisms_sessions(frequencies: dict[str:list]):
 
         session_time = 0
         current_session_idx = 0
-        for frequency, treatment_time in zip(freq_time["freq"], freq_time["time"]):
+        for frequency, treatment_time, microorganism_name in zip(
+            freq_time["freq"], freq_time["time"], freq_time["microorganism_name"]
+        ):
             if session_time > TOL_TIME:
                 current_session_idx += 1
                 microorganism_sessions["sessions"][current_session_idx] = []
                 session_time = 0
 
             microorganism_sessions["sessions"][current_session_idx].append(
-                [frequency, treatment_time]
+                [frequency, treatment_time, microorganism_name]
             )
             session_time += float(treatment_time) if len(treatment_time) > 0 else 0
 
         sessions_data.append(microorganism_sessions)
 
     return sessions_data
+
+
+def format_microorganism_content_sessions(data: list[dict]):
+    all_sessions = []
+
+    for microorganism_type in data:
+        name = microorganism_type.get("name", "")
+        type_ = name.split("-")[-1].strip()
+        for sessions in microorganism_type.get("sessions", {}).values():
+            for session in sessions:
+                s = session.copy()
+                s.append(type_)
+                all_sessions.append(s)
+
+    return all_sessions
+
+
+def build_sessions(data: list[dict], tol_time: int = TOL_TIME) -> list[list]:
+    sessions_complete_content = []
+    frequencies = format_microorganism_content_sessions(data)
+    session_content = []
+    session_total_time = 0
+
+    for list_ in frequencies:
+        f_time = list_[1]
+        if not len(f_time) > 0:
+            continue
+
+        session_content.append(list_)
+        session_total_time += float(f_time)
+
+        if float(session_total_time) >= tol_time:
+            sessions_complete_content.append(session_content)
+            session_content = []
+            session_total_time = 0
+
+    if len(session_content) > 0:
+        sessions_complete_content.append(session_content)
+
+    return sessions_complete_content
+
+
+def microorganisms_content_docx(frequencies: list[list]):
+    docx_content = []
+
+    for session in frequencies:
+        session_data = {}
+
+        for row in session:
+            microorganism = row[2].lower()
+            row_freq_time_content = ",".join([row[0], row[1]])
+
+            if session_data.get(microorganism):
+                session_data[microorganism].append(row_freq_time_content)
+            else:
+                session_data[microorganism] = [row_freq_time_content]
+
+        session_for_docx = "\n".join(
+            ["\n".join([f"#{k}", "\n".join(v)]) for k, v in session_data.items()]
+        )
+
+        docx_content.append(session_for_docx)
+
+    return docx_content
+
+
+def format_microorganisms_to_docx(data: list[dict]):
+    frequencies = build_sessions(data)
+    content_for_docx = microorganisms_content_docx(frequencies)
+    return content_for_docx
+
+
+def add_midterm_analysis_sessions(docx_content, sessions_for_analysis: int = 9):
+    output_content = []
+
+    for idx, content in enumerate(docx_content):
+        if ((idx + 1) % sessions_for_analysis) == 0:
+            output_content.append("sessão de alinhamento extra")
+        output_content.append(content)
+
+    return output_content
 
 
 def microorganisms_treatment_block(
@@ -188,10 +343,12 @@ def microorganisms_treatment_block(
         microrganisms_informations_oberon, microrganisms_informations_prosync
     )
 
-    frequencies = microorganisms_frequencies(protocol_data)
+    frequencies, not_founded = microorganisms_frequencies(protocol_data)
     sessions = microorganisms_sessions(frequencies)
-    # Formatar para docx template
-    # Fazer alguns testes para apurar se está correto
+    formated_docx = format_microorganisms_to_docx(sessions)
+    content_with_additional_analysis = add_midterm_analysis_sessions(formated_docx)
+
+    return content_with_additional_analysis, not_founded
 
 
 def format_microorganism_content(
@@ -231,3 +388,32 @@ def format_microorganism_content(
 
 # ? Análise término
 # ================================================================== #
+
+
+# Implementação do protocolo
+def generate_protocol(protocol_content):
+    microorganisms_prosync = protocol_content.get("table_prosync", {})
+    microorganisms_oberon = protocol_content.get("table_microorganism", {})
+
+    m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
+        microorganisms_prosync, microorganisms_oberon
+    )
+
+    if not PROTOCOL_TEMPLATE_PATH.exists():
+        print(f"Template not found at {PROTOCOL_TEMPLATE_PATH}")
+        return
+
+    content = {
+        "name": "Nome teste",
+        "microorganisms_protocol": m_t_b,
+        "microorganisms_not_founded": not_founded_microorganisms,
+    }
+
+    doc = DocxTemplate(PROTOCOL_TEMPLATE_PATH)
+    doc.render(content)
+
+    buffer = BytesIO()
+    doc.save(buffer)
+    buffer.seek(0)
+
+    return buffer

@@ -1,3 +1,4 @@
+from rich import print
 from utils.prosync import extract_prosync_content
 from utils.oberon import (
     extract_oberon_content,
@@ -9,7 +10,6 @@ from docxtpl import DocxTemplate, RichText
 from datetime import datetime
 from io import BytesIO
 from utils.find_most_related_term import find_related_term
-from utils.protocol import metals_treatment_block, microorganisms_treatment_block
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
@@ -155,7 +155,6 @@ def generate_content_for_report(
                         filtered.append(item)
 
             context["table_microorganism"] = filtered
-            print(microorganisms_treatment_block(filtered, prosync_data))
 
         elif category == "cristais":
             # List of dicts
@@ -211,18 +210,14 @@ def generate_content_for_report(
     return context
 
 
-def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
+def generate_report(report_content):
 
     if not REPORT_TEMPLATE_PATH.exists():
         print(f"Template not found at {REPORT_TEMPLATE_PATH}")
         return
 
-    context = generate_content_for_report(
-        prosync_data, oberon_data, oberon_thresholds, patient_name
-    )
-
     doc = DocxTemplate(REPORT_TEMPLATE_PATH)
-    doc.render(context)
+    doc.render(report_content)
 
     buffer = BytesIO()
     doc.save(buffer)
