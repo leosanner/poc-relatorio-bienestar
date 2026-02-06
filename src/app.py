@@ -1,3 +1,4 @@
+from utils.oberon import toxins_info, crystal_info, microorganism_info
 import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
@@ -82,8 +83,6 @@ else:
 if oberon_files:
     st.subheader("Resultados Oberon")
 
-    from utils.oberon import toxins_info, crystal_info, microorganism_info
-
     for key, file in oberon_files.items():
         try:
             st.markdown(f"**Categoria: {oberon_categories[key]}**")
@@ -149,9 +148,8 @@ if st.button("Gerar Relatório"):
             protocol_and_report_content = generate_content_for_report(
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
             )
-            generate_protocol(protocol_and_report_content)
-            docx_buffer = generate_report(protocol_and_report_content)
 
+            docx_buffer = generate_report(protocol_and_report_content)
             protocol_buffer = generate_protocol(protocol_and_report_content)
 
             if protocol_buffer:
@@ -159,7 +157,7 @@ if st.button("Gerar Relatório"):
                     label="Baixar Protocolo (DOCX)",
                     data=protocol_buffer,
                     file_name=(
-                        f"relatorio_bienestar_{patient_name.replace(' ', '_')}.docx"
+                        f"protocolo_bienestar_{patient_name.replace(' ', '_')}.docx"
                         if patient_name
                         else "protocolo_bienestar.docx"
                     ),

@@ -1,8 +1,6 @@
 from itertools import groupby
 from docxtpl import DocxTemplate
 from io import BytesIO
-from utils.sort_elements import sort_by_d, remove_duplicates
-from utils.report import generate_content_for_report
 from pathlib import Path
 import pandas as pd
 from collections import Counter
@@ -154,15 +152,11 @@ def microorganisms_frequencies(protocol_data: dict[str, list]):
         summary[microorganism_type]["time"] = relative_time
         summary[microorganism_type]["microorganism_name"] = unique_microorganism_name
 
-        path_ = Path(__file__).parent / "not_founded_elements.json"
-        write_not_found_elements(not_founded, path_)
-
     return (summary, not_founded_to_export)
 
 
 def metals_treatment_block(toxins_data: list[dict]):
     metals = []
-    print(f"Tamanho dos dados de entrada: {len(toxins_data)}")
 
     for d in toxins_data:
         metal_name = d.get("nome")
@@ -215,7 +209,7 @@ def metals_frequencies(metals: list):
 
 
 # Arrumar esta parte, adicionar para cada sessão o nome do microorganismo
-def microorganisms_sessions(frequencies: dict[str:list]):
+def microorganisms_sessions(frequencies: dict[str, list]):
     # receber frequências
     # quebrar em blocos por tipo
     # quebrar em sessões de 1 hora
@@ -330,7 +324,7 @@ def add_midterm_analysis_sessions(docx_content, sessions_for_analysis: int = 9):
 
     for idx, content in enumerate(docx_content):
         if ((idx + 1) % sessions_for_analysis) == 0:
-            output_content.append("sessão de alinhamento extra")
+            output_content.append("sessão de alinhamento")
         output_content.append(content)
 
     return output_content
