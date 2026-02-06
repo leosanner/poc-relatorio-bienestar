@@ -138,7 +138,6 @@ if st.button("Gerar Relatório"):
         st.markdown("---")
         st.subheader("Relatório")
         try:
-            from utils.report import generate_report, prosync_table_content
 
             # Calculate prosync table content to pass to context (reusing existing logic for consistency)
             prosync_list = []

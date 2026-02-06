@@ -33,6 +33,10 @@ important_microrganisms = [
 ]
 
 
+def verify_parentesis(text: str):
+    return ("(" in text) and (")" in text)
+
+
 def load_stopwords(file_name):
     data_path = OBERON_DATA_PATH / "elementos-excluir"
 
@@ -201,14 +205,14 @@ def microorganism_info(
     }
 
     scpecial_micro = [
-        "hepatite d",
-        "hepatite c",
-        "hepatite e",
-        "hepatite b",
-        "influenza a",
-        "hepadnovirus b",
-        "salmonella paratyphi b",
-        "coxsackie b4",
+        "Hepatite D",
+        "Hepatite C",
+        "Hepatite E",
+        "Hepatite B",
+        "Influenza A",
+        "Hepadnovirus B",
+        "Salmonella paratyphi B",
+        "Coxsackie B4",
     ]
 
     content = []
@@ -243,6 +247,10 @@ def microorganism_info(
 
                         if obj["nome"].lower() in scpecial_micro:
                             new_obj["nome"] = match_name.title()
+
+                        elif verify_parentesis(obj["nome"]):
+                            new_obj["nome"] = match_name
+
                         else:
                             new_obj["nome"] = first_char_uppercase(match_name)
 
@@ -339,7 +347,14 @@ def emotions_info(emotions_content: dict):
 
 
 def patologies_info(patologies_content: dict):
+    matchs = load_match_information("patologias.json")
     formated_content = {}
+
+    for patologie_name, d in patologies_content.items():
+        match = matchs.get(patologie_name.strip().lower())
+        name_in_file = match if match else patologie_name.strip().lower()
+        formated_content[name_in_file] = d
+
     formated_content = dict(
         sorted(patologies_content.items(), key=lambda x: x[1], reverse=False)
     )
