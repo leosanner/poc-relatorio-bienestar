@@ -1,3 +1,4 @@
+from utils.oberon import toxins_info, crystal_info, microorganism_info
 import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
@@ -7,7 +8,12 @@ from utils.oberon import (
     emotions_info,
     patologies_info,
 )
-from utils.report import generate_report, prosync_table_content
+from utils.report import (
+    generate_report,
+    prosync_table_content,
+    generate_content_for_report,
+)
+from utils.protocol import generate_protocol
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
@@ -77,8 +83,6 @@ else:
 if oberon_files:
     st.subheader("Resultados Oberon")
 
-    from utils.oberon import toxins_info, crystal_info, microorganism_info
-
     for key, file in oberon_files.items():
         try:
             st.markdown(f"**Categoria: {oberon_categories[key]}**")
@@ -140,9 +144,26 @@ if st.button("Gerar Relatório"):
             if prosync_data:
                 prosync_list = prosync_table_content(prosync_data, gen_report=True)[1]
 
-            docx_buffer = generate_report(
+            protocol_and_report_content = generate_content_for_report(
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
             )
+
+            docx_buffer = generate_report(protocol_and_report_content)
+            protocol_buffer = generate_protocol(protocol_and_report_content)
+
+            if protocol_buffer:
+                st.download_button(
+                    label="Baixar Protocolo (DOCX)",
+                    data=protocol_buffer,
+                    file_name=(
+                        f"protocolo_bienestar_{patient_name.replace(' ', '_')}.docx"
+                        if patient_name
+                        else "protocolo_bienestar.docx"
+                    ),
+                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                )
+            else:
+                st.error("Erro ao gerar o protocolo (Template não encontrado?).")
 
             if docx_buffer:
                 st.download_button(

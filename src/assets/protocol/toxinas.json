@@ -1,0 +1,309 @@
+{
+  "Mercúrio": [
+    "mercúrio",
+    "hg (mercúrio)",
+    0.7619047619047619,
+    "1075, 360\t\n1182, 360\n2430, 360"
+  ],
+  "Chumbo": [
+    "chumbo",
+    "pb (chumbo)",
+    0.7058823529411765,
+    "1257, 360\n1382, 360\n2092, 360"
+  ],
+  "Cádmio": [
+    "cádmio",
+    "cd (cádmio",
+    0.75,
+    "1192, 360\n1310, 360\n2284, 360"
+  ],
+  "Arsênio": [
+    "arsênio",
+    "as(arsênico)",
+    0.7368421052631579,
+    "1408, 360\t\n1548, 360\n1875, 360"
+  ],
+  "Níquel": "",
+  "Molibdênio": [
+    "molibdênio",
+    "mo(molibidenio)",
+    0.72,
+    "3125, 360\n870, 360\n957, 360"
+  ],
+  "Urânio": [
+    "urânio",
+    "u(urânio)",
+    0.8,
+    "464, 360\n510, 360\n3606, 360\n761, 360\n836, 360"
+  ],
+  "Benzeno": "",
+  "Tolueno": "",
+  "Xileno": "",
+  "Acetona": "",
+  "Clorofórmio": "",
+  "Tetracloreto de carbono": "",
+  "Amianto": "",
+  "Radiação gama": "",
+  "Raios X": "",
+  "Bisfenol A (BPA)": "",
+  "Ftalatos": "",
+  "Parabenos": "",
+  "Atrazina": "",
+  "Fósforo": "",
+  "Fluor": [
+    "fluor",
+    "f(fluor)",
+    0.7692307692307693,
+    "0832, 360"
+  ],
+  "Platina": [
+    "platina",
+    "pt(platina)",
+    0.7777777777777778,
+    "2649, 360\n1025, 360\n1127, 360"
+  ],
+  "Ouro": [
+    "ouro",
+    "au(ouro)",
+    0.6666666666666666,
+    "1123, 360\n1235, 360\n2420, 360"
+  ],
+  "Lítio": "",
+  "ROB (B) no cabelo": "",
+  "37 BACTÉRIAS": "",
+  "conduzir": "",
+  "Tálio": [
+    "tálio",
+    "tl(tálio)",
+    0.7142857142857143,
+    "985, 360\n1083, 360"
+  ],
+  "Radiação": "",
+  "Estrôncio": [
+    "estrôncio",
+    "sr(estroncio)",
+    0.7272727272727273,
+    "4587, 360\n592, 360\n651, 360"
+  ],
+  "Zinco": [
+    "zinco",
+    "zn(zinco)",
+    0.7142857142857143,
+    "1275, 360\n1402, 360"
+  ],
+  "VACUNAS": "",
+  "Constipação": "",
+  "Estanho": [
+    "estanho",
+    "sn(estanho)",
+    0.7777777777777778,
+    "2263, 360\n1158, 360\n1273, 360"
+  ],
+  "LESIÓN/CIRUGÍA": "",
+  "TOXINAS DE alimentares": "",
+  "Toxinas de vacinas": "",
+  "METAIS PESADOS": "",
+  "CORE": "",
+  "BACTÉRIAS": "",
+  "ÁLCOOL": "",
+  "COSMÉTICOS": "",
+  "Arsênico": [
+    "arsênico",
+    "as(arsênico)",
+    0.8,
+    "1408, 360\t\n1548, 360\n1875, 360"
+  ],
+  "GLUTEN": "",
+  "Tugstênio": [
+    "tugstênio",
+    "w(tungstenio",
+    0.7619047619047619,
+    "1069, 360\n1175, 360"
+  ],
+  "MUCOSIDADES": "",
+  "INSETICIDAS": "",
+  "Toxinas do Açúcar": "",
+  "TOXINAS Intestinais": "",
+  "MODELO VIRTUAL": "",
+  "Priones": [
+    "priones",
+    "prions",
+    0.9230769230769231,
+    "150, 180; 250, 180; 567.2, 180; 743.2, 180; 951, 180; 960, 180; 970.3, 180; 978.1, 180; 984, 180; 984, 180"
+  ],
+  "RICKETSIA": "",
+  "Tabaco": "",
+  "TOXINAS CERDO/RES": "",
+  "Toxinas Nervosas": "",
+  "LÁCTEOS": "",
+  "AMEBA": "",
+  "Amianato": "",
+  "Monóxido De Carbono": [
+    "monóxido de carbono",
+    "oxido de grafeno",
+    0.6857142857142857,
+    "1212, 180\n2020, 180\n2610, 180\n3793, 180\n5398, 180\n6114, 180\n7299, 180\n8838, 180\n9584, 180\n10560, 180\n11286, 180\n13688, 180\n14328, 180\n15073, 180\n15723, 180\n16669, 180\n17438, 180\n18122, 180\n19226, 180"
+  ],
+  "HONGOS": "",
+  "CAFEINA": "",
+  "Fármacos": "",
+  "A MELHOR DISTRIBUIÇÃO": "",
+  "Potássio": [
+    "potássio",
+    "k(potassio)",
+    0.7368421052631579,
+    "356, 360\n391, 360"
+  ],
+  "PRATA": [
+    "prata",
+    "ag(prata)",
+    0.7142857142857143,
+    "830, 360\n913, 360\n3269, 360"
+  ],
+  "AMALGAMAS": "",
+  "CLORO": "",
+  "Cromo": [
+    "cromo",
+    "cr(cromo)",
+    0.7142857142857143,
+    "762, 360\n838, 360"
+  ],
+  "ÁLCOOL DESIDROGENASE": "",
+  "BERYLLIUM 30X 200X 1M (berílio)": "",
+  "Silício": [
+    "silício",
+    "silicio",
+    0.8571428571428571,
+    "423, 1200 \n456, 1200"
+  ],
+  "COBALT 30X 200X 1M (Cobalt)": "",
+  "Amálgama": "",
+  "Fluoreto": "",
+  "Lesão / Cirurgia": "",
+  "Lacticínios": "",
+  "cafeína": "",
+  "glúten": "",
+  "toxinas intestinais": "",
+  "toxinas nervosas": "",
+  "cloranfenicol": "",
+  "Cobre": [
+    "cobre",
+    "cu(cobre)",
+    0.7142857142857143,
+    "839, 360\n923, 360"
+  ],
+  "formaldeído": "",
+  "níquel (forma diferente)": "",
+  "pesticidas": "",
+  "Salicilatos": [
+    "salicilatos",
+    "silicio",
+    0.6666666666666666,
+    "423, 1200 \n456, 1200"
+  ],
+  "salicilatos acetil": "",
+  "triptofano": "",
+  "zinco (forma diferente)": "",
+  "ALUMÍNIO 30X 200X 1M (Alumínio)": "",
+  "ARSENIC 30X 200X 1M (Arseny)": "",
+  "MERC TEM 30X 200X 1M (mercúrio metálico)": "",
+  "Stannum 30X 200X 1M (Tin)": "",
+  "Tálio 30X 200X 1M (Tálio)": "",
+  "URÂNIO 30X200X 1M (Urano)": "",
+  "Alumínio": [
+    "alumínio",
+    "al (aluminio)",
+    0.6666666666666666,
+    "688, 360\n757, 360\n3946, 360"
+  ],
+  "Antimônio": [
+    "antimônio",
+    "sb(antimônio)",
+    0.8181818181818182,
+    "1253, 360\n1378, 360\n2095, 360"
+  ],
+  "Berílio": [
+    "berílio",
+    "be(berilio",
+    0.7058823529411765,
+    "1161, 360\n1276, 360\n2257, 360"
+  ],
+  "Bismuto": [
+    "bismuto",
+    "bi(bismuto)",
+    0.7777777777777778,
+    "2148, 360\n1222, 360\n1344, 360"
+  ],
+  "Bário": [
+    "bário",
+    "ba(bário)",
+    0.7142857142857143,
+    "493, 120\t\n542, 120\n2283, 120"
+  ],
+  "Cobalto": [
+    "cobalto",
+    "co(cobalto)",
+    0.7777777777777778,
+    "1133, 360\n1246, 360"
+  ],
+  "Cálcio": "",
+  "Ferro": [
+    "ferro",
+    "fe(ferro)",
+    0.7142857142857143,
+    "2475, 360\n1098, 360\t\n1207, 360"
+  ],
+  "Germânio": [
+    "germânio",
+    "ge(germanio)",
+    0.7,
+    "1028, 360\n1130, 360"
+  ],
+  "Gálio": "",
+  "Iodo": "",
+  "Magnésio": [
+    "magnésio",
+    "mg(magnesio)",
+    0.7,
+    "956, 360\n1051, 360"
+  ],
+  "Manganês": [
+    "manganês",
+    "mn(manganes)",
+    0.7,
+    "976, 120\n1073, 120"
+  ],
+  "Rubídio": [
+    "rubídio",
+    "rb(rubidio)",
+    0.6666666666666666,
+    "6867, 360\n343, 360\n377, 360\n350, 360\n384, 360"
+  ],
+  "Selênio": [
+    "selênio",
+    "se(selenio)",
+    0.6666666666666666,
+    "1391, 360\n1530, 360"
+  ],
+  "Sódio": "",
+  "Tungstênio": [
+    "tungstênio",
+    "w(tungstenio",
+    0.8181818181818182,
+    "1069, 360\n1175, 360"
+  ],
+  "Vanádio": [
+    "vanádio",
+    "v(vanadio",
+    0.75,
+    "3125, 360\n856, 360\n941, 360"
+  ],
+  "Zircônio": "",
+  "Intestine (Bowel, Colon, Intestine). D Nosode *  ]": "",
+  "Cromosomas Homem": "",
+  "Gluten": "",
+  "Metales Pesados": "",
+  "Parásitos": "",
+  "Toxinas De Vacinas": "",
+  "Toxinas de suínos e bovinos": ""
+}

@@ -1,3 +1,4 @@
+from rich import print
 from utils.prosync import extract_prosync_content
 from utils.oberon import (
     extract_oberon_content,
@@ -210,18 +211,14 @@ def generate_content_for_report(
     return context
 
 
-def generate_report(prosync_data, oberon_data, oberon_thresholds, patient_name):
+def generate_report(report_content):
 
     if not REPORT_TEMPLATE_PATH.exists():
         print(f"Template not found at {REPORT_TEMPLATE_PATH}")
         return
 
-    context = generate_content_for_report(
-        prosync_data, oberon_data, oberon_thresholds, patient_name
-    )
-
     doc = DocxTemplate(REPORT_TEMPLATE_PATH)
-    doc.render(context)
+    doc.render(report_content)
 
     buffer = BytesIO()
     doc.save(buffer)
