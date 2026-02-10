@@ -5,12 +5,15 @@ from pathlib import Path
 import pandas as pd
 from collections import Counter
 from rich import print
+from utils.format_string import first_char_uppercase
 import json
 
 TOL_TIME = 70 * 60
 
 path = Path(__file__).parent.parent
 PROTOCOL_TEMPLATE_PATH = path / "assets/protocol/template_protocolo_microrganismos.docx"
+ASSETS = path / "assets"
+PROTOCOL_ASSETS_PATH = ASSETS / "protocol"
 
 # Desenvolvimento do protocolo
 # Microrganismo de 0,000 até 0,350 – estarão em preto no relatório e na 1ª etapa do protocolo
@@ -27,6 +30,11 @@ PROTOCOL_TEMPLATE_PATH = path / "assets/protocol/template_protocolo_microrganism
 # ================================================================== #
 
 # ========================== Bloco parasitas ========================== #
+
+
+def load_json(path_: Path | str) -> dict:
+    with open(path_, "r", encoding="utf-8") as file:
+        return json.load(file)
 
 
 exclude_metals = [
@@ -155,7 +163,16 @@ def microorganisms_frequencies(protocol_data: dict[str, list]):
     return (summary, not_founded_to_export)
 
 
-def metals_treatment_block(toxins_data: list[dict]):
+# ================== Toxinas ================== #
+
+
+def load_metals_content():
+    metals = load_json(PROTOCOL_ASSETS_PATH / "toxinas_manus.json")
+
+    return metals
+
+
+def process_metals_content_from_prosync(toxins_data: list[dict]):
     metals = []
 
     for d in toxins_data:
@@ -166,46 +183,107 @@ def metals_treatment_block(toxins_data: list[dict]):
         if metal_name.lower() in exclude_metals:
             continue
 
-        metals.append([metal_name, d.get("D")])
+        metals.append(metal_name)
 
     return metals
 
 
-def load_freq_groups():
-    pass
-
-
-def metals_frequencies(metals: list):
-    # ver a que grupo o metal pertence
-    # para cada grupo pegar as frequências
-    # com as frequências em mãos, criar sessões de até uma hora
-
-    """
-    [
-        {
-            metals: [],
-            frequencies: [],
-            group_id: int
-
-        }
+def compare_metals_to_table_frequencies(metals_name: list[str]):
+    toxins_metadata = load_metals_content()
+    toxins_metadata_keys = [k.lower().strip() for k in list(toxins_metadata.keys())]
+    toxins_metadata_oberon_names = [
+        v.get("oberon_name").lower() for v in toxins_metadata.values()
     ]
-    """
 
-    groups_founded = []
-    frequency_group: list[dict] = load_freq_groups()
+    not_founded = []
+    founded = []
 
-    for metal_name, d in metals:
-        metal_name = metal_name.strip().lower()
-        for frequenct_obj in frequency_group:
-            if metal_name in list(frequenct_obj.get("metals")):
-                group_id = frequenct_obj.get("group_id")
-                if group_id not in groups_founded:
-                    groups_founded.append(group_id)
+    for metal in metals_name:
+        if (
+            metal.lower() not in toxins_metadata_keys
+            and metal.lower() not in toxins_metadata_oberon_names
+        ):
+            not_founded.append(metal.lower())
+            continue
 
-                continue
+        elif toxins_metadata.get(metal.lower()):
+            toxin_content = toxins_metadata.get(metal.lower(), {})
+            founded.append(
+                {
+                    "display_name": metal.lower(),
+                    "freq": toxin_content.get("frequency"),
+                    "time": toxin_content.get("time"),
+                }
+            )
 
-    # criar lista com total de frequências -> por meio dos grupos encontrados
-    # criar sessões de 1 hora
+        else:
+            for k, v in toxins_metadata.items():
+                if v.get("oberon_name").lower() == metal.lower():
+                    founded.append(
+                        {
+                            "display_name": metal.lower(),
+                            "freq": v.get("frequency"),
+                            "time": v.get("time"),
+                        }
+                    )
+                    break
+
+    return founded, not_founded
+
+
+def metals_docx_format(treatment_content: list[list]):
+    docx_sessions = []
+
+    for session_treatment in treatment_content:
+        sessions_by_toxin_name = {}
+
+        for treatment in session_treatment:
+            if treatment[0] not in sessions_by_toxin_name:
+                sessions_by_toxin_name[treatment[0]] = []
+
+            sessions_by_toxin_name[treatment[0]].append(", ".join(treatment[1:]))
+
+        docx_sessions.append(
+            "\n".join(
+                [
+                    f"#{first_char_uppercase(k)}\n{"\n".join(v)}"
+                    for k, v in sessions_by_toxin_name.items()
+                ]
+            )
+        )
+
+    return docx_sessions
+
+
+def format_metals_content_to_docx(founded: list[dict], tol_time: int = TOL_TIME):
+    sessions: list[list] = []
+    current_session = []
+    current_session_time = 0
+
+    for toxin_treatment_content in founded:
+        toxin_name = toxin_treatment_content.get("display_name")
+        frequencies = toxin_treatment_content.get("freq", [])
+        times = toxin_treatment_content.get("time", [])
+
+        for freq, time in zip(frequencies, times):
+            if current_session_time >= tol_time:
+                sessions.append(current_session)
+                current_session = []
+                current_session_time = 0
+
+            current_session_time += float(time)
+            current_session.append([toxin_name, freq, time])
+
+    sessions.append(current_session)
+    return metals_docx_format(sessions)
+
+
+def metals_treatment_block(toxins_data: list[dict]):
+    metals = process_metals_content_from_prosync(toxins_data)
+    founded, not_founded = compare_metals_to_table_frequencies(metals)
+    content_for_docx = format_metals_content_to_docx(founded)
+
+    return content_for_docx, not_founded
 
 
 # Arrumar esta parte, adicionar para cada sessão o nome do microorganismo
@@ -388,7 +466,9 @@ def format_microorganism_content(
 def generate_protocol(protocol_content):
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
+    toxins = protocol_content.get("table_toxins", {})
 
+    t_t_b, not_founded_metals = metals_treatment_block(toxins)
     m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
         microorganisms_prosync, microorganisms_oberon
     )
@@ -401,6 +481,8 @@ def generate_protocol(protocol_content):
         "name": "Nome teste",
         "microorganisms_protocol": m_t_b,
         "microorganisms_not_founded": not_founded_microorganisms,
+        "metals_protocol": t_t_b,
+        "metals_not_founded": not_founded_metals,
     }
 
     doc = DocxTemplate(PROTOCOL_TEMPLATE_PATH)
