@@ -1,4 +1,5 @@
 from utils.oberon import toxins_info, crystal_info, microorganism_info
+from utils.budget import generate_budget
 import streamlit as st
 import pandas as pd
 from utils.prosync import extract_prosync_content
@@ -148,6 +149,7 @@ if st.button("Gerar Relatório"):
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
             )
 
+            budget_buffer = generate_budget(protocol_and_report_content)
             docx_buffer = generate_report(protocol_and_report_content)
             protocol_buffer = generate_protocol(protocol_and_report_content)
 
@@ -164,6 +166,20 @@ if st.button("Gerar Relatório"):
                 )
             else:
                 st.error("Erro ao gerar o protocolo (Template não encontrado?).")
+
+            if budget_buffer:
+                st.download_button(
+                    label="Baixar Orçamento (DOCX)",
+                    data=budget_buffer,
+                    file_name=(
+                        f"orcamento_bienestar_{patient_name.replace(' ', '_')}.docx"
+                        if patient_name
+                        else "orcamento_bienestar.docx"
+                    ),
+                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                )
+            else:
+                st.error("Erro ao gerar o relatório (Template não encontrado?).")
 
             if docx_buffer:
                 st.download_button(
