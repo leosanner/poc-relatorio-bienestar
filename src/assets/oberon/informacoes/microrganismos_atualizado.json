@@ -238,6 +238,10 @@
   ],
   "bactéria": [
     {
+      "nome": "Streptococcus bovis D",
+      "sintomas": "Pode fazer parte da microbiota intestinal. Em carga baixa,  é assintomático ou causa desconforto abdominal leve e alteração do hábito intestinal. Em carga alta, pode provocar infecções graves como endocardite e septicemia, além de estar fortemente associado a pólipos e câncer colorretal, podendo causar febre persistente, fraqueza e sinais inflamatórios."
+    },
+    {
       "nome": "Borellia miyamotoi",
       "sintomas": "Não faz parte da biota humana. Em baixa carga, a nfecção pode ser assintomática ou causar sintomas leves, como febre, fadiga, dor de cabeça e mal-estar. Em carga alta, pode provocar febre alta, calafrios, mialgias, dor de cabeça intensa e, em alguns casos, envolvimento neurológico (meningite ou meningoencefalite), sobretudo em pessoas imunocomprometidas."
     },
@@ -655,7 +659,7 @@
     },
     {
       "nome": "Cryptococcus neoformans",
-      "sintomas": "Meningite fúngica",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode ser assintomático ou causar cansaço, febre, dor de cabeça, sonolência, dificuldade de concentração e tosse seca. Em carga alta, pode provocar meningite fúngica.",
       "fonte": "Excretas de pombos"
     },
     {

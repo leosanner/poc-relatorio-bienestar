@@ -215,6 +215,8 @@ def microorganism_info(
         "Coxsackie B4",
     ]
 
+    scpecial_micro_d = {k.lower(): k for k in scpecial_micro}
+
     content = []
     control = None
     if for_prosync:
@@ -245,7 +247,7 @@ def microorganism_info(
                 for obj in objs:
                     if obj["nome"].title() == match_name:
 
-                        if obj["nome"].lower() in scpecial_micro:
+                        if scpecial_micro_d.get(obj["nome"].lower()):
                             new_obj["nome"] = match_name.title()
 
                         elif verify_parentesis(obj["nome"]):
@@ -280,7 +282,6 @@ def food_info(food_content: dict):
     food_sw = load_stopwords("alimentos.json")
     food_sw = [f.lower() for f in food_sw]
     food_match = load_match_information("alimentos.json")
-
     content = []
 
     for k, v in food_content.items():
@@ -348,6 +349,7 @@ def emotions_info(emotions_content: dict):
 
 def patologies_info(patologies_content: dict):
     matchs = load_match_information("patologias.json")
+    patologies_stopwords = load_stopwords("patologias.json")
     formated_content = {}
 
     for patologie_name, d in patologies_content.items():
@@ -359,4 +361,8 @@ def patologies_info(patologies_content: dict):
         sorted(patologies_content.items(), key=lambda x: x[1], reverse=False)
     )
 
-    return {first_char_uppercase(k): v for k, v in formated_content.items()}
+    return {
+        first_char_uppercase(k): v
+        for k, v in formated_content.items()
+        if k.lower() not in patologies_stopwords
+    }

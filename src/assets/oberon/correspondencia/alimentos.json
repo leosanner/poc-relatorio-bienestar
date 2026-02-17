@@ -18,8 +18,10 @@
   "ostras": "ostra",
   "côco": "coco",
   "cogumelos ostra": "cogumelo-ostra (shimeji)",
-  "cogumelos vegetal": "cogumelo paris (champignon)",
+  "cogumelos vegetal": "champignon",
+  "cogumelo paris (champignon)": "champignon",
   "couve-flor vegetais": "couve-flor",
+  "couve de bruxelas": "couve de Bruxelas",
   "cravinho": "cravo da índia",
   "datas de frutas": "tâmaras",
   "dente de leão vegetal": "dente de leão",
@@ -49,6 +51,7 @@
   "pepinos em conserva vegetais": "picles",
   "pistacho": "pistache",
   "sementes de abóbora": "Semente de abóbora",
+
   "rábano": "rabanete",
   "radish vegetais": "rabanete",
   "rebentos bambu": "broto de bambu",
@@ -72,6 +75,7 @@
   "azeitonas verdes": "azeitona verde",
   "ovos de codorna mol": "ovo de cordorna",
   "peixe linguado": "linguado",
+  "peixe liguado": "linguado",
   "sementes de girassol": "semente de girassol",
   "kiwis": "kiwi",
   "red vegetal repolho": "repolho roxo"

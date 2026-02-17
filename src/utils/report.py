@@ -13,7 +13,7 @@ from utils.find_most_related_term import find_related_term
 
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
-REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_provisorio.docx"
+REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_relatorio.docx"
 
 
 def inside_interval(val, interval):
