@@ -37,6 +37,11 @@ def load_json(path_: Path | str) -> dict:
         return json.load(file)
 
 
+def write_json_file(file_name: str, obj):
+    with open(f"{file_name}.json", "w", encoding="utf8") as file:
+        json.dump(obj, file, indent=2, ensure_ascii=False)
+
+
 exclude_metals = [
     "cádmio",
     "mercúrio",
@@ -73,6 +78,36 @@ def write_not_found_elements(names: list[str], path: Path):
         json.dump(unique_elements, file, ensure_ascii=False, indent=2)
 
 
+def load_microorganisms(file_name: str = "frequencias_microrganismos.csv"):
+    path = PROTOCOL_ASSETS_PATH / file_name
+    df = pd.read_csv(path)  # verificar index col
+    data = {}
+    df.columns = ["microorganism", "frequency", "timeTreatment", "_"]
+
+    for idx, row in df.iterrows():
+        microorganism_name = row["microorganism"]
+        microorganism_name = microorganism_name.strip().lower()
+
+        if microorganism_name not in data:
+            data[microorganism_name] = {
+                "frequencies": [],
+                "treatment_time": [],
+            }
+
+        frequency = row["frequency"]
+        time = row["timeTreatment"]
+
+        if isNaN(frequency):
+            frequency = " "
+        if isNaN(time):
+            time = " "
+
+        data[microorganism_name]["frequencies"].append(frequency)
+        data[microorganism_name]["treatment_time"].append(time)
+
+    return data
+
+
 def load_microorganisms_frequencies():
     path = (
         Path(__file__).parent.parent / "assets/protocol/microrganismos_encontrados.csv"
@@ -106,7 +141,7 @@ def get_microorganism_frequency(microorganism_name: str, frequencies: dict):
 
 def microorganisms_frequencies(protocol_data: dict[str, list]):
     summary = {}
-    frequencies = load_microorganisms_frequencies()
+    frequencies = load_microorganisms()
     not_founded_to_export = []
 
     for microorganism_type, microorganisms in protocol_data.items():
