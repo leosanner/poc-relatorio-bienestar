@@ -160,12 +160,15 @@ def microorganisms_frequencies(protocol_data: dict[str, list]):
             )
 
             if microorganism_data:
+                treatment_time_updated = [
+                    treat_time if treat_time not in [" ", ""] else "180"
+                    for treat_time in microorganism_data["treatment_time"]
+                ]
+
                 summary[microorganism_type]["freq"].extend(
                     microorganism_data["frequencies"]
                 )
-                summary[microorganism_type]["time"].extend(
-                    microorganism_data["treatment_time"]
-                )
+                summary[microorganism_type]["time"].extend(treatment_time_updated)
                 summary[microorganism_type]["microorganism_name"].extend(
                     [
                         microorganism
@@ -449,7 +452,6 @@ def microorganisms_treatment_block(
     protocol_data = format_microorganism_content(
         microrganisms_informations_oberon, microrganisms_informations_prosync
     )
-
     frequencies, not_founded = microorganisms_frequencies(protocol_data)
     sessions = microorganisms_sessions(frequencies)
     formated_docx = format_microorganisms_to_docx(sessions)

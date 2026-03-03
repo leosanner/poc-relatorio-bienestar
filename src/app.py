@@ -149,9 +149,17 @@ if st.button("Gerar Relatório"):
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
             )
 
-            budget_buffer = generate_budget(protocol_and_report_content)
-            docx_buffer = generate_report(protocol_and_report_content)
-            protocol_buffer = generate_protocol(protocol_and_report_content)
+            docx_buffer = None
+            protocol_buffer = None
+            budget_buffer = None
+
+            try:
+                docx_buffer = generate_report(protocol_and_report_content)
+                protocol_buffer = generate_protocol(protocol_and_report_content)
+                budget_buffer = generate_budget(protocol_and_report_content)
+
+            except Exception as e:
+                print(f"Erro ao gerar conteúdo: {e}")
 
             if protocol_buffer:
                 st.download_button(
