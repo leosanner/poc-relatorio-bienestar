@@ -2,6 +2,7 @@ from utils.oberon import toxins_info, crystal_info, microorganism_info
 from utils.budget import generate_budget
 import streamlit as st
 import pandas as pd
+from typing import get_args
 from utils.prosync import extract_prosync_content
 from utils.oberon import (
     extract_oberon_content,
@@ -10,6 +11,7 @@ from utils.oberon import (
     patologies_info,
 )
 from utils.report import (
+    availableCompanies,
     generate_report,
     prosync_table_content,
     generate_content_for_report,
@@ -18,7 +20,7 @@ from utils.protocol import generate_protocol
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
-st.title("Bienestar POC - Processamento de Arquivos")
+st.title("Processamento de Arquivos")
 
 st.markdown("### Prosync (PDF)")
 prosync_file = st.file_uploader("Upload Prosync PDF", type=["pdf"], key="prosync")
@@ -58,6 +60,12 @@ for key, label in oberon_categories.items():
 
 st.markdown("### Informações do Relatório")
 patient_name = st.text_input("Nome do Paciente", key="patient_name")
+selected_company = st.selectbox(
+    "Clínica",
+    options=get_args(availableCompanies),
+    index=0,
+    key="selected_company",
+)
 
 st.markdown("### Parâmetros de Configuração")
 prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
@@ -194,9 +202,9 @@ if st.button("Gerar Relatório"):
                     label="Baixar Relatório (DOCX)",
                     data=docx_buffer,
                     file_name=(
-                        f"relatorio_bienestar_{patient_name.replace(' ', '_')}.docx"
+                        f"relatorio_{selected_company}_{patient_name.replace(' ', '_')}.docx"
                         if patient_name
-                        else "relatorio_bienestar.docx"
+                        else f"relatorio_{selected_company}.docx"
                     ),
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 )
