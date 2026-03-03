@@ -5,6 +5,7 @@ from utils.oberon import (
     format_file_name,
     important_microrganisms,
 )
+from typing import Literal
 from pathlib import Path
 from docxtpl import DocxTemplate, RichText
 from datetime import datetime
@@ -14,6 +15,22 @@ from utils.find_most_related_term import find_related_term
 current_path = Path(__file__)
 ROOT = current_path.parent.parent
 REPORT_TEMPLATE_PATH = ROOT / "assets/report/template_relatorio.docx"
+ASSETS_PATH = ROOT / "assets"
+REPORT_ASSETS_PATH = ASSETS_PATH / "report"
+
+availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
+
+
+def load_path_by_company(
+    company_name: availableCompanies = "Bienestar",
+) -> Path:
+    match company_name:
+        case "Alecrim":
+            return REPORT_ASSETS_PATH / "relatorio_alecrim.docx"
+        case "Bienestar":
+            return REPORT_ASSETS_PATH / "relatorio_bienestar.docx"
+        case "VitaeFlux":
+            return REPORT_ASSETS_PATH / "relatorio_vitaeflux.docx"
 
 
 def inside_interval(val, interval):
@@ -211,13 +228,14 @@ def generate_content_for_report(
     return context
 
 
-def generate_report(report_content):
+def generate_report(report_content, company_name: availableCompanies = "Bienestar"):
+    template_path = load_path_by_company(company_name)
 
-    if not REPORT_TEMPLATE_PATH.exists():
-        print(f"Template not found at {REPORT_TEMPLATE_PATH}")
+    if not template_path.exists():
+        print(f"Template not found at {template_path}")
         return
 
-    doc = DocxTemplate(REPORT_TEMPLATE_PATH)
+    doc = DocxTemplate(template_path)
     doc.render(report_content)
 
     buffer = BytesIO()
