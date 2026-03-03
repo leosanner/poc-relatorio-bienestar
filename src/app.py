@@ -11,12 +11,14 @@ from utils.oberon import (
     patologies_info,
 )
 from utils.report import (
-    availableCompanies,
     generate_report,
     prosync_table_content,
     generate_content_for_report,
 )
+from typing import Literal
 from utils.protocol import generate_protocol
+
+availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
@@ -162,7 +164,11 @@ if st.button("Gerar Relatório"):
             budget_buffer = None
 
             try:
-                docx_buffer = generate_report(protocol_and_report_content)
+                if not selected_company:
+                    selected_company = "Bienestar"
+                docx_buffer = generate_report(
+                    protocol_and_report_content, company_name=selected_company
+                )
                 protocol_buffer = generate_protocol(protocol_and_report_content)
                 budget_buffer = generate_budget(protocol_and_report_content)
 
