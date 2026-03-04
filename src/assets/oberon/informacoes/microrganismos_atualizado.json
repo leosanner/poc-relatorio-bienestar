@@ -1,7 +1,12 @@
 {
   "vírus": [
     {
-      "nome": "Epstein-Barr Virus",
+      "nome": "Enterovírus 72",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa pode ser assintomático ou causar sintomas leves como mal-estar, febre baixa, náuseas e desconforto abdominal. Em carga alta pode provocar hepatite A, com inflamação do fígado, fadiga intensa, dor abdominal, náuseas, vômitos, perda de apetite e icterícia.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Epstein-Barr (EBV)",
       "sintomas": "Pode gerar fadiga persistente, linfonodomegalia e impacto no sistema imunológico e neuroenergético.",
       "fonte": "-"
     },
@@ -61,8 +66,8 @@
       "fonte": "-"
     },
     {
-      "nome": "Vírus sincicial respiratório (VSR)",
-      "sintomas": "Não faz parte da biota humana normal. Em carga baixa, pode causar sintomas leves das vias aéreas superiores, como coriza, congestão nasal, tosse discreta, mal-estar e fadiga leve. Em carga alta, pode provocar comprometimento das vias respiratórias inferiores, com tosse intensa, chiado no peito, febre, dificuldade respiratória, queda da oxigenação e quadros como bronquiolite ou pneumonia.",
+      "nome": "Vírus sincicial respiratório",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar coriza, congestão nasal, tosse discreta, mal-estar e fadiga leve. Em carga alta, pode provocar m tosse intensa, chiado no peito, febre, dificuldade respiratória, queda da oxigenação e quadros como bronquiolite ou pneumonia.",
       "fonte": "Contato com secreções respiratórias contaminadas."
     },
     {
@@ -238,6 +243,11 @@
   ],
   "bactéria": [
     {
+      "nome": "Bordetella pertussis",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa pode causar sintomas respiratórios leves, como coriza, tosse seca e febre baixa. Em carga alta pode provocar coqueluche.",
+      "fonte": "-"
+    },
+    {
       "nome": "Streptococcus bovis D",
       "sintomas": "Pode fazer parte da microbiota intestinal. Em carga baixa,  é assintomático ou causa desconforto abdominal leve e alteração do hábito intestinal. Em carga alta, pode provocar infecções graves como endocardite e septicemia, além de estar fortemente associado a pólipos e câncer colorretal, podendo causar febre persistente, fraqueza e sinais inflamatórios."
     },
@@ -287,7 +297,7 @@
     },
     {
       "nome": "Proteus Vulgaris",
-      "sintomas": "Não faz parte da biota humana normal. Em carga baixa pode causar desconforto intestinal leve. Em carga alta provoca infecções urinárias, diarreia, inflamação intestinal, dor abdominal, febre e, em casos mais graves, infecção sistêmica.",
+      "sintomas": "– Não faz parte da biota humana. Em carga baixa pode causar desconforto intestinal leve. Em carga alta  pode causar infecções urinárias, diarreia, inflamação intestinal, dor abdominal, febre e, em casos mais graves, infecção sistêmica.",
       "fonte": "Ascensão de bactérias intestinais ao trato urinário."
     },
     {
@@ -422,7 +432,7 @@
     },
     {
       "nome": "Borrelia Burgdorferi",
-      "sintomas": "Inflamação multissistêmica com fadiga crônica, dores articulares e possível comprometimento neurológico funcional.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode ser assintomática ou causar fadiga leve, cefaleia, dores musculares e eritema migratório discreto. Em carga alta, pode provocar artrite recorrente, distúrbios neurológicos, alterações cardíacas e inflamação sistêmica persistente.",
       "fonte": "-"
     },
     {
@@ -573,6 +583,11 @@
   ],
   "fungo": [
     {
+      "nome": "Mucor racemosus",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa pode ser assintomático ou causar irritação respiratória leve, congestão nasal, tosse e reações alérgicas. Em carga alta pode provocar infecções fúngicas oportunistas com inflamação dos seios nasais, pulmões ou pele, podendo evoluir com febre, dor facial, dificuldade respiratória e comprometimento de tecidos, especialmente em pessoas com sistema imunológico enfraquecido.",
+      "fonte": "-"
+    },
+    {
       "nome": "Torulopsis glabratis candida",
       "sintomas": "Infecções urinárias, candidemia, febre, dor, ardência, fadiga persistente.",
       "fonte": "-"
@@ -614,7 +629,7 @@
     },
     {
       "nome": "Criptococcus Neoformans",
-      "sintomas": "Pode colonizar vias respiratórias sem sintomas. Em alta carga ou imunossupressão pode causar pneumonia fúngica e meningite criptocócica, com cefaleia e alterações neurológicas.",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa pode permanecer assintomático ou causar sintomas leves respiratórios, como tosse e mal-estar. Em carga alta pode provocar infecção pulmonar, febre persistente, dor torácica e fadiga profunda.",
       "fonte": "Inalação de poeira contaminada por excrementos de aves."
     },
     {
@@ -967,7 +982,7 @@
     },
     {
       "nome": "Clonorchis sinensis",
-      "sintomas": "Colangite crônica",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa pode ser assintomático ou causar desconforto abdominal leve, fadiga e alterações digestivas discretas. Em carga alta pode provocar inflamação dos ductos biliares, dor abdominal, náuseas, diarreia, aumento do fígado e da vesícula biliar, podendo evoluir com colangite, cálculos biliares e alterações hepáticas crônicas.",
       "fonte": "Peixe cru"
     },
     {

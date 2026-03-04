@@ -248,7 +248,7 @@ def microorganism_info(
                     if obj["nome"].title() == match_name:
 
                         if scpecial_micro_d.get(obj["nome"].lower()):
-                            new_obj["nome"] = match_name.title()
+                            new_obj["nome"] = scpecial_micro_d.get(obj["nome"].lower())
 
                         elif verify_parentesis(obj["nome"]):
                             new_obj["nome"] = match_name
