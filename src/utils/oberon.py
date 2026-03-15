@@ -1,4 +1,5 @@
 from pathlib import Path
+from rich import print
 import os
 import json
 import re
@@ -114,13 +115,16 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
         "fontes": "não encontrado",
     }
 
-    toxins_sw = load_stopwords("toxinas.json")
+    toxins_sw = [w.lower() for w in load_stopwords("toxinas.json")]
     toxins_information = load_test_information(json_file)
     toxins_match = load_match_information(json_file)
     content = []
 
     for k, v in oberon_toxin_content.items():
         if find_related_term(k, toxins_sw):
+            continue
+
+        if k.lower() in toxins_sw:
             continue
 
         formatted_key = k.title()
