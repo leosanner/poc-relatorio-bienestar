@@ -1,4 +1,5 @@
 from pathlib import Path
+from rich import print
 import os
 import json
 import re
@@ -114,13 +115,16 @@ def toxins_info(oberon_toxin_content: dict, json_file="toxinas_atualizado.json")
         "fontes": "não encontrado",
     }
 
-    toxins_sw = load_stopwords("toxinas.json")
+    toxins_sw = [w.lower() for w in load_stopwords("toxinas.json")]
     toxins_information = load_test_information(json_file)
     toxins_match = load_match_information(json_file)
     content = []
 
     for k, v in oberon_toxin_content.items():
         if find_related_term(k, toxins_sw):
+            continue
+
+        if k.lower() in toxins_sw:
             continue
 
         formatted_key = k.title()
@@ -213,6 +217,7 @@ def microorganism_info(
         "Hepadnovirus B",
         "Salmonella paratyphi B",
         "Coxsackie B4",
+        "Streptococcus bovis D",
     ]
 
     scpecial_micro_d = {k.lower(): k for k in scpecial_micro}
@@ -248,7 +253,7 @@ def microorganism_info(
                     if obj["nome"].title() == match_name:
 
                         if scpecial_micro_d.get(obj["nome"].lower()):
-                            new_obj["nome"] = match_name.title()
+                            new_obj["nome"] = scpecial_micro_d.get(obj["nome"].lower())
 
                         elif verify_parentesis(obj["nome"]):
                             new_obj["nome"] = match_name
