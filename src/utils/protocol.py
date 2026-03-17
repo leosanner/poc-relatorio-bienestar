@@ -432,12 +432,15 @@ def format_microorganisms_to_docx(data: list[dict]):
     return content_for_docx
 
 
-def add_midterm_analysis_sessions(docx_content, sessions_for_analysis: int = 9):
+def add_midterm_analysis_sessions(
+    docx_content, sessions_for_analysis: int = 9, initial_session_count: int = 0
+):
     output_content = []
 
     for idx, content in enumerate(docx_content):
         output_content.append(content)
-        if ((idx + 1) % sessions_for_analysis) == 0:
+        total_sessions = initial_session_count + idx + 1
+        if (total_sessions % sessions_for_analysis) == 0:
             output_content.append("Sessão intermediária")
 
     return output_content
@@ -452,9 +455,8 @@ def microorganisms_treatment_block(
     frequencies, not_founded = microorganisms_frequencies(protocol_data)
     sessions = microorganisms_sessions(frequencies)
     formated_docx = format_microorganisms_to_docx(sessions)
-    content_with_additional_analysis = add_midterm_analysis_sessions(formated_docx)
 
-    return content_with_additional_analysis, not_founded
+    return formated_docx, not_founded
 
 
 def format_microorganism_content(
@@ -505,6 +507,11 @@ def generate_protocol(protocol_content):
     t_t_b, not_founded_metals = metals_treatment_block(toxins)
     m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
         microorganisms_prosync, microorganisms_oberon
+    )
+    total_metals_sessions = len(t_t_b)
+    t_t_b = add_midterm_analysis_sessions(t_t_b)
+    m_t_b = add_midterm_analysis_sessions(
+        m_t_b, initial_session_count=total_metals_sessions
     )
 
     if not PROTOCOL_TEMPLATE_PATH.exists():
