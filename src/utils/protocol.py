@@ -78,32 +78,29 @@ def write_not_found_elements(names: list[str], path: Path):
         json.dump(unique_elements, file, ensure_ascii=False, indent=2)
 
 
-def load_microorganisms(file_name: str = "frequencias_microrganismos.csv"):
+def load_microorganisms(file_name: str = "nova_versao_microrganismos.json"):
     path = PROTOCOL_ASSETS_PATH / file_name
-    df = pd.read_csv(path)  # verificar index col
+    raw_data = load_json(path)
     data = {}
-    df.columns = ["microorganism", "frequency", "timeTreatment", "_"]
 
-    for idx, row in df.iterrows():
-        microorganism_name = row["microorganism"]
-        microorganism_name = microorganism_name.strip().lower()
+    for microorganism_name, frequency_time_list in raw_data.items():
+        normalized_name = microorganism_name.strip().lower()
+        data[normalized_name] = {
+            "frequencies": [],
+            "treatment_time": [],
+        }
 
-        if microorganism_name not in data:
-            data[microorganism_name] = {
-                "frequencies": [],
-                "treatment_time": [],
-            }
+        for pair in frequency_time_list:
+            frequency = pair[0] if len(pair) > 0 else " "
+            time = pair[1] if len(pair) > 1 else " "
 
-        frequency = row["frequency"]
-        time = row["timeTreatment"]
+            if frequency in [None, ""]:
+                frequency = " "
+            if time in [None, ""]:
+                time = " "
 
-        if isNaN(frequency):
-            frequency = " "
-        if isNaN(time):
-            time = " "
-
-        data[microorganism_name]["frequencies"].append(frequency)
-        data[microorganism_name]["treatment_time"].append(time)
+            data[normalized_name]["frequencies"].append(frequency)
+            data[normalized_name]["treatment_time"].append(time)
 
     return data
 
