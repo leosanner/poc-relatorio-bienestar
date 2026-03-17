@@ -436,9 +436,9 @@ def add_midterm_analysis_sessions(docx_content, sessions_for_analysis: int = 9):
     output_content = []
 
     for idx, content in enumerate(docx_content):
-        if ((idx + 1) % sessions_for_analysis) == 0:
-            output_content.append("sessão de alinhamento")
         output_content.append(content)
+        if ((idx + 1) % sessions_for_analysis) == 0:
+            output_content.append("Sessão intermediária")
 
     return output_content
 

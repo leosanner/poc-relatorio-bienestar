@@ -19,7 +19,7 @@ def extract_only_substance_name(content: list[str]):
             if session_row.startswith("#"):
                 session.append(session_row)
 
-        if len(session) == 0 and treatment.startswith("sessão"):
+        if len(session) == 0 and treatment.lower().startswith("sessão"):
             session.append(treatment)
 
         sessions.append(session)
