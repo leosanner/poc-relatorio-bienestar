@@ -78,32 +78,29 @@ def write_not_found_elements(names: list[str], path: Path):
         json.dump(unique_elements, file, ensure_ascii=False, indent=2)
 
 
-def load_microorganisms(file_name: str = "frequencias_microrganismos.csv"):
+def load_microorganisms(file_name: str = "nova_versao_microrganismos.json"):
     path = PROTOCOL_ASSETS_PATH / file_name
-    df = pd.read_csv(path)  # verificar index col
+    raw_data = load_json(path)
     data = {}
-    df.columns = ["microorganism", "frequency", "timeTreatment", "_"]
 
-    for idx, row in df.iterrows():
-        microorganism_name = row["microorganism"]
-        microorganism_name = microorganism_name.strip().lower()
+    for microorganism_name, frequency_time_list in raw_data.items():
+        normalized_name = microorganism_name.strip().lower()
+        data[normalized_name] = {
+            "frequencies": [],
+            "treatment_time": [],
+        }
 
-        if microorganism_name not in data:
-            data[microorganism_name] = {
-                "frequencies": [],
-                "treatment_time": [],
-            }
+        for pair in frequency_time_list:
+            frequency = pair[0] if len(pair) > 0 else " "
+            time = pair[1] if len(pair) > 1 else " "
 
-        frequency = row["frequency"]
-        time = row["timeTreatment"]
+            if frequency in [None, ""]:
+                frequency = " "
+            if time in [None, ""]:
+                time = " "
 
-        if isNaN(frequency):
-            frequency = " "
-        if isNaN(time):
-            time = " "
-
-        data[microorganism_name]["frequencies"].append(frequency)
-        data[microorganism_name]["treatment_time"].append(time)
+            data[normalized_name]["frequencies"].append(frequency)
+            data[normalized_name]["treatment_time"].append(time)
 
     return data
 
@@ -435,13 +432,16 @@ def format_microorganisms_to_docx(data: list[dict]):
     return content_for_docx
 
 
-def add_midterm_analysis_sessions(docx_content, sessions_for_analysis: int = 9):
+def add_midterm_analysis_sessions(
+    docx_content, sessions_for_analysis: int = 9, initial_session_count: int = 0
+):
     output_content = []
 
     for idx, content in enumerate(docx_content):
-        if ((idx + 1) % sessions_for_analysis) == 0:
-            output_content.append("sessão de alinhamento")
         output_content.append(content)
+        total_sessions = initial_session_count + idx + 1
+        if (total_sessions % sessions_for_analysis) == 0:
+            output_content.append("Sessão intermediária")
 
     return output_content
 
@@ -455,9 +455,8 @@ def microorganisms_treatment_block(
     frequencies, not_founded = microorganisms_frequencies(protocol_data)
     sessions = microorganisms_sessions(frequencies)
     formated_docx = format_microorganisms_to_docx(sessions)
-    content_with_additional_analysis = add_midterm_analysis_sessions(formated_docx)
 
-    return content_with_additional_analysis, not_founded
+    return formated_docx, not_founded
 
 
 def format_microorganism_content(
@@ -508,6 +507,11 @@ def generate_protocol(protocol_content):
     t_t_b, not_founded_metals = metals_treatment_block(toxins)
     m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
         microorganisms_prosync, microorganisms_oberon
+    )
+    total_metals_sessions = len(t_t_b)
+    t_t_b = add_midterm_analysis_sessions(t_t_b)
+    m_t_b = add_midterm_analysis_sessions(
+        m_t_b, initial_session_count=total_metals_sessions
     )
 
     if not PROTOCOL_TEMPLATE_PATH.exists():

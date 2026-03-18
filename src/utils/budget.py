@@ -1,4 +1,8 @@
-from utils.protocol import metals_treatment_block, microorganisms_treatment_block
+from utils.protocol import (
+    add_midterm_analysis_sessions,
+    metals_treatment_block,
+    microorganisms_treatment_block,
+)
 from pathlib import Path
 from rich import print
 from io import BytesIO
@@ -19,7 +23,7 @@ def extract_only_substance_name(content: list[str]):
             if session_row.startswith("#"):
                 session.append(session_row)
 
-        if len(session) == 0 and treatment.startswith("sessão"):
+        if len(session) == 0 and treatment.lower().startswith("sessão"):
             session.append(treatment)
 
         sessions.append(session)
@@ -45,6 +49,11 @@ def format_content_for_budget(microorganisms_prosync, microorganisms_oberon, tox
     t_t_b, not_founded_metals = metals_treatment_block(toxins)
     m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
         microorganisms_prosync, microorganisms_oberon
+    )
+    total_metals_sessions = len(t_t_b)
+    t_t_b = add_midterm_analysis_sessions(t_t_b)
+    m_t_b = add_midterm_analysis_sessions(
+        m_t_b, initial_session_count=total_metals_sessions
     )
 
     metals = extract_only_substance_name(m_t_b)
