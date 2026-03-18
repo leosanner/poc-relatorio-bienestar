@@ -43,10 +43,13 @@ def inside_interval(val, interval):
 def process_input_content(
     prosync_file: Path,
     oberon_files: list[Path],
+    prosync_std: float | None = None,
 ):
     summary_results = {"prosync": {}, "oberon": {}}
 
-    summary_results["prosync"] = extract_prosync_content(prosync_file)
+    summary_results["prosync"] = extract_prosync_content(
+        prosync_file, prosync_std=prosync_std
+    )
 
     for oberon_file in oberon_files:
         formated_file_name = format_file_name(oberon_file.name)
