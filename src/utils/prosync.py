@@ -62,12 +62,47 @@ def retrival_pdf_information(content: list):
     return summary
 
 
-def extract_prosync_content(path):
+def filter_prosync_by_control_std(
+    prosync_microorganisms: list[dict], prosync_std: float | None = None
+):
+    if not prosync_microorganisms:
+        return prosync_microorganisms
+
+    control_data = prosync_microorganisms[0]
+    control_value = control_data.get("D")
+
+    if control_data.get("nome", "").lower() != "controle" or control_value is None:
+        return prosync_microorganisms
+
+    if prosync_std is None:
+        return prosync_microorganisms
+
+    control_value = float(control_value)
+    std_value = control_value * float(prosync_std)
+    lower_bound = control_value - std_value
+    upper_bound = control_value + std_value
+
+    filtered_microorganisms = [control_data]
+
+    for microorganism in prosync_microorganisms[1:]:
+        microorganism_value = microorganism.get("D")
+        if microorganism_value is None:
+            continue
+
+        microorganism_value = float(microorganism_value)
+        if (microorganism_value < lower_bound) or (microorganism_value > upper_bound):
+            filtered_microorganisms.append(microorganism)
+
+    return filtered_microorganisms
+
+
+def extract_prosync_content(path, prosync_std: float | None = None):
     pdf_content = extract_pdf_content(path)
     pdf_content = [preprocess_text(content) for content in pdf_content]
     summ = retrival_pdf_information(pdf_content)
+    prosync_microorganisms = find_microorgnism_prosyn_info(summ)
 
-    return find_microorgnism_prosyn_info(summ)
+    return filter_prosync_by_control_std(prosync_microorganisms, prosync_std)
 
 
 # Melhorar isso para ficar unificado com o do oberon

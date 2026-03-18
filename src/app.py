@@ -79,7 +79,7 @@ if prosync_file:
     try:
         st.subheader("Resultado Prosync")
         # extract_prosync_content returns a dict
-        prosync_data = extract_prosync_content(prosync_file)
+        prosync_data = extract_prosync_content(prosync_file, prosync_std=prosync_std)
         df_prosync = pd.DataFrame(
             prosync_table_content(prosync_data, gen_report=True)[0]
         )
