@@ -452,6 +452,7 @@ def microorganisms_treatment_block(
     protocol_data = format_microorganism_content(
         microrganisms_informations_oberon, microrganisms_informations_prosync
     )
+    print(protocol_data)
     frequencies, not_founded = microorganisms_frequencies(protocol_data)
     sessions = microorganisms_sessions(frequencies)
     formated_docx = format_microorganisms_to_docx(sessions)
