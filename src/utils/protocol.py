@@ -402,6 +402,29 @@ def build_sessions(data: list[dict], tol_time: int = TOL_TIME) -> list[list]:
     return sessions_complete_content
 
 
+# temporary
+def format_microorganism_name(m_name: str) -> str:
+    special_micro = [
+        "Hepatite D",
+        "Hepatite C",
+        "Hepatite E",
+        "Hepatite B",
+        "Influenza A",
+        "Hepadnovirus B",
+        "Salmonella paratyphi B",
+        "Coxsackie B4",
+        "Streptococcus bovis D",
+    ]
+
+    special_micro_d = {k.lower(): k for k in special_micro}
+    special_micro_match = special_micro_d.get(m_name.lower())
+
+    if special_micro_match:
+        return special_micro_match
+
+    return first_char_uppercase(m_name)
+
+
 def microorganisms_content_docx(frequencies: list[list]):
     docx_content = []
 
@@ -418,7 +441,10 @@ def microorganisms_content_docx(frequencies: list[list]):
                 session_data[microorganism] = [row_freq_time_content]
 
         session_for_docx = "\n".join(
-            ["\n".join([f"#{k}", "\n".join(v)]) for k, v in session_data.items()]
+            [
+                "\n".join([f"#{format_microorganism_name(k)}", "\n".join(v)])
+                for k, v in session_data.items()
+            ]
         )
 
         docx_content.append(session_for_docx)
