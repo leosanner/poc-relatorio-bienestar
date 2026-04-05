@@ -44,7 +44,7 @@
   {
     "nome": "Molibdênio",
     "tipo": "Metal essencial",
-    "efeitos": "Sintomas tipo gota, irritabilidade.",
+    "efeitos": " Em excesso pode aumentar a produção de ácido úrico favorecendo crises de gota, levar a fadiga, anemia, queda de cabelo, alterações imunológicas e irritabilidade.",
     "fontes": "Leguminosas, água."
   },
   {
@@ -236,7 +236,7 @@
   {
     "nome": "Alumínio",
     "tipo": "Metal adjuvante",
-    "efeitos": "Estimulo de forma inadequada do sistema imunológico, estresse oxidativo, interferência no metabolismo do cálcio e do ferro afetando o sistema nervoso e a saúde óssea.",
+    "efeitos": "Estresse oxidativo, interferência no metabolismo do cálcio e do ferro afetando o sistema nervoso e a saúde óssea.",
     "fontes": "Adjuvantes."
   },
   {

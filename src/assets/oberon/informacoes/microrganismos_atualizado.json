@@ -262,7 +262,7 @@
     },
     {
       "nome": "Bartonella Quintana",
-      "sintomas": "Não faz parte da biota humana. Aloja-se no sangue, infectando eritrócitos e o endotélio vascular. Em alta carga causa febre recorrente, dor de cabeça, dores musculares, mal estar geral.",
+      "sintomas": "Não faz parte da biota humana. Aloja-se no sangue, infectando eritrócitos e o endotélio vascular. Em alta carga causa febre recorrente, dor de cabeça, dores musculares e mal estar geral.",
       "fonte": "Transmissão por piolhos do corpo."
     },
     {
@@ -357,7 +357,7 @@
     },
     {
       "nome": "Streptococcus pyogenes",
-      "sintomas": "Infecções invasivas",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar leve irritação na garganta. Em carga alta está associada a amigdalite e infecções de pele, podendo evoluir para complicações como febre reumática e problemas renais se não tratada adequadamente.",
       "fonte": "Contato"
     },
     {
@@ -417,7 +417,7 @@
     },
     {
       "nome": "Helicobacter Pylori",
-      "sintomas": "Pode fazer parte da biota humana. Quando presente, instala-se principalmente no estômago, aderido à mucosa gástrica. Em carga baixa, pode permanecer silencioso ou causar leve queimação, sensação de peso após comer ou aumento da sensibilidade a alimentos ácidos. Em carga alta, pode provocar gastrite, refluxo, náuseas, distensão, mau hálito e irritação persistente da mucosa. Pode ainda favorecer a formação de úlceras e inflamação crônica do estômago.",
+      "sintomas": "Pode fazer parte da biota humana, instalando-se principalmente no estômago, aderido à mucosa gástrica. Em carga baixa, pode permanecer silencioso  ou causar leve queimação, sensação de peso após comer ou ainda aumento da sensibilidade a alimentos ácidos. Em carga alta, pode provocar gastrite, refluxo, náuseas, distensão, mau hálito, irritação persistente da mucosa e úlceras.",
       "fonte": "Água e alimentos contaminados."
     },
     {
@@ -437,7 +437,7 @@
     },
     {
       "nome": "Escherichia Coli",
-      "sintomas": "Compõe a biota intestinal sem causar danos.  Em carga alta pode provocar diarreia, cólicas, gases, náuseas, febre, mal-estar, além de infecções do trato urinário, prostatite e infecções intestinais.",
+      "sintomas": "Compõe a biota intestinal sem causar danos. Em carga alta pode provocar diarreia, cólicas, gases, náuseas, febre, mal-estar, além de infecções  intestinas, do trato urinário e prostatite.",
       "fonte": "-"
     },
     {
