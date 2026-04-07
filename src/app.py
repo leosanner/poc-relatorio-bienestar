@@ -19,6 +19,49 @@ from typing import Literal
 from utils.protocol import generate_protocol
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
+EXTRA_SESSION_OPTIONS = [
+    "Acupuntura",
+    "Auriculo terapia",
+    "Alinhamento vibracional",
+    "Alinhamento dos chacras",
+    "Barras de access",
+    "Bemer essencial",
+    "Bemer + colorGen + reflexologia ou calatonia",
+    "Bemer + biofóton",
+    "Brain machine",
+    "Câmara de regeneração e reequilíbrio",
+    "ColorGen + uzapper",
+    "Calatonia",
+    "Constelação individual ou com representantes",
+    "Drenagem facial + reflexologia",
+    "Drenagem linfática",
+    "Harmonizer",
+    "Hidrogênio molecular medicinal",
+    "Hidrovitalis +",
+    "Intravascular laser irradiation ILIB",
+    "Hidrogênio molecular medicinal intensivo",
+    "Liberação miofascial",
+    "Manta térmica Biomat + uzapper+ colorgen",
+    "Massagem relaxante",
+    "Massagem com pedras quentes",
+    "Massagem Ayurvédica abyanga",
+    "Metaterapia",
+    "Neurospa",
+    "Radiant Plasma Device (RPD)",
+    "Reiki",
+    "Relax dos pés + reflexologia podal",
+    "Scan e meta 3D",
+    "Shiatsu",
+    "Tens",
+    "Terapias da medicina chinesa + cone hindu",
+    "Terapia de hidratação! dos tecidos conjuntivos + Colorgen",
+    "uZapper",
+    "Spa dos pés + calatonia",
+    "Spa dos pés + reflexologia podal + massagem facial",
+    "Spa dos pés + brain machine",
+    "Spa dos pés + neurospa",
+    "Spa dos pés + harmonizer",
+]
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
@@ -71,6 +114,24 @@ selected_company = st.selectbox(
 
 st.markdown("### Parâmetros de Configuração")
 prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
+
+st.markdown("### Sessões Extras")
+selected_extra_sessions = st.multiselect(
+    "Selecione as sessões extras do protocolo",
+    options=EXTRA_SESSION_OPTIONS,
+    key="selected_extra_sessions",
+)
+
+extra_sessions = []
+for session_name in selected_extra_sessions:
+    quantity = st.number_input(
+        f"Quantidade de {session_name}",
+        min_value=1,
+        step=1,
+        value=1,
+        key=f"extra_session_quantity_{session_name}",
+    )
+    extra_sessions.extend([session_name] * int(quantity))
 
 prosync_data = {}
 oberon_data_full = {}
@@ -158,6 +219,7 @@ if st.button("Gerar Relatório"):
             protocol_and_report_content = generate_content_for_report(
                 prosync_list, oberon_data_full, oberon_thresholds, patient_name
             )
+            protocol_and_report_content["extra_sessions"] = extra_sessions
 
             docx_buffer = None
             protocol_buffer = None

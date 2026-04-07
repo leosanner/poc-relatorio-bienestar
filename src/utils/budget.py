@@ -75,6 +75,7 @@ def generate_budget(protocol_content):
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
+    extra_sessions = protocol_content.get("extra_sessions", [])
 
     microorganisms, metals = format_content_for_budget(
         microorganisms_prosync, microorganisms_oberon, toxins
@@ -90,6 +91,7 @@ def generate_budget(protocol_content):
         "microorganisms_not_founded": [microorganisms[1]],
         "metals_budget": metals[0],
         "metals_not_founded": [metals[1]],
+        "extra_sessions_budget": extra_sessions,
     }
 
     doc = DocxTemplate(BUDGET_TEMPLATE_PATH)

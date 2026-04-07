@@ -529,6 +529,7 @@ def generate_protocol(protocol_content):
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
+    extra_sessions = protocol_content.get("extra_sessions", [])
 
     t_t_b, not_founded_metals = metals_treatment_block(toxins)
     m_t_b, not_founded_microorganisms = microorganisms_treatment_block(
@@ -550,6 +551,7 @@ def generate_protocol(protocol_content):
         "microorganisms_not_founded": not_founded_microorganisms,
         "metals_protocol": t_t_b,
         "metals_not_founded": not_founded_metals,
+        "extra_sessions_protocol": extra_sessions,
     }
 
     doc = DocxTemplate(PROTOCOL_TEMPLATE_PATH)

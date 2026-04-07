@@ -28,7 +28,7 @@ def load_path_by_company(
         case "Alecrim":
             return REPORT_ASSETS_PATH / "relatorio_alecrim.docx"
         case "Bienestar":
-            return REPORT_ASSETS_PATH / "relatorio_bienestar.docx"
+            return REPORT_ASSETS_PATH / "relatorio_bienestar_1.docx"
         case "VitaeFlux":
             return REPORT_ASSETS_PATH / "relatorio_vitaeflux.docx"
 
