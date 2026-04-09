@@ -1,3 +1,6 @@
+import hashlib
+import json
+
 from utils.oberon import toxins_info, crystal_info, microorganism_info
 from utils.budget import generate_budget
 import streamlit as st
@@ -62,6 +65,60 @@ EXTRA_SESSION_OPTIONS = [
     "Spa dos pés + neurospa",
     "Spa dos pés + harmonizer",
 ]
+
+SELECTION_COLUMN = "Selecionado"
+
+
+def build_table_signature(records: list[dict]) -> str:
+    return json.dumps(records, ensure_ascii=False, sort_keys=True, default=str)
+
+
+def render_selectable_table(
+    source_records: list[dict],
+    state_key: str,
+    display_records: list[dict] | None = None,
+):
+    display_records = source_records if display_records is None else display_records
+    signature = build_table_signature(source_records)
+    signature_key = f"{state_key}_signature"
+    selection_key = f"{state_key}_selection"
+
+    if st.session_state.get(signature_key) != signature:
+        st.session_state[signature_key] = signature
+        st.session_state[selection_key] = [True] * len(source_records)
+
+    selected_rows = st.session_state.get(selection_key, [True] * len(source_records))
+    if len(selected_rows) != len(source_records):
+        selected_rows = [True] * len(source_records)
+        st.session_state[selection_key] = selected_rows
+
+    editor_df = pd.DataFrame(display_records).copy()
+    editor_df.insert(0, SELECTION_COLUMN, selected_rows)
+
+    widget_key = (
+        f"{state_key}_editor_"
+        f"{hashlib.md5(signature.encode('utf-8')).hexdigest()[:12]}"
+    )
+    edited_df = st.data_editor(
+        editor_df,
+        key=widget_key,
+        hide_index=True,
+        use_container_width=True,
+        disabled=[column for column in editor_df.columns if column != SELECTION_COLUMN],
+        column_config={
+            SELECTION_COLUMN: st.column_config.CheckboxColumn(
+                SELECTION_COLUMN,
+                default=True,
+            )
+        },
+    )
+
+    current_selection = edited_df[SELECTION_COLUMN].fillna(False).astype(bool).tolist()
+    st.session_state[selection_key] = current_selection
+
+    return [
+        row for row, is_selected in zip(source_records, current_selection) if is_selected
+    ]
 
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
@@ -134,17 +191,22 @@ for session_name in selected_extra_sessions:
     extra_sessions.extend([session_name] * int(quantity))
 
 prosync_data = {}
+selected_prosync_list = []
 oberon_data_full = {}
+selected_oberon_data_full = {}
 
 if prosync_file:
     try:
         st.subheader("Resultado Prosync")
-        # extract_prosync_content returns a dict
         prosync_data = extract_prosync_content(prosync_file, prosync_std=prosync_std)
-        df_prosync = pd.DataFrame(
-            prosync_table_content(prosync_data, gen_report=True)[0]
+        prosync_table, prosync_list = prosync_table_content(
+            prosync_data, gen_report=True
         )
-        st.dataframe(df_prosync)
+        selected_prosync_list = render_selectable_table(
+            prosync_list,
+            "prosync",
+            display_records=pd.DataFrame(prosync_table).to_dict("records"),
+        )
 
     except Exception as e:
         st.error(f"Erro ao processar Prosync: {e}")
@@ -192,12 +254,17 @@ if oberon_files:
                 processed_data = raw_content
 
             oberon_data_full[key] = processed_data
+            selected_oberon_data_full[key] = processed_data
 
-            # Display
-            if isinstance(processed_data, list):
-                st.dataframe(pd.DataFrame(processed_data))
+            if key in {"toxinas", "microrganismos"} and isinstance(processed_data, list):
+                selected_oberon_data_full[key] = render_selectable_table(
+                    processed_data,
+                    f"oberon_{key}",
+                )
+            elif isinstance(processed_data, list):
+                st.dataframe(pd.DataFrame(processed_data), use_container_width=True)
             else:
-                st.dataframe(pd.DataFrame([processed_data]))
+                st.dataframe(pd.DataFrame([processed_data]), use_container_width=True)
 
         except Exception as e:
             st.error(f"Erro ao processar Oberon ({oberon_categories[key]}): {e}")
@@ -210,14 +277,11 @@ if st.button("Gerar Relatório"):
         st.markdown("---")
         st.subheader("Relatório")
         try:
-
-            # Calculate prosync table content to pass to context (reusing existing logic for consistency)
-            prosync_list = []
-            if prosync_data:
-                prosync_list = prosync_table_content(prosync_data, gen_report=True)[1]
-
             protocol_and_report_content = generate_content_for_report(
-                prosync_list, oberon_data_full, oberon_thresholds, patient_name
+                selected_prosync_list,
+                selected_oberon_data_full,
+                oberon_thresholds,
+                patient_name,
             )
             protocol_and_report_content["extra_sessions"] = extra_sessions
 
