@@ -15,11 +15,6 @@
     "beneficios_emocionais": "Atenua ansiedade leve."
   },
   {
-    "cristal": "Olho de Tigre",
-    "beneficios_fisicos": "Aumento de vigor e resistência.",
-    "beneficios_emocionais": "Confiança e foco."
-  },
-  {
     "cristal": "Olho de Falcão",
     "beneficios_fisicos": "Relaxamento ocular e mental.",
     "beneficios_emocionais": "Clareza emocional em decisões."
@@ -28,11 +23,6 @@
     "cristal": "Olho de Boi",
     "beneficios_fisicos": "Estímulo leve de energia e disposição.",
     "beneficios_emocionais": "Coragem e firmeza."
-  },
-  {
-    "cristal": "Labradorita",
-    "beneficios_fisicos": "Auxilia na saúde dos olhos, cérebro e ajuda a regular o metabolismo e a digestão.",
-    "beneficios_emocionais": "Atua como um escudo protetor repelindo energias negativas e medos, enquanto estimula a intuição e a autodescoberta espiritual."
   },
   {
     "cristal": "Pirita",
@@ -55,11 +45,6 @@
     "beneficios_emocionais": "Calma emocional e serenidade."
   },
   {
-    "cristal": "Kunzita",
-    "beneficios_fisicos": "Atua no sistema nervoso central e melhora a qualidade do sono.",
-    "beneficios_emocionais": "Desperta o centro do coração e o amor incondicional, além de aliviar a ansiedade. "
-  },
-  {
     "cristal": "Lepidolita",
     "beneficios_fisicos": "Redução perceptível de tensão corporal.",
     "beneficios_emocionais": "Auxilia em irritabilidade e estresse."
@@ -68,16 +53,6 @@
     "cristal": "Serpentinita",
     "beneficios_fisicos": "Sensação de relaxamento profundo.",
     "beneficios_emocionais": "Favorece sensação de adaptação emocional."
-  },
-  {
-    "cristal": "Crisocola",
-    "beneficios_fisicos": "Atenuação de tensões cervicais.",
-    "beneficios_emocionais": "Calma emocional e suavidade afetiva."
-  },
-  {
-    "cristal": "Crisoprásio",
-    "beneficios_fisicos": "Alívio corporal leve.",
-    "beneficios_emocionais": "Reduz impulsividade emocional."
   },
   {
     "cristal": "Unakita",
@@ -210,11 +185,6 @@
     "beneficios_emocionais": "Desperta a força de vontade, sendo vital para momentos de crise onde é necessário recuperar a esperança."
   },
   {
-    "cristal": "Cornalina",
-    "beneficios_fisicos": "Sensação de ativação e energia.",
-    "beneficios_emocionais": "Motivação e confiança."
-  },
-  {
     "cristal": "Fluorita",
     "beneficios_fisicos": "Reduz esgotamento mental.",
     "beneficios_emocionais": "Melhora organização e clareza de pensamentos."
@@ -223,16 +193,6 @@
     "cristal": "Malaquita",
     "beneficios_fisicos": "Relaxamento muscular e sensação de fluidez.",
     "beneficios_emocionais": "Liberação de tensões emocionais acumuladas."
-  },
-  {
-    "cristal": "Âmbar",
-    "beneficios_fisicos": "Leve aquecimento corporal e apoio à vitalidade.",
-    "beneficios_emocionais": "Proteção emocional e suavização de tensões."
-  },
-  {
-    "cristal": "Pérola",
-    "beneficios_fisicos": "Equilibra os sistemas hormonal e reprodutor feminino.",
-    "beneficios_emocionais": "Traz uma sensação de calma e dignidade pessoal."
   },
   {
     "cristal": "Alexandrita",
@@ -270,11 +230,6 @@
     "beneficios_emocionais": "Promove sensação de integração emocional."
   },
   {
-    "cristal": "Esmeralda",
-    "beneficios_fisicos": "Atua na recuperação dos pulmões, do coração e ajuda a fortalecer o sistema imunológico.",
-    "beneficios_emocionais": "Favorece o equilíbrio nos relacionamentos e a paciência, trazendo frescor emocional, esperança e uma sensação profunda de renovação."
-  },
-  {
     "cristal": "Hialite",
     "beneficios_fisicos": "Sensação de suavidade fisiológica.",
     "beneficios_emocionais": "Favorece clareza emocional e calma mental."
@@ -293,11 +248,6 @@
     "cristal": "Modelo Virtual",
     "beneficios_fisicos": "Sensação de alinhamento corporal leve.",
     "beneficios_emocionais": "Auxilia na organização interna e clareza emocional."
-  },
-  {
-    "cristal": "Rubi",
-    "beneficios_fisicos": "Estimula os sistema cardiovascular e as glândulas suprarrenais.",
-    "beneficios_emocionais": "Revigora a paixão pela vida e a motivação, trazendo coragem para enfrentar desafios e tomar decisões."
   },
   {
     "cristal": "Selenita",
@@ -333,11 +283,6 @@
     "cristal": "Gessonita",
     "beneficios_fisicos": "Auxilia o sistema digestório favorecendo o metabolismo.",
     "beneficios_emocionais": "Estimula o autorrespeito e a eliminação de sentimentos de inferioridade."
-  },
-  {
-    "cristal": "Pérola",
-    "beneficios_fisicos": "Sensação de equilíbrio fisiológico suave e harmonização do sistema feminino",
-    "beneficios_emocionais": "Favorece calma, autoestima e estabilidade emocional."
   },
   {
     "cristal": "Heliotrópio",
@@ -383,5 +328,155 @@
     "cristal": "Zircão",
     "beneficios_fisicos": "Beneficia o fígado e ajuda a equilibrar as glândulas em geral.",
     "beneficios_emocionais": "Promove o foco e a organização de ideias, trazendo clareza em momentos de confusão."
+  },
+  {
+    "cristal": "Nácar",
+    "beneficios_fisicos": "Hidratação da pele, acalma emoções intensas, apoio à regeneração cutânea,Promove sensação de proteção, fortalecimento de unhas e cabelos, Reduz anciedade",
+    "beneficios_emocionais": "Traz sensação de segurança , Auxílio em processos anti-inflamatórios | Equilibra oscilações emocionais, Melhora da aparência da pele| Favorece suavidade emociona"
+  },
+  {
+    "cristal": "Pedra-Do-Sangue",
+    "beneficios_fisicos": "Apoia a circulação sanguínea, Pode auxiliar na oxigenação dos tecidos, Estimula processos de desintoxicação, Contribui para fortalecimento do sistema imunológico",
+    "beneficios_emocionais": "Aumenta a coragem em momentos de pressão, Fortalece a estabilidade emocional, Ajuda a enfrentar situações difíceis com firmeza, Reduz irritabilidade e impulsividade, Promove sensação de proteção e segurança"
+  },
+  {
+    "cristal": "Hessonita",
+    "beneficios_fisicos": "Apoia o metabolismo e a energia vital, Pode estimular o sistema digestivo, Associada ao suporte do fígado e assimilação de nutrientes",
+    "beneficios_emocionais": "Aumenta autoconfiança e senso de direção, Ajuda a superar confusão mental e indecisão, Reduz insegurança e dependência emocional, Estimula clareza de propósito"
+  },
+  {
+    "cristal": "Olho de Tigre",
+    "beneficios_fisicos": "Apoia a vitalidade e disposição geral, Pode auxiliar no equilíbrio do sistema digestivo, Associado ao suporte do fígado e metabolismo, Contribui para sensação de estabilidade corporal",
+    "beneficios_emocionais": "Aumenta autoconfiança e segurança, Reduz medo e ansiedade antecipatória, Favorece tomada de decisões com clareza, Ajuda a sair da estagnação e agir"
+  },
+  {
+    "cristal": "Safira",
+    "beneficios_fisicos": "Associada ao equilíbrio do sistema nervoso, Pode auxiliar na redução de tensão mental e física, Relacionada ao suporte do sistema endócrino, Contribui para qualidade do sono",
+    "beneficios_emocionais": "Promove calma e serenidade Reduz ansiedade e agitação mental, Favorece clareza de pensamento, Estimula sabedoria e discernimento"
+  },
+  {
+    "cristal": "Esmeralda",
+    "beneficios_fisicos": "Associada ao suporte do sistema cardiovascular, Pode auxiliar na regulação do sistema nervoso, Relacionada ao equilíbrio do sistema imunológico,Contribui para recuperação e regeneração do organismo",
+    "beneficios_emocionais": "Promove equilíbrio emocional profundo, Auxilia na liberação de mágoas e ressentimentos, Favorece amor próprio e compaixão, Reduz ansiedade emocional e insegurança"
+  },
+  {
+    "cristal": "Turmalina",
+    "beneficios_fisicos": "Associada à regulação do sistema nervoso, Pode auxiliar na redução do estresse físico, Relacionada ao equilíbrio do campo eletromagnético do corpo",
+    "beneficios_emocionais": "Promove proteção e sensação de segurança, Reduz ansiedade e medo, Ajuda a descarregar tensão emocional acumulada"
+  },
+  {
+    "cristal": "Âmbar",
+    "beneficios_fisicos": "Associado ao suporte do sistema imunológico, Pode auxiliar na redução de inflamação leve, Relacionado ao alívio de desconfortos em dentição",
+    "beneficios_emocionais": "Auxilia em estados de tristeza e desânimo, Estimula alegria e vitalidade, Promove sensação de proteção emocional"
+  },
+  {
+    "cristal": "Crisolita",
+    "beneficios_fisicos": "Contribui para melhora da vitalidade geral, Pode apoiar em estados de sobrecarga metabólica, Associada ao equilíbrio do sistema imunológico",
+    "beneficios_emocionais": "Estimula renovação interna e recomeços, Favorece autoconfiança e crescimento pessoal, Auxilia na liberação de padrões repetitivos negativos, Promove clareza emocional"
+  },
+  {
+    "cristal": "Água-Marinha",
+    "beneficios_fisicos": "Pode ajudar na redução de tensão cervical, Associada ao sistema imunológico, Contribui para relaxamento físico geral, Pode apoiar em estados de estresse leve",
+    "beneficios_emocionais": "Promove calma e serenidade, Reduz ansiedade e agitação emocional, Favorece comunicação clara e consciente, Ajuda a expressar sentimentos reprimidos"
+  },
+  {
+    "cristal": "Rubi",
+    "beneficios_fisicos": "Associado ao estímulo da vitalidade e energia geral, Pode apoiar a circulação sanguínea, Relacionado ao aumento da disposição física, Pode auxiliar em estados de fadiga e fraqueza",
+    "beneficios_emocionais": "Aumenta motivação e força de vontade, Estimula coragem e ação, Reduz apatia e falta de energia emocional, Favorece entusiasmo e paixão pela vida"
+  },
+  {
+    "cristal": "Kunzita",
+    "beneficios_fisicos": "Associada ao relaxamento do sistema nervoso, Pode auxiliar na redução de tensão física ligada ao estresse, Relacionada ao equilíbrio do sistema cardiovascular , Pode contribuir para melhora da qualidade do sono",
+    "beneficios_emocionais": "Promove abertura emocional profunda, Auxilia na liberação de traumas afetivos, Reduz medo de rejeição e abandono, Favorece amor próprio e autoaceitação, Ajuda a lidar com hipersensibilidade emocional"
+  },
+  {
+    "cristal": "Crisoprásio",
+    "beneficios_fisicos": "Associado ao suporte do sistema digestivo, Pode auxiliar na função hepática, Relacionado à eliminação de toxinas metabólicas, Associado à regulação do sistema nervoso",
+    "beneficios_emocionais": "Ajuda a liberar mágoas profundas, Reduz sentimentos de rejeição e abandono, Promove perdão e reconciliação emocional, Favorece confiança e segurança afetiva, Estimula leveza emocional"
+  },
+  {
+    "cristal": "Pérola",
+    "beneficios_fisicos": "Associada ao suporte do sistema nervoso, Pode auxiliar na redução de tensão e estresse físico, Pode contribuir para melhora da qualidade do sono, Associada ao suporte da saúde da pele",
+    "beneficios_emocionais": "Promove calma e serenidade, Reduz ansiedade e irritabilidade, Favorece equilíbrio emocional, Estimula aceitação e amor próprio, Promove sensação de proteção emocional, Favorece maturidade emocional"
+  },
+  {
+    "cristal": "Almandina",
+    "beneficios_fisicos": "Associada ao estímulo da vitalidade e resistência física, Pode auxiliar em processos de recuperação física, Pode contribuir para aumento de disposição e força, Relacionada ao equilíbrio do metabolismo energético",
+    "beneficios_emocionais": "Aumenta força interna e resiliência, Ajuda a enfrentar desafios com firmeza, Reduz sensação de fraqueza emocional, Estimula coragem e perseverança, Favorece estabilidade emocional"
+  },
+  {
+    "cristal": "Charoíta",
+    "beneficios_fisicos": "Associada ao suporte do sistema nervoso, Pode auxiliar na redução de tensão física ligada ao estresse, Relacionada ao equilíbrio do sono, Pode apoiar em estados de fadiga física e mental",
+    "beneficios_emocionais": "Ajuda a lidar com medos profundos, Reduz ansiedade intensa e sensação de ameaça, Promove transformação emocional, Auxilia em momentos de crise e mudança"
+  },
+  {
+    "cristal": "Crisocola",
+    "beneficios_fisicos": "Associada ao suporte do sistema nervoso, Pode auxiliar na redução de tensão muscular, Associada ao sistema hormonal, Pode apoiar em estados de estresse físico e emocional",
+    "beneficios_emocionais": "Facilita a expressão emocional, Ajuda a comunicar sentimentos com clareza, Reduz medo de se expor, Promove calma e equilíbrio emocional, Auxilia na liberação de emoções reprimidas, Favorece comunicação assertiva, Promove sensação de paz interna"
+  },
+  {
+    "cristal": "Obsidiana",
+    "beneficios_fisicos": "Associada ao suporte do sistema nervoso, Pode auxiliar na liberação de tensões físicas acumuladas, Relacionada ao alívio de sobrecarga corporal, Pode contribuir para sensação de “descarga” energética, Pode apoiar em estados de fadiga por estresse",
+    "beneficios_emocionais": "Ajuda a trazer à tona emoções reprimidas, Promove clareza sobre padrões ocultos, Auxilia no enfrentamento de sombras internas, Reduz autoengano e fuga emocional"
+  },
+  {
+    "cristal": "Turmalina",
+    "beneficios_fisicos": "Associada ao suporte do sistema nervoso, Pode auxiliar na redução de estresse físico, Associada ao suporte em estados de fadiga mental, Relacionada ao equilíbrio energético geral",
+    "beneficios_emocionais": "Promove sensação de proteção e segurança, Reduz ansiedade e medo, Auxilia em estados de hipervigilância, Reduz sobrecarga emocional, Promove estabilidade interna"
+  },
+  {
+    "cristal": "Ônix",
+    "beneficios_fisicos": "Associado ao suporte do sistema nervoso, Pode auxiliar na redução de tensão física ligada ao estresse, Relacionado ao aumento da resistência física,Pode contribuir para estabilidade corporal, Pode apoiar em estados de fadiga prolongada, Relacionado ao equilíbrio energético geral",
+    "beneficios_emocionais": "Promove autocontrole e disciplina, Reduz impulsividade emocional, Ajuda a manter foco em momentos difíceis, Favorece estabilidade emocional, Auxilia na tomada de decisões firmes"
+  },
+  {
+    "cristal": "Cornalina",
+    "beneficios_fisicos": "Estímulo da vitalidade e energia corporal, Apoio à circulação e oxigenação dos tecidos, Auxílio no metabolismo e na disposição física, Suporte energético ao sistema reprodutor",
+    "beneficios_emocionais": "Aumento da coragem e autoconfiança, Redução de apatia, medo e insegurança, Estímulo à motivação e ação, Desbloqueio emocional e ativação da criatividade"
+  },
+  {
+    "cristal": "Obsidiana",
+    "beneficios_fisicos": "Apoio energético a processos de desintoxicação do organismo, Estímulo à eliminação de sobrecargas, Suporte ao sistema digestivo e intestinal, Auxílio no alívio de tensões físicas acumuladas",
+    "beneficios_emocionais": "Favorece o enfrentamento de emoções reprimidas, Auxilia na liberação de padrões negativos profundos, Promove proteção energética e fortalecimento emocional, Estimula clareza mental e autoconhecimento"
+  },
+  {
+    "cristal": "Quartzo Fumê",
+    "beneficios_fisicos": "Apoio energético ao processo de desintoxicação do organismo, Auxílio na redução de tensões físicas e musculares, Suporte ao sistema nervoso em estados de sobrecarga",
+    "beneficios_emocionais": "Promove sensação de segurança e enraizamento, Auxilia na redução de ansiedade e pensamentos excessivos, Favorece liberação de medos e inseguranças"
+  },
+  {
+    "cristal": "Turmalina",
+    "beneficios_fisicos": "Apoio energético na neutralização de cargas eletromagnéticas, Auxílio na redução de estresse físico relacionado ao ambiente, Suporte ao sistema nervoso em estados de sobrecarga",
+    "beneficios_emocionais": "Promove sensação de proteção e segurança, Auxilia na redução de ansiedade e medo, Favorece o enraizamento e a presença no momento atual, Ajuda a criar limites emocionais mais firmes"
+  },
+  {
+    "cristal": "Jasper",
+    "beneficios_fisicos": "Apoio energético à vitalidade e resistência do organismo, Suporte ao sistema imunológico, Contribuição para equilíbrio do sistema digestivo",
+    "beneficios_emocionais": "Promove estabilidade emocional e sensação de segurança, Auxilia na redução de estresse e sobrecarga emocional, Favorece equilíbrio em momentos de pressão ou conflito, Estimula perseverança, foco e força interior"
+  },
+  {
+    "cristal": "Crisocola",
+    "beneficios_fisicos": "Apoio energético ao sistema respiratório e à região da garganta, Auxílio no relaxamento de tensões corporais, Suporte ao equilíbrio hormonal, Contribuição para estados de fadiga e exaustão física",
+    "beneficios_emocionais": "Facilita a expressão emocional e a comunicação, Auxilia na liberação de emoções reprimidas, Promove calma, serenidade e equilíbrio interno, Favorece o autoconhecimento e a escuta interior"
+  },
+  {
+    "cristal": "Almandina",
+    "beneficios_fisicos": "Estímulo da vitalidade e energia corporal, Apoio à circulação sanguínea e oxigenação, Auxílio na recuperação física e fortalecimento geral, Suporte energético ao sistema imunológico",
+    "beneficios_emocionais": "Aumento da força interior e resiliência, Auxílio na superação de desânimo e falta de energia, Estímulo à coragem e determinação, Fortalecimento da autoestima e da segurança pessoal"
+  },
+  {
+    "cristal": "Labradorita",
+    "beneficios_fisicos": "Apoio energético ao sistema nervoso, Auxílio na redução de fadiga mental e física, Suporte ao equilíbrio do metabolismo energético, Contribuição para adaptação do organismo ao estresse",
+    "beneficios_emocionais": "Proteção energética frente a ambientes e pessoas intensas, Redução de confusão mental e excesso de estímulos, Estímulo à intuição e clareza interna, Auxílio em processos de mudança e transição emocional"
+  },
+  {
+    "cristal": "Rubelita",
+    "beneficios_fisicos": "Apoio energético ao sistema cardiovascular, Auxílio na vitalidade e circulação sanguínea, Suporte ao equilíbrio do sistema nervoso, Contribuição para recuperação de desgaste físico",
+    "beneficios_emocionais": "Estímulo ao amor-próprio e autoestima, Auxílio na cura de feridas emocionais profundas, Favorece abertura emocional e conexão afetiva, Redução de tristeza, mágoa e bloqueios do coração"
+  },
+  {
+    "cristal": "Pedra-Da-Lua",
+    "beneficios_fisicos": "",
+    "beneficios_emocionais": ""
   }
 ]
