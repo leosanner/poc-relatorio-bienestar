@@ -26,6 +26,14 @@ from typing import Literal
 from utils.protocol import generate_protocol
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
+ANAMNESIS_FORM_URLS: dict[str, str | None] = {
+    "Bienestar": (
+        "https://docs.google.com/forms/d/e/"
+        "1FAIpQLSdF61RuGcVsBEe5ikuwVKqevD7Qtil9fwgD-E5N9nhErvDi-Q/viewform"
+    ),
+    "Alecrim": None,
+    "VitaeFlux": None,
+}
 EXTRA_SESSION_OPTIONS = [
     "Acupuntura",
     "Auriculo terapia",
@@ -339,6 +347,15 @@ def render_docx_download_link(label: str, data, file_name: str):
     )
 
 
+def render_anamnesis_form_link(company_name: availableCompanies):
+    form_url = ANAMNESIS_FORM_URLS.get(company_name)
+
+    if form_url:
+        st.link_button("Abrir formulário de anamnese", form_url)
+    else:
+        st.info("Formulário de anamnese da clínica ainda não disponível.")
+
+
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
 st.title("Bienestar POC")
@@ -391,6 +408,7 @@ with processing_tab:
         index=0,
         key="selected_company",
     )
+    render_anamnesis_form_link(selected_company)
 
     st.markdown("### Parâmetros de Configuração")
     prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
