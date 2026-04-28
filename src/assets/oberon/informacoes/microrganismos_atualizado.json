@@ -238,6 +238,10 @@
   ],
   "bactéria": [
     {
+      "nome": "Rickettsia",
+      "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar sintomas gripais, dores musculares, manchas vermelhas especialmente nas palmas das mãos e solas dos pês. Em carga alta, pode provocar inflamação dos vasos sanguíneos e disfunções em diversos sistemas (como predominância no digestório e respiratório)."
+    },
+    {
       "nome": "Streptococcus bovis D",
       "sintomas": "Pode fazer parte da microbiota intestinal. Em carga baixa,  é assintomático ou causa desconforto abdominal leve e alteração do hábito intestinal. Em carga alta, pode provocar infecções graves como endocardite e septicemia, além de estar fortemente associado a pólipos e câncer colorretal, podendo causar febre persistente, fraqueza e sinais inflamatórios."
     },
