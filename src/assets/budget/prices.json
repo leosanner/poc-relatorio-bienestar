@@ -1,0 +1,98 @@
+{
+  "Análise de microscopia de campo escuro": {
+    "pix": 270,
+    "cartao": 297
+  },
+  "Análise de biorressonância de alérgenos alimentares": {
+    "pix": 270,
+    "cartao": 297
+  },
+  "Análise de biorressonância detalhada": {
+    "pix": 486,
+    "cartao": 535
+  },
+  "Análise de biorressonância detalhada + microscopia": {
+    "pix": 715,
+    "cartao": 787
+  },
+  "RPD": {
+    "pix": 153,
+    "cartao": 169
+  },
+  "Hidrovitalis": {
+    "pix": 195,
+    "cartao": 215
+  },
+  "Hidrovitalis + ILIB + Hidrogênio": {
+    "pix": 195,
+    "cartao": 215
+  },
+  "Metaterapia": {
+    "pix": 267,
+    "cartao": 294
+  },
+  "Acupuntura e cone hindu": {
+    "pix": 195,
+    "cartao": 215
+  },
+  "Cromoterapia + Uzapper": {
+    "pix": 153,
+    "cartao": 169
+  },
+  "Cromoterapia + Neurospa": {
+    "pix": 153,
+    "cartao": 169
+  },
+  "Cromoterapia com bastão de cristal": {
+    "pix": 160,
+    "cartao": 176
+  },
+  "Termoterapia + RPD": {
+    "pix": 254,
+    "cartao": 280
+  },
+  "Performance cerebral": {
+    "pix": 153,
+    "cartao": 169
+  },
+  "Reflexologia": {
+    "pix": 169,
+    "cartao": 186
+  },
+  "Calatonia": {
+    "pix": 152,
+    "cartao": 168
+  },
+  "Constelação sistêmica": {
+    "pix": 519,
+    "cartao": 571
+  },
+  "Constelação familiar infantil": {
+    "pix": 378,
+    "cartao": 416
+  },
+  "Hipnose não verbal e magnetismo — adultos": {
+    "pix": 254,
+    "cartao": 280
+  },
+  "Hipnose não verbal e magnetismo — crianças e adolescentes": {
+    "pix": 254,
+    "cartao": 280
+  },
+  "Tratamento vibracional diário — cartão magnético ou pingente personalizado": {
+    "pix": 162,
+    "cartao": 179
+  },
+  "Tratamento vibracional diário — pulseira e relógio com pingente personalizado": {
+    "pix": 216,
+    "cartao": 238
+  },
+  "Yoga para vários públicos — 1 vez por semana, valor mensal": {
+    "pix": 227,
+    "cartao": 250
+  },
+  "Yoga para vários públicos — 2 vezes por semana, valor mensal": {
+    "pix": 335,
+    "cartao": 369
+  }
+}
