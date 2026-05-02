@@ -166,6 +166,11 @@ def build_budget_context(protocol_content: dict) -> dict:
         create_extra_sessions_rows(extra_sessions, prices)
     )
 
+    treatments_total_pix = microorganisms_total_pix + metals_total_pix
+    treatments_total_card = microorganisms_total_card + metals_total_card
+    total_pix = treatments_total_pix + extra_total_pix
+    total_card = treatments_total_card + extra_total_card
+
     return {
         "name": protocol_content.get("name", "") or "",
         "date": protocol_content.get("date")
@@ -177,6 +182,12 @@ def build_budget_context(protocol_content: dict) -> dict:
         "metals_budget": metals_budget,
         "metals_not_founded": formatted_budget_content["metals_not_founded"],
         "extra_sessions_budget": extra_sessions_budget,
+        "treatments_total_pix": format_currency(treatments_total_pix),
+        "treatments_total_card": format_currency(treatments_total_card),
+        "extra_sessions_total_pix": format_currency(extra_total_pix),
+        "extra_sessions_total_card": format_currency(extra_total_card),
+        "total_pix": format_currency(total_pix),
+        "total_card": format_currency(total_card),
     }
 
 
