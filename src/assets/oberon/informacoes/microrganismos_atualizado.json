@@ -238,7 +238,7 @@
   ],
   "bactéria": [
     {
-      "nome": "Rickettsia",
+      "nome": "Riquétsias",
       "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar sintomas gripais, dores musculares, manchas vermelhas especialmente nas palmas das mãos e solas dos pês. Em carga alta, pode provocar inflamação dos vasos sanguíneos e disfunções em diversos sistemas (como predominância no digestório e respiratório)."
     },
     {
@@ -795,6 +795,11 @@
     {
       "nome": "Giardia Lamblia",
       "sintomas": "Não faz parte da biota humana. Em carga baixa, pode provocar desconforto e distensão abdominal leve, gases, fezes amolecidas, digestão lenta e fadiga. Em carga alta, pode causar diarreia persistente, fezes volumosas e gordurosas, cólicas, náuseas, perda de apetite e de  peso, deficiência de absorção de nutrientes e sensação de fraqueza geral.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Entamoeba Gingivalis",
+      "sintomas": "Faz parte da biota humana como comensal da cavidade oral  Em carga baixa, coexiste de forma inofensiva e assintomática.  Em carga alta, agrava doenças periodontais.",
       "fonte": "-"
     },
     {

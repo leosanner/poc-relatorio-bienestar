@@ -432,7 +432,7 @@
     "fontes": "Produtos cosméticos"
   },
   {
-    "nome": "Gluten",
+    "nome": "Glúten",
     "tipo": "Proteína alimentar",
     "efeitos": "Inflamação intestinal",
     "fontes": "Trigo"
@@ -618,9 +618,9 @@
     "fontes": "Dieta"
   },
   {
-    "nome": "Lacticínios",
+    "nome": "Laticínios",
     "tipo": "Alimentar",
-    "efeitos": "Intolerância",
+    "efeitos": "Para quem tem intolerância à lactose,  podem provocar gases e inchaço. No caso da caseína, pode levar a uma resposta inflamatória no intestino.",
     "fontes": "Leite"
   },
   {
