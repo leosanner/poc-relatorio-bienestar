@@ -45,6 +45,7 @@ SELECTION_COLUMN = "Selecionado"
 ROOT = Path(__file__).parent
 OBERON_ASSETS_PATH = ROOT / "assets" / "oberon"
 EXTRA_SESSIONS_CATALOG_STATE_KEY = "extra_sessions_catalog_state"
+EXTRA_SESSIONS_COMPANY_STATE_KEY = "extra_sessions_catalog_company"
 
 SYSTEM_DATA_CATEGORIES = {
     "toxinas": {
@@ -344,6 +345,16 @@ def get_extra_sessions_catalog_state() -> dict:
     return st.session_state[EXTRA_SESSIONS_CATALOG_STATE_KEY]
 
 
+def invalidate_extra_sessions_cache_on_company_change(company_name: str):
+    previous_company = st.session_state.get(EXTRA_SESSIONS_COMPANY_STATE_KEY)
+
+    if previous_company == company_name:
+        return
+
+    st.session_state[EXTRA_SESSIONS_COMPANY_STATE_KEY] = company_name
+    st.session_state.pop(EXTRA_SESSIONS_CATALOG_STATE_KEY, None)
+
+
 def format_extra_session_option_label(option: dict) -> str:
     prices = option["prices"]
     return (
@@ -422,6 +433,7 @@ with processing_tab:
     prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
 
     st.markdown("### Sessões Extras")
+    invalidate_extra_sessions_cache_on_company_change(selected_company)
     extra_sessions_catalog_state = get_extra_sessions_catalog_state()
     available_extra_session_options = build_catalog_options_for_clinic(
         extra_sessions_catalog_state["catalog"],
