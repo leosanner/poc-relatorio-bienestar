@@ -3,10 +3,11 @@ import base64
 import html
 import json
 import re
+import time
 from pathlib import Path
 
 from utils.oberon import toxins_info, crystal_info, microorganism_info
-from utils.budget import generate_budget
+from utils.budget import format_currency, generate_budget
 import streamlit as st
 import pandas as pd
 from typing import get_args
@@ -24,6 +25,11 @@ from utils.report import (
 )
 from typing import Literal
 from utils.protocol import generate_protocol
+from utils.extra_sessions_sheet import (
+    build_catalog_options_for_clinic,
+    build_selected_session_price_lookup,
+    load_extra_sessions_catalog,
+)
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
 ANAMNESIS_FORM_URLS: dict[str, str | None] = {
@@ -34,53 +40,11 @@ ANAMNESIS_FORM_URLS: dict[str, str | None] = {
     "Alecrim": None,
     "VitaeFlux": None,
 }
-EXTRA_SESSION_OPTIONS = [
-    "Acupuntura",
-    "Auriculo terapia",
-    "Alinhamento vibracional",
-    "Alinhamento dos chacras",
-    "Barras de access",
-    "Bemer essencial",
-    "Bemer + colorGen + reflexologia ou calatonia",
-    "Bemer + biofóton",
-    "Brain machine",
-    "Câmara de regeneração e reequilíbrio",
-    "ColorGen + uzapper",
-    "Calatonia",
-    "Constelação individual ou com representantes",
-    "Drenagem facial + reflexologia",
-    "Drenagem linfática",
-    "Harmonizer",
-    "Hidrogênio molecular medicinal",
-    "Hidrovitalis +",
-    "Intravascular laser irradiation ILIB",
-    "Hidrogênio molecular medicinal intensivo",
-    "Liberação miofascial",
-    "Manta térmica Biomat + uzapper+ colorgen",
-    "Massagem relaxante",
-    "Massagem com pedras quentes",
-    "Massagem Ayurvédica abyanga",
-    "Metaterapia",
-    "Neurospa",
-    "Radiant Plasma Device (RPD)",
-    "Reiki",
-    "Relax dos pés + reflexologia podal",
-    "Scan e meta 3D",
-    "Shiatsu",
-    "Tens",
-    "Terapias da medicina chinesa + cone hindu",
-    "Terapia de hidratação! dos tecidos conjuntivos + Colorgen",
-    "uZapper",
-    "Spa dos pés + calatonia",
-    "Spa dos pés + reflexologia podal + massagem facial",
-    "Spa dos pés + brain machine",
-    "Spa dos pés + neurospa",
-    "Spa dos pés + harmonizer",
-]
 
 SELECTION_COLUMN = "Selecionado"
 ROOT = Path(__file__).parent
 OBERON_ASSETS_PATH = ROOT / "assets" / "oberon"
+EXTRA_SESSIONS_CATALOG_STATE_KEY = "extra_sessions_catalog_state"
 
 SYSTEM_DATA_CATEGORIES = {
     "toxinas": {
@@ -356,6 +320,50 @@ def render_anamnesis_form_link(company_name: availableCompanies):
         st.info("Formulário de anamnese da clínica ainda não disponível.")
 
 
+def read_secret_section(section_name: str) -> dict:
+    try:
+        section = st.secrets[section_name]
+    except Exception:
+        return {}
+
+    return {key: section[key] for key in section.keys()}
+
+
+def get_extra_sessions_catalog_state() -> dict:
+    if EXTRA_SESSIONS_CATALOG_STATE_KEY not in st.session_state:
+        google_sheets_config = read_secret_section("google_sheets")
+        service_account_info = read_secret_section("google_service_account")
+        catalog_state = load_extra_sessions_catalog(
+            spreadsheet_id=google_sheets_config.get("spreadsheet_id"),
+            worksheet_name=google_sheets_config.get("extra_sessions_tab"),
+            service_account_info=service_account_info or None,
+        )
+        catalog_state["loaded_at"] = time.time()
+        st.session_state[EXTRA_SESSIONS_CATALOG_STATE_KEY] = catalog_state
+
+    return st.session_state[EXTRA_SESSIONS_CATALOG_STATE_KEY]
+
+
+def format_extra_session_option_label(option: dict) -> str:
+    prices = option["prices"]
+    return (
+        f"{option['treatment_name']} - PIX {format_currency(prices['pix'])} "
+        f"| Cartão {format_currency(prices['cartao'])}"
+    )
+
+
+def sync_selected_extra_sessions(available_options: list[dict]):
+    available_names = {option["treatment_name"] for option in available_options}
+    current_selected = st.session_state.get("selected_extra_sessions", [])
+    valid_selected = [name for name in current_selected if name in available_names]
+
+    if current_selected != valid_selected:
+        removed_sessions = set(current_selected) - set(valid_selected)
+        st.session_state["selected_extra_sessions"] = valid_selected
+        for session_name in removed_sessions:
+            st.session_state.pop(f"extra_session_quantity_{session_name}", None)
+
+
 st.set_page_config(page_title="Bienestar POC", layout="wide")
 
 st.title("Bienestar POC")
@@ -414,11 +422,38 @@ with processing_tab:
     prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
 
     st.markdown("### Sessões Extras")
+    extra_sessions_catalog_state = get_extra_sessions_catalog_state()
+    available_extra_session_options = build_catalog_options_for_clinic(
+        extra_sessions_catalog_state["catalog"],
+        selected_company,
+    )
+    sync_selected_extra_sessions(available_extra_session_options)
+
+    if extra_sessions_catalog_state["status"] == "warning":
+        st.warning(extra_sessions_catalog_state["message"])
+    elif extra_sessions_catalog_state["status"] == "error":
+        st.error(extra_sessions_catalog_state["message"])
+
+    available_extra_session_names = [
+        option["treatment_name"] for option in available_extra_session_options
+    ]
+    option_labels = {
+        option["treatment_name"]: format_extra_session_option_label(option)
+        for option in available_extra_session_options
+    }
+
     selected_extra_sessions = st.multiselect(
         "Selecione as sessões extras do protocolo",
-        options=EXTRA_SESSION_OPTIONS,
+        options=available_extra_session_names,
+        format_func=lambda name: option_labels.get(name, name),
         key="selected_extra_sessions",
+        disabled=not available_extra_session_names,
     )
+
+    if not available_extra_session_names:
+        st.info(
+            f"Nenhuma sessão extra com preço válido disponível para {selected_company}."
+        )
 
     extra_sessions = []
     for session_name in selected_extra_sessions:
@@ -430,6 +465,11 @@ with processing_tab:
             key=f"extra_session_quantity_{session_name}",
         )
         extra_sessions.extend([session_name] * int(quantity))
+    extra_session_prices = build_selected_session_price_lookup(
+        extra_sessions_catalog_state["catalog"],
+        selected_company,
+        selected_extra_sessions,
+    )
 
     prosync_data = {}
     selected_prosync_list = []
@@ -525,6 +565,9 @@ with processing_tab:
                     patient_name,
                 )
                 protocol_and_report_content["extra_sessions"] = extra_sessions
+                protocol_and_report_content["extra_session_prices"] = (
+                    extra_session_prices
+                )
 
                 docx_buffer = None
                 protocol_buffer = None

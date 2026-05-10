@@ -9,6 +9,11 @@ wheels/
 # Virtual environments
 .venv
 
+# Streamlit secrets
+.streamlit/secrets.toml
+service-account*.json
+google-service-account*.json
+
 src/assets/oberon/correspondencia/helper.py
 src/assets/oberon/correspondencia/full-content.json
 src/assets/oberon/correspondencia/matchs-test.json

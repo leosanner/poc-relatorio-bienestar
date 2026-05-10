@@ -143,6 +143,7 @@ def build_budget_context(protocol_content: dict) -> dict:
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
     extra_sessions = protocol_content.get("extra_sessions", [])
+    extra_session_prices = protocol_content.get("extra_session_prices")
 
     formatted_budget_content = format_content_for_budget(
         microorganisms_prosync, microorganisms_oberon, toxins
@@ -162,8 +163,11 @@ def build_budget_context(protocol_content: dict) -> dict:
     metals_budget, metals_total_pix, metals_total_card = create_budget_rows(
         formatted_budget_content["metals_budget"], default_treatment_price
     )
+    extra_session_price_lookup = (
+        prices if extra_session_prices is None else extra_session_prices
+    )
     extra_sessions_budget, extra_total_pix, extra_total_card = (
-        create_extra_sessions_rows(extra_sessions, prices)
+        create_extra_sessions_rows(extra_sessions, extra_session_price_lookup)
     )
 
     treatments_total_pix = microorganisms_total_pix + metals_total_pix

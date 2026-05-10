@@ -1,0 +1,29 @@
+[
+  {
+    "nome tratamento": "Calatonia",
+    "bienestar pix": 152,
+    "bienestar cartao": 168,
+    "vitaeflux pix": 152,
+    "vitaeflux cartao": 168,
+    "alecrim pix": 152,
+    "alecrim cartao": 168
+  },
+  {
+    "nome tratamento": "Metaterapia",
+    "bienestar pix": 267,
+    "bienestar cartao": 294,
+    "vitaeflux pix": 267,
+    "vitaeflux cartao": 294,
+    "alecrim pix": 267,
+    "alecrim cartao": 294
+  },
+  {
+    "nome tratamento": "Radiant Plasma Device (RPD)",
+    "bienestar pix": 153,
+    "bienestar cartao": 169,
+    "vitaeflux pix": 153,
+    "vitaeflux cartao": 169,
+    "alecrim pix": 153,
+    "alecrim cartao": 169
+  }
+]
