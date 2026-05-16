@@ -30,6 +30,12 @@ from utils.extra_sessions_sheet import (
     build_selected_session_price_lookup,
     load_extra_sessions_catalog,
 )
+from utils.anamnesis_sheet import (
+    NO_ANAMNESIS_FOUND_MESSAGE,
+    build_question_answer_rows,
+    format_candidate_label,
+    load_anamnesis_lookup,
+)
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
 ANAMNESIS_FORM_URLS: dict[str, str | None] = {
@@ -46,6 +52,15 @@ ROOT = Path(__file__).parent
 OBERON_ASSETS_PATH = ROOT / "assets" / "oberon"
 EXTRA_SESSIONS_CATALOG_STATE_KEY = "extra_sessions_catalog_state"
 EXTRA_SESSIONS_COMPANY_STATE_KEY = "extra_sessions_catalog_company"
+ANAMNESIS_LOOKUP_STATE_KEY = "anamnesis_lookup_state"
+ANAMNESIS_CONTEXT_STATE_KEY = "anamnesis_lookup_context"
+ANAMNESIS_SELECTED_ROWS_STATE_KEY = "anamnesis_selected_question_rows"
+ANAMNESIS_QUESTION_TABLE_KEY = "anamnesis_questions"
+ANAMNESIS_SUPPORTED_COMPANIES = {"Bienestar", "VitaeFlux"}
+ANAMNESIS_SECRET_PREFIX_BY_COMPANY = {
+    "Bienestar": "bienestar",
+    "VitaeFlux": "vitaeflux",
+}
 
 SYSTEM_DATA_CATEGORIES = {
     "toxinas": {
@@ -261,6 +276,27 @@ def filter_system_data(df: pd.DataFrame, search_term: str) -> pd.DataFrame:
     return df[matches.any(axis=1)]
 
 
+def normalize_file_name_part(value: str) -> str:
+    normalized = re.sub(r"\s+", "_", str(value or "").strip())
+    normalized = re.sub(r"[^0-9A-Za-zÀ-ÖØ-öø-ÿ_-]+", "", normalized)
+    return normalized or "sem_nome"
+
+
+def build_output_file_name(
+    document_type: str,
+    company_name: str,
+    patient_name: str,
+) -> str:
+    file_parts = [
+        document_type,
+        normalize_file_name_part(company_name),
+    ]
+    if patient_name:
+        file_parts.append(normalize_file_name_part(patient_name))
+
+    return f"{'_'.join(file_parts)}.docx"
+
+
 def render_system_data_tab():
     st.title("Dados do Sistema")
     st.write("Consulte as correspondências usadas internamente pelo sistema.")
@@ -330,6 +366,130 @@ def read_secret_section(section_name: str) -> dict:
     return {key: section[key] for key in section.keys()}
 
 
+def clear_anamnesis_lookup_state():
+    keys_to_clear = [
+        ANAMNESIS_LOOKUP_STATE_KEY,
+        ANAMNESIS_SELECTED_ROWS_STATE_KEY,
+        "anamnesis_candidate_index",
+        f"{ANAMNESIS_QUESTION_TABLE_KEY}_signature",
+        f"{ANAMNESIS_QUESTION_TABLE_KEY}_selection",
+    ]
+    for key in keys_to_clear:
+        st.session_state.pop(key, None)
+
+
+def reset_anamnesis_lookup_on_context_change(
+    company_name: str,
+    patient_name: str,
+):
+    context = {
+        "company_name": company_name,
+        "patient_name": patient_name,
+    }
+    previous_context = st.session_state.get(ANAMNESIS_CONTEXT_STATE_KEY)
+
+    if previous_context is None:
+        st.session_state[ANAMNESIS_CONTEXT_STATE_KEY] = context
+        return
+
+    if previous_context != context:
+        clear_anamnesis_lookup_state()
+        st.session_state[ANAMNESIS_CONTEXT_STATE_KEY] = context
+
+
+def get_anamnesis_sheet_config(company_name: str) -> dict:
+    prefix = ANAMNESIS_SECRET_PREFIX_BY_COMPANY.get(company_name)
+    if not prefix:
+        return {}
+
+    google_sheets_config = read_secret_section("google_sheets")
+    return {
+        "spreadsheet_id": google_sheets_config.get(
+            f"{prefix}_anamnesis_spreadsheet_id"
+        ),
+        "worksheet_name": google_sheets_config.get(f"{prefix}_anamnesis_tab"),
+        "name_column": google_sheets_config.get(f"{prefix}_anamnesis_name_column"),
+    }
+
+
+def render_anamnesis_lookup_section(
+    company_name: availableCompanies,
+    patient_name: str,
+):
+    st.markdown("### Anamnese")
+    reset_anamnesis_lookup_on_context_change(company_name, patient_name)
+
+    if company_name not in ANAMNESIS_SUPPORTED_COMPANIES:
+        st.info("Anamnese indisponível para esta clínica nesta versão.")
+        return
+
+    if st.button("Buscar", key="anamnesis_search_button"):
+        search_term = patient_name.strip()
+        clear_anamnesis_lookup_state()
+
+        if not search_term:
+            st.session_state[ANAMNESIS_LOOKUP_STATE_KEY] = {
+                "status": "validation_error",
+                "message": "Informe o nome do paciente antes de buscar a anamnese.",
+                "candidates": [],
+            }
+        else:
+            config = get_anamnesis_sheet_config(company_name)
+            service_account_info = read_secret_section("google_service_account")
+            st.session_state[ANAMNESIS_LOOKUP_STATE_KEY] = load_anamnesis_lookup(
+                clinic_name=company_name,
+                search_term=search_term,
+                spreadsheet_id=config.get("spreadsheet_id"),
+                worksheet_name=config.get("worksheet_name"),
+                configured_name_column=config.get("name_column"),
+                service_account_info=service_account_info or None,
+            )
+
+    lookup_state = st.session_state.get(ANAMNESIS_LOOKUP_STATE_KEY)
+    if not lookup_state:
+        st.info("Use o nome do paciente acima e clique em Buscar para consultar a anamnese.")
+        return
+
+    status = lookup_state.get("status")
+    message = lookup_state.get("message")
+
+    if status == "validation_error":
+        st.warning(message)
+        return
+
+    if status == "not_found":
+        st.warning(message or NO_ANAMNESIS_FOUND_MESSAGE)
+        return
+
+    if status in {"error", "unavailable"}:
+        st.error(message)
+        return
+
+    candidates = lookup_state.get("candidates", [])
+    if not candidates:
+        st.warning(NO_ANAMNESIS_FOUND_MESSAGE)
+        return
+
+    if len(candidates) == 1:
+        selected_candidate_index = 0
+        st.caption(format_candidate_label(candidates[0]))
+    else:
+        selected_candidate_index = st.selectbox(
+            "Resposta encontrada",
+            options=list(range(len(candidates))),
+            format_func=lambda index: format_candidate_label(candidates[index]),
+            key="anamnesis_candidate_index",
+        )
+
+    selected_candidate = candidates[selected_candidate_index]
+    question_answer_rows = build_question_answer_rows(selected_candidate["record"])
+    selected_rows = render_selectable_table(
+        question_answer_rows,
+        ANAMNESIS_QUESTION_TABLE_KEY,
+    )
+    st.session_state[ANAMNESIS_SELECTED_ROWS_STATE_KEY] = selected_rows
+
+
 def get_extra_sessions_catalog_state() -> dict:
     if EXTRA_SESSIONS_CATALOG_STATE_KEY not in st.session_state:
         google_sheets_config = read_secret_section("google_sheets")
@@ -383,6 +543,20 @@ processing_tab, system_data_tab = st.tabs(["Processamento", "Dados do Sistema"])
 with processing_tab:
     st.title("Processamento de Arquivos")
 
+    st.markdown("### Informações do Atendimento")
+    clinic_column, patient_column = st.columns(2)
+    with clinic_column:
+        selected_company = st.selectbox(
+            "Clínica",
+            options=get_args(availableCompanies),
+            index=0,
+            key="selected_company",
+        )
+    with patient_column:
+        patient_name = st.text_input("Nome do Paciente", key="patient_name")
+
+    render_anamnesis_lookup_section(selected_company, patient_name)
+
     st.markdown("### Prosync (PDF)")
     prosync_file = st.file_uploader("Upload Prosync PDF", type=["pdf"], key="prosync")
 
@@ -418,16 +592,6 @@ with processing_tab:
                 )
 
             oberon_thresholds[key] = [f_min, f_max]
-
-    st.markdown("### Informações do Relatório")
-    patient_name = st.text_input("Nome do Paciente", key="patient_name")
-    selected_company = st.selectbox(
-        "Clínica",
-        options=get_args(availableCompanies),
-        index=0,
-        key="selected_company",
-    )
-    render_anamnesis_form_link(selected_company)
 
     st.markdown("### Parâmetros de Configuração")
     prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
@@ -601,10 +765,10 @@ with processing_tab:
                     render_docx_download_link(
                         "Baixar Protocolo (DOCX)",
                         protocol_buffer,
-                        (
-                            f"protocolo_bienestar_{patient_name.replace(' ', '_')}.docx"
-                            if patient_name
-                            else "protocolo_bienestar.docx"
+                        build_output_file_name(
+                            "protocolo",
+                            selected_company,
+                            patient_name,
                         ),
                     )
                 else:
@@ -614,10 +778,10 @@ with processing_tab:
                     render_docx_download_link(
                         "Baixar Orçamento (DOCX)",
                         budget_buffer,
-                        (
-                            f"orcamento_bienestar_{patient_name.replace(' ', '_')}.docx"
-                            if patient_name
-                            else "orcamento_bienestar.docx"
+                        build_output_file_name(
+                            "orcamento",
+                            selected_company,
+                            patient_name,
                         ),
                     )
                 else:
@@ -627,10 +791,10 @@ with processing_tab:
                     render_docx_download_link(
                         "Baixar Relatório (DOCX)",
                         docx_buffer,
-                        (
-                            f"relatorio_{selected_company}_{patient_name.replace(' ', '_')}.docx"
-                            if patient_name
-                            else f"relatorio_{selected_company}.docx"
+                        build_output_file_name(
+                            "relatorio",
+                            selected_company,
+                            patient_name,
                         ),
                     )
                 else:
