@@ -188,6 +188,33 @@ def build_report_anamnesis_rows(
     return list(selected_rows or [])
 
 
+def resolve_report_patient_name(
+    typed_patient_name: Any,
+    access_granted: bool,
+    lookup_state: Mapping[str, Any] | None,
+    selected_candidate_index: int | None = None,
+) -> str:
+    typed_patient_name = normalize_text(typed_patient_name)
+    if not access_granted or not lookup_state:
+        return typed_patient_name
+
+    if lookup_state.get("status") != "ready":
+        return typed_patient_name
+
+    candidates = lookup_state.get("candidates") or []
+    if not candidates:
+        return typed_patient_name
+
+    selected_candidate_index = selected_candidate_index or 0
+    if selected_candidate_index < 0 or selected_candidate_index >= len(candidates):
+        return typed_patient_name
+
+    anamnesis_patient_name = normalize_text(
+        candidates[selected_candidate_index].get("patient_name")
+    )
+    return anamnesis_patient_name or typed_patient_name
+
+
 def load_google_sheet_records(
     spreadsheet_id: str,
     worksheet_name: str,

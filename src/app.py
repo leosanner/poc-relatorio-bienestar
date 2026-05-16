@@ -41,6 +41,7 @@ from utils.anamnesis_sheet import (
     get_configured_anamnesis_access_secret,
     is_anamnesis_access_authorized,
     load_anamnesis_lookup,
+    resolve_report_patient_name,
 )
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
@@ -786,11 +787,17 @@ with processing_tab:
             st.markdown("---")
             st.subheader("Relatório")
             try:
+                report_patient_name = resolve_report_patient_name(
+                    patient_name,
+                    st.session_state.get(ANAMNESIS_ACCESS_GRANTED_STATE_KEY) is True,
+                    st.session_state.get(ANAMNESIS_LOOKUP_STATE_KEY),
+                    st.session_state.get("anamnesis_candidate_index"),
+                )
                 protocol_and_report_content = generate_content_for_report(
                     selected_prosync_list,
                     selected_oberon_data_full,
                     oberon_thresholds,
-                    patient_name,
+                    report_patient_name,
                 )
                 protocol_and_report_content["extra_sessions"] = extra_sessions
                 protocol_and_report_content["extra_session_prices"] = (
@@ -827,7 +834,7 @@ with processing_tab:
                         build_output_file_name(
                             "protocolo",
                             selected_company,
-                            patient_name,
+                            report_patient_name,
                         ),
                     )
                 else:
@@ -840,7 +847,7 @@ with processing_tab:
                         build_output_file_name(
                             "orcamento",
                             selected_company,
-                            patient_name,
+                            report_patient_name,
                         ),
                     )
                 else:
@@ -853,7 +860,7 @@ with processing_tab:
                         build_output_file_name(
                             "relatorio",
                             selected_company,
-                            patient_name,
+                            report_patient_name,
                         ),
                     )
                 else:

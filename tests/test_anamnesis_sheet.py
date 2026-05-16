@@ -15,6 +15,7 @@ from utils.anamnesis_sheet import (  # noqa: E402
     is_anamnesis_access_authorized,
     load_anamnesis_lookup,
     resolve_patient_name_column,
+    resolve_report_patient_name,
     search_anamnesis_candidates,
 )
 
@@ -121,6 +122,54 @@ class AnamnesisSheetTests(unittest.TestCase):
         rows = build_report_anamnesis_rows(True, selected_rows)
 
         self.assertEqual(rows, selected_rows)
+
+    def test_report_patient_name_uses_typed_name_without_anamnesis_access(self):
+        lookup_state = {
+            "status": "ready",
+            "candidates": [{"patient_name": "Nome da Anamnese"}],
+        }
+
+        patient_name = resolve_report_patient_name(
+            "Nome Digitado",
+            False,
+            lookup_state,
+            0,
+        )
+
+        self.assertEqual(patient_name, "Nome Digitado")
+
+    def test_report_patient_name_uses_selected_anamnesis_candidate_name(self):
+        lookup_state = {
+            "status": "ready",
+            "candidates": [
+                {"patient_name": "Primeira Pessoa"},
+                {"patient_name": " Nome da Anamnese  "},
+            ],
+        }
+
+        patient_name = resolve_report_patient_name(
+            "Nome Digitado",
+            True,
+            lookup_state,
+            1,
+        )
+
+        self.assertEqual(patient_name, "Nome da Anamnese")
+
+    def test_report_patient_name_falls_back_to_typed_name_without_valid_candidate(self):
+        lookup_state = {
+            "status": "not_found",
+            "candidates": [{"patient_name": "Nome da Anamnese"}],
+        }
+
+        patient_name = resolve_report_patient_name(
+            "Nome Digitado",
+            True,
+            lookup_state,
+            0,
+        )
+
+        self.assertEqual(patient_name, "Nome Digitado")
 
     def test_lookup_returns_no_result_state_without_treating_it_as_error(self):
         result = load_anamnesis_lookup(
