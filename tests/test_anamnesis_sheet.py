@@ -10,6 +10,8 @@ from utils.anamnesis_sheet import (  # noqa: E402
     UNAVAILABLE_ANAMNESIS_MESSAGE,
     build_question_answer_rows,
     format_candidate_label,
+    get_configured_anamnesis_access_secret,
+    is_anamnesis_access_authorized,
     load_anamnesis_lookup,
     resolve_patient_name_column,
     search_anamnesis_candidates,
@@ -17,6 +19,26 @@ from utils.anamnesis_sheet import (  # noqa: E402
 
 
 class AnamnesisSheetTests(unittest.TestCase):
+    def test_get_configured_anamnesis_access_secret_defaults_to_empty(self):
+        self.assertEqual(get_configured_anamnesis_access_secret({}), "")
+        self.assertEqual(get_configured_anamnesis_access_secret(None), "")
+
+    def test_get_configured_anamnesis_access_secret_reads_and_trims_secret(self):
+        self.assertEqual(
+            get_configured_anamnesis_access_secret(
+                {"anamnesis_access_secret": "  senha-clinica  "}
+            ),
+            "senha-clinica",
+        )
+
+    def test_anamnesis_access_requires_matching_submitted_secret(self):
+        config = {"anamnesis_access_secret": "senha-clinica"}
+
+        self.assertTrue(is_anamnesis_access_authorized(config, "senha-clinica"))
+        self.assertFalse(is_anamnesis_access_authorized(config, "senha-errada"))
+        self.assertFalse(is_anamnesis_access_authorized(config, ""))
+        self.assertFalse(is_anamnesis_access_authorized({}, "senha-clinica"))
+
     def test_resolve_patient_name_column_uses_configured_header(self):
         records = [{" Nome Completo ": "Ana Silva", "Outro": "valor"}]
 

@@ -31,9 +31,14 @@ from utils.extra_sessions_sheet import (
     load_extra_sessions_catalog,
 )
 from utils.anamnesis_sheet import (
+    INVALID_ANAMNESIS_ACCESS_SECRET_MESSAGE,
+    LOCKED_ANAMNESIS_MESSAGE,
+    MISSING_ANAMNESIS_ACCESS_SECRET_MESSAGE,
     NO_ANAMNESIS_FOUND_MESSAGE,
     build_question_answer_rows,
     format_candidate_label,
+    get_configured_anamnesis_access_secret,
+    is_anamnesis_access_authorized,
     load_anamnesis_lookup,
 )
 
@@ -55,6 +60,7 @@ EXTRA_SESSIONS_COMPANY_STATE_KEY = "extra_sessions_catalog_company"
 ANAMNESIS_LOOKUP_STATE_KEY = "anamnesis_lookup_state"
 ANAMNESIS_CONTEXT_STATE_KEY = "anamnesis_lookup_context"
 ANAMNESIS_SELECTED_ROWS_STATE_KEY = "anamnesis_selected_question_rows"
+ANAMNESIS_ACCESS_GRANTED_STATE_KEY = "anamnesis_access_granted"
 ANAMNESIS_QUESTION_TABLE_KEY = "anamnesis_questions"
 ANAMNESIS_SUPPORTED_COMPANIES = {"Bienestar", "VitaeFlux"}
 ANAMNESIS_SECRET_PREFIX_BY_COMPANY = {
@@ -378,6 +384,11 @@ def clear_anamnesis_lookup_state():
         st.session_state.pop(key, None)
 
 
+def revoke_anamnesis_access():
+    clear_anamnesis_lookup_state()
+    st.session_state.pop(ANAMNESIS_ACCESS_GRANTED_STATE_KEY, None)
+
+
 def reset_anamnesis_lookup_on_context_change(
     company_name: str,
     patient_name: str,
@@ -412,18 +423,58 @@ def get_anamnesis_sheet_config(company_name: str) -> dict:
     }
 
 
+def render_anamnesis_access_gate() -> bool:
+    google_sheets_config = read_secret_section("google_sheets")
+    configured_secret = get_configured_anamnesis_access_secret(google_sheets_config)
+
+    if not configured_secret:
+        revoke_anamnesis_access()
+        st.info(MISSING_ANAMNESIS_ACCESS_SECRET_MESSAGE)
+        return False
+
+    submitted_secret = st.text_input(
+        "Secret da anamnese",
+        type="password",
+        key="anamnesis_access_secret_input",
+    )
+
+    if not submitted_secret:
+        revoke_anamnesis_access()
+        st.info(LOCKED_ANAMNESIS_MESSAGE)
+        return False
+
+    if not is_anamnesis_access_authorized(google_sheets_config, submitted_secret):
+        revoke_anamnesis_access()
+        st.warning(INVALID_ANAMNESIS_ACCESS_SECRET_MESSAGE)
+        return False
+
+    st.session_state[ANAMNESIS_ACCESS_GRANTED_STATE_KEY] = True
+    return True
+
+
 def render_anamnesis_lookup_section(
     company_name: availableCompanies,
     patient_name: str,
 ):
     st.markdown("### Anamnese")
-    reset_anamnesis_lookup_on_context_change(company_name, patient_name)
+    has_anamnesis_access = render_anamnesis_access_gate()
+    is_supported_company = company_name in ANAMNESIS_SUPPORTED_COMPANIES
 
-    if company_name not in ANAMNESIS_SUPPORTED_COMPANIES:
+    if not is_supported_company:
         st.info("Anamnese indisponível para esta clínica nesta versão.")
+
+    search_clicked = st.button(
+        "Buscar",
+        key="anamnesis_search_button",
+        disabled=not has_anamnesis_access or not is_supported_company,
+    )
+
+    if not has_anamnesis_access or not is_supported_company:
         return
 
-    if st.button("Buscar", key="anamnesis_search_button"):
+    reset_anamnesis_lookup_on_context_change(company_name, patient_name)
+
+    if search_clicked:
         search_term = patient_name.strip()
         clear_anamnesis_lookup_state()
 

@@ -1,8 +1,10 @@
+import hmac
 import re
 from collections.abc import Callable, Mapping
 from typing import Any
 
 
+ANAMNESIS_ACCESS_SECRET_KEY = "anamnesis_access_secret"
 SUPPORTED_ANAMNESIS_CLINICS = ("Bienestar", "VitaeFlux")
 NO_ANAMNESIS_FOUND_MESSAGE = (
     "Nenhuma anamnese encontrada para este paciente nesta clínica."
@@ -10,6 +12,15 @@ NO_ANAMNESIS_FOUND_MESSAGE = (
 UNAVAILABLE_ANAMNESIS_MESSAGE = (
     "Nao foi possivel consultar a anamnese agora. "
     "Verifique a configuracao do Google Sheets e tente novamente."
+)
+MISSING_ANAMNESIS_ACCESS_SECRET_MESSAGE = (
+    "Anamnese indisponível. Configure o secret de acesso para habilitar a consulta."
+)
+LOCKED_ANAMNESIS_MESSAGE = (
+    "Informe o secret da anamnese para consultar os dados."
+)
+INVALID_ANAMNESIS_ACCESS_SECRET_MESSAGE = (
+    "Secret da anamnese inválido."
 )
 
 PATIENT_NAME_ALIASES = (
@@ -39,6 +50,28 @@ EMAIL_ALIASES = (
 
 class AnamnesisLookupError(Exception):
     pass
+
+
+def get_configured_anamnesis_access_secret(
+    config: Mapping[str, Any] | None,
+) -> str:
+    if not config:
+        return ""
+
+    return normalize_text(config.get(ANAMNESIS_ACCESS_SECRET_KEY))
+
+
+def is_anamnesis_access_authorized(
+    config: Mapping[str, Any] | None,
+    submitted_secret: Any,
+) -> bool:
+    configured_secret = get_configured_anamnesis_access_secret(config)
+    submitted_secret = normalize_text(submitted_secret)
+
+    if not configured_secret or not submitted_secret:
+        return False
+
+    return hmac.compare_digest(configured_secret, submitted_secret)
 
 
 def normalize_text(value: Any) -> str:
