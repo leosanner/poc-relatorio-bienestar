@@ -35,6 +35,7 @@ from utils.anamnesis_sheet import (
     LOCKED_ANAMNESIS_MESSAGE,
     MISSING_ANAMNESIS_ACCESS_SECRET_MESSAGE,
     NO_ANAMNESIS_FOUND_MESSAGE,
+    build_report_anamnesis_rows,
     build_question_answer_rows,
     format_candidate_label,
     get_configured_anamnesis_access_secret,
@@ -794,6 +795,13 @@ with processing_tab:
                 protocol_and_report_content["extra_sessions"] = extra_sessions
                 protocol_and_report_content["extra_session_prices"] = (
                     extra_session_prices
+                )
+                protocol_and_report_content["anamnesis_rows"] = (
+                    build_report_anamnesis_rows(
+                        st.session_state.get(ANAMNESIS_ACCESS_GRANTED_STATE_KEY)
+                        is True,
+                        st.session_state.get(ANAMNESIS_SELECTED_ROWS_STATE_KEY),
+                    )
                 )
 
                 docx_buffer = None

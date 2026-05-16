@@ -8,6 +8,7 @@ from utils.anamnesis_sheet import (  # noqa: E402
     AnamnesisLookupError,
     NO_ANAMNESIS_FOUND_MESSAGE,
     UNAVAILABLE_ANAMNESIS_MESSAGE,
+    build_report_anamnesis_rows,
     build_question_answer_rows,
     format_candidate_label,
     get_configured_anamnesis_access_secret,
@@ -106,6 +107,20 @@ class AnamnesisSheetTests(unittest.TestCase):
                 {"Pergunta": "Observacao", "Resposta": ""},
             ],
         )
+
+    def test_report_anamnesis_rows_are_empty_without_access(self):
+        selected_rows = [{"Pergunta": "Nome", "Resposta": "Ana"}]
+
+        rows = build_report_anamnesis_rows(False, selected_rows)
+
+        self.assertEqual(rows, [])
+
+    def test_report_anamnesis_rows_are_available_with_access(self):
+        selected_rows = [{"Pergunta": "Nome", "Resposta": "Ana"}]
+
+        rows = build_report_anamnesis_rows(True, selected_rows)
+
+        self.assertEqual(rows, selected_rows)
 
     def test_lookup_returns_no_result_state_without_treating_it_as_error(self):
         result = load_anamnesis_lookup(

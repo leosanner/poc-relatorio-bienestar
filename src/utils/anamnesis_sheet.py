@@ -178,6 +178,16 @@ def build_question_answer_rows(record: Mapping[str, Any]) -> list[dict[str, str]
     ]
 
 
+def build_report_anamnesis_rows(
+    access_granted: bool,
+    selected_rows: list[dict[str, Any]] | None,
+) -> list[dict[str, Any]]:
+    if not access_granted:
+        return []
+
+    return list(selected_rows or [])
+
+
 def load_google_sheet_records(
     spreadsheet_id: str,
     worksheet_name: str,
