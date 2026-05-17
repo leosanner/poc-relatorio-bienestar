@@ -121,7 +121,7 @@ class AnamnesisSheetTests(unittest.TestCase):
 
         rows = build_report_anamnesis_rows(True, selected_rows)
 
-        self.assertEqual(rows, selected_rows)
+        self.assertEqual(rows, [{"pergunta": "Nome", "resposta": "Ana"}])
 
     def test_report_patient_name_uses_typed_name_without_anamnesis_access(self):
         lookup_state = {

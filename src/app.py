@@ -803,7 +803,7 @@ with processing_tab:
                 protocol_and_report_content["extra_session_prices"] = (
                     extra_session_prices
                 )
-                protocol_and_report_content["anamnesis_rows"] = (
+                protocol_and_report_content["anamnesis"] = (
                     build_report_anamnesis_rows(
                         st.session_state.get(ANAMNESIS_ACCESS_GRANTED_STATE_KEY)
                         is True,

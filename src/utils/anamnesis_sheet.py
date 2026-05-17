@@ -185,7 +185,10 @@ def build_report_anamnesis_rows(
     if not access_granted:
         return []
 
-    return list(selected_rows or [])
+    return [
+        {"pergunta": row.get("Pergunta", ""), "resposta": row.get("Resposta", "")}
+        for row in (selected_rows or [])
+    ]
 
 
 def resolve_report_patient_name(
