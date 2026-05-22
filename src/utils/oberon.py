@@ -353,17 +353,21 @@ def emotions_info(emotions_content: dict):
 
 
 def patologies_info(patologies_content: dict):
-    matchs = load_match_information("patologias.json")
+    matchs = {
+        k.strip().lower(): v
+        for k, v in load_match_information("patologias.json").items()
+    }
     patologies_stopwords = load_stopwords("patologias.json")
     formated_content = {}
 
     for patologie_name, d in patologies_content.items():
-        match = matchs.get(patologie_name.strip().lower())
-        name_in_file = match if match else patologie_name.strip().lower()
+        normalized_name = patologie_name.strip().lower()
+        match = matchs.get(normalized_name)
+        name_in_file = match if match else normalized_name
         formated_content[name_in_file] = d
 
     formated_content = dict(
-        sorted(patologies_content.items(), key=lambda x: x[1], reverse=False)
+        sorted(formated_content.items(), key=lambda x: x[1], reverse=False)
     )
 
     return {
