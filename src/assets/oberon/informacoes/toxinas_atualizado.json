@@ -6,6 +6,12 @@
     "fontes": "Peixes grandes, amálgamas."
   },
   {
+    "nome": "Indio",
+    "tipo": "Metal",
+    "efeitos": "Toxicidade pulmonar e celular, associada a inflamação respiratória, estresse oxidativo e alterações metabólicas e neurológicas.",
+    "fontes": "-"
+  },
+  {
     "nome": "Chumbo",
     "tipo": "Metal pesado",
     "efeitos": "Déficit cognitivo, anemia, aumento da pressão arterial e danos progressivos aos rins, coração e vasos sanguíneos.",
