@@ -380,6 +380,17 @@
             "180"
         ]
     },
+    "indio": {
+        "oberon_name": "Indium Metallicum D6",
+        "frequency": [
+            "897",
+            "987"
+        ],
+        "time": [
+            "360",
+            "360"
+        ]
+    },
     "laticínio": {
         "oberon_name": "LÁCTEOS",
         "frequency": [
@@ -923,9 +934,9 @@
             "2092"
         ],
         "time": [
-            "120",
-            "120",
-            "120"
+            "360",
+            "360",
+            "360"
         ]
     },
     "alumínio (quelação)": {
@@ -973,6 +984,19 @@
             "2233",
             "1175",
             "1292"
+        ],
+        "time": [
+            "360",
+            "360",
+            "360"
+        ]
+    },
+    "ouro": {
+        "oberon_name": "Aurum Metallicum  D30",
+        "frequency": [
+            "1123",
+            "1235",
+            "2420"
         ],
         "time": [
             "360",
