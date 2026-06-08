@@ -129,14 +129,24 @@ Registro retornado:
 - Nome do paciente.
 - Timestamp, quando existir.
 - Email, quando existir.
-- Todas as perguntas e respostas da linha da planilha.
+- Linha completa da planilha para processamento interno.
 
-O sistema transforma cada coluna da linha em um par:
+O sistema nao exibe mais todas as colunas da linha. Antes da curadoria, ele
+filtra perguntas conhecidas por comparacao normalizada do texto da pergunta
+e gera duas secoes:
 
-- Pergunta.
+- Dados pessoais.
+- Indicadores do historico de saude.
+
+Cada secao transforma as perguntas mapeadas em pares:
+
+- Campo.
 - Resposta.
 
-Esses pares sao selecionaveis e apenas os selecionados entram no relatorio.
+Perguntas nao mapeadas sao ignoradas. Campos mapeados sem resposta aparecem
+com `--`. Quando mais de uma pergunta alimenta o mesmo campo, as respostas
+sao concatenadas com `;`. Esses pares sao selecionaveis e apenas os
+selecionados entram no relatorio, separados por secao.
 
 ## Sessoes extras
 
