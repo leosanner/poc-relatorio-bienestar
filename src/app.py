@@ -31,12 +31,13 @@ from utils.extra_sessions_sheet import (
     load_extra_sessions_catalog,
 )
 from utils.anamnesis_sheet import (
+    ANAMNESIS_SECTION_LABELS,
     INVALID_ANAMNESIS_ACCESS_SECRET_MESSAGE,
     LOCKED_ANAMNESIS_MESSAGE,
     MISSING_ANAMNESIS_ACCESS_SECRET_MESSAGE,
     NO_ANAMNESIS_FOUND_MESSAGE,
+    build_anamnesis_section_tables,
     build_report_anamnesis_rows,
-    build_question_answer_rows,
     format_candidate_label,
     get_configured_anamnesis_access_secret,
     is_anamnesis_access_authorized,
@@ -535,12 +536,17 @@ def render_anamnesis_lookup_section(
         )
 
     selected_candidate = candidates[selected_candidate_index]
-    question_answer_rows = build_question_answer_rows(selected_candidate["record"])
-    selected_rows = render_selectable_table(
-        question_answer_rows,
-        ANAMNESIS_QUESTION_TABLE_KEY,
-    )
-    st.session_state[ANAMNESIS_SELECTED_ROWS_STATE_KEY] = selected_rows
+    section_tables = build_anamnesis_section_tables(selected_candidate["record"])
+    selected_sections = {}
+
+    for section_key, section_rows in section_tables.items():
+        st.markdown(f"#### {ANAMNESIS_SECTION_LABELS[section_key]}")
+        selected_sections[section_key] = render_selectable_table(
+            section_rows,
+            f"{ANAMNESIS_QUESTION_TABLE_KEY}_{section_key}",
+        )
+
+    st.session_state[ANAMNESIS_SELECTED_ROWS_STATE_KEY] = selected_sections
 
 
 def get_extra_sessions_catalog_state() -> dict:
