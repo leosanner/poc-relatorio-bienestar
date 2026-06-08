@@ -95,7 +95,8 @@ Selecoes explicitas:
 - Achados Prosync.
 - Toxinas Oberon.
 - Microrganismos Oberon.
-- Perguntas/respostas de anamnese.
+- Campos processados de anamnese, separados por dados pessoais e indicadores
+  do historico de saude.
 
 Na nova aplicacao, selecoes devem ser persistidas como decisoes do atendimento, com origem e data.
 
