@@ -171,7 +171,7 @@ def render_selectable_table(
         editor_df,
         key=widget_key,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         disabled=[column for column in editor_df.columns if column != SELECTION_COLUMN],
         column_config={
             SELECTION_COLUMN: st.column_config.CheckboxColumn(
@@ -329,7 +329,7 @@ def render_system_data_tab():
     filtered_df = filter_system_data(df, search_term)
 
     st.caption(f"{len(filtered_df)} de {len(df)} registros exibidos")
-    st.dataframe(filtered_df, hide_index=True, use_container_width=True)
+    st.dataframe(filtered_df, hide_index=True, width="stretch")
 
 
 def render_docx_download_link(label: str, data, file_name: str):
@@ -772,9 +772,9 @@ with processing_tab:
                         f"oberon_{key}",
                     )
                 elif isinstance(processed_data, list):
-                    st.dataframe(pd.DataFrame(processed_data), use_container_width=True)
+                    st.dataframe(pd.DataFrame(processed_data), width="stretch")
                 else:
-                    st.dataframe(pd.DataFrame([processed_data]), use_container_width=True)
+                    st.dataframe(pd.DataFrame([processed_data]), width="stretch")
 
             except Exception as e:
                 st.error(f"Erro ao processar Oberon ({oberon_categories[key]}): {e}")
