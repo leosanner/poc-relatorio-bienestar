@@ -8,6 +8,7 @@ from utils.anamnesis_sheet import (  # noqa: E402
     AnamnesisLookupError,
     NO_ANAMNESIS_FOUND_MESSAGE,
     UNAVAILABLE_ANAMNESIS_MESSAGE,
+    build_anamnesis_section_tables,
     build_report_anamnesis_rows,
     build_question_answer_rows,
     format_candidate_label,
@@ -91,37 +92,120 @@ class AnamnesisSheetTests(unittest.TestCase):
         self.assertEqual([candidate["record_index"] for candidate in candidates], [0, 1])
         self.assertEqual(format_candidate_label(candidates[1]), "Ana Lima | 2026-05-12")
 
-    def test_build_question_answer_rows_keeps_all_record_columns(self):
-        rows = build_question_answer_rows(
+    def test_build_anamnesis_section_tables_filters_and_renames_questions(self):
+        sections = build_anamnesis_section_tables(
             {
-                "Nome": "Ana",
-                "Sintoma principal": "Dor",
-                "Observacao": None,
+                " idade ": " 34 ",
+                "CPF": "123",
+                "Pergunta sem mapeamento": "Nao deve aparecer",
+                "Qual a sua queixa principal? O que você percebeu de diferente ou que tem te incomodado?": "Cansaço",
             }
         )
 
         self.assertEqual(
-            rows,
+            sections["dados_pessoais"][:3],
             [
-                {"Pergunta": "Nome", "Resposta": "Ana"},
-                {"Pergunta": "Sintoma principal", "Resposta": "Dor"},
-                {"Pergunta": "Observacao", "Resposta": ""},
+                {"Campo": "Idade", "Resposta": "34"},
+                {"Campo": "Data de nasc.", "Resposta": "--"},
+                {"Campo": "CPF", "Resposta": "123"},
+            ],
+        )
+        self.assertEqual(
+            sections["indicadores_do_historico_de_saude"][0],
+            {"Campo": "Queixa Principal", "Resposta": "Cansaço"},
+        )
+
+    def test_build_anamnesis_section_tables_accepts_sheet_header_variations(self):
+        sections = build_anamnesis_section_tables(
+            {
+                "CPF.": "123",
+                "Tipo Sanguineo.": "AB +",
+                "Celular de uma pessoa  próxima (nome e parentesco).": "Mae 9999",
+                "Conte um pouco sobre seu histórico médico? (Condições crônicas ou recorrentes; alergias; infecções relevantes; tratamentos contínuos; internações significativas.)\n": "Alergia",
+                "Vacinas  recentes (menos de 6 anos)  que tomou:  (Marque todas as que se aplicam) ": "Febre amarela",
+            }
+        )
+
+        self.assertIn(
+            {"Campo": "CPF", "Resposta": "123"},
+            sections["dados_pessoais"],
+        )
+        self.assertIn(
+            {"Campo": "Tipo Sanguíneo", "Resposta": "AB +"},
+            sections["dados_pessoais"],
+        )
+        self.assertIn(
+            {"Campo": "Contato de emergência", "Resposta": "Mae 9999"},
+            sections["dados_pessoais"],
+        )
+        self.assertIn(
+            {"Campo": "Histórico médico", "Resposta": "Alergia"},
+            sections["indicadores_do_historico_de_saude"],
+        )
+        self.assertIn(
+            {"Campo": "Vacinas", "Resposta": "Febre amarela"},
+            sections["indicadores_do_historico_de_saude"],
+        )
+
+    def test_build_anamnesis_section_tables_joins_duplicate_output_fields(self):
+        sections = build_anamnesis_section_tables(
+            {
+                "Histórico familiar de doenças do lado paterno: doenças crônicas ou condições de saúde significativas, como diabetes, hipertensão, câncer, doenças cardíacas etc., que afetem ou tenham afetado pai, avós, tios e primos de primeiro grau.": "Diabetes",
+                "Histórico familiar de doenças do lado paterno: no caso de câncer, indique o tipo.": "Pulmão",
+                "Mora em edifício? Se sim, em que andar?": "Sim, 4o andar",
+                "Mora perto de canais, rios ou mangues?": "Perto de canal",
+            }
+        )
+
+        self.assertEqual(
+            sections["indicadores_do_historico_de_saude"][2],
+            {"Campo": "Histórico familiar (paterno)", "Resposta": "Diabetes; Pulmão"},
+        )
+        self.assertEqual(
+            sections["indicadores_do_historico_de_saude"][-2],
+            {
+                "Campo": "Fatores ambientais",
+                "Resposta": "Sim, 4o andar; Perto de canal",
+            },
+        )
+
+    def test_build_question_answer_rows_returns_flattened_mapped_rows(self):
+        rows = build_question_answer_rows({"Idade": "34"})
+
+        self.assertEqual(
+            rows[:2],
+            [
+                {"Pergunta": "Idade", "Resposta": "34"},
+                {"Pergunta": "Data de nasc.", "Resposta": "--"},
             ],
         )
 
     def test_report_anamnesis_rows_are_empty_without_access(self):
-        selected_rows = [{"Pergunta": "Nome", "Resposta": "Ana"}]
+        selected_rows = {"dados_pessoais": [{"Campo": "Idade", "Resposta": "34"}]}
 
         rows = build_report_anamnesis_rows(False, selected_rows)
 
-        self.assertEqual(rows, [])
+        self.assertEqual(rows, {})
 
     def test_report_anamnesis_rows_are_available_with_access(self):
-        selected_rows = [{"Pergunta": "Nome", "Resposta": "Ana"}]
+        selected_rows = {
+            "dados_pessoais": [{"Campo": "Idade", "Resposta": "34"}],
+            "indicadores_do_historico_de_saude": [
+                {"Campo": "Histórico médico", "Resposta": "--"}
+            ],
+        }
 
         rows = build_report_anamnesis_rows(True, selected_rows)
 
-        self.assertEqual(rows, [{"pergunta": "Nome", "resposta": "Ana"}])
+        self.assertEqual(
+            rows,
+            {
+                "dados_pessoais": [{"campo": "Idade", "resposta": "34"}],
+                "indicadores_do_historico_de_saude": [
+                    {"campo": "Histórico médico", "resposta": "--"}
+                ],
+            },
+        )
 
     def test_report_patient_name_uses_typed_name_without_anamnesis_access(self):
         lookup_state = {
