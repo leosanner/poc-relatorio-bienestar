@@ -26,8 +26,9 @@ Fluxo esperado:
 4. Sistema consulta uma planilha Google Sheets da clinica.
 5. Se houver uma resposta, ela e selecionada automaticamente.
 6. Se houver multiplas respostas, o usuario escolhe uma.
-7. Todas as perguntas e respostas da linha escolhida aparecem em tabela selecionavel.
-8. Apenas as linhas selecionadas entram no relatorio.
+7. Sistema processa a linha escolhida e gera duas tabelas selecionaveis:
+   dados pessoais e indicadores do historico de saude.
+8. Apenas as linhas selecionadas entram no relatorio, separadas por secao.
 
 Quando a anamnese esta autorizada e uma resposta valida foi selecionada, o nome do paciente no relatorio pode ser substituido pelo nome vindo da planilha.
 
