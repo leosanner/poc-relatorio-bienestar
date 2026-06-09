@@ -311,17 +311,22 @@ def food_info(food_content: dict):
 
     results_sorted = sort_by_d(unique_results)
 
-    output_results_splitted = [{} for _ in range(3)]
+    output_results_splitted = [{} for _ in range(4)]
 
     for food_name, food_value in results_sorted:
-        if 0 <= float(food_value) <= 0.300:
+        food_value_float = float(food_value)
+
+        if 0 <= food_value_float <= 0.300:
             output_results_splitted[0][food_name] = food_value
 
-        if 0.300 < float(food_value) <= 1:
+        elif food_value_float <= 0.700:
             output_results_splitted[1][food_name] = food_value
 
-        if float(food_value) > 1:
+        elif food_value_float <= 1.000:
             output_results_splitted[2][food_name] = food_value
+
+        elif food_value_float > 1.000:
+            output_results_splitted[3][food_name] = food_value
 
     return output_results_splitted
 

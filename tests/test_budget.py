@@ -9,7 +9,13 @@ if "docxtpl" not in sys.modules:
     class DummyDocxTemplate:
         pass
 
+    class DummyRichText:
+        def __init__(self, text, color=None):
+            self.text = text
+            self.color = color
+
     fake_docxtpl.DocxTemplate = DummyDocxTemplate
+    fake_docxtpl.RichText = DummyRichText
     sys.modules["docxtpl"] = fake_docxtpl
 
 if "rich" not in sys.modules:

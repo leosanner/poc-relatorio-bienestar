@@ -68,7 +68,8 @@ Regras especificas:
 - Toxinas: enriquecem efeitos/fontes quando encontrados.
 - Microrganismos: enriquecem tipo e sintomas; alguns nomes especiais preservam grafia, como hepatites e Influenza A.
 - Cristais: enriquecem beneficios fisicos e emocionais.
-- Alimentos: sao distribuidos em tres grupos por valor D: `0 a 0.300`, `0.300 a 1` e `> 1`.
+- Alimentos: sao distribuidos em quatro grupos por valor D: `0 a 0.300`,
+  `0.300 a 0.700`, `0.700 a 1.000` e `> 1.000`.
 - Emocoes: aplicam correspondencia e removem termos excluidos.
 - Patologias: aplicam correspondencia antes de retornar; termos novos nao excluidos podem aparecer no resultado.
 
