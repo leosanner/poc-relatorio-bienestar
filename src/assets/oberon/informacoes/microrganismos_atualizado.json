@@ -234,6 +234,16 @@
       "nome": "Chikungunya",
       "sintomas": "Não faz parte da biota humana. Em carga baixa, pode causar febre moderada, cansaço, dor de cabeça e dores articulares leves. Em carga alta, pode causar febre alta, dores musculares e articulares intensas, rigidez, fadiga profunda e, em alguns casos, persistência da e da inflamação por meses ou anos.",
       "fonte": "Picada dos mosquitos Aedes aegypti ou albopictus."
+    },
+    {
+      "nome": "Influenza b",
+      "sintomas": "Não faz parte da biota humana normal. Em fase inicial pode causar sintomas semelhantes a resfriado. Em maior atividade pode provocar gripe com febre, dores no corpo, tosse, dor de garganta, dor de cabeça, fadiga intensa e, em crianças, idosos ou pessoas vulneráveis, complicações respiratórias.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Poliovírus",
+      "sintomas": "Não faz parte da biota humana normal. Em carga baixa ou fase inicial pode ser assintomático ou causar sintomas leves semelhantes a gripe, como febre, dor de garganta, náuseas, dor de cabeça, cansaço e mal-estar. Em carga/atividade maior pode atingir o sistema nervoso, provocando rigidez na nuca, dor nos membros, fraqueza muscular, paralisia flácida e, em casos graves, insuficiência respiratória ou sequelas permanentes.",
+      "fonte": "-"
     }
   ],
   "bactéria": [
@@ -572,6 +582,16 @@
     {
       "nome": "Yersinia Enterocolitica",
       "sintomas": "Gastroenterite com dor abdominal, diarreia e possível inflamação autoimune reativa.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Bordetella pertussis",
+      "sintomas": "Não faz parte da biota humana normal. Em carga baixa ou fase inicial pode parecer um resfriado, com coriza, febre baixa, mal-estar e tosse leve. Em carga/atividade maior pode causar coqueluche, com crises intensas de tosse, guincho ao inspirar, vômitos após tossir, fadiga importante e, em bebês ou pessoas vulneráveis, apneia, pneumonia e dificuldade respiratória.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Corynebacterium dipntheriae",
+      "sintomas": "Não faz parte da biota humana normal. Em carga baixa ou fase inicial pode ser assintomática ou causar dor de garganta leve, febre baixa, mal-estar e fraqueza. Em carga/atividade maior, especialmente quando produz toxina, pode causar difteria, com placas acinzentadas na garganta ou nariz, dificuldade para engolir e respirar, gânglios inchados no pescoço, além de complicações como miocardite, neuropatia, obstrução das vias aéreas.",
       "fonte": "-"
     }
   ],
@@ -1042,6 +1062,16 @@
     {
       "nome": "Ascaris Lumbricoides",
       "sintomas": "Não faz parte da biota humana. Aloja-se principalmente no intestino e em carga baixa pode causar desconforto leve, gases, distensão e alteração discreta da mucosa, além de fase pulmonar inicial com tosse leve e irritação brônquica. Em carga alta, gera dor abdominal, náuseas, inflamação persistente, maior permeabilidade intestina, sensibilização imunológica, além de poder migrar para outros órgãos, como ductos biliares, ducto pancreático, fígado e vesícula, podendo desencadear crises inflamatórias mais amplas.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Echinococcus granulosus",
+      "sintomas": "Não faz parte da biota humana normal. Em fase inicial ou com cistos pequenos pode ser assintomático por anos. Em carga/atividade maior pode formar cistos hidáticos, principalmente no fígado e nos pulmões, causando dor abdominal, náuseas, tosse crônica, dor torácica, falta de ar, perda de apetite, emagrecimento, fraqueza e, em casos de ruptura, reação alérgica grave.",
+      "fonte": "-"
+    },
+    {
+      "nome": "Plasmodium vivax",
+      "sintomas": "Não faz parte da biota humana normal. Em fase inicial ou baixa atividade pode causar mal-estar, febre baixa, dor de cabeça, calafrios leves e cansaço. Em maior atividade pode provocar crises de malária com febre intermitente, calafrios intensos, sudorese, dor no corpo, náuseas, vômitos, anemia, aumento do baço e fraqueza importante.",
       "fonte": "-"
     }
   ],
