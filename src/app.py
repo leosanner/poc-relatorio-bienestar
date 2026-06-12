@@ -8,6 +8,7 @@ from pathlib import Path
 
 from utils.oberon import toxins_info, crystal_info, microorganism_info
 from utils.budget import format_currency, generate_budget
+from utils.control import generate_control
 import streamlit as st
 import pandas as pd
 from typing import get_args
@@ -820,6 +821,7 @@ with processing_tab:
                 docx_buffer = None
                 protocol_buffer = None
                 budget_buffer = None
+                control_buffer = None
 
                 try:
                     if not selected_company:
@@ -829,6 +831,7 @@ with processing_tab:
                     )
                     protocol_buffer = generate_protocol(protocol_and_report_content)
                     budget_buffer = generate_budget(protocol_and_report_content)
+                    control_buffer = generate_control(protocol_and_report_content)
 
                 except Exception as e:
                     print(f"Erro ao gerar conteúdo: {e}")
@@ -857,7 +860,20 @@ with processing_tab:
                         ),
                     )
                 else:
-                    st.error("Erro ao gerar o relatório (Template não encontrado?).")
+                    st.error("Erro ao gerar o orçamento (Template não encontrado?).")
+
+                if control_buffer:
+                    render_docx_download_link(
+                        "Baixar Controle (DOCX)",
+                        control_buffer,
+                        build_output_file_name(
+                            "controle",
+                            selected_company,
+                            report_patient_name,
+                        ),
+                    )
+                else:
+                    st.error("Erro ao gerar o controle.")
 
                 if docx_buffer:
                     render_docx_download_link(
