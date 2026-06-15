@@ -52,8 +52,18 @@ class BudgetTests(unittest.TestCase):
         self.assertEqual(
             budget_context["extra_sessions_budget"],
             [
-                {"name": "Sessao Especial", "pix": "R$ 111,00", "card": "R$ 222,00"},
-                {"name": "Sessao Especial", "pix": "R$ 111,00", "card": "R$ 222,00"},
+                {
+                    "name": "Sessao Especial",
+                    "pix": "R$ 111,00",
+                    "card": "R$ 222,00",
+                    "number": "11",
+                },
+                {
+                    "name": "Sessao Especial",
+                    "pix": "R$ 111,00",
+                    "card": "R$ 222,00",
+                    "number": "12",
+                },
             ],
         )
         self.assertEqual(budget_context["extra_sessions_total_pix"], "R$ 222,00")

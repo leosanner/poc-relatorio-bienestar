@@ -55,6 +55,19 @@ def format_not_founded(content: list[str]) -> list[str]:
     return content if len(content) > 0 else ["Todos foram encontrados"]
 
 
+def add_row_numbers(
+    rows: list[dict[str, str]], start_number: int
+) -> tuple[list[dict[str, str]], int]:
+    numbered_rows = []
+    current_number = start_number
+
+    for row in rows:
+        numbered_rows.append({**row, "number": str(current_number)})
+        current_number += 1
+
+    return numbered_rows, current_number
+
+
 def create_budget_rows(
     session_names: list[str], price: dict[str, float | int]
 ) -> tuple[list[dict[str, str]], float, float]:
@@ -168,6 +181,16 @@ def build_budget_context(protocol_content: dict) -> dict:
     )
     extra_sessions_budget, extra_total_pix, extra_total_card = (
         create_extra_sessions_rows(extra_sessions, extra_session_price_lookup)
+    )
+    next_row_number = 10
+    microorganisms_budget, next_row_number = add_row_numbers(
+        microorganisms_budget, next_row_number
+    )
+    metals_budget, next_row_number = add_row_numbers(
+        metals_budget, next_row_number
+    )
+    extra_sessions_budget, next_row_number = add_row_numbers(
+        extra_sessions_budget, next_row_number
     )
 
     treatments_total_pix = microorganisms_total_pix + metals_total_pix
