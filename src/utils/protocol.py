@@ -14,6 +14,8 @@ path = Path(__file__).parent.parent
 PROTOCOL_TEMPLATE_PATH = path / "assets/protocol/template_protocolo_microrganismos.docx"
 ASSETS = path / "assets"
 PROTOCOL_ASSETS_PATH = ASSETS / "protocol"
+MIDTERM_ANALYSIS_SESSION_NAME = "Sessão intermediária"
+SESSION_COMPLEMENT_NAME = "Hidrovitalis + Hidrogênio + ILIB"
 
 # Desenvolvimento do protocolo
 # Microrganismo de 0,000 até 0,350 – estarão em preto no relatório e na 1ª etapa do protocolo
@@ -270,6 +272,9 @@ def metals_docx_format(treatment_content: list[list]):
     docx_sessions = []
 
     for session_treatment in treatment_content:
+        if not session_treatment:
+            continue
+
         sessions_by_toxin_name = {}
 
         for treatment in session_treatment:
@@ -280,8 +285,9 @@ def metals_docx_format(treatment_content: list[list]):
 
         docx_sessions.append(
             "\n".join(
-                [
-                    f"#{first_char_uppercase(k)}\n{"\n".join(v)}"
+                ["RPD - Metais"]
+                + [
+                    f"# {first_char_uppercase(k)}\n{"\n".join(v)}"
                     for k, v in sessions_by_toxin_name.items()
                 ]
             )
@@ -309,7 +315,9 @@ def format_metals_content_to_docx(founded: list[dict], tol_time: int = TOL_TIME)
             current_session_time += float(time)
             current_session.append([toxin_name, freq, time])
 
-    sessions.append(current_session)
+    if current_session:
+        sessions.append(current_session)
+
     return metals_docx_format(sessions)
 
 
@@ -382,19 +390,26 @@ def build_sessions(data: list[dict], tol_time: int = TOL_TIME) -> list[list]:
     frequencies = format_microorganism_content_sessions(data)
     session_content = []
     session_total_time = 0
+    current_session_type = ""
 
     for list_ in frequencies:
         f_time = list_[1]
         if not len(f_time) > 0:
             continue
 
-        session_content.append(list_)
-        session_total_time += float(f_time)
-
-        if float(session_total_time) >= tol_time:
+        f_time_float = float(f_time)
+        row_type = list_[3]
+        if session_content and (
+            row_type != current_session_type
+            or float(session_total_time + f_time_float) > tol_time
+        ):
             sessions_complete_content.append(session_content)
             session_content = []
             session_total_time = 0
+
+        session_content.append(list_)
+        session_total_time += f_time_float
+        current_session_type = row_type
 
     if len(session_content) > 0:
         sessions_complete_content.append(session_content)
@@ -429,6 +444,10 @@ def microorganisms_content_docx(frequencies: list[list]):
     docx_content = []
 
     for session in frequencies:
+        if not session:
+            continue
+
+        session_type = session[0][3]
         session_data = {}
 
         for row in session:
@@ -441,8 +460,9 @@ def microorganisms_content_docx(frequencies: list[list]):
                 session_data[microorganism] = [row_freq_time_content]
 
         session_for_docx = "\n".join(
-            [
-                "\n".join([f"#{format_microorganism_name(k)}", "\n".join(v)])
+            [f"RPD - {session_type}"]
+            + [
+                "\n".join([f"# {format_microorganism_name(k)}", "\n".join(v)])
                 for k, v in session_data.items()
             ]
         )
@@ -467,7 +487,18 @@ def add_midterm_analysis_sessions(
         output_content.append(content)
         total_sessions = initial_session_count + idx + 1
         if (total_sessions % sessions_for_analysis) == 0:
-            output_content.append("Sessão intermediária")
+            output_content.append(MIDTERM_ANALYSIS_SESSION_NAME)
+
+    return output_content
+
+
+def add_session_complements(docx_content: list[str]) -> list[str]:
+    output_content = []
+
+    for content in docx_content:
+        output_content.append(content)
+        if content.strip() and content.strip() != MIDTERM_ANALYSIS_SESSION_NAME:
+            output_content.append(SESSION_COMPLEMENT_NAME)
 
     return output_content
 
@@ -536,9 +567,11 @@ def generate_protocol(protocol_content):
         microorganisms_prosync, microorganisms_oberon
     )
     total_metals_sessions = len(t_t_b)
-    t_t_b = add_midterm_analysis_sessions(t_t_b)
-    m_t_b = add_midterm_analysis_sessions(
-        m_t_b, initial_session_count=total_metals_sessions
+    t_t_b = add_session_complements(add_midterm_analysis_sessions(t_t_b))
+    m_t_b = add_session_complements(
+        add_midterm_analysis_sessions(
+            m_t_b, initial_session_count=total_metals_sessions
+        )
     )
 
     if not PROTOCOL_TEMPLATE_PATH.exists():

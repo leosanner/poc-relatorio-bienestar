@@ -2,6 +2,7 @@ from utils.protocol import (
     add_midterm_analysis_sessions,
     metals_treatment_block,
     microorganisms_treatment_block,
+    SESSION_COMPLEMENT_NAME,
 )
 from pathlib import Path
 from datetime import datetime
@@ -17,6 +18,7 @@ BUDGET_ASSETS_PATH = ASSETS / "budget"
 BUDGET_TEMPLATE_PATH = BUDGET_ASSETS_PATH / "template_orcamento.docx"
 PRICES_PATH = BUDGET_ASSETS_PATH / "prices.json"
 DEFAULT_TREATMENT_PRICE_NAME = "RPD"
+SESSION_COMPLEMENT_PRICE_NAME = "Hidrovitalis + ILIB + Hidrogênio"
 
 
 def load_prices() -> dict:
@@ -32,23 +34,57 @@ def format_currency(value: float | int) -> str:
     return f"R$ {formatted_value}"
 
 
-def extract_only_substance_name(content: list[str]) -> list[str]:
+def is_frequency_time_row(content: str) -> bool:
+    parts = [part.strip() for part in content.split(",")]
+    if len(parts) != 2:
+        return False
+
+    try:
+        float(parts[0])
+        float(parts[1])
+    except ValueError:
+        return False
+
+    return True
+
+
+def extract_treatment_budget_items(content: list[str]) -> list[dict[str, str]]:
     sessions = []
     for treatment in content:
+        treatment = treatment.strip()
+        if not treatment:
+            continue
+
+        if treatment == SESSION_COMPLEMENT_NAME:
+            continue
+
         session_names = []
         for session_row in treatment.splitlines():
             cleaned_row = session_row.strip()
-            if cleaned_row.startswith("#"):
-                cleaned_row = cleaned_row.lstrip("#").strip()
+            if cleaned_row.startswith("RPD -") or cleaned_row.startswith("#"):
                 if cleaned_row:
                     session_names.append(cleaned_row)
+                continue
 
-        if len(session_names) == 0 and treatment.strip().lower().startswith("sessão"):
-            session_names.append(treatment.strip())
+            if not is_frequency_time_row(cleaned_row) and cleaned_row:
+                session_names.append(cleaned_row)
 
-        sessions.append("\n".join(session_names))
+        if len(session_names) == 0 and treatment.lower().startswith("sessão"):
+            session_names.append(treatment)
+
+        if session_names:
+            sessions.append(
+                {
+                    "name": "\n".join(session_names),
+                    "price_name": DEFAULT_TREATMENT_PRICE_NAME,
+                }
+            )
 
     return sessions
+
+
+def is_rpd_treatment(session_name: str) -> bool:
+    return session_name.lstrip().startswith("RPD -")
 
 
 def format_not_founded(content: list[str]) -> list[str]:
@@ -69,23 +105,49 @@ def add_row_numbers(
 
 
 def create_budget_rows(
-    session_names: list[str], price: dict[str, float | int]
+    session_items: list[dict[str, str]], prices: dict[str, dict[str, float | int]]
 ) -> tuple[list[dict[str, str]], float, float]:
     rows = []
     total_pix = 0.0
     total_card = 0.0
-
-    pix = float(price.get("pix", 0))
-    card = float(price.get("cartao", 0))
-
-    for session_name in session_names:
-        rows.append(
-            {
-                "name": session_name,
-                "pix": format_currency(pix),
-                "card": format_currency(card),
-            }
+    session_complement_price = prices.get(SESSION_COMPLEMENT_PRICE_NAME)
+    if not session_complement_price:
+        raise ValueError(
+            f"Treatment price '{SESSION_COMPLEMENT_PRICE_NAME}' not found."
         )
+
+    for session_item in session_items:
+        session_name = session_item["name"]
+        price_name = session_item["price_name"]
+        price = prices.get(price_name)
+        if not price:
+            raise ValueError(f"Treatment price '{price_name}' not found.")
+
+        pix = float(price.get("pix", 0))
+        card = float(price.get("cartao", 0))
+        row = {
+            "name": session_name,
+            "pix": format_currency(pix),
+            "card": format_currency(card),
+            "h": "",
+            "h_p": "",
+            "h_c": "",
+        }
+
+        if is_rpd_treatment(session_name):
+            complement_pix = float(session_complement_price.get("pix", 0))
+            complement_card = float(session_complement_price.get("cartao", 0))
+            row.update(
+                {
+                    "h": SESSION_COMPLEMENT_NAME,
+                    "h_p": format_currency(complement_pix),
+                    "h_c": format_currency(complement_card),
+                }
+            )
+            pix += complement_pix
+            card += complement_card
+
+        rows.append(row)
         total_pix += pix
         total_card += card
 
@@ -140,13 +202,13 @@ def format_content_for_budget(microorganisms_prosync, microorganisms_oberon, tox
     )
 
     return {
-        "microorganisms_budget": extract_only_substance_name(
+        "microorganisms_budget": extract_treatment_budget_items(
             microorganisms_treatment
         ),
         "microorganisms_not_founded": format_not_founded(
             not_founded_microorganisms
         ),
-        "metals_budget": extract_only_substance_name(metals_treatment),
+        "metals_budget": extract_treatment_budget_items(metals_treatment),
         "metals_not_founded": format_not_founded(not_founded_metals),
     }
 
@@ -162,19 +224,11 @@ def build_budget_context(protocol_content: dict) -> dict:
         microorganisms_prosync, microorganisms_oberon, toxins
     )
     prices = load_prices()
-    default_treatment_price = prices.get(DEFAULT_TREATMENT_PRICE_NAME)
-    if not default_treatment_price:
-        raise ValueError(
-            f"Default treatment price '{DEFAULT_TREATMENT_PRICE_NAME}' not found."
-        )
-
     microorganisms_budget, microorganisms_total_pix, microorganisms_total_card = (
-        create_budget_rows(
-            formatted_budget_content["microorganisms_budget"], default_treatment_price
-        )
+        create_budget_rows(formatted_budget_content["microorganisms_budget"], prices)
     )
     metals_budget, metals_total_pix, metals_total_card = create_budget_rows(
-        formatted_budget_content["metals_budget"], default_treatment_price
+        formatted_budget_content["metals_budget"], prices
     )
     extra_session_price_lookup = (
         prices if extra_session_prices is None else extra_session_prices

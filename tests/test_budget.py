@@ -2,6 +2,7 @@ import sys
 import types
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 if "docxtpl" not in sys.modules:
     fake_docxtpl = types.ModuleType("docxtpl")
@@ -32,6 +33,12 @@ if "spacy" not in sys.modules:
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from utils.budget import build_budget_context  # noqa: E402
+from utils.protocol import (  # noqa: E402
+    SESSION_COMPLEMENT_NAME,
+    add_session_complements,
+    metals_docx_format,
+    microorganisms_content_docx,
+)
 
 
 class BudgetTests(unittest.TestCase):
@@ -56,18 +63,86 @@ class BudgetTests(unittest.TestCase):
                     "name": "Sessao Especial",
                     "pix": "R$ 111,00",
                     "card": "R$ 222,00",
-                    "number": "11",
+                    "number": "10",
                 },
                 {
                     "name": "Sessao Especial",
                     "pix": "R$ 111,00",
                     "card": "R$ 222,00",
-                    "number": "12",
+                    "number": "11",
                 },
             ],
         )
         self.assertEqual(budget_context["extra_sessions_total_pix"], "R$ 222,00")
         self.assertEqual(budget_context["extra_sessions_total_card"], "R$ 444,00")
+
+    def test_protocol_rows_include_rpd_header_and_complement(self):
+        self.assertEqual(
+            microorganisms_content_docx(
+                [[["333", "180", "taenia geral", "Parasitas"]]]
+            ),
+            ["RPD - Parasitas\n# Taenia geral\n333,180"],
+        )
+        self.assertEqual(
+            metals_docx_format([[["chumbo", "333", "180"]]]),
+            ["RPD - Metais\n# Chumbo\n333, 180"],
+        )
+        self.assertEqual(
+            add_session_complements(["RPD - Parasitas\n# Taenia geral\n333,180"]),
+            ["RPD - Parasitas\n# Taenia geral\n333,180", SESSION_COMPLEMENT_NAME],
+        )
+
+    def test_budget_uses_rpd_headers_and_complement_prices(self):
+        protocol_content = {
+            "name": "Paciente Teste",
+            "table_prosync": [],
+            "table_microorganism": [],
+            "table_toxins": [],
+            "extra_sessions": [],
+        }
+
+        with patch(
+            "utils.budget.microorganisms_treatment_block",
+            return_value=(
+                ["RPD - Parasitas\n# Taenia geral\n333,180\n# Enterococcus\n786,180"],
+                [],
+            ),
+        ), patch(
+            "utils.budget.metals_treatment_block",
+            return_value=(["RPD - Metais\n# Chumbo\n333, 180"], []),
+        ):
+            budget_context = build_budget_context(protocol_content)
+
+        self.assertEqual(
+            budget_context["microorganisms_budget"],
+            [
+                {
+                    "name": "RPD - Parasitas\n# Taenia geral\n# Enterococcus",
+                    "pix": "R$ 153,00",
+                    "card": "R$ 169,00",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
+                    "h_p": "R$ 195,00",
+                    "h_c": "R$ 215,00",
+                    "number": "10",
+                },
+            ],
+        )
+        self.assertEqual(
+            budget_context["metals_budget"],
+            [
+                {
+                    "name": "RPD - Metais\n# Chumbo",
+                    "pix": "R$ 153,00",
+                    "card": "R$ 169,00",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
+                    "h_p": "R$ 195,00",
+                    "h_c": "R$ 215,00",
+                    "number": "11",
+                },
+            ],
+        )
+        self.assertEqual(budget_context["treatments_total_pix"], "R$ 696,00")
+        self.assertEqual(budget_context["treatments_total_card"], "R$ 768,00")
 
 
 if __name__ == "__main__":
