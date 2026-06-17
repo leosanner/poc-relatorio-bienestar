@@ -30,6 +30,7 @@ def build_control_context(protocol_content: dict) -> dict:
                     {
                         "week": week_number,
                         "name": session_name,
+                        "h": str(row.get("h", "") or ""),
                         "date_placeholder": CONTROL_DATE_PLACEHOLDER,
                         "signature_placeholder": CONTROL_SIGNATURE_PLACEHOLDER,
                     }

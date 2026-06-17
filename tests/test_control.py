@@ -43,7 +43,12 @@ class ControlTests(unittest.TestCase):
             "name": "Paciente Teste",
             "date": "12/06/2026",
             "microorganisms_budget": [
-                {"name": "RPD - Fungos", "pix": "R$ 520,00", "card": "R$ 620,00"}
+                {
+                    "name": "RPD - Fungos",
+                    "pix": "R$ 520,00",
+                    "card": "R$ 620,00",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
+                }
             ],
             "metals_budget": [
                 {"name": "Detox metais", "pix": "R$ 520,00", "card": "R$ 620,00"}
@@ -66,18 +71,21 @@ class ControlTests(unittest.TestCase):
                 {
                     "week": 10,
                     "name": "RPD - Fungos",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
                     "date_placeholder": CONTROL_DATE_PLACEHOLDER,
                     "signature_placeholder": CONTROL_SIGNATURE_PLACEHOLDER,
                 },
                 {
                     "week": 11,
                     "name": "Detox metais",
+                    "h": "",
                     "date_placeholder": CONTROL_DATE_PLACEHOLDER,
                     "signature_placeholder": CONTROL_SIGNATURE_PLACEHOLDER,
                 },
                 {
                     "week": 12,
                     "name": "Calatonia",
+                    "h": "",
                     "date_placeholder": CONTROL_DATE_PLACEHOLDER,
                     "signature_placeholder": CONTROL_SIGNATURE_PLACEHOLDER,
                 },
