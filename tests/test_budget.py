@@ -36,6 +36,7 @@ from utils.budget import build_budget_context  # noqa: E402
 from utils.protocol import (  # noqa: E402
     SESSION_COMPLEMENT_NAME,
     add_session_complements,
+    build_protocol_context,
     metals_docx_format,
     microorganisms_content_docx,
 )
@@ -143,6 +144,67 @@ class BudgetTests(unittest.TestCase):
         )
         self.assertEqual(budget_context["treatments_total_pix"], "R$ 696,00")
         self.assertEqual(budget_context["treatments_total_card"], "R$ 768,00")
+
+    def test_protocol_context_uses_budget_row_shape_with_frequencies(self):
+        protocol_content = {
+            "name": "Paciente Teste",
+            "table_prosync": [],
+            "table_microorganism": [],
+            "table_toxins": [],
+            "extra_sessions": ["Calatonia"],
+        }
+
+        with patch(
+            "utils.protocol.microorganisms_treatment_block",
+            return_value=(
+                ["RPD - Parasitas\n# Taenia geral\n333,180\n# Enterococcus\n786,180"],
+                [],
+            ),
+        ), patch(
+            "utils.protocol.metals_treatment_block",
+            return_value=(["RPD - Metais\n# Chumbo\n333, 180"], []),
+        ):
+            protocol_context = build_protocol_context(protocol_content)
+
+        self.assertEqual(
+            protocol_context["microorganisms_protocol"],
+            [
+                {
+                    "name": "RPD - Parasitas\n# Taenia geral\n333,180\n# Enterococcus\n786,180",
+                    "pix": "R$ 153,00",
+                    "card": "R$ 169,00",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
+                    "h_p": "R$ 195,00",
+                    "h_c": "R$ 215,00",
+                    "display": (
+                        "RPD - Parasitas\n# Taenia geral\n333,180\n"
+                        "# Enterococcus\n786,180\n"
+                        "Hidrovitalis + Hidrogênio + ILIB"
+                    ),
+                    "number": "10",
+                },
+            ],
+        )
+        self.assertEqual(
+            protocol_context["metals_protocol"],
+            [
+                {
+                    "name": "RPD - Metais\n# Chumbo\n333, 180",
+                    "pix": "R$ 153,00",
+                    "card": "R$ 169,00",
+                    "h": "Hidrovitalis + Hidrogênio + ILIB",
+                    "h_p": "R$ 195,00",
+                    "h_c": "R$ 215,00",
+                    "display": (
+                        "RPD - Metais\n# Chumbo\n333, 180\n"
+                        "Hidrovitalis + Hidrogênio + ILIB"
+                    ),
+                    "number": "11",
+                },
+            ],
+        )
+        self.assertEqual(protocol_context["total_pix"], "R$ 696,00")
+        self.assertEqual(protocol_context["total_card"], "R$ 768,00")
 
 
 if __name__ == "__main__":

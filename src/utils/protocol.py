@@ -14,6 +14,10 @@ path = Path(__file__).parent.parent
 PROTOCOL_TEMPLATE_PATH = path / "assets/protocol/template_protocolo_microrganismos.docx"
 ASSETS = path / "assets"
 PROTOCOL_ASSETS_PATH = ASSETS / "protocol"
+BUDGET_ASSETS_PATH = ASSETS / "budget"
+PRICES_PATH = BUDGET_ASSETS_PATH / "prices.json"
+DEFAULT_TREATMENT_PRICE_NAME = "RPD"
+SESSION_COMPLEMENT_PRICE_NAME = "Hidrovitalis + ILIB + Hidrogênio"
 MIDTERM_ANALYSIS_SESSION_NAME = "Sessão intermediária"
 SESSION_COMPLEMENT_NAME = "Hidrovitalis + Hidrogênio + ILIB"
 
@@ -37,6 +41,18 @@ SESSION_COMPLEMENT_NAME = "Hidrovitalis + Hidrogênio + ILIB"
 def load_json(path_: Path | str) -> dict:
     with open(path_, "r", encoding="utf-8") as file:
         return json.load(file)
+
+
+def load_prices() -> dict:
+    return load_json(PRICES_PATH)
+
+
+def format_currency(value: float | int) -> str:
+    formatted_value = f"{value:,.2f}"
+    formatted_value = formatted_value.replace(",", "X").replace(".", ",").replace(
+        "X", "."
+    )
+    return f"R$ {formatted_value}"
 
 
 def write_json_file(file_name: str, obj):
@@ -503,6 +519,77 @@ def add_session_complements(docx_content: list[str]) -> list[str]:
     return output_content
 
 
+def is_rpd_treatment(session_name: str) -> bool:
+    return session_name.lstrip().startswith("RPD -")
+
+
+def add_row_numbers(
+    rows: list[dict[str, str]], start_number: int
+) -> tuple[list[dict[str, str]], int]:
+    numbered_rows = []
+    current_number = start_number
+
+    for row in rows:
+        numbered_rows.append({**row, "number": str(current_number)})
+        current_number += 1
+
+    return numbered_rows, current_number
+
+
+def create_protocol_treatment_rows(
+    session_names: list[str], prices: dict[str, dict[str, float | int]]
+) -> tuple[list[dict[str, str]], float, float]:
+    rows = []
+    total_pix = 0.0
+    total_card = 0.0
+    treatment_price = prices.get(DEFAULT_TREATMENT_PRICE_NAME)
+    session_complement_price = prices.get(SESSION_COMPLEMENT_PRICE_NAME)
+
+    if not treatment_price:
+        raise ValueError(f"Treatment price '{DEFAULT_TREATMENT_PRICE_NAME}' not found.")
+    if not session_complement_price:
+        raise ValueError(
+            f"Treatment price '{SESSION_COMPLEMENT_PRICE_NAME}' not found."
+        )
+
+    for session_name in session_names:
+        session_name = session_name.strip()
+        if not session_name or session_name == SESSION_COMPLEMENT_NAME:
+            continue
+
+        pix = float(treatment_price.get("pix", 0))
+        card = float(treatment_price.get("cartao", 0))
+        row = {
+            "name": session_name,
+            "pix": format_currency(pix),
+            "card": format_currency(card),
+            "h": "",
+            "h_p": "",
+            "h_c": "",
+            "display": session_name,
+        }
+
+        if is_rpd_treatment(session_name):
+            complement_pix = float(session_complement_price.get("pix", 0))
+            complement_card = float(session_complement_price.get("cartao", 0))
+            row.update(
+                {
+                    "h": SESSION_COMPLEMENT_NAME,
+                    "h_p": format_currency(complement_pix),
+                    "h_c": format_currency(complement_card),
+                    "display": f"{session_name}\n{SESSION_COMPLEMENT_NAME}",
+                }
+            )
+            pix += complement_pix
+            card += complement_card
+
+        rows.append(row)
+        total_pix += pix
+        total_card += card
+
+    return rows, total_pix, total_card
+
+
 def microorganisms_treatment_block(
     microrganisms_informations_oberon, microrganisms_informations_prosync
 ):
@@ -555,8 +642,7 @@ def format_microorganism_content(
 # ================================================================== #
 
 
-# Implementação do protocolo
-def generate_protocol(protocol_content):
+def build_protocol_context(protocol_content: dict) -> dict:
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
@@ -567,26 +653,48 @@ def generate_protocol(protocol_content):
         microorganisms_prosync, microorganisms_oberon
     )
     total_metals_sessions = len(t_t_b)
-    t_t_b = add_session_complements(add_midterm_analysis_sessions(t_t_b))
-    m_t_b = add_session_complements(
-        add_midterm_analysis_sessions(
-            m_t_b, initial_session_count=total_metals_sessions
-        )
+    t_t_b = add_midterm_analysis_sessions(t_t_b)
+    m_t_b = add_midterm_analysis_sessions(
+        m_t_b, initial_session_count=total_metals_sessions
     )
 
+    prices = load_prices()
+    microorganisms_protocol, microorganisms_total_pix, microorganisms_total_card = (
+        create_protocol_treatment_rows(m_t_b, prices)
+    )
+    metals_protocol, metals_total_pix, metals_total_card = (
+        create_protocol_treatment_rows(t_t_b, prices)
+    )
+    next_row_number = 10
+    microorganisms_protocol, next_row_number = add_row_numbers(
+        microorganisms_protocol, next_row_number
+    )
+    metals_protocol, next_row_number = add_row_numbers(
+        metals_protocol, next_row_number
+    )
+
+    total_pix = microorganisms_total_pix + metals_total_pix
+    total_card = microorganisms_total_card + metals_total_card
+
+    return {
+        "name": protocol_content.get("name", "") or "",
+        "microorganisms_protocol": microorganisms_protocol,
+        "microorganisms_not_founded": not_founded_microorganisms,
+        "metals_protocol": metals_protocol,
+        "metals_not_founded": not_founded_metals,
+        "extra_sessions_protocol": extra_sessions,
+        "total_pix": format_currency(total_pix),
+        "total_card": format_currency(total_card),
+    }
+
+
+# Implementação do protocolo
+def generate_protocol(protocol_content):
     if not PROTOCOL_TEMPLATE_PATH.exists():
         print(f"Template not found at {PROTOCOL_TEMPLATE_PATH}")
         return
 
-    content = {
-        "name": "Nome teste",
-        "microorganisms_protocol": m_t_b,
-        "microorganisms_not_founded": not_founded_microorganisms,
-        "metals_protocol": t_t_b,
-        "metals_not_founded": not_founded_metals,
-        "extra_sessions_protocol": extra_sessions,
-    }
-
+    content = build_protocol_context(protocol_content)
     doc = DocxTemplate(PROTOCOL_TEMPLATE_PATH)
     doc.render(content)
 
