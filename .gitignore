@@ -3,6 +3,9 @@
 
 tmp/*
 
+# Local test input data (Oberon TXT / Prosync PDF samples)
+tests/data
+
 # Python-generated files
 __pycache__/
 *.py[oc]
