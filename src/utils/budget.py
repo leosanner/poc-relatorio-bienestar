@@ -105,7 +105,9 @@ def add_row_numbers(
 
 
 def create_budget_rows(
-    session_items: list[dict[str, str]], prices: dict[str, dict[str, float | int]]
+    session_items: list[dict[str, str]],
+    prices: dict[str, dict[str, float | int]],
+    multiplier: float = 1.0,
 ) -> tuple[list[dict[str, str]], float, float]:
     rows = []
     total_pix = 0.0
@@ -123,8 +125,8 @@ def create_budget_rows(
         if not price:
             raise ValueError(f"Treatment price '{price_name}' not found.")
 
-        pix = float(price.get("pix", 0))
-        card = float(price.get("cartao", 0))
+        pix = float(price.get("pix", 0)) * multiplier
+        card = float(price.get("cartao", 0)) * multiplier
         row = {
             "name": session_name,
             "pix": format_currency(pix),
@@ -135,8 +137,10 @@ def create_budget_rows(
         }
 
         if is_rpd_treatment(session_name):
-            complement_pix = float(session_complement_price.get("pix", 0))
-            complement_card = float(session_complement_price.get("cartao", 0))
+            complement_pix = float(session_complement_price.get("pix", 0)) * multiplier
+            complement_card = (
+                float(session_complement_price.get("cartao", 0)) * multiplier
+            )
             row.update(
                 {
                     "h": SESSION_COMPLEMENT_NAME,
@@ -213,7 +217,7 @@ def format_content_for_budget(microorganisms_prosync, microorganisms_oberon, tox
     }
 
 
-def build_budget_context(protocol_content: dict) -> dict:
+def build_budget_context(protocol_content: dict, multiplier: float = 1.0) -> dict:
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
@@ -225,10 +229,12 @@ def build_budget_context(protocol_content: dict) -> dict:
     )
     prices = load_prices()
     microorganisms_budget, microorganisms_total_pix, microorganisms_total_card = (
-        create_budget_rows(formatted_budget_content["microorganisms_budget"], prices)
+        create_budget_rows(
+            formatted_budget_content["microorganisms_budget"], prices, multiplier
+        )
     )
     metals_budget, metals_total_pix, metals_total_card = create_budget_rows(
-        formatted_budget_content["metals_budget"], prices
+        formatted_budget_content["metals_budget"], prices, multiplier
     )
     extra_session_price_lookup = (
         prices if extra_session_prices is None else extra_session_prices
@@ -272,12 +278,12 @@ def build_budget_context(protocol_content: dict) -> dict:
     }
 
 
-def generate_budget(protocol_content):
+def generate_budget(protocol_content, multiplier: float = 1.0):
     if not BUDGET_TEMPLATE_PATH.exists():
         print(f"Template not found at {BUDGET_TEMPLATE_PATH}")
         return
 
-    content = build_budget_context(protocol_content)
+    content = build_budget_context(protocol_content, multiplier)
     doc = DocxTemplate(BUDGET_TEMPLATE_PATH)
     doc.render(content)
 

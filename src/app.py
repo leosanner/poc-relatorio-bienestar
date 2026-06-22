@@ -24,6 +24,13 @@ from utils.report import (
     prosync_table_content,
     generate_content_for_report,
 )
+from utils.group import (
+    partition_group_elements,
+    build_shared_content,
+    build_individual_content,
+    build_individual_report_content,
+    format_shared_name,
+)
 from typing import Literal
 from utils.protocol import generate_protocol
 from utils.extra_sessions_sheet import (
@@ -54,6 +61,21 @@ ANAMNESIS_FORM_URLS: dict[str, str | None] = {
     ),
     "Alecrim": None,
     "VitaeFlux": None,
+}
+
+availableCompaniesArgs = get_args(availableCompanies)
+SHARED_SESSION_MULTIPLIER = 1.0
+
+GROUP_SELECTED_COMPANY_STATE_KEY = "group_selected_company"
+GROUP_PATIENT_COUNT_STATE_KEY = "group_patient_count"
+
+OBERON_CATEGORIES = {
+    "toxinas": "Toxinas",
+    "emocoes": "Emoções",
+    "microrganismos": "Microrganismos",
+    "cristais": "Cristais",
+    "alimentos": "Alimentos",
+    "patologias": "Patologias",
 }
 
 SELECTION_COLUMN = "Selecionado"
@@ -583,60 +605,82 @@ def format_extra_session_option_label(option: dict) -> str:
     )
 
 
-def sync_selected_extra_sessions(available_options: list[dict]):
+def sync_selected_extra_sessions(
+    available_options: list[dict],
+    state_key: str = "selected_extra_sessions",
+    quantity_key_prefix: str = "",
+):
     available_names = {option["treatment_name"] for option in available_options}
-    current_selected = st.session_state.get("selected_extra_sessions", [])
+    current_selected = st.session_state.get(state_key, [])
     valid_selected = [name for name in current_selected if name in available_names]
 
     if current_selected != valid_selected:
         removed_sessions = set(current_selected) - set(valid_selected)
-        st.session_state["selected_extra_sessions"] = valid_selected
+        st.session_state[state_key] = valid_selected
         for session_name in removed_sessions:
-            st.session_state.pop(f"extra_session_quantity_{session_name}", None)
+            st.session_state.pop(
+                f"{quantity_key_prefix}extra_session_quantity_{session_name}", None
+            )
 
 
-st.set_page_config(page_title="Bienestar POC", layout="wide")
+def render_prosync_uploader(key_prefix: str):
+    """Render the Prosync uploader. Returns the uploaded file (or None).
 
-st.title("Bienestar POC")
-processing_tab, system_data_tab = st.tabs(["Processamento", "Dados do Sistema"])
-
-with processing_tab:
-    st.title("Processamento de Arquivos")
-
-    st.markdown("### Informações do Atendimento")
-    clinic_column, patient_column = st.columns(2)
-    with clinic_column:
-        selected_company = st.selectbox(
-            "Clínica",
-            options=get_args(availableCompanies),
-            index=0,
-            key="selected_company",
-        )
-    with patient_column:
-        patient_name = st.text_input("Nome do Paciente", key="patient_name")
-
-    render_anamnesis_lookup_section(selected_company, patient_name)
-
+    With key_prefix == "" the uploader/state key is "prosync" (unchanged).
+    """
     st.markdown("### Prosync (PDF)")
-    prosync_file = st.file_uploader("Upload Prosync PDF", type=["pdf"], key="prosync")
+    return st.file_uploader(
+        "Upload Prosync PDF", type=["pdf"], key=f"{key_prefix}prosync"
+    )
 
+
+def process_prosync_input(key_prefix: str, prosync_file, prosync_std: float):
+    """When a file is present, extract + render the selectable table.
+    Returns (selected_prosync_list, prosync_data).
+
+    With key_prefix == "" the selectable-table state key is "prosync" (unchanged).
+    """
+    prosync_data = {}
+    selected_prosync_list = []
+
+    if prosync_file:
+        try:
+            st.subheader("Resultado Prosync")
+            prosync_data = extract_prosync_content(
+                prosync_file, prosync_std=prosync_std
+            )
+            prosync_table, prosync_list = prosync_table_content(
+                prosync_data, gen_report=True
+            )
+            selected_prosync_list = render_selectable_table(
+                prosync_list,
+                f"{key_prefix}prosync",
+                display_records=table_columns_to_records(prosync_table),
+            )
+        except Exception as e:
+            st.error(f"Erro ao processar Prosync: {e}")
+    else:
+        st.info("Nenhum arquivo Prosync enviado.")
+
+    return selected_prosync_list, prosync_data
+
+
+def render_oberon_inputs(key_prefix: str):
+    """Render the 6 Oberon uploaders + min/max D number inputs.
+    Returns (oberon_files, oberon_thresholds).
+
+    With key_prefix == "" keys are "oberon_{cat}"/"min_d_{cat}"/"max_d_{cat}".
+    """
     st.markdown("### Oberon (TXT)")
-
-    oberon_categories = {
-        "toxinas": "Toxinas",
-        "emocoes": "Emoções",
-        "microrganismos": "Microrganismos",
-        "cristais": "Cristais",
-        "alimentos": "Alimentos",
-        "patologias": "Patologias",
-    }
 
     oberon_files = {}
     oberon_thresholds = {}
 
-    for key, label in oberon_categories.items():
+    for key, label in OBERON_CATEGORIES.items():
         st.markdown(f"#### {label}")
-        file = st.file_uploader(f"Upload {label} TXT", type=["txt"], key=f"oberon_{key}")
+        file = st.file_uploader(
+            f"Upload {label} TXT", type=["txt"], key=f"{key_prefix}oberon_{key}"
+        )
 
         if file:
             oberon_files[key] = file
@@ -644,99 +688,39 @@ with processing_tab:
             c1, c2 = st.columns(2)
             with c1:
                 f_min = st.number_input(
-                    f"Min D ({label})", value=0.0, step=0.1, key=f"min_d_{key}"
+                    f"Min D ({label})",
+                    value=0.0,
+                    step=0.1,
+                    key=f"{key_prefix}min_d_{key}",
                 )
             with c2:
                 f_max = st.number_input(
-                    f"Max D ({label})", value=1.0, step=0.1, key=f"max_d_{key}"
+                    f"Max D ({label})",
+                    value=1.0,
+                    step=0.1,
+                    key=f"{key_prefix}max_d_{key}",
                 )
 
             oberon_thresholds[key] = [f_min, f_max]
 
-    st.markdown("### Parâmetros de Configuração")
-    prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
+    return oberon_files, oberon_thresholds
 
-    st.markdown("### Sessões Extras")
-    invalidate_extra_sessions_cache_on_company_change(selected_company)
-    extra_sessions_catalog_state = get_extra_sessions_catalog_state()
-    available_extra_session_options = build_catalog_options_for_clinic(
-        extra_sessions_catalog_state["catalog"],
-        selected_company,
-    )
-    sync_selected_extra_sessions(available_extra_session_options)
 
-    if extra_sessions_catalog_state["status"] == "warning":
-        st.warning(extra_sessions_catalog_state["message"])
-    elif extra_sessions_catalog_state["status"] == "error":
-        st.error(extra_sessions_catalog_state["message"])
+def process_oberon_inputs(key_prefix: str, oberon_files: dict):
+    """Replicate the per-category Oberon processing + selectable tables.
+    Returns (oberon_data_full, selected_oberon_data_full).
 
-    available_extra_session_names = [
-        option["treatment_name"] for option in available_extra_session_options
-    ]
-    option_labels = {
-        option["treatment_name"]: format_extra_session_option_label(option)
-        for option in available_extra_session_options
-    }
-
-    selected_extra_sessions = st.multiselect(
-        "Selecione as sessões extras do protocolo",
-        options=available_extra_session_names,
-        format_func=lambda name: option_labels.get(name, name),
-        key="selected_extra_sessions",
-        disabled=not available_extra_session_names,
-    )
-
-    if not available_extra_session_names:
-        st.info(
-            f"Nenhuma sessão extra com preço válido disponível para {selected_company}."
-        )
-
-    extra_sessions = []
-    for session_name in selected_extra_sessions:
-        quantity = st.number_input(
-            f"Quantidade de {session_name}",
-            min_value=1,
-            step=1,
-            value=1,
-            key=f"extra_session_quantity_{session_name}",
-        )
-        extra_sessions.extend([session_name] * int(quantity))
-    extra_session_prices = build_selected_session_price_lookup(
-        extra_sessions_catalog_state["catalog"],
-        selected_company,
-        selected_extra_sessions,
-    )
-
-    prosync_data = {}
-    selected_prosync_list = []
+    With key_prefix == "" the selectable-table state key is "oberon_{cat}".
+    """
     oberon_data_full = {}
     selected_oberon_data_full = {}
-
-    if prosync_file:
-        try:
-            st.subheader("Resultado Prosync")
-            prosync_data = extract_prosync_content(prosync_file, prosync_std=prosync_std)
-            prosync_table, prosync_list = prosync_table_content(
-                prosync_data, gen_report=True
-            )
-            selected_prosync_list = render_selectable_table(
-                prosync_list,
-                "prosync",
-                display_records=table_columns_to_records(prosync_table),
-            )
-
-        except Exception as e:
-            st.error(f"Erro ao processar Prosync: {e}")
-    else:
-        st.info("Nenhum arquivo Prosync enviado.")
-
 
     if oberon_files:
         st.subheader("Resultados Oberon")
 
         for key, file in oberon_files.items():
             try:
-                st.markdown(f"**Categoria: {oberon_categories[key]}**")
+                st.markdown(f"**Categoria: {OBERON_CATEGORIES[key]}**")
                 available_enc = ["cp1252", "utf-8", "latin1", "iso-8859-1", "utf-8-sig"]
 
                 for enc in available_enc:
@@ -773,10 +757,12 @@ with processing_tab:
                 oberon_data_full[key] = processed_data
                 selected_oberon_data_full[key] = processed_data
 
-                if key in {"toxinas", "microrganismos"} and isinstance(processed_data, list):
+                if key in {"toxinas", "microrganismos"} and isinstance(
+                    processed_data, list
+                ):
                     selected_oberon_data_full[key] = render_selectable_table(
                         processed_data,
-                        f"oberon_{key}",
+                        f"{key_prefix}oberon_{key}",
                     )
                 elif isinstance(processed_data, list):
                     st.dataframe(pd.DataFrame(processed_data), width="stretch")
@@ -784,9 +770,374 @@ with processing_tab:
                     st.dataframe(pd.DataFrame([processed_data]), width="stretch")
 
             except Exception as e:
-                st.error(f"Erro ao processar Oberon ({oberon_categories[key]}): {e}")
+                st.error(f"Erro ao processar Oberon ({OBERON_CATEGORIES[key]}): {e}")
     else:
         st.info("Nenhum arquivo Oberon enviado.")
+
+    return oberon_data_full, selected_oberon_data_full
+
+
+def render_extra_sessions(key_prefix: str, selected_company: str):
+    """Render the extra-sessions catalog/multiselect/quantity logic, namespaced.
+    Returns (extra_sessions, extra_session_prices).
+
+    With key_prefix == "" keys are "selected_extra_sessions" and
+    "extra_session_quantity_{name}" (unchanged).
+    """
+    st.markdown("### Sessões Extras")
+    extra_sessions_catalog_state = get_extra_sessions_catalog_state()
+    available_extra_session_options = build_catalog_options_for_clinic(
+        extra_sessions_catalog_state["catalog"],
+        selected_company,
+    )
+    selected_state_key = f"{key_prefix}selected_extra_sessions"
+    sync_selected_extra_sessions(
+        available_extra_session_options,
+        state_key=selected_state_key,
+        quantity_key_prefix=key_prefix,
+    )
+
+    if extra_sessions_catalog_state["status"] == "warning":
+        st.warning(extra_sessions_catalog_state["message"])
+    elif extra_sessions_catalog_state["status"] == "error":
+        st.error(extra_sessions_catalog_state["message"])
+
+    available_extra_session_names = [
+        option["treatment_name"] for option in available_extra_session_options
+    ]
+    option_labels = {
+        option["treatment_name"]: format_extra_session_option_label(option)
+        for option in available_extra_session_options
+    }
+
+    selected_extra_sessions = st.multiselect(
+        "Selecione as sessões extras do protocolo",
+        options=available_extra_session_names,
+        format_func=lambda name: option_labels.get(name, name),
+        key=selected_state_key,
+        disabled=not available_extra_session_names,
+    )
+
+    if not available_extra_session_names:
+        st.info(
+            f"Nenhuma sessão extra com preço válido disponível para {selected_company}."
+        )
+
+    extra_sessions = []
+    for session_name in selected_extra_sessions:
+        quantity = st.number_input(
+            f"Quantidade de {session_name}",
+            min_value=1,
+            step=1,
+            value=1,
+            key=f"{key_prefix}extra_session_quantity_{session_name}",
+        )
+        extra_sessions.extend([session_name] * int(quantity))
+    extra_session_prices = build_selected_session_price_lookup(
+        extra_sessions_catalog_state["catalog"],
+        selected_company,
+        selected_extra_sessions,
+    )
+
+    return extra_sessions, extra_session_prices
+
+
+def render_group_treatment_docs(content: dict, label: str, multiplier: float = 1.0):
+    """Generate protocolo/orcamento/controle from a content dict. Returns a dict
+    of {doc_type: buffer or None}. ``label`` is used only for error context.
+    """
+    protocol_buffer = None
+    budget_buffer = None
+    control_buffer = None
+    try:
+        protocol_buffer = generate_protocol(content, multiplier=multiplier)
+        budget_buffer = generate_budget(content, multiplier=multiplier)
+        control_buffer = generate_control(content)
+    except Exception as e:
+        st.error(f"Erro ao gerar documentos ({label}): {e}")
+
+    return {
+        "protocolo": protocol_buffer,
+        "orcamento": budget_buffer,
+        "controle": control_buffer,
+    }
+
+
+def render_doc_link_or_notice(
+    buffer,
+    label: str,
+    doc_type: str,
+    company_name: str,
+    name: str,
+    skipped: bool = False,
+    skip_message: str | None = None,
+):
+    if skipped:
+        st.info(skip_message or f"{label}: documento não gerado.")
+        return
+
+    if buffer:
+        render_docx_download_link(
+            label,
+            buffer,
+            build_output_file_name(doc_type, company_name, name),
+        )
+    else:
+        st.warning(f"{label}: erro ao gerar o documento.")
+
+
+def render_group_tab():
+    st.title("Processamento em Grupo")
+
+    st.markdown("### Informações do Grupo")
+    clinic_column, count_column = st.columns(2)
+    with clinic_column:
+        group_selected_company = st.selectbox(
+            "Clínica",
+            options=availableCompaniesArgs,
+            index=0,
+            key=GROUP_SELECTED_COMPANY_STATE_KEY,
+        )
+    with count_column:
+        patient_count = st.selectbox(
+            "Número de pacientes",
+            options=[2, 3],
+            index=0,
+            key=GROUP_PATIENT_COUNT_STATE_KEY,
+        )
+
+    # Ensure the extra-sessions catalog is loaded for the group clinic before the
+    # per-patient extra-sessions sections render (shared company state key).
+    invalidate_extra_sessions_cache_on_company_change(group_selected_company)
+
+    patient_inputs = []
+    patient_sub_tabs = st.tabs(
+        [f"Paciente {i + 1}" for i in range(patient_count)]
+    )
+
+    for i, sub_tab in enumerate(patient_sub_tabs):
+        key_prefix = f"g{i}_"
+        with sub_tab:
+            patient_name = st.text_input(
+                "Nome do Paciente", key=f"{key_prefix}patient_name"
+            )
+
+            prosync_file = render_prosync_uploader(key_prefix)
+            oberon_files, oberon_thresholds = render_oberon_inputs(key_prefix)
+
+            st.markdown("### Parâmetros de Configuração")
+            prosync_std = st.number_input(
+                "Prosync Std",
+                value=0.1,
+                step=0.01,
+                key=f"{key_prefix}prosync_std",
+            )
+
+            extra_sessions, extra_session_prices = render_extra_sessions(
+                key_prefix, group_selected_company
+            )
+
+            selected_prosync_list, prosync_data = process_prosync_input(
+                key_prefix, prosync_file, prosync_std
+            )
+            oberon_data_full, selected_oberon_data_full = process_oberon_inputs(
+                key_prefix, oberon_files
+            )
+
+            patient_inputs.append(
+                {
+                    "patient_name": patient_name,
+                    "selected_prosync_list": selected_prosync_list,
+                    "selected_oberon_data_full": selected_oberon_data_full,
+                    "oberon_thresholds": oberon_thresholds,
+                    "extra_sessions": extra_sessions,
+                    "extra_session_prices": extra_session_prices,
+                }
+            )
+
+    st.markdown("---")
+    if not st.button("Gerar documentos do grupo", key="group_generate_button"):
+        return
+
+    # Per-patient processing -> content dicts (RF-06, RF-12).
+    per_patient_contents = []
+    patient_names = []
+    for i, patient in enumerate(patient_inputs):
+        name = (patient["patient_name"] or "").strip() or f"Paciente {i + 1}"
+        patient_names.append(name)
+        try:
+            content = generate_content_for_report(
+                patient["selected_prosync_list"],
+                patient["selected_oberon_data_full"],
+                patient["oberon_thresholds"],
+                name,
+            )
+            content["extra_sessions"] = patient["extra_sessions"]
+            content["extra_session_prices"] = patient["extra_session_prices"]
+        except Exception as e:
+            st.error(f"Erro ao processar {name}: {e}")
+            content = None
+        per_patient_contents.append(content)
+
+    valid_contents = [c for c in per_patient_contents if c is not None]
+    if not valid_contents:
+        st.error("Nenhum paciente foi processado com sucesso.")
+        return
+
+    partition = partition_group_elements(per_patient_contents)
+
+    company = group_selected_company
+
+    # --- Shared documents (RF-08, RN-05) ---
+    st.markdown("---")
+    st.subheader("Compartilhado")
+    shared_name_label = format_shared_name(patient_names)
+
+    has_common = any(
+        partition.common_elements.get(cat) for cat in partition.common_elements
+    )
+    if has_common:
+        shared_content = build_shared_content(
+            partition.common_elements, patient_names
+        )
+        shared_docs = render_group_treatment_docs(
+            shared_content,
+            "Compartilhado",
+            multiplier=SHARED_SESSION_MULTIPLIER,
+        )
+        render_doc_link_or_notice(
+            shared_docs["protocolo"], "Baixar Protocolo (DOCX)",
+            "protocolo", company, shared_name_label,
+        )
+        render_doc_link_or_notice(
+            shared_docs["orcamento"], "Baixar Orçamento (DOCX)",
+            "orcamento", company, shared_name_label,
+        )
+        render_doc_link_or_notice(
+            shared_docs["controle"], "Baixar Controle (DOCX)",
+            "controle", company, shared_name_label,
+        )
+    else:
+        st.info(
+            "Nenhum elemento em comum a todos os pacientes; "
+            "documentos compartilhados não gerados."
+        )
+
+    # --- Per-patient documents (RF-09, RF-10) ---
+    for i, content in enumerate(per_patient_contents):
+        name = patient_names[i]
+        st.markdown("---")
+        st.subheader(name)
+
+        if content is None:
+            st.warning(f"{name} não foi processado; documentos não gerados.")
+            continue
+
+        unique = partition.per_patient_unique[i]
+        unique_micro = unique.get("microorganisms", [])
+        unique_toxins = unique.get("toxins", [])
+        extra_sessions = content.get("extra_sessions") or []
+
+        # Individual treatment documents (RF-09, RN-06, RN-12).
+        if not unique_micro and not unique_toxins and not extra_sessions:
+            st.info(
+                f"{name} não possui elementos únicos nem sessões extras; "
+                "documentos de tratamento individual não gerados."
+            )
+        else:
+            indiv_content = build_individual_content(
+                unique,
+                extra_sessions,
+                name,
+                content.get("extra_session_prices"),
+            )
+            indiv_docs = render_group_treatment_docs(
+                indiv_content, name, multiplier=1.0
+            )
+            render_doc_link_or_notice(
+                indiv_docs["protocolo"], "Baixar Protocolo (DOCX)",
+                "protocolo", company, name,
+            )
+            render_doc_link_or_notice(
+                indiv_docs["orcamento"], "Baixar Orçamento (DOCX)",
+                "orcamento", company, name,
+            )
+            render_doc_link_or_notice(
+                indiv_docs["controle"], "Baixar Controle (DOCX)",
+                "controle", company, name,
+            )
+
+        # Individual relatorio (RF-10, RN-07).
+        other = {
+            k: content.get(k)
+            for k in (
+                "table_crystals",
+                "table_food",
+                "table_emotions",
+                "table_patologies",
+            )
+        }
+        report_content = build_individual_report_content(
+            unique_micro,
+            unique_toxins,
+            other,
+            name,
+        )
+        # Anamnesis is out of scope for the group tab; pass the canonical empty
+        # value so the report template's anamnesis block renders (RF-10).
+        report_content["anamnesis"] = build_report_anamnesis_rows(False, None)
+        report_buffer = None
+        try:
+            report_buffer = generate_report(report_content, company_name=company)
+        except Exception as e:
+            st.error(f"Erro ao gerar relatório ({name}): {e}")
+        render_doc_link_or_notice(
+            report_buffer, "Baixar Relatório (DOCX)",
+            "relatorio", company, name,
+        )
+
+
+st.set_page_config(page_title="Bienestar POC", layout="wide")
+
+st.title("Bienestar POC")
+processing_tab, group_tab, system_data_tab = st.tabs(
+    ["Processamento", "Processamento em Grupo", "Dados do Sistema"]
+)
+
+with processing_tab:
+    st.title("Processamento de Arquivos")
+
+    st.markdown("### Informações do Atendimento")
+    clinic_column, patient_column = st.columns(2)
+    with clinic_column:
+        selected_company = st.selectbox(
+            "Clínica",
+            options=get_args(availableCompanies),
+            index=0,
+            key="selected_company",
+        )
+    with patient_column:
+        patient_name = st.text_input("Nome do Paciente", key="patient_name")
+
+    render_anamnesis_lookup_section(selected_company, patient_name)
+
+    prosync_file = render_prosync_uploader("")
+
+    oberon_files, oberon_thresholds = render_oberon_inputs("")
+
+    st.markdown("### Parâmetros de Configuração")
+    prosync_std = st.number_input("Prosync Std", value=0.1, step=0.01, key="prosync_std")
+
+    invalidate_extra_sessions_cache_on_company_change(selected_company)
+    extra_sessions, extra_session_prices = render_extra_sessions("", selected_company)
+
+    selected_prosync_list, prosync_data = process_prosync_input(
+        "", prosync_file, prosync_std
+    )
+
+    oberon_data_full, selected_oberon_data_full = process_oberon_inputs(
+        "", oberon_files
+    )
 
     # Generate Report Button
     if st.button("Gerar Relatório"):
@@ -894,6 +1245,9 @@ with processing_tab:
             st.warning(
                 "Sem dados para gerar relatório. Por favor, faça upload dos arquivos."
             )
+
+with group_tab:
+    render_group_tab()
 
 with system_data_tab:
     render_system_data_tab()

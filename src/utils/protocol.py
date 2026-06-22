@@ -537,7 +537,9 @@ def add_row_numbers(
 
 
 def create_protocol_treatment_rows(
-    session_names: list[str], prices: dict[str, dict[str, float | int]]
+    session_names: list[str],
+    prices: dict[str, dict[str, float | int]],
+    multiplier: float = 1.0,
 ) -> tuple[list[dict[str, str]], float, float]:
     rows = []
     total_pix = 0.0
@@ -557,8 +559,8 @@ def create_protocol_treatment_rows(
         if not session_name or session_name == SESSION_COMPLEMENT_NAME:
             continue
 
-        pix = float(treatment_price.get("pix", 0))
-        card = float(treatment_price.get("cartao", 0))
+        pix = float(treatment_price.get("pix", 0)) * multiplier
+        card = float(treatment_price.get("cartao", 0)) * multiplier
         row = {
             "name": session_name,
             "pix": format_currency(pix),
@@ -570,8 +572,10 @@ def create_protocol_treatment_rows(
         }
 
         if is_rpd_treatment(session_name):
-            complement_pix = float(session_complement_price.get("pix", 0))
-            complement_card = float(session_complement_price.get("cartao", 0))
+            complement_pix = float(session_complement_price.get("pix", 0)) * multiplier
+            complement_card = (
+                float(session_complement_price.get("cartao", 0)) * multiplier
+            )
             row.update(
                 {
                     "h": SESSION_COMPLEMENT_NAME,
@@ -642,7 +646,7 @@ def format_microorganism_content(
 # ================================================================== #
 
 
-def build_protocol_context(protocol_content: dict) -> dict:
+def build_protocol_context(protocol_content: dict, multiplier: float = 1.0) -> dict:
     microorganisms_prosync = protocol_content.get("table_prosync", {})
     microorganisms_oberon = protocol_content.get("table_microorganism", {})
     toxins = protocol_content.get("table_toxins", {})
@@ -660,10 +664,10 @@ def build_protocol_context(protocol_content: dict) -> dict:
 
     prices = load_prices()
     microorganisms_protocol, microorganisms_total_pix, microorganisms_total_card = (
-        create_protocol_treatment_rows(m_t_b, prices)
+        create_protocol_treatment_rows(m_t_b, prices, multiplier)
     )
     metals_protocol, metals_total_pix, metals_total_card = (
-        create_protocol_treatment_rows(t_t_b, prices)
+        create_protocol_treatment_rows(t_t_b, prices, multiplier)
     )
     next_row_number = 10
     microorganisms_protocol, next_row_number = add_row_numbers(
@@ -689,12 +693,12 @@ def build_protocol_context(protocol_content: dict) -> dict:
 
 
 # Implementação do protocolo
-def generate_protocol(protocol_content):
+def generate_protocol(protocol_content, multiplier: float = 1.0):
     if not PROTOCOL_TEMPLATE_PATH.exists():
         print(f"Template not found at {PROTOCOL_TEMPLATE_PATH}")
         return
 
-    content = build_protocol_context(protocol_content)
+    content = build_protocol_context(protocol_content, multiplier)
     doc = DocxTemplate(PROTOCOL_TEMPLATE_PATH)
     doc.render(content)
 
