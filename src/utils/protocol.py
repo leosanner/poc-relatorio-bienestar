@@ -198,16 +198,21 @@ def microorganisms_frequencies(protocol_data: dict[str, list]):
         unique_freq = []
         relative_time = []
         unique_microorganism_name = []
+        seen_pairs: set[tuple[str, str]] = set()
 
         current_frequencies = summary[microorganism_type]["freq"]
         current_treatment_time = summary[microorganism_type]["time"]
         current_names = summary[microorganism_type]["microorganism_name"]
 
         for i in range(0, len(summary[microorganism_type]["freq"])):
-            if current_frequencies[i] not in unique_freq:
-                unique_freq.append(current_frequencies[i])
-                relative_time.append(current_treatment_time[i])
-                unique_microorganism_name.append(current_names[i])
+            pair = (current_names[i].lower(), current_frequencies[i])
+            if pair in seen_pairs:
+                continue
+
+            seen_pairs.add(pair)
+            unique_freq.append(current_frequencies[i])
+            relative_time.append(current_treatment_time[i])
+            unique_microorganism_name.append(current_names[i])
 
         summary[microorganism_type]["freq"] = unique_freq
         summary[microorganism_type]["time"] = relative_time

@@ -37,8 +37,12 @@ from utils.protocol import (  # noqa: E402
     SESSION_COMPLEMENT_NAME,
     add_session_complements,
     build_protocol_context,
+    format_microorganisms_to_docx,
     metals_docx_format,
     microorganisms_content_docx,
+    microorganisms_frequencies,
+    microorganisms_sessions,
+    microorganisms_treatment_block,
 )
 
 
@@ -205,6 +209,31 @@ class BudgetTests(unittest.TestCase):
         )
         self.assertEqual(protocol_context["total_pix"], "R$ 696,00")
         self.assertEqual(protocol_context["total_card"], "R$ 768,00")
+
+    def test_shared_frequency_keeps_both_microorganism_names(self):
+        blocks, not_founded = microorganisms_treatment_block(
+            [],
+            [
+                {"nome": "taenia saginata", "tipo": "Helminto"},
+                {"nome": "taenia solium", "tipo": "Helminto"},
+            ],
+        )
+
+        self.assertEqual(not_founded, [])
+        self.assertEqual(len(blocks), 1)
+        self.assertIn("# Taenia saginata", blocks[0])
+        self.assertIn("# Taenia solium", blocks[0])
+        self.assertEqual(blocks[0].count("#"), 2)
+
+    def test_duplicate_microorganism_frequency_pair_is_still_deduped(self):
+        protocol_data = {
+            "Helminto": ["taenia saginata", "taenia saginata"],
+        }
+        sessions = microorganisms_sessions(microorganisms_frequencies(protocol_data)[0])
+        blocks = format_microorganisms_to_docx(sessions)
+
+        self.assertEqual(len(blocks), 1)
+        self.assertEqual(blocks[0].count("# Taenia saginata"), 1)
 
 
 if __name__ == "__main__":
