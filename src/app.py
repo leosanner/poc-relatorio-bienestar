@@ -20,6 +20,7 @@ from utils.oberon import (
     patologies_info,
 )
 from utils.report import (
+    ReportTemplateVariant,
     generate_report,
     prosync_table_content,
     generate_content_for_report,
@@ -64,10 +65,13 @@ ANAMNESIS_FORM_URLS: dict[str, str | None] = {
 }
 
 availableCompaniesArgs = get_args(availableCompanies)
+REPORT_TEMPLATE_VARIANTS = get_args(ReportTemplateVariant)
 SHARED_SESSION_MULTIPLIER = 1.0
 
 GROUP_SELECTED_COMPANY_STATE_KEY = "group_selected_company"
+GROUP_REPORT_TEMPLATE_VARIANT_STATE_KEY = "group_report_template_variant"
 GROUP_PATIENT_COUNT_STATE_KEY = "group_patient_count"
+REPORT_TEMPLATE_VARIANT_STATE_KEY = "report_template_variant"
 
 OBERON_CATEGORIES = {
     "toxinas": "Toxinas",
@@ -890,13 +894,20 @@ def render_group_tab():
     st.title("Processamento em Grupo")
 
     st.markdown("### Informações do Grupo")
-    clinic_column, count_column = st.columns(2)
+    clinic_column, template_column, count_column = st.columns(3)
     with clinic_column:
         group_selected_company = st.selectbox(
             "Clínica",
             options=availableCompaniesArgs,
             index=0,
             key=GROUP_SELECTED_COMPANY_STATE_KEY,
+        )
+    with template_column:
+        group_report_template_variant = st.selectbox(
+            "Modelo do relatório",
+            options=REPORT_TEMPLATE_VARIANTS,
+            index=0,
+            key=GROUP_REPORT_TEMPLATE_VARIANT_STATE_KEY,
         )
     with count_column:
         patient_count = st.selectbox(
@@ -1088,7 +1099,11 @@ def render_group_tab():
         report_content["anamnesis"] = build_report_anamnesis_rows(False, None)
         report_buffer = None
         try:
-            report_buffer = generate_report(report_content, company_name=company)
+            report_buffer = generate_report(
+                report_content,
+                company_name=company,
+                template_variant=group_report_template_variant,
+            )
         except Exception as e:
             st.error(f"Erro ao gerar relatório ({name}): {e}")
         render_doc_link_or_notice(
@@ -1108,13 +1123,20 @@ with processing_tab:
     st.title("Processamento de Arquivos")
 
     st.markdown("### Informações do Atendimento")
-    clinic_column, patient_column = st.columns(2)
+    clinic_column, template_column, patient_column = st.columns(3)
     with clinic_column:
         selected_company = st.selectbox(
             "Clínica",
             options=get_args(availableCompanies),
             index=0,
             key="selected_company",
+        )
+    with template_column:
+        report_template_variant = st.selectbox(
+            "Modelo do relatório",
+            options=REPORT_TEMPLATE_VARIANTS,
+            index=0,
+            key=REPORT_TEMPLATE_VARIANT_STATE_KEY,
         )
     with patient_column:
         patient_name = st.text_input("Nome do Paciente", key="patient_name")
@@ -1178,7 +1200,9 @@ with processing_tab:
                     if not selected_company:
                         selected_company = "Bienestar"
                     docx_buffer = generate_report(
-                        protocol_and_report_content, company_name=selected_company
+                        protocol_and_report_content,
+                        company_name=selected_company,
+                        template_variant=report_template_variant,
                     )
                     protocol_buffer = generate_protocol(protocol_and_report_content)
                     budget_buffer = generate_budget(protocol_and_report_content)

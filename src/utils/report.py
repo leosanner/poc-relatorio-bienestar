@@ -19,18 +19,31 @@ ASSETS_PATH = ROOT / "assets"
 REPORT_ASSETS_PATH = ASSETS_PATH / "report"
 
 availableCompanies = Literal["Bienestar", "Alecrim", "VitaeFlux"]
+ReportTemplateVariant = Literal["Oberon", "MetaHunter"]
+
+REPORT_TEMPLATE_FILES = {
+    ("Bienestar", "Oberon"): "relatorio_bienestar_1.docx",
+    ("Bienestar", "MetaHunter"): "relatorio_bienestar_metahunter.docx",
+    ("Alecrim", "Oberon"): "relatorio_alecrim.docx",
+    ("Alecrim", "MetaHunter"): "relatorio_alecrim_metahunter.docx",
+    ("VitaeFlux", "Oberon"): "relatorio_vitaeflux.docx",
+    ("VitaeFlux", "MetaHunter"): "relatorio_vitaeflux_metahunter.docx",
+}
 
 
 def load_path_by_company(
     company_name: availableCompanies = "Bienestar",
+    template_variant: ReportTemplateVariant = "Oberon",
 ) -> Path:
-    match company_name:
-        case "Alecrim":
-            return REPORT_ASSETS_PATH / "relatorio_alecrim.docx"
-        case "Bienestar":
-            return REPORT_ASSETS_PATH / "relatorio_bienestar_1.docx"
-        case "VitaeFlux":
-            return REPORT_ASSETS_PATH / "relatorio_vitaeflux.docx"
+    try:
+        template_file = REPORT_TEMPLATE_FILES[(company_name, template_variant)]
+    except KeyError as error:
+        raise ValueError(
+            "Unsupported report template combination: "
+            f"{company_name} / {template_variant}"
+        ) from error
+
+    return REPORT_ASSETS_PATH / template_file
 
 
 def inside_interval(val, interval):
@@ -231,8 +244,12 @@ def generate_content_for_report(
     return context
 
 
-def generate_report(report_content, company_name: availableCompanies = "Bienestar"):
-    template_path = load_path_by_company(company_name)
+def generate_report(
+    report_content,
+    company_name: availableCompanies = "Bienestar",
+    template_variant: ReportTemplateVariant = "Oberon",
+):
+    template_path = load_path_by_company(company_name, template_variant)
 
     if not template_path.exists():
         print(f"Template not found at {template_path}")
